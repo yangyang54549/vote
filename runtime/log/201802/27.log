@@ -543,3 +543,102 @@
 [ info ] [ LOG ] INIT File
 
 ---------------------------------------------------------------
+[ 2018-02-27T09:13:15+08:00 ] 127.0.0.1 127.0.0.1 GET /web/user/index.html
+[ log ] vote.com/web/user/index.html [运行时间：0.026206s][吞吐率：38.16req/s] [内存消耗：1,306.95kb] [文件加载：52]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/zuopin.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\User->index[ E:\GitHub\vote\application\web\controller\User.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\user\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:13:37+08:00 ] 127.0.0.1 127.0.0.1 GET /web/index/index.html
+[ log ] vote.com/web/index/index.html [运行时间：0.023023s][吞吐率：43.43req/s] [内存消耗：1,317.81kb] [文件加载：52]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; Qs_lvt_224241=1519631686%2C1519694005; Qs_pv_224241=109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000%2C2978964878901980700',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\Index->index[ E:\GitHub\vote\application\web\controller\Index.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:15:01+08:00 ] 127.0.0.1 127.0.0.1 GET /web/index/index.html
+[ log ] vote.com/web/index/index.html [运行时间：0.039489s][吞吐率：25.32req/s] [内存消耗：1,317.81kb] [文件加载：52]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; Qs_lvt_224241=1519631686%2C1519694005; Qs_pv_224241=2598183554041171000%2C1636956911432677600%2C3012495400803430000%2C2978964878901980700%2C792934817413848000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\Index->index[ E:\GitHub\vote\application\web\controller\Index.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
