@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"E:\GitHub\vote\public/../application/web\view\index\index.html";i:1519641194;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"E:\GitHub\vote\public/../application/web\view\index\index.html";i:1519721967;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -162,104 +162,34 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 						<ul class="mui-table-view mui-grid-view mui-grid-9" id="card">
 							<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" id="card1">
 
+								<?php if(is_array($recommend) || $recommend instanceof \think\Collection || $recommend instanceof \think\Paginator): $i = 0; $__LIST__ = $recommend;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+
 								<div class="mui-card" >
-									<a href="<?php echo url('index/info'); ?>">
+									<a href="<?php echo url('index/info',['id'=>$vo['id']]); ?>">
 										<!--页眉，放置标题-->
 										<!--<div class="mui-card-header">页眉</div>-->
 										<!--内容区-->
-										<div class="mui-card-content"><img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" /></div>
+										<div class="mui-card-content"><img src="<?php echo $vo['img']; ?>" /></div>
 										<!--页脚，放置补充信息或支持的操作-->
-										<div class="mui-card-footer">名称</div>
-									</a>
-								</div><div class="mui-card">
-									<a href="<?php echo url('index/info'); ?>">
-										<!--页眉，放置标题-->
-										<!--<div class="mui-card-header">页眉</div>-->
-										<!--内容区-->
-										<div class="mui-card-content"><img src="__WEB__/img/painting/gh/timg (15).jpg" /></div>
-										<!--页脚，放置补充信息或支持的操作-->
-										<div class="mui-card-footer">名称</div>
-									</a>
-								</div><div class="mui-card">
-									<a href="<?php echo url('index/info'); ?>">
-										<!--页眉，放置标题-->
-										<!--<div class="mui-card-header">页眉</div>-->
-										<!--内容区-->
-										<div class="mui-card-content"><img src="__WEB__/img/painting/gh/timg (1).jpg" /></div>
-										<!--页脚，放置补充信息或支持的操作-->
-										<div class="mui-card-footer">名称</div>
-									</a>
-								</div><div class="mui-card">
-									<a href="<?php echo url('index/info'); ?>">
-										<!--页眉，放置标题-->
-										<!--<div class="mui-card-header">页眉</div>-->
-										<!--内容区-->
-										<div class="mui-card-content"><img src="__WEB__/img/painting/gh/timg (10).jpg" /></div>
-										<!--页脚，放置补充信息或支持的操作-->
-										<div class="mui-card-footer">名称</div>
-									</a>
-								</div><div class="mui-card">
-									<a href="<?php echo url('index/info'); ?>">
-										<!--页眉，放置标题-->
-										<!--<div class="mui-card-header">页眉</div>-->
-										<!--内容区-->
-										<div class="mui-card-content"><img src="__WEB__/img/painting/gh/timg (12).jpg" /></div>
-										<!--页脚，放置补充信息或支持的操作-->
-										<div class="mui-card-footer">名称</div>
+										<div class="mui-card-footer"><?php echo $vo['title']; ?></div>
 									</a>
 								</div>
+								<?php endforeach; endif; else: echo "" ;endif; ?>
 							</ul>
 							<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" id="card2">
-								<div class="mui-card">
-									<a href="<?php echo url('index/info'); ?>">
-										<!--页眉，放置标题-->
-										<!--<div class="mui-card-header">页眉</div>-->
-										<!--内容区-->
-										<div class="mui-card-content"><img src="__WEB__/img/painting/gh/timg (16).jpg" /></div>
-										<!--页脚，放置补充信息或支持的操作-->
-										<div class="mui-card-footer">名称</div>
-									</a>
-								</div>
-								<div class="mui-card">
-									<a href="<?php echo url('index/info'); ?>">
-										<!--页眉，放置标题-->
-										<!--<div class="mui-card-header">页眉</div>-->
-										<!--内容区-->
-										<div class="mui-card-content"><img src="__WEB__/img/painting/gh/timg (6).jpg" /></div>
-										<!--页脚，放置补充信息或支持的操作-->
-										<div class="mui-card-footer">名称</div>
-									</a>
-								</div>
-								<div class="mui-card">
-									<a href="<?php echo url('index/info'); ?>">
-										<!--页眉，放置标题-->
-										<!--<div class="mui-card-header">页眉</div>-->
-										<!--内容区-->
-										<div class="mui-card-content"><img src="__WEB__/img/painting/gh/timg (8).jpg" /></div>
-										<!--页脚，放置补充信息或支持的操作-->
-										<div class="mui-card-footer">名称</div>
-									</a>
-								</div>
-								<div class="mui-card">
-									<a href="<?php echo url('index/info'); ?>">
-										<!--页眉，放置标题-->
-										<!--<div class="mui-card-header">页眉</div>-->
-										<!--内容区-->
-										<div class="mui-card-content"><img src="__WEB__/img/painting/gr/timg (26).jpg" /></div>
-										<!--页脚，放置补充信息或支持的操作-->
-										<div class="mui-card-footer">名称</div>
-									</a>
-								</div>
+								<?php if(is_array($recommend) || $recommend instanceof \think\Collection || $recommend instanceof \think\Paginator): $i = 0; $__LIST__ = $recommend;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+
 								<div class="mui-card" >
-									<a href="<?php echo url('index/info'); ?>">
+									<a href="<?php echo url('index/info',['id'=>$vo['id']]); ?>">
 										<!--页眉，放置标题-->
 										<!--<div class="mui-card-header">页眉</div>-->
 										<!--内容区-->
-										<div class="mui-card-content"><img src="__WEB__/img/painting/gs/u=1012637593,3984533236&fm=27&gp=0.jpg" /></div>
+										<div class="mui-card-content"><img src="<?php echo $vo['img']; ?>" /></div>
 										<!--页脚，放置补充信息或支持的操作-->
-										<div class="mui-card-footer">名称</div>
+										<div class="mui-card-footer"><?php echo $vo['title']; ?></div>
 									</a>
 								</div>
+								<?php endforeach; endif; else: echo "" ;endif; ?>
 
 							</ul>
 

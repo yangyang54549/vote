@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>订单详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="__WEB__/css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="__WEB__/css/style.css" />
+		<style type="text/css">
+			.spans {
+				display: flex;
+				justify-content: center;
+			}
+
+			.spans .mui-icon {
+				width: 30px;
+				height: 30px;
+				text-align: center;
+				line-height: 25px;
+				border-radius: 50%;
+				margin-bottom: 10px;
+			}
+			header>.div {
+
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				/* IE 9 */
+				-moz-transform: rotate(45deg);
+				/* Firefox */
+				-webkit-transform: rotate(45deg);
+				/* Safari 和 Chrome */
+				-o-transform: rotate(45deg);
+				/* Opera */
+				width: 13px;
+				height: 13px;
+				border-bottom: 2px solid #007aff;
+				border-left: 2px solid #007aff;
+				z-index: 100;
+			}
+
+			/*.mui-row div {
+				text-align: center;
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<!--
+	      index1.html
+	      <project>
+
+	      Created by Administrator on 2018-01-18.
+	      Copyright 2018 Administrator. All rights reserved.
+	 -->
+
+		<!-- 主界面菜单同时移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 菜单容器 -->
+
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<div class="div" onclick="history.go(-1);"></div>
+					<h1 class="mui-title mui-active">订单详情</h1>
+				</header>
+
+				<!-- 主页面内容容器 -->
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+						<!--九宫格1-->
+						<!--下拉刷新容器-->
+
+						<ul class="mui-media " style="padding: 0;">
+							<div class="mui-card">
+								<div class="mui-media-body" style="padding: 10px;">
+									名家字画
+									<p style="text-indent:2em;"> 吴败，字国旗，号画魔,云南江川人。4岁学习书画，其人画画成魔，15年不出家门。读周易，悟太极，理解宇宙变化原理，融和中国传统山水，花鸟。启功先生观其书画，书赠“少年老成”四字，既表认同，更多激励。中国艺术大师朱纪瞻先生在上海为吴败题写了“滇南鬼才”四字，以奖励后生。
+										<!--电话：13521352789
+  中国建设银行  户名：王 君   卡号：4367 4200 1350 0901 552-->
+									</p>
+								</div>
+							</div>
+							<div class="mui-card mui-row" style="padding: 10px;">
+								<div class="mui-col-sm-6 mui-col-xs-6">
+									订单价格：
+								</div>
+								<div class="mui-col-sm-6 mui-col-xs-6" id="gm">
+150
+								</div>
+								<div class="mui-col-sm-6 mui-col-xs-6">
+									李先生
+								</div>
+								<div class="mui-col-sm-6 mui-col-xs-6" >
+13613820359
+								</div>
+								<div class="mui-col-sm-12 mui-col-xs-12">
+									深圳市南山区科技园南区R2-B三楼
+								</div>
+
+							</div>
+							<div class="mui-card">
+
+								<!--页眉，放置标题-->
+								<!--<div class="mui-card-header">页眉</div>-->
+								<!--内容区-->
+								<div class="mui-card-content">
+									<a href="#"><img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" /></a>
+								</div>
+								<!--页脚，放置补充信息或支持的操作-->
+								<!--<div class="mui-card-footer">名称</div>-->
+
+							</div>
+							<div class="mui-card mui-row" style="padding: 10px;">
+								<div class="mui-col-sm-6 mui-col-xs-6">商品</div>
+								<div class="mui-col-sm-6 mui-col-xs-6" > ￥ 150</div><div class="mui-col-sm-6 mui-col-xs-6">运费</div>
+								<div class="mui-col-sm-6 mui-col-xs-6" > ￥ 0</div>
+								<div class="mui-col-sm-6 mui-col-xs-6">总计</div>
+								<div class="mui-col-sm-6 mui-col-xs-6" > ￥ 150</div>
+							</div><div class="mui-card mui-row" style="padding: 10px;">
+								<div class="mui-col-sm-4 mui-col-xs-4">订单编号：</div>
+								<div class="mui-col-sm-8 mui-col-xs-8" > yx12313213514543013543</div>
+								<div class="mui-col-sm-4 mui-col-xs-4">创建时间</div>
+								<div class="mui-col-sm-8 mui-col-xs-8" > 18-01-30 16:40:50</div>
+
+							</div>
+
+						</ul>
+
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+				<div class="mui-backdrop" style="display: none;">
+
+				</div>
+			</div>
+		</div>
+
+		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			jQuery.noConflict()
+		</script>
+		<script type="text/javascript">
+			mui.init();
+			(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					//bounce: false,//滚动条是否有弹力默认是true
+					//indicators: false, //是否显示滚动条,默认是true
+				});
+			})(mui);
+			//mui下a标签href失效问题解决
+			mui('body').on('tap', 'a', function() {
+				window.top.location.href = this.href;
+				/*$(this).classList.remove("mui-active") */
+			});
+			var ons = 3;
+			var onl;
+			//var mask = mui.createMask(callback);//callback为用户点击蒙版时自动执行的回调；
+			/*mui(".mui-media").on("tap", ".mui-media .mui-card .spans .mui-icon", function() {
+				//当前对象直接就是--->this
+				var sq = this;
+				var tt = this.className.length;
+
+				if(tt > 32) {
+				} else {
+					if(ons > 0) {
+						this.classList.add('active');
+						ons = ons - 1;
+					} else {
+						 mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' })
+					}
+				}
+			});*/
+			mui(".mui-row").on("tap", ".mui-row #gm", function() {
+				//当前对象直接就是--->this
+				var th = this;
+				/*mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' }) */
+				mui.confirm("确认购买？", '提示', ['取消', '确认'], function(e) {
+
+					if(e.index == 0) {
+						//点击取消	this.text("123123");
+
+					} else {
+
+						//确认
+
+					}
+				}, 'div');
+				//mui.alert("确认购买？",'提示',['确认'],null,'div')
+				//mui.prompt(" message", "placeholder", "title", ['取消','确认'], null,'div')
+
+			});
+		</script>
+	</body>
+
+</html>

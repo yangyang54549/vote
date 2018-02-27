@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:61:"E:\GitHub\vote\public/../application/web\view\user\index.html";i:1519642277;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:61:"E:\GitHub\vote\public/../application/web\view\user\index.html";i:1519697767;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -166,22 +166,22 @@
 
 						<ul class="mui-table-view" style="margin: 10px;">
 							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right" href="zuopin.html">
+								<a class="mui-navigate-right" href="<?php echo url('production/index'); ?>">
 									<span class="mui-icon mui-icon-compose"></span> 我的作品
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right" href="dingdan.html">
+								<a class="mui-navigate-right" href="<?php echo url('order/index'); ?>">
 									<span class="mui-icon mui-icon-email"></span>我的订单
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a href="dz-jl.html" class="mui-navigate-right">
+								<a href="<?php echo url('address/index'); ?>" class="mui-navigate-right">
 									<span class="mui-icon mui-icon-location"></span>收货地址
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right" href="paws.html">
+								<a class="mui-navigate-right" href="<?php echo url('login/edit'); ?>">
 									<span class="mui-icon mui-icon-gear"></span>修改密码
 								</a>
 							</li>
@@ -222,7 +222,7 @@
 					if(e.index == 0) {
 						//点击取消	this.text("123123");
 					} else { //确认
-						window.top.location.href = "login.html";
+						window.top.location.href = "<?php echo url('login/login'); ?>";
 					}
 				}, 'div');
 			});
