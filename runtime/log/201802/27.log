@@ -840,3 +840,36 @@
 [ info ] [ LOG ] INIT File
 
 ---------------------------------------------------------------
+[ 2018-02-27T09:18:33+08:00 ] 127.0.0.1 127.0.0.1 GET /web/index/index.html
+[ log ] vote.com/web/index/index.html [运行时间：0.031684s][吞吐率：31.56req/s] [内存消耗：1,317.81kb] [文件加载：52]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; thinkphp_show_page_trace=0|1; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; Qs_lvt_224241=1519631686%2C1519694005; Qs_pv_224241=1152435442621314000%2C1084824000907173000%2C793322423179746000%2C2140110382157109800%2C346376379830556900',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\Index->index[ E:\GitHub\vote\application\web\controller\Index.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
