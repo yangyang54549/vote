@@ -1,0 +1,545 @@
+[ 2018-02-27T09:01:33+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/index.html
+[ log ] vote.com/admin/index/index.html [运行时间：0.110735s][吞吐率：9.03req/s] [内存消耗：6,074.41kb] [文件加载：69]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/pub/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.023614s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.038851s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013295s ] mysql:dbname=vote;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.010084s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (0 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/index/index.html' , 'admin' , 'Index' , 'index' , 'GET' , 'a:0:{}' , 1519693293) [ RunTime:0.001433s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T09:01:34+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/pub/login.html
+[ log ] vote.com/admin/pub/login.html [运行时间：0.035763s][吞吐率：27.96req/s] [内存消耗：6,104.77kb] [文件加载：69]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'pub',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/pub/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.003717s ]
+[ info ] [ RUN ] app\admin\controller\Pub->login[ E:\GitHub\vote\application\admin\controller\Pub.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\pub\login.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.010814s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000707s ] mysql:dbname=vote;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.005223s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (0 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/pub/login.html' , 'admin' , 'Pub' , 'login' , 'GET' , 'a:0:{}' , 1519693294) [ RunTime:0.000321s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T09:01:34+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ log ] vote.com/captcha.html [运行时间：0.025909s][吞吐率：38.60req/s] [内存消耗：1,050.88kb] [文件加载：41]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/pub/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ E:\GitHub\vote\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:01:51+08:00 ] 127.0.0.1 127.0.0.1 GET /web/user/index.html
+[ log ] vote.com/web/user/index.html [运行时间：0.024258s][吞吐率：41.22req/s] [内存消耗：1,306.89kb] [文件加载：52]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/zuopin.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\User->index[ E:\GitHub\vote\application\web\controller\User.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\user\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:02:42+08:00 ] 127.0.0.1 127.0.0.1 GET /web/user/zuopin.html
+[ log ] vote.com/web/user/zuopin.html [运行时间：0.024418s][吞吐率：40.95req/s] [内存消耗：1,272.30kb] [文件加载：53]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'user',
+    2 => 'zuopin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:02:44+08:00 ] 127.0.0.1 127.0.0.1 GET /web/pay/pay.html
+[ log ] vote.com/web/pay/pay.html [运行时间：0.031663s][吞吐率：31.58req/s] [内存消耗：1,304.24kb] [文件加载：52]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'pay',
+    2 => 'pay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\Pay->pay[ E:\GitHub\vote\application\web\controller\Pay.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\pay\pay.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:02:45+08:00 ] 127.0.0.1 127.0.0.1 GET /static/web/js/jquery.min.map
+[ log ] vote.com/static/web/js/jquery.min.map [运行时间：0.028696s][吞吐率：34.85req/s] [内存消耗：1,071.83kb] [文件加载：45]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'web',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:02:47+08:00 ] 127.0.0.1 127.0.0.1 GET /web/user/zuopin.html
+[ log ] vote.com/web/user/zuopin.html [运行时间：0.028566s][吞吐率：35.01req/s] [内存消耗：1,272.30kb] [文件加载：53]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'user',
+    2 => 'zuopin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:02:57+08:00 ] 127.0.0.1 127.0.0.1 GET /web/pay/pay.html
+[ log ] vote.com/web/pay/pay.html [运行时间：0.017331s][吞吐率：57.70req/s] [内存消耗：1,304.43kb] [文件加载：52]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'pay',
+    2 => 'pay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\Pay->pay[ E:\GitHub\vote\application\web\controller\Pay.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\pay\pay.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:02:57+08:00 ] 127.0.0.1 127.0.0.1 GET /static/web/js/jquery.min.map
+[ log ] vote.com/static/web/js/jquery.min.map [运行时间：0.029835s][吞吐率：33.52req/s] [内存消耗：1,071.83kb] [文件加载：45]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'web',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:03:00+08:00 ] 127.0.0.1 127.0.0.1 GET /web/pay/paylog.html
+[ log ] vote.com/web/pay/paylog.html [运行时间：0.024124s][吞吐率：41.45req/s] [内存消耗：1,262.41kb] [文件加载：51]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'pay',
+    2 => 'paylog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/pay/pay.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\Pay->paylog[ E:\GitHub\vote\application\web\controller\Pay.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\pay\paylog.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:03:02+08:00 ] 127.0.0.1 127.0.0.1 GET /static/web/js/jquery.min.map
+[ log ] vote.com/static/web/js/jquery.min.map [运行时间：0.027167s][吞吐率：36.81req/s] [内存消耗：1,071.83kb] [文件加载：45]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'web',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:03:03+08:00 ] 127.0.0.1 127.0.0.1 GET /web/user/dingdan.html
+[ log ] vote.com/web/user/dingdan.html [运行时间：0.026521s][吞吐率：37.71req/s] [内存消耗：1,272.31kb] [文件加载：53]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'user',
+    2 => 'dingdan',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:03:05+08:00 ] 127.0.0.1 127.0.0.1 GET /web/pay/list.html
+[ log ] vote.com/web/pay/list.html [运行时间：0.019143s][吞吐率：52.24req/s] [内存消耗：1,306.17kb] [文件加载：52]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'pay',
+    2 => 'list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\Pay->list[ E:\GitHub\vote\application\web\controller\Pay.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\pay\list.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:03:05+08:00 ] 127.0.0.1 127.0.0.1 GET /static/web/js/muis.js
+[ log ] vote.com/static/web/js/muis.js [运行时间：0.031321s][吞吐率：31.93req/s] [内存消耗：1,072.06kb] [文件加载：45]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'web',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/pay/list.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:03:05+08:00 ] 127.0.0.1 127.0.0.1 GET /static/web/js/jquery.min.map
+[ log ] vote.com/static/web/js/jquery.min.map [运行时间：0.026983s][吞吐率：37.06req/s] [内存消耗：1,071.83kb] [文件加载：45]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'web',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:03:06+08:00 ] 127.0.0.1 127.0.0.1 GET /static/web/js/muis.js
+[ log ] vote.com/static/web/js/muis.js [运行时间：0.016055s][吞吐率：62.29req/s] [内存消耗：1,072.06kb] [文件加载：45]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'web',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/pay/list.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T09:03:11+08:00 ] 127.0.0.1 127.0.0.1 GET /web/user/zuopin.html
+[ log ] vote.com/web/user/zuopin.html [运行时间：0.026412s][吞吐率：37.86req/s] [内存消耗：1,272.30kb] [文件加载：53]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'user',
+    2 => 'zuopin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; Qs_lvt_224241=1519631686; Qs_pv_224241=2207848512521522000%2C109599632538287980%2C2598183554041171000%2C1636956911432677600%2C3012495400803430000; PHPSESSID=edhp8f6qqdf3iftbflur4nh524',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

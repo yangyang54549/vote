@@ -1,0 +1,9 @@
+			.mui-input-row label,.mui-input-row input{
+				font-size: 15px;
+			}
+			.mui-input-group .mui-input-row:after {
+   opacity: 0;
+}
+.mui-input-row{
+	border-bottom: 1px solid #c8c7cc;
+}

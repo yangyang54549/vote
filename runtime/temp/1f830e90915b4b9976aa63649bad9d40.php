@@ -1,0 +1,125 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"E:\GitHub\vote\public/../application/web\view\pay\withdraw.html";i:1519642666;}*/ ?>
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>提现</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="__WEB__/css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="__WEB__/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="__WEB__/css/border.css"/>
+		<style type="text/css">
+			.mui-row .mui-col-sm-6,.mui-row .mui-col-xs-6{
+				margin-top: 10px;
+			}
+			header>.div {
+
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				/* IE 9 */
+				-moz-transform: rotate(45deg);
+				/* Firefox */
+				-webkit-transform: rotate(45deg);
+				/* Safari 和 Chrome */
+				-o-transform: rotate(45deg);
+				/* Opera */
+				width: 13px;
+				height: 13px;
+				border-bottom: 2px solid #007aff;
+				border-left: 2px solid #007aff;
+				z-index: 100;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 主界面菜单同时移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 菜单容器 -->
+				<aside class="mui-off-canvas-left" id="offCanvasSide">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<!-- 菜单具体展示内容 -->
+
+						</div>
+					</div>
+				</aside>
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<div class="div" onclick="history.go(-1);"></div>
+					<h1 class="mui-title mui-active">  提现</h1>
+					<a class=" mui-pull-right mui-btn-link as" href="<?php echo url('pay/withdrawlog'); ?>">提现记录</a>
+				</header>
+
+				<!-- 主页面内容容器 -->
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+
+						<div class="mui-row" style="margin: 10px; background-color: white;">
+							<div class="mui-col-sm-4 mui-col-xs-4">
+								<img src="__WEB__/img/png/10.png" width="80" height="80" />
+							</div>
+							<div class="mui-col-sm-6 mui-col-xs-6">
+								<h4 style="line-height: 30px; margin-top:5px ;">中信银行</h4>
+								<p style="line-height: 20px;">尾号为4455</p>
+							</div>
+						</div>
+						<form class="mui-input-group" style="margin: 10px;">
+							<div class="mui-input-row">
+								<label>  提现金额：</label>
+								<input type="number" id="number" class="mui-input-clear" placeholder="只能为整数" oninput="if(value.length>7)value=value.slice(0,7)" step="0" style="ime-mode:disabled" oninput="if(value.length>7)value=value.slice(0,7)" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}">
+							</div>
+							<div class="mui-input-row" style="height: auto;">
+								<p style="margin: 10px; ">可提现金额：456132元</p>
+								<!--<p style="margin: 10px; ">余额：151231584</p>-->
+							</div>
+
+						</form>
+						<!--<div id="demo1" class="mui-progressbar mui-progressbar-infinite">
+							<span></span>
+						</div>-->
+						<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;">确认提现</button>
+						<!--<div id="demo12" class="mui-progressbar">
+	<span></span>
+</div>-->
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/muis.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			//mui('.mui-input-row input').input();
+			//mui("#demo1").progressbar().show();
+			/*mui("#demo12").progressbar({
+				progress: 50
+			}).show();
+*/
+mui('body').on('tap', 'a', function() {
+				window.top.location.href = this.href;
+			});
+			mui('.mui-scroll').on('tap', '.mui-btn-primary', function() {
+				var th = document.getElementById("number");
+				if(!th.value || th.value.trim() == "") {
+					var label = th.previousElementSibling;
+					mui.alert(label.innerText + "不允许为空");
+				} else {
+					mui.alert('验证通过!')
+				}
+
+			});
+		</script>
+	</body>
+
+</html>

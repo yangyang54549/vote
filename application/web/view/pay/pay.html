@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>充值</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="__WEB__/css/mui.css" /><link rel="stylesheet" type="text/css" href="__WEB__/css/border.css"/>
+		<link rel="stylesheet" type="text/css" href="__WEB__/css/style.css"/>
+		<style type="text/css">
+			.mui-input-row {
+    height: auto !important;
+    padding: 10px 0 ;
+}
+header>.div {
+
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				/* IE 9 */
+				-moz-transform: rotate(45deg);
+				/* Firefox */
+				-webkit-transform: rotate(45deg);
+				/* Safari 和 Chrome */
+				-o-transform: rotate(45deg);
+				/* Opera */
+				width: 13px;
+				height: 13px;
+				border-bottom: 2px solid #007aff;
+				border-left: 2px solid #007aff;
+				z-index: 100;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 主界面菜单同时移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 菜单容器 -->
+				<aside class="mui-off-canvas-left" id="offCanvasSide">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<!-- 菜单具体展示内容 -->
+
+						</div>
+					</div>
+				</aside>
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<div class="div" onclick="history.go(-1);"></div>
+					<h1 class="mui-title mui-active">充值</h1>
+					<a class=" mui-pull-right mui-btn-link as" href="{:url('pay/paylog')}">充值记录</a>
+				</header>
+
+				<!-- 主页面内容容器 -->
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+						<form class="mui-input-group" style="margin: 10px;">
+							<div class="mui-input-row">
+								<label>充值金额：</label>
+								<input type="number" id="number" class="mui-input-clear" placeholder="只能为整数" oninput="if(value.length>7)value=value.slice(0,7)" step="0" style="ime-mode:disabled" oninput="if(value.length>7)value=value.slice(0,7)" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}">
+							</div>
+
+							<div class="mui-input-row">
+								<label>充值方式：</label>
+								<div class="mui-input-row mui-checkbox" style="width: 75%; position: absolute; top: 0;right: 0;">
+									<label id="zf">微信支付</label>
+									<input name="checkbox1" id="checkbox" value="Item 1" type="checkbox" checked style="margin-top: 10px;">
+								</div>
+							</div>
+
+							<div class="mui-input-row" style="height: auto;">
+								<p style="margin: 10px; ">一元人民币=100一勺积分。</p>
+								<p style="margin: 10px; ">
+									温馨提示：当您的充值用途不是购买时，7个自然日内我们不支持提现，7个自然日之后您申请提现时我们将收取0.6%的手续费哦∩_∩。
+								</p>
+							</div>
+						</form>
+
+						<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%; margin-left: 5%;">确认充值</button>
+
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui('.mui-input-row input').input();
+			document.getElementById('checkbox').setAttribute("readOnly", 'true'); //复选框 禁止点击
+
+			mui('.mui-input-row').on('tap', '.mui-checkbox', function() {
+				var ths = document.getElementById("zf");
+				/*if(ths.innerText == "微信支付") {
+					ths.innerText = "支付包支付";
+				} else {
+					ths.innerText = "微信支付";
+				}*/
+			});
+mui('body').on('tap', 'a', function() {
+				window.top.location.href = this.href;
+			});
+			mui('.mui-scroll').on('tap', '.mui-scroll .mui-btn-primary', function() {
+				var th = document.getElementById("number");
+				if(!th.value || th.value.trim() == "") {
+					var label = th.previousElementSibling;
+					mui.alert(label.innerText + "不允许为空");
+				} else {
+
+					mui.alert('验证通过!')
+				}
+
+			});
+		</script>
+	</body>
+
+</html>

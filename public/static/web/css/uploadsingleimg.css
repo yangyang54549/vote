@@ -1,0 +1,8 @@
+* {box-sizing:border-box;font-size: 16px;vertical-align: middle;}
+/* 娓呴櫎鐜颁唬IE娴忚鍣ㄧ殑杈撳叆妗嗗拰瀵嗙爜妗嗙殑榛樿浜や簰鎸夐挳 */
+::-ms-clear, ::-ms-reveal{display: none;}
+input {box-sizing:border-box;}
+input:active, input:focus{ outline:none; -moz-outline:none;} /* PC chrome鏂囨湰杈撳叆妗嗙殑杈规鐒︾偣鏃跺€欑殑棰滆壊 */
+input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner{ border:none;} /*鍘绘帀绉诲姩绔痜irefox 鎸夐挳鑾峰緱鐒︾偣鏄剧ず铏氱嚎妗嗙殑鏍峰紡 */
+
+/* main style */
