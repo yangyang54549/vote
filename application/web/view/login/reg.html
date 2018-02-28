@@ -125,9 +125,10 @@
 			</div>
 		</div>
 		<script src="__WEB__/js/mui.min.js"></script>
+		<!-- <script src="__WEB__/js/jquery.js"></script> -->
 
-		<script src="__WEB__/js/mui.enterfocus.js"></script>
-		<script src="__WEB__/js/app.js"></script>
+		<!-- <script src="__WEB__/js/mui.enterfocus.js"></script> -->
+		<!-- <script src="__WEB__/js/app.js"></script> -->
 		<script>
 			mui(".mui-input-rows").on("tap", "#wait", function() {
 					var phone = document.getElementById("phone");
@@ -154,7 +155,7 @@
 					}
 			})
 			mui(".mui-content-padded").on("tap", "#reg", function() {
-					var names = document.getElementById("names");
+					var names = document.getElementById("names").value;
 					var name = document.getElementById("name");
 					var phone = document.getElementById("phone");
 					var yanz = document.getElementById("yanz");
@@ -171,6 +172,29 @@
 										if(password1.value>6){
 											if(password1.value==password2.value){
 												//验证完成
+												var names = document.getElementById("names").value;
+												var name = document.getElementById("name").value;
+												var phone = document.getElementById("phone").value;
+												var yanz = document.getElementById("yanz").value;
+												var identity = document.getElementById("identity").value;
+												var password1 = document.getElementById("password").value;
+												mui.post("{:url('login/reg')}",{
+													name:names,mobile:phone,yanz:yanz,id_name:name,id_card:identity,password:password1
+												},function(data){
+														//服务器返回响应，根据响应结果，分析是否登录成功；
+														if (data.code==1) {
+															mui.toast(data.msg);
+															setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+																window.location = "{:url('login/login')}";
+															}, 1000);
+														}else{
+															mui.toast(data.msg);
+														}
+
+													},'json'
+												);
+
+
 											}else{
 												mui.toast('确认密码与密码不一致');
 											}

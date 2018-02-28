@@ -10,9 +10,9 @@ class Match extends Yang
     {
         $type = Type::select();
         $this->assign('type',$type);
-
         return $this->fetch();
     }
+
     public function info()
     {
         return $this->fetch();

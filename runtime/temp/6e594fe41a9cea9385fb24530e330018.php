@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"E:\GitHub\vote\public/../application/web\view\match\index.html";i:1519641391;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"E:\GitHub\vote\public/../application/web\view\match\index.html";i:1519796959;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -161,23 +161,9 @@
 
 						</form>
 						<ul class="mui-table-view" id="mui_view">
-							<li class="mui-table-view-cell">古风诗<input type="hidden" name="" id="" value="1" /></li>
-							<li class="mui-table-view-cell">近体诗<input type="hidden" name="" id="" value="2" /></li>
-							<li class="mui-table-view-cell">格律诗<input type="hidden" name="" id="" value="3" /></li>
-							<li class="mui-table-view-cell">楷书<input type="hidden" name="" id="" value="4" /></li>
-							<li class="mui-table-view-cell">行书<input type="hidden" name="" id="" value="5" /></li>
-							<li class="mui-table-view-cell">草书<input type="hidden" name="" id="" value="6" /></li>
-							<li class="mui-table-view-cell">隶书<input type="hidden" name="" id="" value="7" /></li>
-							<li class="mui-table-view-cell">篆书 <input type="hidden" name="" id="" value="8" /></li>
-							<li class="mui-table-view-cell">魏碑<input type="hidden" name="" id="" value="9" /></li>
-							<li class="mui-table-view-cell">毛体<input type="hidden" name="" id="" value="10" /></li>
-							<li class="mui-table-view-cell">写意画：山水<input type="hidden" name="" id="" value="12" /></li>
-							<li class="mui-table-view-cell">写意画：花鸟<input type="hidden" name="" id="" value="13" /></li>
-							<li class="mui-table-view-cell">写意画：人物<input type="hidden" name="" id="" value="14" /></li>
-							<li class="mui-table-view-cell">工笔画：山水<input type="hidden" name="" id="" value="15" /></li>
-							<li class="mui-table-view-cell">工笔画：花鸟<input type="hidden" name="" id="" value="16" /></li>
-							<li class="mui-table-view-cell">工笔画：人物<input type="hidden" name="" id="" value="17" /></li>
-
+							<?php if(is_array($type) || $type instanceof \think\Collection || $type instanceof \think\Paginator): $i = 0; $__LIST__ = $type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+							<li class="mui-table-view-cell"><?php echo $vo['name']; ?><input type="hidden" name="" value="<?php echo $vo['id']; ?>" /></li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 					</div>
 				</div>
@@ -192,8 +178,8 @@
 			up.style.height = preview.style.height;
 			(function($) {
 				$(".mui-scroll-wrapper").scroll({
-					//bounce: false,//滚动条是否有弹力默认是true
-					//indicators: false, //是否显示滚动条,默认是true
+					// bounce: false,//滚动条是否有弹力默认是true
+					// indicators: false, //是否显示滚动条,默认是true
 				});
 			})(mui);
 

@@ -2,6 +2,7 @@
 namespace app\web\controller;
 
 use app\web\controller\Yang;
+use app\common\model\User;
 
 class Login extends Yang
 {
@@ -11,7 +12,36 @@ class Login extends Yang
     }
     public function reg()
     {
-        return $this->fetch();
+        if ($this->request->isAjax()) {
+            $arr = input('post.');
+
+            // if (!isset($arr['mobile'])) {
+            //     return json(['code'=>1, 'msg'=>'手机号不能为空']);
+            // }
+            // if (!isset($arr['yanz'])) {
+            //     return json(['code'=>1, 'msg'=>'短信验证码不能为空']);
+            // }
+            // if ($code != Session::get($mobile)) {
+            //     return json(['code'=>1, 'msg'=>'短信验证码错误']);
+            // }
+            // $times=Session::get($code);
+            // if (time() > ($times+5*60)) {
+            //     Session::delete($times);
+            //     return json(['code'=>1, 'msg'=>'短信验证码已失效']);
+            // }
+            unset($arr['yanz']);
+            $user = User::insert($arr);
+            if($user){
+                return json($this->ret);
+            }else{
+                $this->ret['data'] = '注册失败,请重试';
+                $this->ret['code'] = -200;
+                return json($this->ret);
+            }
+
+        }else{
+            return $this->fetch();
+        }
     }
     /*修改密码*/
     public function edit()
