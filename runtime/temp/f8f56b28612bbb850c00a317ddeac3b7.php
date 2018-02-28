@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"E:\GitHub\vote\public/../application/web\view\qunying\info.html";i:1519639988;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"E:\GitHub\vote\public/../application/web\view\qunying\info.html";i:1519810911;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -195,19 +195,6 @@
 				line-height: 21px
 			}
 
-			.spans {
-				display: flex;
-				justify-content: center;
-			}
-
-			.spans .mui-icon {
-				width: 30px;
-				height: 30px;
-				text-align: center;
-				line-height: 25px;
-				border-radius: 50%;
-				margin-bottom: 10px;
-			}
 			.mui-media-body{
 				text-align: center;
 				font-size: 18px;
@@ -254,7 +241,7 @@
 		</style>
 	</head>
 
-	<body>
+	<body class="mui-ios mui-ios-9 mui-ios-9-1">
 		<!--
 	      index1.html
 	      <project>
@@ -265,14 +252,12 @@
 
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable">
-			<!-- 主页面容器 -->
-			<div class="mui-inner-wrap">
-				<!-- 菜单容器 -->
+		
 
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
-					<div class="div" onclick="history.go(-1);"></div>
+					<!--<div class="div" onclick="history.go(-1);"></div>-->
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 					<h1 class="mui-title mui-active">作品</h1>
 				</header>
 
@@ -322,12 +307,7 @@
 
 					</div>
 				</div>
-				<div class="mui-off-canvas-backdrop"></div>
-				<div class="mui-backdrop" style="display: none;">
-
-				</div>
-			</div>
-		</div>
+			
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 
@@ -344,44 +324,11 @@
 					//indicators: false, //是否显示滚动条,默认是true
 				});
 			})(mui);
-			//mui下a标签href失效问题解决
-			mui('body').on('tap', 'a', function() {
-				window.top.location.href = this.href;
-				/*$(this).classList.remove("mui-active") */
-			});
-			var ons = 3;
-			var onl;
-			//var mask = mui.createMask(callback);//callback为用户点击蒙版时自动执行的回调；
-			mui(".mui-media").on("tap", ".mui-media .mui-card .spans .mui-icon", function() {
-				//当前对象直接就是--->this
-				var sq = this;
-				var tt = this.className.length;
-
-				if(tt > 32) {
-
-				} else {
-					if(ons > 0) {
-
-						this.classList.add('active');
-						ons = ons - 1;
-						/*alert(this.className.length)
-						this.classList.add('active');
-						ons = ons-1;
-						alert(this.className.length)*/
-					} else {
-						/*alert("123123")*/
-						//mask.show();//显示遮罩
-
-						mui.toast('已使用完每天三次的点赞功能', {
-							duration: 'long',
-							type: 'div'
-						})
-
-					}
-
-				}
-
-			});
+			
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	
 		</script>
 	</body>
 

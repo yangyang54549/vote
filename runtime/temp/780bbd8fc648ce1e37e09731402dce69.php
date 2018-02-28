@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:60:"E:\GitHub\vote\public/../application/web\view\user\edit.html";i:1519641956;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:60:"E:\GitHub\vote\public/../application/web\view\user\edit.html";i:1519810911;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -55,12 +55,17 @@
 				font-size: 14px;
 				z-index: 20;
 			}
-
+			
+ .mui-icon, .mui-hidden{
+  	display: none !important;
+  	z-index: -1;
+  }
 		</style>
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav">
 					<div class="div" onclick="history.go(-1);"></div>
+					<a href="javascript :;" onClick="javascript :history.back(-1);">返回上一页</a>
 					<h1 class="mui-title mui-active">个人信息</h1>
 					<!--<a class=" mui-pull-right mui-btn-link">提现记录</a>-->
 				</header>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"E:\GitHub\vote\public/../application/web\view\match\index.html";i:1519799433;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"E:\GitHub\vote\public/../application/web\view\match\index.html";i:1519812251;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -59,12 +59,12 @@
 
 			#mui_view {
 				position: fixed;
-				top: 0;
-				left: 0;
+   				left: 0;
+   				top: 0;
 				width: 100vw;
 				height: auto;
-				transition: all .5s ease-in .1s;
-				box-sizing: border-box;
+				/*transition: all .5s ease-in .1s;
+				box-sizing: border-box;*/
 				padding: 0px;
 				display: none;
 				/*background-image: url(__WEB__/img/painting/gr/u=10131947,1032570421&fm=27&gp=0.jpg);*/
@@ -98,11 +98,7 @@
 
 	<body>
 		<!-- 主界面移动、菜单不动 -->
-		<div class="mui-off-canvas-wrap mui-draggable">
-			<!-- 菜单容器 -->
-
-			<!-- 主页面容器 -->
-			<div class="mui-inner-wrap">
+		
 				<!-- 主页面标题 -->
 				<!--<header class="mui-bar mui-bar-nav">
 
@@ -162,14 +158,13 @@
 						</form>
 						<ul class="mui-table-view" id="mui_view">
 							<?php if(is_array($type) || $type instanceof \think\Collection || $type instanceof \think\Paginator): $i = 0; $__LIST__ = $type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-							<li class="mui-table-view-cell"><?php echo $vo['name']; ?><input type="hidden" name="" value="<?php echo $vo['id']; ?>" /></li>
+							<li class="mui-table-view-cell" data-type = "<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
+							<input type="hidden" name="" id="mui_views" value="" />
 						</ul>
 					</div>
 				</div>
-				<div class="mui-off-canvas-backdrop"></div>
-			</div>
-		</div>
+			
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
@@ -192,8 +187,11 @@
 			})
 
 			mui("#mui_view").on("tap", "#mui_view li", function() {
+				var datas = this.getAttribute("data-type");
 				document.getElementById("leixing").value = this.innerText;
+				document.getElementById("mui_views").value = this.getAttribute("data-type");
 				document.getElementById("mui_view").style.display = "none";
+				
 			})
 			var img = document.getElementById("nextview");
 			var ss = img.src;
@@ -211,16 +209,21 @@
 					if(name.value != "") {
 						if(tes.value != "") {
 							if(lei.value != "") {
+								/*获取值*/
+								var Names = name.value;
+								var leis = lei.value;
+								var tess = tes.value;
 								mui.toast('提交完成');
-								document.getElementById("nextview").src = "__WEB__/img/a11.png";
-								document.getElementById("name").value = "";
-								document.getElementById("leixing").value = "";
-								document.getElementById("text_s").value = "";
-
+								/*清空*/
+								document.getElementById("nextview").src = "__WEB__/img/a11.png";							
+								name.value = "";
+								lei.value = "";
+								tes.value = "";
+								/*跳转*/
 								setTimeout(function() {
 									window.top.location.href = "zuopin.html";
 								}, 1000);
-								/*window.top.location.href = "zuopin.html";*/
+								
 							} else {
 								mui.toast('请选择分类')
 							}

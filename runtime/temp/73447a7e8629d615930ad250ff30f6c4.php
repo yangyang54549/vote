@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\GitHub\vote\public/../application/web\view\qunying\index.html";i:1519788051;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\GitHub\vote\public/../application/web\view\qunying\index.html";i:1519810911;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -101,7 +101,8 @@ font-family:KaiTi,
 
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
-					<div class="div" onclick="history.go(-1);"></div>
+					<!--<div class="div" onclick="history.go(-1);"></div>-->
+					<div class="div" onclick="history.back(-1);"></div>
 					<h1 class="mui-title mui-active">群英逐鹿</h1>
 				</header>
 
