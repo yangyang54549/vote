@@ -194,19 +194,6 @@
 				line-height: 21px
 			}
 
-			.spans {
-				display: flex;
-				justify-content: center;
-			}
-
-			.spans .mui-icon {
-				width: 30px;
-				height: 30px;
-				text-align: center;
-				line-height: 25px;
-				border-radius: 50%;
-				margin-bottom: 10px;
-			}
 			.mui-media-body{
 				text-align: center;
 				font-size: 18px;
@@ -348,39 +335,7 @@
 				window.top.location.href = this.href;
 				/*$(this).classList.remove("mui-active") */
 			});
-			var ons = 3;
-			var onl;
-			//var mask = mui.createMask(callback);//callback为用户点击蒙版时自动执行的回调；
-			mui(".mui-media").on("tap", ".mui-media .mui-card .spans .mui-icon", function() {
-				//当前对象直接就是--->this
-				var sq = this;
-				var tt = this.className.length;
-
-				if(tt > 32) {
-
-				} else {
-					if(ons > 0) {
-
-						this.classList.add('active');
-						ons = ons - 1;
-						/*alert(this.className.length)
-						this.classList.add('active');
-						ons = ons-1;
-						alert(this.className.length)*/
-					} else {
-						/*alert("123123")*/
-						//mask.show();//显示遮罩
-
-						mui.toast('已使用完每天三次的点赞功能', {
-							duration: 'long',
-							type: 'div'
-						})
-
-					}
-
-				}
-
-			});
+			
 		</script>
 	</body>
 
