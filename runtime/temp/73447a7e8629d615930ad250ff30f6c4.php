@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\GitHub\vote\public/../application/web\view\qunying\index.html";i:1519787005;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\GitHub\vote\public/../application/web\view\qunying\index.html";i:1519788051;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -37,10 +37,10 @@ font-family:KaiTi,
 				width: 20%;
 			}
 
-			.mui-grid-9>li:nth-child(11),
+/* 			.mui-grid-9>li:nth-child(11),
 			.mui-grid-9>li:nth-child(19) {
 				margin-left: 20% !important;
-			}
+			} */
 			.mui-grid-9>.mui22{
 				width: 26.5%;
 			}
