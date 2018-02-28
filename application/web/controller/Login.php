@@ -29,12 +29,29 @@ class Login extends Yang
             //     Session::delete($times);
             //     return json(['code'=>1, 'msg'=>'短信验证码已失效']);
             // }
+
+            $users = User::where(['mobile'=>$arr['mobile']])->find();
+            if (isset($users)) {
+                $this->ret['msg'] = '手机号码已注册';
+                $this->ret['code'] = -200;
+                return json($this->ret);
+            }
+            $users = User::where(['id_card'=>$arr['id_card']])->find();
+            if (isset($users)) {
+                $this->ret['msg'] = '身份证号码已注册';
+                $this->ret['code'] = -200;
+                return json($this->ret);
+            }
             unset($arr['yanz']);
+            $arr['image'] = '/static/web/img/painting/gh/timg (7).jpg';
+            $arr['create_time'] = time();
+            $arr['status'] = 1;
+            $arr['password'] = md5($arr['password']);
             $user = User::insert($arr);
             if($user){
                 return json($this->ret);
             }else{
-                $this->ret['data'] = '注册失败,请重试';
+                $this->ret['msg'] = '注册失败,请重试';
                 $this->ret['code'] = -200;
                 return json($this->ret);
             }
