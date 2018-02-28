@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"E:\GitHub\vote\public/../application/web\view\index\index.html";i:1519782374;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"E:\GitHub\vote\public/../application/web\view\index\index.html";i:1519804329;}*/ ?>
 <!doctype html>
 <html lang="en">
 
