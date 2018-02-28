@@ -240,7 +240,7 @@
 		</style>
 	</head>
 
-	<body>
+	<body class="mui-ios mui-ios-9 mui-ios-9-1">
 		<!--
 	      index1.html
 	      <project>
@@ -251,14 +251,12 @@
 
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable">
-			<!-- 主页面容器 -->
-			<div class="mui-inner-wrap">
-				<!-- 菜单容器 -->
+		
 
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
-					<div class="div" onclick="history.go(-1);"></div>
+					<!--<div class="div" onclick="history.go(-1);"></div>-->
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 					<h1 class="mui-title mui-active">作品</h1>
 				</header>
 
@@ -308,12 +306,7 @@
 
 					</div>
 				</div>
-				<div class="mui-off-canvas-backdrop"></div>
-				<div class="mui-backdrop" style="display: none;">
-
-				</div>
-			</div>
-		</div>
+			
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 
@@ -330,12 +323,11 @@
 					//indicators: false, //是否显示滚动条,默认是true
 				});
 			})(mui);
-			//mui下a标签href失效问题解决
-			mui('body').on('tap', 'a', function() {
-				window.top.location.href = this.href;
-				/*$(this).classList.remove("mui-active") */
-			});
 			
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	
 		</script>
 	</body>
 
