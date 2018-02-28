@@ -160,23 +160,9 @@
 
 						</form>
 						<ul class="mui-table-view" id="mui_view">
-							<li class="mui-table-view-cell">古风诗<input type="hidden" name="" id="" value="1" /></li>
-							<li class="mui-table-view-cell">近体诗<input type="hidden" name="" id="" value="2" /></li>
-							<li class="mui-table-view-cell">格律诗<input type="hidden" name="" id="" value="3" /></li>
-							<li class="mui-table-view-cell">楷书<input type="hidden" name="" id="" value="4" /></li>
-							<li class="mui-table-view-cell">行书<input type="hidden" name="" id="" value="5" /></li>
-							<li class="mui-table-view-cell">草书<input type="hidden" name="" id="" value="6" /></li>
-							<li class="mui-table-view-cell">隶书<input type="hidden" name="" id="" value="7" /></li>
-							<li class="mui-table-view-cell">篆书 <input type="hidden" name="" id="" value="8" /></li>
-							<li class="mui-table-view-cell">魏碑<input type="hidden" name="" id="" value="9" /></li>
-							<li class="mui-table-view-cell">毛体<input type="hidden" name="" id="" value="10" /></li>
-							<li class="mui-table-view-cell">写意画：山水<input type="hidden" name="" id="" value="12" /></li>
-							<li class="mui-table-view-cell">写意画：花鸟<input type="hidden" name="" id="" value="13" /></li>
-							<li class="mui-table-view-cell">写意画：人物<input type="hidden" name="" id="" value="14" /></li>
-							<li class="mui-table-view-cell">工笔画：山水<input type="hidden" name="" id="" value="15" /></li>
-							<li class="mui-table-view-cell">工笔画：花鸟<input type="hidden" name="" id="" value="16" /></li>
-							<li class="mui-table-view-cell">工笔画：人物<input type="hidden" name="" id="" value="17" /></li>
-
+							{volist name="type" id="vo"}
+							<li class="mui-table-view-cell">{$vo.name}<input type="hidden" name="" value="{$vo.id}" /></li>
+							{/volist}
 						</ul>
 					</div>
 				</div>
@@ -191,8 +177,8 @@
 			up.style.height = preview.style.height;
 			(function($) {
 				$(".mui-scroll-wrapper").scroll({
-					//bounce: false,//滚动条是否有弹力默认是true
-					//indicators: false, //是否显示滚动条,默认是true
+					// bounce: false,//滚动条是否有弹力默认是true
+					// indicators: false, //是否显示滚动条,默认是true
 				});
 			})(mui);
 
