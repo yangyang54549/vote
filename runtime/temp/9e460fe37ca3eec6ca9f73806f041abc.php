@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"E:\GitHub\vote\public/../application/web\view\index\index.html";i:1519721967;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"E:\GitHub\vote\public/../application/web\view\index\index.html";i:1519782374;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -56,46 +56,34 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 							<div class="mui-slider-group mui-slider-loop">
 								<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
 								<div class="mui-slider-item mui-slider-item-duplicate">
-									<a href="<?php echo url('index/info'); ?>">
-										<img src="__WEB__/img/painting/gr/timg (15).jpg">
+									<a href="<?php echo $zui['url']; ?>">
+										<img src="<?php echo $zui['img']; ?>">
 									</a>
 								</div>
-								<!-- 第一张 -->
+
+								<?php if(is_array($barner) || $barner instanceof \think\Collection || $barner instanceof \think\Paginator): $i = 0; $__LIST__ = $barner;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vos): $mod = ($i % 2 );++$i;?>
 								<div class="mui-slider-item">
-									<a href="<?php echo url('index/info'); ?>">
-										<img src="__WEB__/img/painting/gh/timg (10).jpg">
+									<a href="<?php echo $vos['url']; ?>">
+										<img src="<?php echo $vos['img']; ?>">
 									</a>
 								</div>
-								<!-- 第二张 -->
-								<div class="mui-slider-item">
-									<a href="<?php echo url('index/info'); ?>">
-										<img src="__WEB__/img/painting/gh/timg (8).jpg">
-									</a>
-								</div>
-								<!-- 第三张 -->
-								<div class="mui-slider-item">
-									<a href="<?php echo url('index/info'); ?>">
-										<img src="__WEB__/img/painting/gr/timg (19).jpg">
-									</a>
-								</div>
-								<!-- 第四张 -->
-								<div class="mui-slider-item">
-									<a href="<?php echo url('index/info'); ?>">
-										<img src="__WEB__/img/painting/gr/timg (15).jpg">
-									</a>
-								</div>
+								<?php endforeach; endif; else: echo "" ;endif; ?>
+
 								<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
 								<div class="mui-slider-item mui-slider-item-duplicate">
-									<a href="<?php echo url('index/info'); ?>">
-										<img src="__WEB__/img/painting/gh/timg (10).jpg">
+									<a href="<?php echo $barner['0']['url']; ?>">
+										<img src="<?php echo $barner['0']['img']; ?>">
 									</a>
 								</div>
 							</div>
 							<div class="mui-slider-indicator">
+
+								<?php if(is_array($barner) || $barner instanceof \think\Collection || $barner instanceof \think\Paginator): $i = 0; $__LIST__ = $barner;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$voss): $mod = ($i % 2 );++$i;if($i == 1): ?>
 								<div class="mui-indicator mui-active"></div>
+								<?php else: ?>
 								<div class="mui-indicator"></div>
-								<div class="mui-indicator"></div>
-								<div class="mui-indicator"></div>
+								<?php endif; endforeach; endif; else: echo "" ;endif; ?>
+
 							</div>
 						</div>
 						<!--九宫格-->
@@ -207,10 +195,10 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 				swipeBack: false,
 				pullRefresh: {
 					container: '#pullrefresh',
-					down: {
-						style:'circle',
-						callback: pulldownRefresh
-					},
+					// down: {
+					// 	style:'circle',
+					// 	callback: pulldownRefresh
+					// },
 					up: {
 						contentrefresh: '正在加载...',
 						callback: pullupRefresh

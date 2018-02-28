@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\GitHub\vote\public/../application/web\view\qunying\index.html";i:1519640054;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\GitHub\vote\public/../application/web\view\qunying\index.html";i:1519786913;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -111,119 +111,27 @@ font-family:KaiTi,
 						<!-- 主界面具体展示内容 -->
 						<!--九宫格1-->
 						<ul class="mui-table-view mui-grid-view mui-grid-9" id="jiu">
-							<li class="mui-table-view-cell mui-media    onclis">
-								<a href="#" disabled>
-
-									<div class="mui-media-body onclis">诗：</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   ">
-								<a href="#">
-
-									<div class="mui-media-body active" id="act">古风诗</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   ">
-								<a href="#">
-
-									<div class="mui-media-body">近体诗</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   ">
-								<a href="#">
-									<div class="mui-media-body">格律诗</div>
-								</a>
-							</li>
-							<br />
-							<li class="mui-table-view-cell mui-media    onclis">
-								<a href="#" disabled>
-
-									<div class="mui-media-body onclis">书：</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   ">
-								<a href="#">
-
-									<div class="mui-media-body">楷书</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   ">
-								<a href="#">
-
-									<div class="mui-media-body">行书</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   ">
-								<a href="#">
-									<div class="mui-media-body">草书</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   ">
-								<a href="#">
-
-									<div class="mui-media-body">隶书</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   ">
-								<a href="#">
-
-									<div class="mui-media-body">篆书</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   ">
-								<a href="#">
-
-									<div class="mui-media-body">魏碑</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   ">
-								<a href="#">
-									<div class="mui-media-body">毛体</div>
-								</a>
-							</li>
-							<br />
-							<li class="mui-table-view-cell mui-media    onclis"disabled>
-								<a href="#" disabled>
-
-									<div class="mui-media-body onclis">画：</div>
-								</a>
-							</li>
-
-							<li class="mui-table-view-cell mui-media    mui22">
-								<a href="#">
-
-									<div class="mui-media-body">写意山水</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   mui22">
-								<a href="#">
-
-									<div class="mui-media-body">写意花鸟</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media  mui22 ">
-								<a href="#">
-									<div class="mui-media-body">写意人物</div>
-								</a>
-							</li>
-
-							<li class="mui-table-view-cell mui-media   mui22">
-								<a href="#">
-
-									<div class="mui-media-body">工笔山水</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media   mui22">
-								<a href="#">
-
-									<div class="mui-media-body">工笔花鸟</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media mui22 ">
-								<a href="#">
-									<div class="mui-media-body">工笔人物</div>
-								</a>
-							</li>
+							<?php if(is_array($typecopy) || $typecopy instanceof \think\Collection || $typecopy instanceof \think\Paginator): $i = 0; $__LIST__ = $typecopy;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+								<li class="mui-table-view-cell mui-media    onclis">
+									<a href="#" disabled>
+										<div class="mui-media-body onclis"><?php echo $vo['name']; ?>：</div>
+									</a>
+								</li>
+								<?php if(is_array($type) || $type instanceof \think\Collection || $type instanceof \think\Paginator): $i = 0; $__LIST__ = $type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vos): $mod = ($i % 2 );++$i;if($vo['id'] == $vos['father_id']): if($i == 1): ?>
+										<li class="mui-table-view-cell mui-media">
+											<a href="#">
+												<div class="mui-media-body active" id="act"><?php echo $vos['name']; ?></div>
+											</a>
+										</li>
+										<?php else: ?>
+										<li class="mui-table-view-cell mui-media">
+											<a href="#">
+												<div class="mui-media-body"><?php echo $vos['name']; ?></div>
+											</a>
+										</li>
+										<?php endif; endif; endforeach; endif; else: echo "" ;endif; ?>
+								<br />
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 
 						<ul class="mui-table-view mui-grid-view mui-grid-9" id="card">
@@ -389,10 +297,10 @@ mui.init({
 				swipeBack: false,
 				pullRefresh: {
 					container: '#pullrefresh',
-					down: {
-						style:'circle',
-						callback: pulldownRefresh
-					},
+					// down: {
+					// 	style:'circle',
+					// 	callback: pulldownRefresh
+					// },
 					up: {
 						contentrefresh: '正在加载...',
 						callback: pullupRefresh

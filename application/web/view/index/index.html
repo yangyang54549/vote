@@ -55,46 +55,36 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 							<div class="mui-slider-group mui-slider-loop">
 								<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
 								<div class="mui-slider-item mui-slider-item-duplicate">
-									<a href="{:url('index/info')}">
-										<img src="__WEB__/img/painting/gr/timg (15).jpg">
+									<a href="{$zui.url}">
+										<img src="{$zui.img}">
 									</a>
 								</div>
-								<!-- 第一张 -->
+
+								{volist name="barner" id="vos"}
 								<div class="mui-slider-item">
-									<a href="{:url('index/info')}">
-										<img src="__WEB__/img/painting/gh/timg (10).jpg">
+									<a href="{$vos.url}">
+										<img src="{$vos.img}">
 									</a>
 								</div>
-								<!-- 第二张 -->
-								<div class="mui-slider-item">
-									<a href="{:url('index/info')}">
-										<img src="__WEB__/img/painting/gh/timg (8).jpg">
-									</a>
-								</div>
-								<!-- 第三张 -->
-								<div class="mui-slider-item">
-									<a href="{:url('index/info')}">
-										<img src="__WEB__/img/painting/gr/timg (19).jpg">
-									</a>
-								</div>
-								<!-- 第四张 -->
-								<div class="mui-slider-item">
-									<a href="{:url('index/info')}">
-										<img src="__WEB__/img/painting/gr/timg (15).jpg">
-									</a>
-								</div>
+								{/volist}
+
 								<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
 								<div class="mui-slider-item mui-slider-item-duplicate">
-									<a href="{:url('index/info')}">
-										<img src="__WEB__/img/painting/gh/timg (10).jpg">
+									<a href="{$barner.0.url}">
+										<img src="{$barner.0.img}">
 									</a>
 								</div>
 							</div>
 							<div class="mui-slider-indicator">
+
+								{volist name="barner" id="voss"}
+								{if condition="$i eq 1"}
 								<div class="mui-indicator mui-active"></div>
+								{else/}
 								<div class="mui-indicator"></div>
-								<div class="mui-indicator"></div>
-								<div class="mui-indicator"></div>
+								{/if}
+								{/volist}
+
 							</div>
 						</div>
 						<!--九宫格-->
@@ -206,10 +196,10 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 				swipeBack: false,
 				pullRefresh: {
 					container: '#pullrefresh',
-					down: {
-						style:'circle',
-						callback: pulldownRefresh
-					},
+					// down: {
+					// 	style:'circle',
+					// 	callback: pulldownRefresh
+					// },
 					up: {
 						contentrefresh: '正在加载...',
 						callback: pullupRefresh

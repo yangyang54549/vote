@@ -17,6 +17,8 @@ class Index extends Yang
             // $column = Column::select();
             $recommend = Recommend::select();
             $this->assign('barner',$barner);
+            // dump($barner[2]);die;
+            $this->assign('zui',$barner[count($barner)-1]);
             // $this->assign('column',$column);
             $this->assign('recommend',$recommend);
             return $this->fetch();

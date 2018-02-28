@@ -20255,3 +20255,2594 @@
 [ info ] [ LOG ] INIT File
 
 ---------------------------------------------------------------
+[ 2018-02-27T17:44:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.195314s][吞吐率：5.12req/s] [内存消耗：6,159.94kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; Qs_lvt_224241=1519631686%2C1519694005; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_pv_224241=2574200280577815600%2C1407947417070595800%2C4306052765647087600%2C3435934718785370000%2C2013413738951857700',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.011604s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\edit.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.148425s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057085s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.039188s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'GET' , 'a:0:{}' , 1519724662) [ RunTime:0.039823s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:44:51+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/upload/index/id/upload.html
+[ log ] vote.com/admin/upload/index/id/upload.html [运行时间：0.191488s][吞吐率：5.22req/s] [内存消耗：6,149.80kb] [文件加载：70]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; Qs_lvt_224241=1519631686%2C1519694005; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_pv_224241=2574200280577815600%2C1407947417070595800%2C4306052765647087600%2C3435934718785370000%2C2013413738951857700',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'upload',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007690s ]
+[ info ] [ RUN ] app\admin\controller\Upload->index[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\upload\index.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.142353s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.058447s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.038506s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/index/id/upload.html' , 'admin' , 'Upload' , 'index' , 'GET' , 'a:1:{s:2:\"id\";s:6:\"upload\";}' , 1519724691) [ RunTime:0.039394s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:46:00+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/upload/index/id/upload.html
+[ log ] vote.com/admin/upload/index/id/upload.html [运行时间：0.184149s][吞吐率：5.43req/s] [内存消耗：6,149.80kb] [文件加载：70]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; Qs_lvt_224241=1519631686%2C1519694005; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_pv_224241=2574200280577815600%2C1407947417070595800%2C4306052765647087600%2C3435934718785370000%2C2013413738951857700',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'upload',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.009238s ]
+[ info ] [ RUN ] app\admin\controller\Upload->index[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\upload\index.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.139137s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057586s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.038375s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/index/id/upload.html' , 'admin' , 'Upload' , 'index' , 'GET' , 'a:1:{s:2:\"id\";s:6:\"upload\";}' , 1519724760) [ RunTime:0.037904s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:46:10+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/upload.html
+[ log ] vote.com/admin/upload/upload.html [运行时间：0.274047s][吞吐率：3.65req/s] [内存消耗：6,085.16kb] [文件加载：68]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; Qs_lvt_224241=1519631686%2C1519694005; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_pv_224241=2574200280577815600%2C1407947417070595800%2C4306052765647087600%2C3435934718785370000%2C2013413738951857700',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/upload/index/id/upload.html',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryQA6NduUVv2ssKpCi',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1185379',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.011155s ]
+[ info ] [ RUN ] app\admin\controller\Upload->upload[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.076244s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057692s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_file` [ RunTime:0.040417s ]
+[ sql ] [ SQL ] INSERT INTO `tp_file` (`cate` , `name` , `original` , `domain` , `type` , `size` , `mtime`) VALUES (3 , '/tmp/uploads/20180227\\67080ca186ff75a147ccc05e8cdbb221.jpg' , '8b82b9014a90f603b87e86243212b31bb151ed83.jpg' , '' , 'image/jpeg' , 1185161 , 1519724770) [ RunTime:0.043704s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.038988s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/upload.html' , 'admin' , 'Upload' , 'upload' , 'POST' , 'a:0:{}' , 1519724770) [ RunTime:0.036781s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:46:15+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.337018s][吞吐率：2.97req/s] [内存消耗：6,263.26kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; Qs_lvt_224241=1519631686%2C1519694005; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_pv_224241=2574200280577815600%2C1407947417070595800%2C4306052765647087600%2C3435934718785370000%2C2013413738951857700',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1401',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+  'title' => '洛神赋图',
+  'content' => '《洛神赋图》是东晋顾恺之的画作，原《洛神赋图》卷为设色绢本。是由多个故事情节组成的类似连环画而又融会贯通的长卷，现已失。现主要传世的是宋代的四件摹本，分别收藏在北京故宫博物院（二件）、辽宁省博物馆和美国弗利尔美术馆。故宫博物院的两件人物形象基本相似，只不过景物有一繁一简之分。',
+  'img' => '/tmp/uploads/20180227\\67080ca186ff75a147ccc05e8cdbb221.jpg',
+  'type' => '山水画',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.009154s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.100360s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.072736s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.050116s ]
+[ sql ] [ SQL ] INSERT INTO `tp_recommend` (`title` , `content` , `img` , `type`) VALUES ('洛神赋图' , '《洛神赋图》是东晋顾恺之的画作，原《洛神赋图》卷为设色绢本。是由多个故事情节组成的类似连环画而又融会贯通的长卷，现已失。现主要传世的是宋代的四件摹本，分别收藏在北京故宫博物院（二件）、辽宁省博物馆和美国弗利尔美术馆。故宫博物院的两件人物形象基本相似，只不过景物有一繁一简之分。' , '/tmp/uploads/20180227\\67080ca186ff75a147ccc05e8cdbb221.jpg' , '山水画') [ RunTime:0.054983s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.049664s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'POST' , 'a:5:{s:2:\"id\";s:0:\"\";s:5:\"title\";s:12:\"洛神赋图\";s:7:\"content\";s:414:\"《洛神赋图》是东晋顾恺之的画作，原《洛神赋图》卷为设色绢本。是由多个故事情节组成的类似连环画而又融会贯通的长卷，现已失。现主要传世的是宋代的四件摹本，分别收藏在北京故宫博物院（二件）、辽宁省博物馆和美国弗利尔美术馆。故宫博物院的两件人物形象基本相似，只不过景物有一繁一简之分。\";s:3:\"img\";s:58:\"/tmp/uploads/20180227\\67080ca186ff75a147ccc05e8cdbb221.jpg\";s:4:\"type\";s:9:\"山水画\";}' , 1519724775) [ RunTime:0.050027s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:46:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/index.html
+[ log ] vote.com/admin/recommend/index.html [运行时间：0.332112s][吞吐率：3.01req/s] [内存消耗：6,408.57kb] [文件加载：76]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; Qs_lvt_224241=1519631686%2C1519694005; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_pv_224241=2574200280577815600%2C1407947417070595800%2C4306052765647087600%2C3435934718785370000%2C2013413738951857700',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.004009s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->index[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.087661s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.064418s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.044172s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_recommend` LIMIT 1 [ RunTime:0.042589s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` ORDER BY id desc LIMIT 0,20 [ RunTime:0.044046s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.043726s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/index.html' , 'admin' , 'Recommend' , 'index' , 'GET' , 'a:0:{}' , 1519724775) [ RunTime:0.043247s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:46:21+08:00 ] 127.0.0.1 127.0.0.1 GET /web/index/index.html
+[ log ] vote.com/web/index/index.html [运行时间：0.278805s][吞吐率：3.59req/s] [内存消耗：2,101.11kb] [文件加载：60]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; thinkphp_show_page_trace=0|1; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; Qs_lvt_224241=1519631686%2C1519694005; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_pv_224241=2574200280577815600%2C1407947417070595800%2C4306052765647087600%2C3435934718785370000%2C2013413738951857700',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/index/info.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\Index->index[ E:\GitHub\vote\application\web\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\index\index.html [ array (
+  0 => 'barner',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.067726s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_barner` [ RunTime:0.044191s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_barner` [ RunTime:0.043983s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.045142s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` [ RunTime:0.045943s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:46:30+08:00 ] 127.0.0.1 127.0.0.1 GET /web/index/info/id/15.html
+[ log ] vote.com/web/index/info/id/15.html [运行时间：0.196737s][吞吐率：5.08req/s] [内存消耗：2,177.02kb] [文件加载：60]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index',
+    2 => 'info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|1; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; thinkphp_show_page_trace=0|1; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=1407947417070595800%2C4306052765647087600%2C3435934718785370000%2C2013413738951857700%2C3453896302073649000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '15',
+)
+[ info ] [ RUN ] app\web\controller\Index->info[ E:\GitHub\vote\application\web\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\index\info.html [ array (
+  0 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066091s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.044410s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` WHERE  `id` = 15 LIMIT 1 [ RunTime:0.044611s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:46:30+08:00 ] 127.0.0.1 127.0.0.1 GET /static/web/js/jquery.min.map
+[ log ] vote.com/static/web/js/jquery.min.map [运行时间：0.040540s][吞吐率：24.67req/s] [内存消耗：1,072.14kb] [文件加载：45]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'web',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=1407947417070595800%2C4306052765647087600%2C3435934718785370000%2C2013413738951857700%2C3453896302073649000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T17:47:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/edit/id/15.html
+[ log ] vote.com/admin/recommend/edit/id/15.html [运行时间：0.318032s][吞吐率：3.14req/s] [内存消耗：6,344.98kb] [文件加载：73]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=4306052765647087600%2C3435934718785370000%2C2013413738951857700%2C3453896302073649000%2C4255149751728953300',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '15',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008322s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->edit[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\edit.html [ array (
+  0 => 'vo',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.098466s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.074093s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.049541s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` WHERE  `id` = 15 LIMIT 1 [ RunTime:0.047847s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.049988s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/edit/id/15.html' , 'admin' , 'Recommend' , 'edit' , 'GET' , 'a:1:{s:2:\"id\";s:2:\"15\";}' , 1519724842) [ RunTime:0.047760s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:47:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/upload/index/id/upload.html
+[ log ] vote.com/admin/upload/index/id/upload.html [运行时间：0.210064s][吞吐率：4.76req/s] [内存消耗：6,149.87kb] [文件加载：70]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=4306052765647087600%2C3435934718785370000%2C2013413738951857700%2C3453896302073649000%2C4255149751728953300',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/edit/id/15.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'upload',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.009594s ]
+[ info ] [ RUN ] app\admin\controller\Upload->index[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\upload\index.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.158892s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062996s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.043751s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/index/id/upload.html' , 'admin' , 'Upload' , 'index' , 'GET' , 'a:1:{s:2:\"id\";s:6:\"upload\";}' , 1519724843) [ RunTime:0.043891s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:47:26+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/upload.html
+[ log ] vote.com/admin/upload/upload.html [运行时间：0.303908s][吞吐率：3.29req/s] [内存消耗：6,085.16kb] [文件加载：68]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=4306052765647087600%2C3435934718785370000%2C2013413738951857700%2C3453896302073649000%2C4255149751728953300',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/upload/index/id/upload.html',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarykNTpX7nWO0eVtzq4',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '313415',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007365s ]
+[ info ] [ RUN ] app\admin\controller\Upload->upload[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.088440s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.064967s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_file` [ RunTime:0.045101s ]
+[ sql ] [ SQL ] INSERT INTO `tp_file` (`cate` , `name` , `original` , `domain` , `type` , `size` , `mtime`) VALUES (3 , '/tmp/uploads/20180227\\0e4ce8f4a8a05105da2dec30ec2e2874.jpg' , '8b82b9014a90f603b87e86243212b31bb151ed83.jpg' , '' , 'image/jpeg' , 313197 , 1519724846) [ RunTime:0.047912s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.043476s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/upload.html' , 'admin' , 'Upload' , 'upload' , 'POST' , 'a:0:{}' , 1519724846) [ RunTime:0.044182s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:47:28+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/recommend/edit/id/15.html
+[ log ] vote.com/admin/recommend/edit/id/15.html [运行时间：0.321634s][吞吐率：3.11req/s] [内存消耗：6,316.25kb] [文件加载：74]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=4306052765647087600%2C3435934718785370000%2C2013413738951857700%2C3453896302073649000%2C4255149751728953300',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/edit/id/15.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1403',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '15',
+  'title' => '洛神赋图',
+  'content' => '《洛神赋图》是东晋顾恺之的画作，原《洛神赋图》卷为设色绢本。是由多个故事情节组成的类似连环画而又融会贯通的长卷，现已失。现主要传世的是宋代的四件摹本，分别收藏在北京故宫博物院（二件）、辽宁省博物馆和美国弗利尔美术馆。故宫博物院的两件人物形象基本相似，只不过景物有一繁一简之分。',
+  'img' => '/tmp/uploads/20180227\\0e4ce8f4a8a05105da2dec30ec2e2874.jpg',
+  'type' => '山水画',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.005593s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->edit[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.095820s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.071380s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.047034s ]
+[ sql ] [ SQL ] UPDATE `tp_recommend`  SET `title`='洛神赋图',`content`='《洛神赋图》是东晋顾恺之的画作，原《洛神赋图》卷为设色绢本。是由多个故事情节组成的类似连环画而又融会贯通的长卷，现已失。现主要传世的是宋代的四件摹本，分别收藏在北京故宫博物院（二件）、辽宁省博物馆和美国弗利尔美术馆。故宫博物院的两件人物形象基本相似，只不过景物有一繁一简之分。',`img`='/tmp/uploads/20180227\\0e4ce8f4a8a05105da2dec30ec2e2874.jpg',`type`='山水画'  WHERE  `id` = 15 [ RunTime:0.050885s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.046657s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/edit/id/15.html' , 'admin' , 'Recommend' , 'edit' , 'POST' , 'a:5:{s:2:\"id\";s:2:\"15\";s:5:\"title\";s:12:\"洛神赋图\";s:7:\"content\";s:414:\"《洛神赋图》是东晋顾恺之的画作，原《洛神赋图》卷为设色绢本。是由多个故事情节组成的类似连环画而又融会贯通的长卷，现已失。现主要传世的是宋代的四件摹本，分别收藏在北京故宫博物院（二件）、辽宁省博物馆和美国弗利尔美术馆。故宫博物院的两件人物形象基本相似，只不过景物有一繁一简之分。\";s:3:\"img\";s:58:\"/tmp/uploads/20180227\\0e4ce8f4a8a05105da2dec30ec2e2874.jpg\";s:4:\"type\";s:9:\"山水画\";}' , 1519724848) [ RunTime:0.048517s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:47:28+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/index.html
+[ log ] vote.com/admin/recommend/index.html [运行时间：0.283359s][吞吐率：3.53req/s] [内存消耗：6,408.63kb] [文件加载：76]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=4306052765647087600%2C3435934718785370000%2C2013413738951857700%2C3453896302073649000%2C4255149751728953300',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.003723s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->index[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.073368s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055309s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.036062s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_recommend` LIMIT 1 [ RunTime:0.037207s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` ORDER BY id desc LIMIT 0,20 [ RunTime:0.036449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.036732s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/index.html' , 'admin' , 'Recommend' , 'index' , 'GET' , 'a:0:{}' , 1519724848) [ RunTime:0.036176s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:47:31+08:00 ] 127.0.0.1 127.0.0.1 GET /web/index/index.html
+[ log ] vote.com/web/index/index.html [运行时间：0.305521s][吞吐率：3.27req/s] [内存消耗：2,101.11kb] [文件加载：60]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; thinkphp_show_page_trace=0|1; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=4306052765647087600%2C3435934718785370000%2C2013413738951857700%2C3453896302073649000%2C4255149751728953300',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/index/info.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\Index->index[ E:\GitHub\vote\application\web\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\index\index.html [ array (
+  0 => 'barner',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073496s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_barner` [ RunTime:0.047683s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_barner` [ RunTime:0.048524s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.048269s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` [ RunTime:0.048789s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:47:33+08:00 ] 127.0.0.1 127.0.0.1 GET /web/index/info/id/15.html
+[ log ] vote.com/web/index/info/id/15.html [运行时间：0.194232s][吞吐率：5.15req/s] [内存消耗：2,044.18kb] [文件加载：58]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index',
+    2 => 'info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|1; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; thinkphp_show_page_trace=0|1; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=3435934718785370000%2C2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '15',
+)
+[ info ] [ RUN ] app\web\controller\Index->info[ E:\GitHub\vote\application\web\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\index\info.html [ array (
+  0 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066924s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.044249s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` WHERE  `id` = 15 LIMIT 1 [ RunTime:0.044342s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:47:33+08:00 ] 127.0.0.1 127.0.0.1 GET /static/web/js/jquery.min.map
+[ log ] vote.com/static/web/js/jquery.min.map [运行时间：0.030826s][吞吐率：32.44req/s] [内存消耗：1,072.14kb] [文件加载：45]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'web',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=3435934718785370000%2C2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T17:47:52+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.182497s][吞吐率：5.48req/s] [内存消耗：6,160.00kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008923s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\edit.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.141079s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056765s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.040905s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'GET' , 'a:0:{}' , 1519724872) [ RunTime:0.039416s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:48:26+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/upload/index/id/upload.html
+[ log ] vote.com/admin/upload/index/id/upload.html [运行时间：0.191026s][吞吐率：5.23req/s] [内存消耗：6,149.87kb] [文件加载：70]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'upload',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.004648s ]
+[ info ] [ RUN ] app\admin\controller\Upload->index[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\upload\index.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.157787s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062649s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.043433s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/index/id/upload.html' , 'admin' , 'Upload' , 'index' , 'GET' , 'a:1:{s:2:\"id\";s:6:\"upload\";}' , 1519724906) [ RunTime:0.042669s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:48:30+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/upload.html
+[ log ] vote.com/admin/upload/upload.html [运行时间：0.293076s][吞吐率：3.41req/s] [内存消耗：6,085.16kb] [文件加载：68]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/upload/index/id/upload.html',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryGDV9ox25gGHvInsz',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '174538',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.003838s ]
+[ info ] [ RUN ] app\admin\controller\Upload->upload[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.089981s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066408s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_file` [ RunTime:0.043688s ]
+[ sql ] [ SQL ] INSERT INTO `tp_file` (`cate` , `name` , `original` , `domain` , `type` , `size` , `mtime`) VALUES (3 , '/tmp/uploads/20180227\\cb48e8314d9d47a536d0507e2cd314ce.jpg' , '8b82b9014a90f603b87e86243212b31bb151ed83.jpg' , '' , 'image/jpeg' , 174320 , 1519724910) [ RunTime:0.046904s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.045739s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/upload.html' , 'admin' , 'Upload' , 'upload' , 'POST' , 'a:0:{}' , 1519724910) [ RunTime:0.043516s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:48:33+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.318633s][吞吐率：3.14req/s] [内存消耗：6,264.57kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1743',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+  'title' => '千里江山图',
+  'content' => '《千里江山图》是北宋王希孟创作的绘画画卷作品，收藏于北京故宫博物院。该作品以长卷形式，立足传统，画面细致入微，烟波浩渺的江河、层峦起伏的群山构成了一幅美妙的江南山水图，渔村野市、水榭亭台、茅庵草舍、水磨长桥等静景穿插捕鱼、驶船、游玩、赶集等动景，动静结合恰到好处。在该作品人物的刻画上，极其精细入微，意态栩栩如生，飞鸟用笔轻轻一点，极具展翅翱翔之态。',
+  'img' => '/tmp/uploads/20180227\\cb48e8314d9d47a536d0507e2cd314ce.jpg',
+  'type' => '山水画',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007717s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.088511s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066177s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.044145s ]
+[ sql ] [ SQL ] INSERT INTO `tp_recommend` (`title` , `content` , `img` , `type`) VALUES ('千里江山图' , '《千里江山图》是北宋王希孟创作的绘画画卷作品，收藏于北京故宫博物院。该作品以长卷形式，立足传统，画面细致入微，烟波浩渺的江河、层峦起伏的群山构成了一幅美妙的江南山水图，渔村野市、水榭亭台、茅庵草舍、水磨长桥等静景穿插捕鱼、驶船、游玩、赶集等动景，动静结合恰到好处。在该作品人物的刻画上，极其精细入微，意态栩栩如生，飞鸟用笔轻轻一点，极具展翅翱翔之态。' , '/tmp/uploads/20180227\\cb48e8314d9d47a536d0507e2cd314ce.jpg' , '山水画') [ RunTime:0.047706s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.044525s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'POST' , 'a:5:{s:2:\"id\";s:0:\"\";s:5:\"title\";s:15:\"千里江山图\";s:7:\"content\";s:525:\"《千里江山图》是北宋王希孟创作的绘画画卷作品，收藏于北京故宫博物院。该作品以长卷形式，立足传统，画面细致入微，烟波浩渺的江河、层峦起伏的群山构成了一幅美妙的江南山水图，渔村野市、水榭亭台、茅庵草舍、水磨长桥等静景穿插捕鱼、驶船、游玩、赶集等动景，动静结合恰到好处。在该作品人物的刻画上，极其精细入微，意态栩栩如生，飞鸟用笔轻轻一点，极具展翅翱翔之态。\";s:3:\"img\";s:58:\"/tmp/uploads/20180227\\cb48e8314d9d47a536d0507e2cd314ce.jpg\";s:4:\"type\";s:9:\"山水画\";}' , 1519724913) [ RunTime:0.043083s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:48:34+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/index.html
+[ log ] vote.com/admin/recommend/index.html [运行时间：0.342188s][吞吐率：2.92req/s] [内存消耗：6,414.41kb] [文件加载：76]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.005988s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->index[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.089360s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.067705s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.045825s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_recommend` LIMIT 1 [ RunTime:0.044763s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` ORDER BY id desc LIMIT 0,20 [ RunTime:0.044192s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.044837s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/index.html' , 'admin' , 'Recommend' , 'index' , 'GET' , 'a:0:{}' , 1519724913) [ RunTime:0.043973s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:48:46+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.197355s][吞吐率：5.07req/s] [内存消耗：6,160.00kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.010023s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\edit.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.156897s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062876s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.041351s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'GET' , 'a:0:{}' , 1519724926) [ RunTime:0.044019s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:49:40+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/upload/index/id/upload.html
+[ log ] vote.com/admin/upload/index/id/upload.html [运行时间：0.220347s][吞吐率：4.54req/s] [内存消耗：6,149.87kb] [文件加载：70]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'upload',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008205s ]
+[ info ] [ RUN ] app\admin\controller\Upload->index[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\upload\index.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.169332s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.067817s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.047205s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/index/id/upload.html' , 'admin' , 'Upload' , 'index' , 'GET' , 'a:1:{s:2:\"id\";s:6:\"upload\";}' , 1519724980) [ RunTime:0.047496s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:49:43+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/upload.html
+[ log ] vote.com/admin/upload/upload.html [运行时间：0.326150s][吞吐率：3.07req/s] [内存消耗：6,085.16kb] [文件加载：68]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/upload/index/id/upload.html',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryaEeYXemDjDK8Q7kY',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '725163',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006318s ]
+[ info ] [ RUN ] app\admin\controller\Upload->upload[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.097188s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073397s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_file` [ RunTime:0.050926s ]
+[ sql ] [ SQL ] INSERT INTO `tp_file` (`cate` , `name` , `original` , `domain` , `type` , `size` , `mtime`) VALUES (3 , '/tmp/uploads/20180227\\bbb4c56a90d4d352e21526672fddc10b.jpg' , '8b82b9014a90f603b87e86243212b31bb151ed83.jpg' , '' , 'image/jpeg' , 724945 , 1519724983) [ RunTime:0.053001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.048833s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/upload.html' , 'admin' , 'Upload' , 'upload' , 'POST' , 'a:0:{}' , 1519724983) [ RunTime:0.047868s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:49:46+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.327966s][吞吐率：3.05req/s] [内存消耗：6,264.95kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1856',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+  'title' => '五牛图',
+  'content' => '《五牛图》是唐朝韩滉创作的黄麻纸本中国画，又名《唐韩滉五牛图》，[1]  该作品现藏于北京故宫博物院。[2] 
+《五牛图》中的五头牛从左至右一字排开，各具状貌，姿态互异。一俯首吃草，一翘首前仰，一回首舐舌，一缓步前行，一在荆棵蹭痒。整幅画面除最后右侧有一小树除外，没有其他的背景，因此每头牛可独立成章。《五牛图》是中国十大传世名画，少数几件唐代传世纸绢画作品真迹之一，也是现存最古的纸本中国画。',
+  'img' => '/tmp/uploads/20180227\\bbb4c56a90d4d352e21526672fddc10b.jpg',
+  'type' => '山水画',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008120s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.096841s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.074262s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.047684s ]
+[ sql ] [ SQL ] INSERT INTO `tp_recommend` (`title` , `content` , `img` , `type`) VALUES ('五牛图' , '《五牛图》是唐朝韩滉创作的黄麻纸本中国画，又名《唐韩滉五牛图》，[1]  该作品现藏于北京故宫博物院。[2] \r\n《五牛图》中的五头牛从左至右一字排开，各具状貌，姿态互异。一俯首吃草，一翘首前仰，一回首舐舌，一缓步前行，一在荆棵蹭痒。整幅画面除最后右侧有一小树除外，没有其他的背景，因此每头牛可独立成章。《五牛图》是中国十大传世名画，少数几件唐代传世纸绢画作品真迹之一，也是现存最古的纸本中国画。' , '/tmp/uploads/20180227\\bbb4c56a90d4d352e21526672fddc10b.jpg' , '山水画') [ RunTime:0.052088s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.048718s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'POST' , 'a:5:{s:2:\"id\";s:0:\"\";s:5:\"title\";s:9:\"五牛图\";s:7:\"content\";s:572:\"《五牛图》是唐朝韩滉创作的黄麻纸本中国画，又名《唐韩滉五牛图》，[1]  该作品现藏于北京故宫博物院。[2] \r\n《五牛图》中的五头牛从左至右一字排开，各具状貌，姿态互异。一俯首吃草，一翘首前仰，一回首舐舌，一缓步前行，一在荆棵蹭痒。整幅画面除最后右侧有一小树除外，没有其他的背景，因此每头牛可独立成章。《五牛图》是中国十大传世名画，少数几件唐代传世纸绢画作品真迹之一，也是现存最古的纸本中国画。\";s:3:\"img\";s:58:\"/tmp/uploads/20180227\\bbb4c56a90d4d352e21526672fddc10b.jpg\";s:4:\"type\";s:9:\"山水画\";}' , 1519724986) [ RunTime:0.047621s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:49:46+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/index.html
+[ log ] vote.com/admin/recommend/index.html [运行时间：0.373533s][吞吐率：2.68req/s] [内存消耗：6,416.07kb] [文件加载：76]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007107s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->index[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.098687s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073887s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.049497s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_recommend` LIMIT 1 [ RunTime:0.047866s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` ORDER BY id desc LIMIT 0,20 [ RunTime:0.049761s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.050073s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/index.html' , 'admin' , 'Recommend' , 'index' , 'GET' , 'a:0:{}' , 1519724986) [ RunTime:0.047666s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:49:56+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.204599s][吞吐率：4.89req/s] [内存消耗：6,160.00kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.014416s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\edit.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.159382s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066699s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.044803s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'GET' , 'a:0:{}' , 1519724996) [ RunTime:0.043490s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:50:24+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/upload/index/id/upload.html
+[ log ] vote.com/admin/upload/index/id/upload.html [运行时间：0.211660s][吞吐率：4.72req/s] [内存消耗：6,149.87kb] [文件加载：70]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'upload',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008326s ]
+[ info ] [ RUN ] app\admin\controller\Upload->index[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\upload\index.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.163547s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.067791s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.046657s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/index/id/upload.html' , 'admin' , 'Upload' , 'index' , 'GET' , 'a:1:{s:2:\"id\";s:6:\"upload\";}' , 1519725024) [ RunTime:0.044044s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:50:27+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/upload.html
+[ log ] vote.com/admin/upload/upload.html [运行时间：0.309350s][吞吐率：3.23req/s] [内存消耗：6,085.16kb] [文件加载：68]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/upload/index/id/upload.html',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryB8X4sjsVV2FHECPb',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '225165',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007769s ]
+[ info ] [ RUN ] app\admin\controller\Upload->upload[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.089309s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066751s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_file` [ RunTime:0.044544s ]
+[ sql ] [ SQL ] INSERT INTO `tp_file` (`cate` , `name` , `original` , `domain` , `type` , `size` , `mtime`) VALUES (3 , '/tmp/uploads/20180227\\581409032c34c579dd867fdd7d3b3a08.jpg' , '8b82b9014a90f603b87e86243212b31bb151ed83.jpg' , '' , 'image/jpeg' , 224947 , 1519725027) [ RunTime:0.048440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.044677s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/upload.html' , 'admin' , 'Upload' , 'upload' , 'POST' , 'a:0:{}' , 1519725027) [ RunTime:0.044003s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:50:29+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.299906s][吞吐率：3.33req/s] [内存消耗：6,263.70kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1407',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+  'title' => '唐宫仕女图',
+  'content' => '《唐宫仕女图》是一幅中国画作，作者是唐代张萱、周昉，该画描述唐代美女众生像。主要表现唐代贵族妇女生活情调，成为唐代仕女画的主要艺术特征。被称为&ldquo;中国十大传世名画&rdquo;之一。
+唐代作为封建社会最为辉煌的时代，也是仕女画的繁荣兴盛阶段。中国古代仕女众生像，&ldquo;倾国倾城貌，多愁多病身&rdquo;。',
+  'img' => '/tmp/uploads/20180227\\581409032c34c579dd867fdd7d3b3a08.jpg',
+  'type' => '山水画',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.005967s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.087252s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.064951s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.044082s ]
+[ sql ] [ SQL ] INSERT INTO `tp_recommend` (`title` , `content` , `img` , `type`) VALUES ('唐宫仕女图' , '《唐宫仕女图》是一幅中国画作，作者是唐代张萱、周昉，该画描述唐代美女众生像。主要表现唐代贵族妇女生活情调，成为唐代仕女画的主要艺术特征。被称为&ldquo;中国十大传世名画&rdquo;之一。\r\n唐代作为封建社会最为辉煌的时代，也是仕女画的繁荣兴盛阶段。中国古代仕女众生像，&ldquo;倾国倾城貌，多愁多病身&rdquo;。' , '/tmp/uploads/20180227\\581409032c34c579dd867fdd7d3b3a08.jpg' , '山水画') [ RunTime:0.047633s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.042581s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'POST' , 'a:5:{s:2:\"id\";s:0:\"\";s:5:\"title\";s:15:\"唐宫仕女图\";s:7:\"content\";s:429:\"《唐宫仕女图》是一幅中国画作，作者是唐代张萱、周昉，该画描述唐代美女众生像。主要表现唐代贵族妇女生活情调，成为唐代仕女画的主要艺术特征。被称为&ldquo;中国十大传世名画&rdquo;之一。\r\n唐代作为封建社会最为辉煌的时代，也是仕女画的繁荣兴盛阶段。中国古代仕女众生像，&ldquo;倾国倾城貌，多愁多病身&rdquo;。\";s:3:\"img\";s:58:\"/tmp/uploads/20180227\\581409032c34c579dd867fdd7d3b3a08.jpg\";s:4:\"type\";s:9:\"山水画\";}' , 1519725029) [ RunTime:0.043247s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:50:30+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/index.html
+[ log ] vote.com/admin/recommend/index.html [运行时间：0.313690s][吞吐率：3.19req/s] [内存消耗：6,418.04kb] [文件加载：76]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.003689s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->index[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.080553s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.061723s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.040022s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_recommend` LIMIT 1 [ RunTime:0.041605s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` ORDER BY id desc LIMIT 0,20 [ RunTime:0.041159s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.040037s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/index.html' , 'admin' , 'Recommend' , 'index' , 'GET' , 'a:0:{}' , 1519725029) [ RunTime:0.039760s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:50:44+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.207403s][吞吐率：4.82req/s] [内存消耗：6,160.00kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008512s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\edit.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.161646s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.067728s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.045183s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'GET' , 'a:0:{}' , 1519725044) [ RunTime:0.043521s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:51:21+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/upload/index/id/upload.html
+[ log ] vote.com/admin/upload/index/id/upload.html [运行时间：0.216427s][吞吐率：4.62req/s] [内存消耗：6,149.87kb] [文件加载：70]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'upload',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.006501s ]
+[ info ] [ RUN ] app\admin\controller\Upload->index[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\upload\index.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.183626s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.076848s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.049117s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/index/id/upload.html' , 'admin' , 'Upload' , 'index' , 'GET' , 'a:1:{s:2:\"id\";s:6:\"upload\";}' , 1519725080) [ RunTime:0.048462s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:51:23+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/upload.html
+[ log ] vote.com/admin/upload/upload.html [运行时间：0.303391s][吞吐率：3.30req/s] [内存消耗：6,085.16kb] [文件加载：68]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/upload/index/id/upload.html',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryEw1hkl6Vl3UIzisc',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '225165',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.011809s ]
+[ info ] [ RUN ] app\admin\controller\Upload->upload[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.087312s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062063s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_file` [ RunTime:0.044621s ]
+[ sql ] [ SQL ] INSERT INTO `tp_file` (`cate` , `name` , `original` , `domain` , `type` , `size` , `mtime`) VALUES (3 , '/tmp/uploads/20180227\\795620dc2431f30eb88e2d427c81ae63.jpg' , '8b82b9014a90f603b87e86243212b31bb151ed83.jpg' , '' , 'image/jpeg' , 224947 , 1519725083) [ RunTime:0.048014s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.043476s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/upload.html' , 'admin' , 'Upload' , 'upload' , 'POST' , 'a:0:{}' , 1519725083) [ RunTime:0.043239s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:51:28+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.310672s][吞吐率：3.22req/s] [内存消耗：6,264.07kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1503',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+  'title' => '步辇图',
+  'content' => '《步辇图》是唐朝画家阎立本的名作之一。是现藏故宫博物院中国十大传世名画之一公元640年（贞观十四年），吐蕃王松赞干布仰慕大唐文明，派使者禄东赞到长安通聘。《步辇图》所绘是禄东赞朝见唐太宗时的场景。现存画作被认为是宋朝摹本。存于北京故宫博物院。绢本，设色，纵38.5厘米，横129.6厘米。[1]  被称为&ldquo;中国十大传世名画&rdquo;之一。',
+  'img' => '/tmp/uploads/20180227\\795620dc2431f30eb88e2d427c81ae63.jpg',
+  'type' => '山水画',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.015789s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.089660s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.065342s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.044688s ]
+[ sql ] [ SQL ] INSERT INTO `tp_recommend` (`title` , `content` , `img` , `type`) VALUES ('步辇图' , '《步辇图》是唐朝画家阎立本的名作之一。是现藏故宫博物院中国十大传世名画之一公元640年（贞观十四年），吐蕃王松赞干布仰慕大唐文明，派使者禄东赞到长安通聘。《步辇图》所绘是禄东赞朝见唐太宗时的场景。现存画作被认为是宋朝摹本。存于北京故宫博物院。绢本，设色，纵38.5厘米，横129.6厘米。[1]  被称为&ldquo;中国十大传世名画&rdquo;之一。' , '/tmp/uploads/20180227\\795620dc2431f30eb88e2d427c81ae63.jpg' , '山水画') [ RunTime:0.048045s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.045045s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'POST' , 'a:5:{s:2:\"id\";s:0:\"\";s:5:\"title\";s:9:\"步辇图\";s:7:\"content\";s:469:\"《步辇图》是唐朝画家阎立本的名作之一。是现藏故宫博物院中国十大传世名画之一公元640年（贞观十四年），吐蕃王松赞干布仰慕大唐文明，派使者禄东赞到长安通聘。《步辇图》所绘是禄东赞朝见唐太宗时的场景。现存画作被认为是宋朝摹本。存于北京故宫博物院。绢本，设色，纵38.5厘米，横129.6厘米。[1]  被称为&ldquo;中国十大传世名画&rdquo;之一。\";s:3:\"img\";s:58:\"/tmp/uploads/20180227\\795620dc2431f30eb88e2d427c81ae63.jpg\";s:4:\"type\";s:9:\"山水画\";}' , 1519725087) [ RunTime:0.044052s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:51:28+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/index.html
+[ log ] vote.com/admin/recommend/index.html [运行时间：0.335262s][吞吐率：2.98req/s] [内存消耗：6,419.82kb] [文件加载：76]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.003282s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->index[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.088428s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066420s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.044371s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_recommend` LIMIT 1 [ RunTime:0.044606s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` ORDER BY id desc LIMIT 0,20 [ RunTime:0.045805s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.043536s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/index.html' , 'admin' , 'Recommend' , 'index' , 'GET' , 'a:0:{}' , 1519725088) [ RunTime:0.043846s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:51:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/edit/id/19.html
+[ log ] vote.com/admin/recommend/edit/id/19.html [运行时间：0.274332s][吞吐率：3.65req/s] [内存消耗：6,345.05kb] [文件加载：73]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '19',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.004397s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->edit[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\edit.html [ array (
+  0 => 'vo',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.082662s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063324s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.039983s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` WHERE  `id` = 19 LIMIT 1 [ RunTime:0.042388s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.040882s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/edit/id/19.html' , 'admin' , 'Recommend' , 'edit' , 'GET' , 'a:1:{s:2:\"id\";s:2:\"19\";}' , 1519725101) [ RunTime:0.040729s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:51:43+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/upload/index/id/upload.html
+[ log ] vote.com/admin/upload/index/id/upload.html [运行时间：0.215462s][吞吐率：4.64req/s] [内存消耗：6,149.87kb] [文件加载：70]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/edit/id/19.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'upload',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007869s ]
+[ info ] [ RUN ] app\admin\controller\Upload->index[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\upload\index.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.167467s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.067616s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.044030s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/index/id/upload.html' , 'admin' , 'Upload' , 'index' , 'GET' , 'a:1:{s:2:\"id\";s:6:\"upload\";}' , 1519725103) [ RunTime:0.043275s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:51:47+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/upload.html
+[ log ] vote.com/admin/upload/upload.html [运行时间：0.331407s][吞吐率：3.02req/s] [内存消耗：6,085.16kb] [文件加载：68]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/upload/index/id/upload.html',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarytd6gXWHUAvAmzD4g',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '161462',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.028521s ]
+[ info ] [ RUN ] app\admin\controller\Upload->upload[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.093198s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.068659s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_file` [ RunTime:0.045489s ]
+[ sql ] [ SQL ] INSERT INTO `tp_file` (`cate` , `name` , `original` , `domain` , `type` , `size` , `mtime`) VALUES (3 , '/tmp/uploads/20180227\\a8ad5c32f860fe4a3adf4930e54e653c.jpg' , '8b82b9014a90f603b87e86243212b31bb151ed83.jpg' , '' , 'image/jpeg' , 161244 , 1519725107) [ RunTime:0.052220s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.044860s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/upload.html' , 'admin' , 'Upload' , 'upload' , 'POST' , 'a:0:{}' , 1519725107) [ RunTime:0.047579s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:51:49+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/recommend/edit/id/19.html
+[ log ] vote.com/admin/recommend/edit/id/19.html [运行时间：0.258487s][吞吐率：3.87req/s] [内存消耗：6,316.75kb] [文件加载：74]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/edit/id/19.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1505',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '19',
+  'title' => '步辇图',
+  'content' => '《步辇图》是唐朝画家阎立本的名作之一。是现藏故宫博物院中国十大传世名画之一公元640年（贞观十四年），吐蕃王松赞干布仰慕大唐文明，派使者禄东赞到长安通聘。《步辇图》所绘是禄东赞朝见唐太宗时的场景。现存画作被认为是宋朝摹本。存于北京故宫博物院。绢本，设色，纵38.5厘米，横129.6厘米。[1]  被称为&ldquo;中国十大传世名画&rdquo;之一。',
+  'img' => '/tmp/uploads/20180227\\a8ad5c32f860fe4a3adf4930e54e653c.jpg',
+  'type' => '山水画',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.005177s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->edit[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.074558s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055557s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.036578s ]
+[ sql ] [ SQL ] UPDATE `tp_recommend`  SET `title`='步辇图',`content`='《步辇图》是唐朝画家阎立本的名作之一。是现藏故宫博物院中国十大传世名画之一公元640年（贞观十四年），吐蕃王松赞干布仰慕大唐文明，派使者禄东赞到长安通聘。《步辇图》所绘是禄东赞朝见唐太宗时的场景。现存画作被认为是宋朝摹本。存于北京故宫博物院。绢本，设色，纵38.5厘米，横129.6厘米。[1]  被称为&ldquo;中国十大传世名画&rdquo;之一。',`img`='/tmp/uploads/20180227\\a8ad5c32f860fe4a3adf4930e54e653c.jpg',`type`='山水画'  WHERE  `id` = 19 [ RunTime:0.039980s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.037058s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/edit/id/19.html' , 'admin' , 'Recommend' , 'edit' , 'POST' , 'a:5:{s:2:\"id\";s:2:\"19\";s:5:\"title\";s:9:\"步辇图\";s:7:\"content\";s:469:\"《步辇图》是唐朝画家阎立本的名作之一。是现藏故宫博物院中国十大传世名画之一公元640年（贞观十四年），吐蕃王松赞干布仰慕大唐文明，派使者禄东赞到长安通聘。《步辇图》所绘是禄东赞朝见唐太宗时的场景。现存画作被认为是宋朝摹本。存于北京故宫博物院。绢本，设色，纵38.5厘米，横129.6厘米。[1]  被称为&ldquo;中国十大传世名画&rdquo;之一。\";s:3:\"img\";s:58:\"/tmp/uploads/20180227\\a8ad5c32f860fe4a3adf4930e54e653c.jpg\";s:4:\"type\";s:9:\"山水画\";}' , 1519725108) [ RunTime:0.036903s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:51:49+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/index.html
+[ log ] vote.com/admin/recommend/index.html [运行时间：0.292526s][吞吐率：3.42req/s] [内存消耗：6,419.82kb] [文件加载：76]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.004447s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->index[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.077815s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056601s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.037282s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_recommend` LIMIT 1 [ RunTime:0.036982s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` ORDER BY id desc LIMIT 0,20 [ RunTime:0.039385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.038415s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/index.html' , 'admin' , 'Recommend' , 'index' , 'GET' , 'a:0:{}' , 1519725109) [ RunTime:0.038742s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:52:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/edit/id/13.html
+[ log ] vote.com/admin/recommend/edit/id/13.html [运行时间：0.300276s][吞吐率：3.33req/s] [内存消耗：6,344.92kb] [文件加载：73]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '13',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.011482s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->edit[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\edit.html [ array (
+  0 => 'vo',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.088648s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.067154s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.044923s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.043492s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.043611s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/edit/id/13.html' , 'admin' , 'Recommend' , 'edit' , 'GET' , 'a:1:{s:2:\"id\";s:2:\"13\";}' , 1519725129) [ RunTime:0.043578s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:52:11+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/upload/index/id/upload.html
+[ log ] vote.com/admin/upload/index/id/upload.html [运行时间：0.243316s][吞吐率：4.11req/s] [内存消耗：6,149.87kb] [文件加载：70]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/edit/id/13.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'upload',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.004773s ]
+[ info ] [ RUN ] app\admin\controller\Upload->index[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\upload\index.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.168935s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.068099s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.048470s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/index/id/upload.html' , 'admin' , 'Upload' , 'index' , 'GET' , 'a:1:{s:2:\"id\";s:6:\"upload\";}' , 1519725131) [ RunTime:0.047512s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:52:14+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/upload.html
+[ log ] vote.com/admin/upload/upload.html [运行时间：0.292136s][吞吐率：3.42req/s] [内存消耗：6,085.16kb] [文件加载：68]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/upload/index/id/upload.html',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryfchDp00fuEIgEokp',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '878178',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008524s ]
+[ info ] [ RUN ] app\admin\controller\Upload->upload[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.084065s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063296s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_file` [ RunTime:0.041055s ]
+[ sql ] [ SQL ] INSERT INTO `tp_file` (`cate` , `name` , `original` , `domain` , `type` , `size` , `mtime`) VALUES (3 , '/tmp/uploads/20180227\\401443f41b29d2fe9a784d644d7b4540.jpg' , '8b82b9014a90f603b87e86243212b31bb151ed83.jpg' , '' , 'image/jpeg' , 877960 , 1519725134) [ RunTime:0.047151s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.041664s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/upload.html' , 'admin' , 'Upload' , 'upload' , 'POST' , 'a:0:{}' , 1519725134) [ RunTime:0.041946s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:52:15+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/recommend/edit/id/13.html
+[ log ] vote.com/admin/recommend/edit/id/13.html [运行时间：0.317426s][吞吐率：3.15req/s] [内存消耗：6,315.63kb] [文件加载：74]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/edit/id/13.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1209',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '13',
+  'title' => '富春山居图',
+  'content' => '富春山居图是元代画家黄公望创作的纸本绘画，中国十大传世名画之一。画家黄公望为师弟郑樗（无用师）所绘，1350年绘制完成，后几经易手，并因&ldquo;焚画殉葬&rdquo;而身首两段，前半卷：剩山图，现收藏于浙江省博物馆；[1]  后半卷：无用师卷，现藏台北故宫博物院。',
+  'img' => '/tmp/uploads/20180227\\401443f41b29d2fe9a784d644d7b4540.jpg',
+  'type' => '山水画',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.003727s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->edit[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.097670s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.072686s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.049691s ]
+[ sql ] [ SQL ] UPDATE `tp_recommend`  SET `title`='富春山居图',`content`='富春山居图是元代画家黄公望创作的纸本绘画，中国十大传世名画之一。画家黄公望为师弟郑樗（无用师）所绘，1350年绘制完成，后几经易手，并因&ldquo;焚画殉葬&rdquo;而身首两段，前半卷：剩山图，现收藏于浙江省博物馆；[1]  后半卷：无用师卷，现藏台北故宫博物院。',`img`='/tmp/uploads/20180227\\401443f41b29d2fe9a784d644d7b4540.jpg',`type`='山水画'  WHERE  `id` = 13 [ RunTime:0.052983s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.049303s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/edit/id/13.html' , 'admin' , 'Recommend' , 'edit' , 'POST' , 'a:5:{s:2:\"id\";s:2:\"13\";s:5:\"title\";s:15:\"富春山居图\";s:7:\"content\";s:359:\"富春山居图是元代画家黄公望创作的纸本绘画，中国十大传世名画之一。画家黄公望为师弟郑樗（无用师）所绘，1350年绘制完成，后几经易手，并因&ldquo;焚画殉葬&rdquo;而身首两段，前半卷：剩山图，现收藏于浙江省博物馆；[1]  后半卷：无用师卷，现藏台北故宫博物院。\";s:3:\"img\";s:58:\"/tmp/uploads/20180227\\401443f41b29d2fe9a784d644d7b4540.jpg\";s:4:\"type\";s:9:\"山水画\";}' , 1519725135) [ RunTime:0.047805s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:52:16+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/index.html
+[ log ] vote.com/admin/recommend/index.html [运行时间：0.299148s][吞吐率：3.34req/s] [内存消耗：6,419.82kb] [文件加载：76]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.005500s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->index[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.073632s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056055s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.036800s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_recommend` LIMIT 1 [ RunTime:0.037039s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` ORDER BY id desc LIMIT 0,20 [ RunTime:0.037098s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.037520s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/index.html' , 'admin' , 'Recommend' , 'index' , 'GET' , 'a:0:{}' , 1519725135) [ RunTime:0.035724s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:52:20+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.181921s][吞吐率：5.50req/s] [内存消耗：6,160.00kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.003249s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\edit.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.138906s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056728s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.038481s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'GET' , 'a:0:{}' , 1519725140) [ RunTime:0.039580s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:53:18+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/upload/index/id/upload.html
+[ log ] vote.com/admin/upload/index/id/upload.html [运行时间：0.222491s][吞吐率：4.49req/s] [内存消耗：6,149.87kb] [文件加载：70]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'upload',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.008292s ]
+[ info ] [ RUN ] app\admin\controller\Upload->index[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\upload\index.html [ array (
+) ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.169761s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.067781s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.046244s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/index/id/upload.html' , 'admin' , 'Upload' , 'index' , 'GET' , 'a:1:{s:2:\"id\";s:6:\"upload\";}' , 1519725198) [ RunTime:0.045665s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:53:21+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/upload.html
+[ log ] vote.com/admin/upload/upload.html [运行时间：0.290425s][吞吐率：3.44req/s] [内存消耗：6,085.16kb] [文件加载：68]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/upload/index/id/upload.html',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary7TJBth57cjb3f9V1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '288310',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.007439s ]
+[ info ] [ RUN ] app\admin\controller\Upload->upload[ E:\GitHub\vote\application\admin\controller\Upload.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.089570s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062436s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_file` [ RunTime:0.044250s ]
+[ sql ] [ SQL ] INSERT INTO `tp_file` (`cate` , `name` , `original` , `domain` , `type` , `size` , `mtime`) VALUES (3 , '/tmp/uploads/20180227\\007e78374ca2f6fe44c7edecd95b90f6.jpg' , '8b82b9014a90f603b87e86243212b31bb151ed83.jpg' , '' , 'image/jpeg' , 288092 , 1519725201) [ RunTime:0.046906s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.044680s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/upload/upload.html' , 'admin' , 'Upload' , 'upload' , 'POST' , 'a:0:{}' , 1519725201) [ RunTime:0.043539s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:53:24+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/recommend/add.html
+[ log ] vote.com/admin/recommend/add.html [运行时间：0.316664s][吞吐率：3.16req/s] [内存消耗：6,264.57kb] [文件加载：71]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/add.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://vote.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1721',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+  'title' => '韩熙载夜宴图',
+  'content' => '《韩熙载夜宴图》描绘了官员韩熙载家设夜宴载歌行乐的场面。此画绘写的就是一次完整的韩府夜宴过程，即琵琶演奏、观舞、宴间休息、清吹、欢送宾客五段场景。整幅作品线条遒劲流畅，工整精细，构图富有想象力。[3] 
+作品造型准确精微，线条工细流畅，色彩绚丽清雅。不同物象的笔墨运用又富有变化，尤其敷色更见丰富、和谐，仕女的素妆艳服与男宾的青黑色衣衫形成鲜明对照。',
+  'img' => '/tmp/uploads/20180227\\007e78374ca2f6fe44c7edecd95b90f6.jpg',
+  'type' => '山水画',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.005171s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->add[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.097410s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073256s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.049457s ]
+[ sql ] [ SQL ] INSERT INTO `tp_recommend` (`title` , `content` , `img` , `type`) VALUES ('韩熙载夜宴图' , '《韩熙载夜宴图》描绘了官员韩熙载家设夜宴载歌行乐的场面。此画绘写的就是一次完整的韩府夜宴过程，即琵琶演奏、观舞、宴间休息、清吹、欢送宾客五段场景。整幅作品线条遒劲流畅，工整精细，构图富有想象力。[3] \r\n作品造型准确精微，线条工细流畅，色彩绚丽清雅。不同物象的笔墨运用又富有变化，尤其敷色更见丰富、和谐，仕女的素妆艳服与男宾的青黑色衣衫形成鲜明对照。' , '/tmp/uploads/20180227\\007e78374ca2f6fe44c7edecd95b90f6.jpg' , '山水画') [ RunTime:0.053735s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.048488s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/add.html' , 'admin' , 'Recommend' , 'add' , 'POST' , 'a:5:{s:2:\"id\";s:0:\"\";s:5:\"title\";s:18:\"韩熙载夜宴图\";s:7:\"content\";s:516:\"《韩熙载夜宴图》描绘了官员韩熙载家设夜宴载歌行乐的场面。此画绘写的就是一次完整的韩府夜宴过程，即琵琶演奏、观舞、宴间休息、清吹、欢送宾客五段场景。整幅作品线条遒劲流畅，工整精细，构图富有想象力。[3] \r\n作品造型准确精微，线条工细流畅，色彩绚丽清雅。不同物象的笔墨运用又富有变化，尤其敷色更见丰富、和谐，仕女的素妆艳服与男宾的青黑色衣衫形成鲜明对照。\";s:3:\"img\";s:58:\"/tmp/uploads/20180227\\007e78374ca2f6fe44c7edecd95b90f6.jpg\";s:4:\"type\";s:9:\"山水画\";}' , 1519725203) [ RunTime:0.048292s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:53:24+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/recommend/index.html
+[ log ] vote.com/admin/recommend/index.html [运行时间：0.325724s][吞吐率：3.07req/s] [内存消耗：6,420.73kb] [文件加载：76]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'recommend',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/admin/recommend/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @module_init [ RunTime:0.004199s ]
+[ info ] [ RUN ] app\admin\controller\Recommend->index[ E:\GitHub\vote\application\admin\traits\controller\Controller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/admin\view\recommend\index.html [ array (
+  0 => 'list',
+  1 => 'count',
+  2 => 'page',
+  3 => 'numPerPage',
+) ]
+[ info ] [ BEHAVIOR ] Run \app\common\behavior\WebLog @app_end [ RunTime:0.087272s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063339s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.042747s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_recommend` LIMIT 1 [ RunTime:0.043348s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` ORDER BY id desc LIMIT 0,20 [ RunTime:0.042851s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_web_log_all` [ RunTime:0.042412s ]
+[ sql ] [ SQL ] INSERT INTO `tp_web_log_all` (`uid` , `ip` , `location` , `os` , `browser` , `url` , `module` , `controller` , `action` , `method` , `data` , `create_at`) VALUES (1 , '127.0.0.1' , '本机地址 本机地址  ' , 'Windows 10' , 'Chrome(64.0.3282.168)' , 'http://vote.com/admin/recommend/index.html' , 'admin' , 'Recommend' , 'index' , 'GET' , 'a:0:{}' , 1519725204) [ RunTime:0.044388s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:53:28+08:00 ] 127.0.0.1 127.0.0.1 GET /web/index/index.html
+[ log ] vote.com/web/index/index.html [运行时间：0.309065s][吞吐率：3.24req/s] [内存消耗：2,117.77kb] [文件加载：60]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; thinkphp_show_page_trace=0|1; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=2013413738951857700%2C3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/index/info.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\web\controller\Index->index[ E:\GitHub\vote\application\web\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\index\index.html [ array (
+  0 => 'barner',
+  1 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066835s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_barner` [ RunTime:0.043867s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_barner` [ RunTime:0.044136s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.044100s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` [ RunTime:0.045020s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:53:36+08:00 ] 127.0.0.1 127.0.0.1 GET /web/index/info/id/13.html
+[ log ] vote.com/web/index/info/id/13.html [运行时间：0.190458s][吞吐率：5.25req/s] [内存消耗：2,044.12kb] [文件加载：58]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index',
+    2 => 'info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|1; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; thinkphp_show_page_trace=0|1; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000%2C4353449557244961300',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '13',
+)
+[ info ] [ RUN ] app\web\controller\Index->info[ E:\GitHub\vote\application\web\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\index\info.html [ array (
+  0 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066055s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.044350s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.044144s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:53:36+08:00 ] 127.0.0.1 127.0.0.1 GET /static/web/js/jquery.min.map
+[ log ] vote.com/static/web/js/jquery.min.map [运行时间：0.028749s][吞吐率：34.78req/s] [内存消耗：1,072.14kb] [文件加载：45]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'web',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=3453896302073649000%2C4255149751728953300%2C463751451506694400%2C4507149226763274000%2C4353449557244961300',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-27T17:53:42+08:00 ] 127.0.0.1 127.0.0.1 GET /web/index/info/id/15.html
+[ log ] vote.com/web/index/info/id/15.html [运行时间：0.197169s][吞吐率：5.07req/s] [内存消耗：2,044.18kb] [文件加载：58]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index',
+    2 => 'info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|1; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; thinkphp_show_page_trace=0|1; pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=4255149751728953300%2C463751451506694400%2C4507149226763274000%2C4353449557244961300%2C2268395980725032000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://vote.com/web/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '15',
+)
+[ info ] [ RUN ] app\web\controller\Index->info[ E:\GitHub\vote\application\web\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\GitHub\vote\public/../application/web\view\index\info.html [ array (
+  0 => 'recommend',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073704s ] mysql:dbname=vote;host=47.94.212.132;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_recommend` [ RunTime:0.048012s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_recommend` WHERE  `id` = 15 LIMIT 1 [ RunTime:0.047721s ]
+
+---------------------------------------------------------------
+[ 2018-02-27T17:53:42+08:00 ] 127.0.0.1 127.0.0.1 GET /static/web/js/jquery.min.map
+[ log ] vote.com/static/web/js/jquery.min.map [运行时间：0.032866s][吞吐率：30.43req/s] [内存消耗：1,072.14kb] [文件加载：45]
+[ info ] [ LANG ] E:\GitHub\vote\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'web',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=4150782976; Huiskin=green; PHPSESSID=edhp8f6qqdf3iftbflur4nh524; thinkphp_show_page_trace=0|0; mediav=%7B%22eid%22%3A%22500000%22%2C%22ep%22%3A%22%22%2C%22vid%22%3A%22gF%3CsGG4%5Dk%25%3AyowGH9%40v-%22%2C%22ctn%22%3A%22%22%7D; Qs_lvt_224241=1519631686%2C1519694005%2C1519724781; Qs_pv_224241=4255149751728953300%2C463751451506694400%2C4507149226763274000%2C4353449557244961300%2C2268395980725032000',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+  'connection' => 'close',
+  'host' => 'vote.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
