@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:61:"E:\GitHub\vote\public/../application/web\view\user\index.html";i:1519697767;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:61:"E:\GitHub\vote\public/../application/web\view\user\index.html";i:1519810526;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -47,7 +47,7 @@
 			}
 			#jf a{
 				color: black;
-				line-height: 25px;
+				line-height: 55px;
 				width: 100%;
 				text-align: center;
 				font-size: 15px;
@@ -115,22 +115,18 @@
 								<a href="<?php echo url('user/edit'); ?>">
 								<span class="imgs" style="display: block; width: 80px; height: 80px;border-radius:50% ; overflow: hidden;">
 
-									<img src="__WEB__/img/painting/gh/timg (7).jpg" id="trueimg" width="100" height="100" />
+									<img src="<?php echo $user['image']; ?>" id="trueimg" width="100" height="100" />
 								</span></a>
 							</div>
 							<div class="mui-col-sm-4 mui-col-xs-4">
 								<!-- <a class="mui-navigate-right">Item 1</a>-->
-								昵称
+								<?php echo $user['name']; ?>
 							</div>
 
 							<div class="mui-col-sm-4 mui-col-xs-4" id="jf">
 								<a class="" >
-									一勺积分
+									<?php echo $user['integral']; ?> 积分
 								</a>
-								<a class="" >
-									120积分
-								</a>
-
 							</div>
 						</div>
 						<!--<p style="margin: 10px; text-indent:1em;">实名认证后才可购买</p>-->
@@ -180,11 +176,11 @@
 									<span class="mui-icon mui-icon-location"></span>收货地址
 								</a>
 							</li>
-							<li class="mui-table-view-cell">
+							<!-- <li class="mui-table-view-cell">
 								<a class="mui-navigate-right" href="<?php echo url('login/edit'); ?>">
 									<span class="mui-icon mui-icon-gear"></span>修改密码
 								</a>
-							</li>
+							</li> -->
 						</ul>
 						<ul class="mui-table-view" style="margin: 10px;">
 
@@ -222,7 +218,7 @@
 					if(e.index == 0) {
 						//点击取消	this.text("123123");
 					} else { //确认
-						window.top.location.href = "<?php echo url('login/login'); ?>";
+						window.top.location.href = "<?php echo url('login/noadmin'); ?>";
 					}
 				}, 'div');
 			});
