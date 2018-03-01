@@ -97,7 +97,7 @@
 
 	<body>
 		<!-- 主界面移动、菜单不动 -->
-		
+
 				<!-- 主页面标题 -->
 				<!--<header class="mui-bar mui-bar-nav">
 
@@ -163,7 +163,7 @@
 						</ul>
 					</div>
 				</div>
-			
+
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
@@ -190,7 +190,7 @@
 				document.getElementById("leixing").value = this.innerText;
 				document.getElementById("mui_views").value = this.getAttribute("data-type");
 				document.getElementById("mui_view").style.display = "none";
-				
+
 			})
 			var img = document.getElementById("nextview");
 			var ss = img.src;
@@ -212,17 +212,32 @@
 								var Names = name.value;
 								var leis = lei.value;
 								var tess = tes.value;
-								mui.toast('提交完成');
-								/*清空*/
-								document.getElementById("nextview").src = "__WEB__/img/a11.png";							
-								name.value = "";
-								lei.value = "";
-								tes.value = "";
-								/*跳转*/
-								setTimeout(function() {
-									window.top.location.href = "zuopin.html";
-								}, 1000);
-								
+
+								mui.post("{:url('match/index')}",{
+									title:Names,
+									content:tess,
+									type:leis
+								},function(data){
+
+										mui.toast('提交完成');
+										/*清空*/
+										document.getElementById("nextview").src = "__WEB__/img/a11.png";
+										name.value = "";
+										lei.value = "";
+										tes.value = "";
+										/*跳转*/
+										if (data.code==1) {
+											mui.toast(data.msg);
+											setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+												window.location = "{:url('index/index')}";
+											}, 1000);
+										}else{
+											mui.toast(data.msg);
+										}
+
+									},'json'
+								);
+
 							} else {
 								mui.toast('请选择分类')
 							}
