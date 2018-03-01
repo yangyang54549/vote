@@ -124,15 +124,38 @@
 						} else {
 						if(texts.value!=""){
 							if(yb.value!=""||yb.value.length==6){
-
+								var is_default = 0;
 								var ss =  ofs.classList.contains('mui-active'); //return true or false
-								mui.toast(ss);
+								if (ss) {
+									is_default = 1;
+								}
+
+								mui.post("{:url('address/add')}",{
+									name:name.value,
+									mobile:phone.value,
+									address:texts.value,
+									postcode:yb.value,
+									is_default:is_default
+								},function(data){
+										//服务器返回响应，根据响应结果，分析是否登录成功；
+										if (data.code==1) {
+											mui.toast(data.msg);
+											setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+												window.location = "{:url('address/index')}";
+											}, 1000);
+										}else{
+											mui.toast(data.msg);
+										}
+
+									},'json'
+								);
+
+
 							}else{
 								mui.toast('请重新输入邮编');
 							}
 						}else{
 							mui.toast('请输入详细地址');
-
 						}
 					}
 				}else{

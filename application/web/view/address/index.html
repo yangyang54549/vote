@@ -79,48 +79,34 @@
 
 				<div class="mui-row" style="background-color: rgba(0,0,0,0);  line-height: 15px; font-size: 15px;color: #8f8f94;">点击可修改（长按删除）
 				<p id="wu">暂无记录</p></div>
-						<a href="{:url('address/edit')}" class="rows">
+
+					{volist name="address" id="vo"}
+						<a href="{:url('address/edit',['id'=>$vo.id])}" class="rows" data-id="{$vo.id}">
 							<div class="mui-row">
 
 								<p class="mui-col-sm-6 mui-col-xs-6">
-									全清午
+									{$vo.name}
 								</p>
 								<p class="mui-col-sm-6 mui-col-xs-6 rs">
-									13203256488
+									{$vo.mobile}
 								</p>
 								<p class="mui-col-sm-12 mui-col-xs-12">
-									地址
+									{$vo.address}
 								</p>
 								<p class="mui-col-sm-6 mui-col-xs-6">
-									邮编
+									{$vo.postcode}
 								</p>
 								<p class="mui-col-sm-6 mui-col-xs-6 rs">
-									off
+									{if condition="$vo.is_default"}
+										on
+									{else /}
+										off
+									{/if}
 								</p>
 
 							</div>
 						</a>
-						<a href="dz.html" class="rows">
-							<div class="mui-row">
-
-								<p class="mui-col-sm-6 mui-col-xs-6">
-									全清午
-								</p>
-								<p class="mui-col-sm-6 mui-col-xs-6 rs">
-									13203256488
-								</p>
-								<p class="mui-col-sm-12 mui-col-xs-12">
-									地址
-								</p>
-								<p class="mui-col-sm-6 mui-col-xs-6">
-									邮编
-								</p>
-								<p class="mui-col-sm-6 mui-col-xs-6 rs">
-									off
-								</p>
-
-							</div>
-						</a>
+					{/volist}
 
 						<!--<div id="demo1" class="mui-progressbar mui-progressbar-infinite">
 							<span></span>
@@ -168,16 +154,31 @@ mui('.mui-scroll').on('longtap', '.rows', function() {
 
 					} else {
 
-						//确认
-						th.remove();
-						var ss = document.getElementsByClassName("rows").length;
-						if(ss<1){
-							document.getElementById("wu").style.display = "block";
-						}
-						setTimeout(function(){
-									mui.toast('删除成功');
-								},1500);
 
+						var id = th.getAttribute("data-id");
+
+
+						mui.post("{:url('address/delete')}",{
+							id:id
+						},function(data){
+								//服务器返回响应，根据响应结果，分析是否登录成功；
+								if (data.code==1) {
+									//确认
+									th.remove();
+									var ss = document.getElementsByClassName("rows").length;
+									if(ss<1){
+										document.getElementById("wu").style.display = "block";
+									}
+									setTimeout(function(){
+												mui.toast('删除成功');
+									},1500);
+
+								}else{
+									mui.toast(data.msg);
+								}
+
+							},'json'
+						);
 
 					}
 				}, 'div');
