@@ -13,6 +13,7 @@
 				z-index: 20;
 				background-color: #000;
 			}
+			
 			.mui-preview-header,
 			.mui-preview-footer {
 				position: absolute;
@@ -20,14 +21,17 @@
 				left: 0;
 				z-index: 10;
 			}
+			
 			.mui-preview-header {
 				height: 44px;
 				top: 0;
 			}
+			
 			.mui-preview-footer {
 				height: 50px;
 				bottom: 0px;
 			}
+			
 			.mui-preview-header .mui-preview-indicator {
 				display: block;
 				line-height: 25px;
@@ -39,6 +43,7 @@
 				border-radius: 12px;
 				font-size: 16px;
 			}
+			
 			.mui-preview-image {
 				display: none;
 				-webkit-animation-duration: 0.5s;
@@ -46,19 +51,23 @@
 				-webkit-animation-fill-mode: both;
 				animation-fill-mode: both;
 			}
+			
 			.mui-preview-image.mui-preview-in {
 				-webkit-animation-name: fadeIn;
 				animation-name: fadeIn;
 			}
+			
 			.mui-preview-image.mui-preview-out {
 				background: none;
 				-webkit-animation-name: fadeOut;
 				animation-name: fadeOut;
 			}
+			
 			.mui-preview-image.mui-preview-out .mui-preview-header,
 			.mui-preview-image.mui-preview-out .mui-preview-footer {
 				display: none;
 			}
+			
 			.mui-zoom-scroller {
 				position: absolute;
 				display: -webkit-box;
@@ -79,10 +88,12 @@
 				margin: 0;
 				-webkit-backface-visibility: hidden;
 			}
+			
 			.mui-zoom {
 				-webkit-transform-style: preserve-3d;
 				transform-style: preserve-3d;
 			}
+			
 			.mui-slider .mui-slider-group .mui-slider-item img {
 				width: auto;
 				height: auto;
@@ -90,16 +101,20 @@
 				max-height: 100%;
 				object-fit: cover;
 			}
+			
 			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
 				width: 100%;
 			}
+			
 			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
 				display: inline-table;
 			}
+			
 			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
 				display: table-cell;
 				vertical-align: middle;
 			}
+			
 			.mui-preview-loading {
 				position: absolute;
 				width: 100%;
@@ -108,9 +123,11 @@
 				left: 0;
 				display: none;
 			}
+			
 			.mui-preview-loading.mui-active {
 				display: block;
 			}
+			
 			.mui-preview-loading .mui-spinner-white {
 				position: absolute;
 				top: 50%;
@@ -120,10 +137,12 @@
 				height: 50px;
 				width: 50px;
 			}
+			
 			.mui-preview-image img.mui-transitioning {
 				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
 				transition: transform 0.5s ease, opacity 0.5s ease;
 			}
+			
 			@-webkit-keyframes fadeIn {
 				0% {
 					opacity: 0;
@@ -132,6 +151,7 @@
 					opacity: 1;
 				}
 			}
+			
 			@keyframes fadeIn {
 				0% {
 					opacity: 0;
@@ -140,6 +160,7 @@
 					opacity: 1;
 				}
 			}
+			
 			@-webkit-keyframes fadeOut {
 				0% {
 					opacity: 1;
@@ -148,6 +169,7 @@
 					opacity: 0;
 				}
 			}
+			
 			@keyframes fadeOut {
 				0% {
 					opacity: 1;
@@ -156,10 +178,12 @@
 					opacity: 0;
 				}
 			}
+			
 			p img {
 				max-width: 100%;
 				height: auto;
 			}
+			
 			.mui-slider-img-content {
 				position: absolute;
 				bottom: 10px;
@@ -169,11 +193,12 @@
 				text-align: center;
 				line-height: 21px
 			}
+			
 			.spans {
 				display: flex;
 				justify-content: center;
 			}
-
+			
 			.spans .mui-icon {
 				width: 30px;
 				height: 30px;
@@ -182,26 +207,30 @@
 				border-radius: 50%;
 				margin-bottom: 10px;
 			}
-
+			
 			.mui-row div {
-				text-align: center;color: #007aff;
+				text-align: center;
+				color: #007aff;
 			}
-			.mui-row div:nth-child(2){
+			
+			.mui-row div:nth-child(2) {
 				border: 1px solid rgba(196, 196, 196, 0.8);
 				border-radius: 5px;
 				background-color: rgba(196, 196, 196, 0.3);
 			}
-			.mui-media-body{
+			
+			.mui-media-body {
 				text-align: center;
 				font-size: 18px;
 			}
-			.mui-media-body P{
-				text-align:left;
+			
+			.mui-media-body P {
+				text-align: left;
 				margin-top: 10px;
 				font-size: 15px;
 			}
+			
 			header>.div {
-
 				position: absolute;
 				top: 15px;
 				left: 15px;
@@ -234,14 +263,12 @@
 
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable">
-			<!-- 主页面容器 -->
-			<div class="mui-inner-wrap">
+		
 				<!-- 菜单容器 -->
 
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
-					<div class="div" onclick="history.go(-1);"></div>
+					<div class="div" onclick="window.history.back()"></div>
 					<h1 class="mui-title mui-active">作品</h1>
 				</header>
 
@@ -286,7 +313,7 @@
 								<!--<div class="mui-card-header">页眉</div>-->
 								<!--内容区-->
 								<div class="mui-card-content">
-									<a href="#"><img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" data-preview-src="" data-preview-group="1"/></a>
+									<a href="#"><img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" data-preview-src="" data-preview-group="1" /></a>
 								</div>
 								<!--页脚，放置补充信息或支持的操作-->
 								<!--<div class="mui-card-footer">名称</div>-->
@@ -297,20 +324,15 @@
 
 					</div>
 				</div>
-				<div class="mui-off-canvas-backdrop"></div>
-				<div class="mui-backdrop" style="display: none;">
-
-				</div>
-			</div>
-		</div>
+			
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/mui.zoom.js"></script>
-	<script src="__WEB__/js/mui.pre.js"></script>
-	<script>
-		mui.previewImage();
-	</script>
+		<script src="__WEB__/js/mui.pre.js"></script>
+		<script>
+			mui.previewImage();
+		</script>
 		<script type="text/javascript">
 			mui.init();
 			(function($) {
@@ -324,6 +346,7 @@
 				window.top.location.href = this.href;
 				/*$(this).classList.remove("mui-active") */
 			});
+			
 			var ons = 3;
 			var onl;
 			//var mask = mui.createMask(callback);//callback为用户点击蒙版时自动执行的回调；
@@ -352,7 +375,7 @@
 						//点击取消	this.text("123123");
 
 					} else {
-window.location.href = "dingdan1.html";
+						window.location.href = "dingdan1.html";
 						//确认
 
 					}
