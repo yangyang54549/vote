@@ -202,6 +202,7 @@
 				var name = document.getElementById("name");
 				var tes = document.getElementById("text_s");
 				var lei = document.getElementById("leixing");
+				var leixid = document.getElementById("mui_views");
 				if(ss1 == s1) {
 					mui.toast('请上传图片')
 				} else {
@@ -210,16 +211,21 @@
 							if(lei.value != "") {
 								/*获取值*/
 								var Names = name.value;
-								var leis = lei.value;
-								var tess = tes.value;
+								var content = tes.value;
+								var leix = lei.value;
+								var leixid = leixid.value;
 
+								alert(Names);
+								alert(content);
+								alert(leix);
+								alert(leixid);
 								mui.post("{:url('match/index')}",{
 									title:Names,
-									content:tess,
-									type:leis
+									content:content,
+									type:leixid
 								},function(data){
 
-										mui.toast('提交完成');
+										mui.toast(data.msg);
 										/*清空*/
 										document.getElementById("nextview").src = "__WEB__/img/a11.png";
 										name.value = "";
