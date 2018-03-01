@@ -251,12 +251,12 @@
 
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		
+
 
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
 					<div class="div" onclick="window.history.back()"></div>
-					
+
 					<h1 class="mui-title mui-active">作品</h1>
 				</header>
 
@@ -283,13 +283,13 @@
 								<!--<div class="mui-card-header">页眉</div>-->
 								<!--内容区-->
 								<div class="mui-card-content">
-									<a href="#"><img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" data-preview-src="" data-preview-group="1" /></a>
+									<a href="#"><img src="{$qunying.img}" data-preview-src="" data-preview-group="1" /></a>
 								</div>
 								<!--页脚，放置补充信息或支持的操作-->
 								<div class="mui-media-body" style="padding: 10px;">
-									名家字画
-									<p style="text-indent:2em;"> 吴败，字国旗，号画魔,云南江川人。4岁学习书画，其人画画成魔，15年不出家门。读周易，悟太极，理解宇宙变化原理，融和中国传统山水，花鸟。启功先生观其书画，书赠“少年老成”四字，既表认同，更多激励。中国艺术大师朱纪瞻先生在上海为吴败题写了“滇南鬼才”四字，以奖励后生。
-
+									{$qunying.title}
+									<p style="text-indent:2em;">
+									{$qunying.content}
 									</p>
 								</div>
 <div class="mui-card mui-row" >
@@ -297,7 +297,7 @@
 									当前票数
 								</div>
 								<div class="mui-col-sm-6 mui-col-xs-6"   >
-									150
+									{$qunying.poll}
 								</div>
 							</div>
 							</div>
@@ -306,7 +306,7 @@
 
 					</div>
 				</div>
-			
+
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 
@@ -323,11 +323,11 @@
 					//indicators: false, //是否显示滚动条,默认是true
 				});
 			})(mui);
-			
+
 		mui.init({
 			swipeBack:true //启用右滑关闭功能
 		});
-	
+
 		</script>
 	</body>
 

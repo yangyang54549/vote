@@ -27,7 +27,7 @@ class Match extends Yang
                 $this->ret['code'] = -200;
                 return json($this->ret);
             }
-
+            $url = "/tmp/production/".$num.".jpg";
             $arr['img'] = $url;
             $type = Qunying::insert($arr);
             if($type){
