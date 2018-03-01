@@ -80,44 +80,21 @@
 						<div class="mui-row" style="background-color: rgba(0,0,0,0);  line-height: 15px; font-size: 15px;color: #8f8f94;">点击可申请提现（长按删除）
 						<p id="wu">暂无记录</p>
 						</div>
+					{volist name="bank" id="vo"}
 						<a href="{:url('pay/withdraw')}" class="rows">
 						<div class="mui-row"  >
 							<div class="mui-col-sm-4 mui-col-xs-4">
 								<img src="__WEB__/img/png/10.png"  />
 							</div>
 							<div class="mui-col-sm-6 mui-col-xs-6">
-								<h4 style="line-height: 30px; margin-top:5px ; color: black;">中国农业银行</h4>
-								<p style="line-height: 20px;">尾号为3045的储蓄卡</p>
+								<h4 style="line-height: 30px; margin-top:5px ; color: black;">{$vo.bank_name}</h4>
+								<p style="line-height: 20px;">尾号为{$vo.cardnum}的储蓄卡</p>
 							</div>
 						</div></a>
-						<a href="{:url('pay/withdraw')}" class="rows">
-						<div class="mui-row"  >
-							<div class="mui-col-sm-4 mui-col-xs-4">
-								<img src="__WEB__/img/png/11.png"  />
-							</div>
-							<div class="mui-col-sm-6 mui-col-xs-6">
-								<h4 style="line-height: 30px; margin-top:5px ; color: black;">中国农业银行</h4>
-								<p style="line-height: 20px;">尾号为3045的储蓄卡</p>
-							</div>
-						</div></a>
-						<a href="{:url('pay/withdraw')}" class="rows">
-						<div class="mui-row"  >
-							<div class="mui-col-sm-4 mui-col-xs-4">
-								<img src="__WEB__/img/png/12.png"  />
-							</div>
-							<div class="mui-col-sm-6 mui-col-xs-6">
-								<h4 style="line-height: 30px; margin-top:5px ; color: black;">中国农业银行</h4>
-								<p style="line-height: 20px;">尾号为3045的储蓄卡</p>
-							</div>
-						</div></a>
+					{/volist}
 
-						<!--<div id="demo1" class="mui-progressbar mui-progressbar-infinite">
-							<span></span>
-						</div>-->
 						<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;">添加银行卡</button>
-						<!--<div id="demo12" class="mui-progressbar">
-	<span></span>
-</div>-->
+
 					</div>
 				</div>
 				<div class="mui-off-canvas-backdrop"></div>
