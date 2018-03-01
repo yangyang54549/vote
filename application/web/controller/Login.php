@@ -59,7 +59,7 @@ class Login extends Yang
             unset($arr['yanz']);
             $arr['image'] = '/static/web/img/painting/gh/timg (7).jpg';
             $arr['create_time'] = time();
-            $arr['status'] = 1;
+            $arr['status'] = 0;
             $arr['password'] = md5($arr['password']);
             $user = User::insert($arr);
             if($user){

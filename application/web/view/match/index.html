@@ -61,7 +61,7 @@
    				left: 0;
    				top: 0;
    				box-sizing:border-box;
-   				
+
 				width: 102vw;
 				height: 100vh;
 				overflow:auto;
@@ -116,7 +116,7 @@
 				top: 0px;
 			}
 			.mui-scroll{
-				-webkit-overflow-scrolling: touch; 
+				-webkit-overflow-scrolling: touch;
 			}
 		</style>
 
@@ -182,13 +182,13 @@
 							<input id="imgOne" name="imgOne" type="hidden" />
 
 						</form>
-						
+
 					</div>
 					<ul class="mui-table-view" id="mui_view">
 							{volist name="type" id="vo"}
 							<li class="mui-table-view-cell" data-type = "{$vo.id}">{$vo.name}</li>
 							{/volist}
-							
+
 							<input type="hidden" name="" id="mui_views" value="" />
 						</ul>
 				</div>
@@ -232,6 +232,7 @@
 				var tes = document.getElementById("text_s");
 				var lei = document.getElementById("leixing");
 				var leixid = document.getElementById("mui_views");
+				var domimg = document.getElementById("preview");
 				if(ss1 == s1) {
 					mui.toast('请上传图片')
 				} else {
@@ -240,15 +241,21 @@
 							if(lei.value != "") {
 								/*获取值*/
 								var Names = name.value;
-
 								var content = tes.value;
 								var leix = lei.value;
 								var leixid = leixid.value;
-								
+
+								if (domimg.src == "") {
+									mui.toast('请上传图片');
+									return false;
+								}
+								console.log(domimg.src);
+
 								mui.post("{:url('match/index')}",{
 									title:Names,
 									content:content,
-									type:leixid
+									type:leixid,
+									img:domimg.src
 								},function(data){
 
 										mui.toast(data.msg);
