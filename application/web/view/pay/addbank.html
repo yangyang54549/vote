@@ -121,7 +121,7 @@
 
 				<div class="mui-input-row">
 					<label>银行卡号</label>
-					<input id='identity' type="tel" class="mui-input-clear mui-input" placeholder="请输入银行卡号" maxlength="18">
+					<input id='identity' type="number" class="mui-input-clear mui-input" placeholder="请输入银行卡号"  oninput="if(value.length>18)value=value.slice(0,18)">
 				</div>
 				<div class="mui-input-row">
 					<label>开户行</label>
