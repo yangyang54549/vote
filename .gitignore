@@ -2,3 +2,5 @@
 *.log
 
 runtime/temp/
+application/common/复制 phone.html
+*.html
