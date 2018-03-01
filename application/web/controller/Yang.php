@@ -19,10 +19,11 @@ class Yang extends Controller
         $act = $request->action();
         $url = $con.'/'.$act;
         if (!in_array($url,$this->arr)) {
-            $suser = Session::get('user');
+            $suser = session('user');
             if (!isset($suser)) {
                 $this->redirect('web/login/login');
             }
+            $this->id = session('user.id');
         }
     }
 }

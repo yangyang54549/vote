@@ -8,9 +8,13 @@ class Match extends Yang
 {
     public function index()
     {
-        $type = Type::select();
-        $this->assign('type',$type);
-        return $this->fetch();
+        if ($this->request->isAjax()) {
+
+        }else{
+            $type = Type::select();
+            $this->assign('type',$type);
+            return $this->fetch();
+        }
     }
 
     public function info()
