@@ -28,4 +28,9 @@ class Qunying extends Yang
         $this->assign('qunying',$qunying);
         return $this->fetch();
     }
+
+    public function toupiao()
+    {
+    }
+
 }
