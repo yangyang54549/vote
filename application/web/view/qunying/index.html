@@ -348,8 +348,7 @@ mui.init({
 						var li = document.createElement('div');
 						li.className = 'mui-card';
 						li.innerHTML = '<div class="mui-card-content"><a href="{:url('qunying/info')}"><img src="__WEB__/img/painting/gr/timg (26).jpg" /></a></div><div class="mui-card-footer">名称</div><div class="spans"><span class="">点赞</span> </div>';
-						var b = i % 2;
-						if(b==0){
+						if(table.offsetHeight>table2.offsetHeight){
 							table2.appendChild(li);
 						}else{
 							table.appendChild(li);

@@ -241,8 +241,7 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 						var li = document.createElement('div');
 						li.className = 'mui-card';
 						li.innerHTML = '<a href="{:url('index/info')}"><div class="mui-card-content"><img src="__WEB__/img/painting/gs/u=1012637593,3984533236&fm=27&gp=0.jpg" /></div><div class="mui-card-footer">名称</div></a>';
-						var b = i % 2;
-						if(b==0){
+						if(table.offsetHeight>table2.offsetHeight){
 							table2.appendChild(li);
 						}else{
 							table.appendChild(li);
