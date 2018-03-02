@@ -69,8 +69,11 @@
 								<input type="number" id="number" class="mui-input-clear" placeholder="只能为整数" oninput="if(value.length>7)value=value.slice(0,7)" step="0" style="ime-mode:disabled" oninput="if(value.length>7)value=value.slice(0,7)" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}">
 							</div>
 							<div class="mui-input-row" style="height: auto;">
-								<p style="margin: 10px 10px 0px; ">可提现金额：{$user.integral}元</p>
+
+								<p style="margin: 10px 10px 0px; ">积分：{$user.integral}</p>
 								<p style="margin: 5px 10px; font-size: 12px; ">100积分等于1元</p>
+
+								
 							</div>
 							
 						</form>
