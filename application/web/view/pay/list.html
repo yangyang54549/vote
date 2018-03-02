@@ -81,7 +81,7 @@
 						<p id="wu">暂无记录</p>
 						</div>
 					{volist name="bank" id="vo"}
-						<a href="{:url('pay/withdraw')}" class="rows">
+						<a href="{:url('pay/withdraw',['id'=>$vo.id])}" class="rows">
 						<div class="mui-row"  >
 							<div class="mui-col-sm-4 mui-col-xs-4">
 								<img src="__WEB__/img/png/10.png"  />
