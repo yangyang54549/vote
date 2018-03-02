@@ -3,6 +3,7 @@ namespace app\web\controller;
 
 use app\web\controller\Yang;
 use app\common\model\Bank;
+use app\common\model\User;
 
 class Pay extends Yang
 {
@@ -26,46 +27,46 @@ class Pay extends Yang
     }
     public function withdraw()
     {
+        $id = input('id');
+        $user = User::where(['id'=>$this->id])->find();
+        $bank = Bank::where(['id'=>$id])->find();
+        $this->assign('user',$user);
+        $this->assign('bank',$bank);
         return $this->fetch();
     }
     public function addbank()
     {
-        return $this->fetch();
+        if ($this->request->isAjax()) {
+             $arr = input('');
+             $user = User::where(['id'=>$this->id])->find();
+             if ($arr['name']!=$user['id_name']) {
+                  $this->ret['msg'] = '真实姓名和实名认证姓名不一致';
+                  $this->ret['code'] = -200;
+                  return json($this->ret);
+             }
+             $arr['user_id'] = $this->id;
+             $arr['create_time'] = time();
+             $add = Bank::insert($arr);
+             if ($add) {
+                  $this->ret['msg'] = '添加银行卡成功';
+                  return json($this->ret);
+             }else{
+                  $this->ret['msg'] = '添加银行卡失败';
+                  $this->ret['code'] = -200;
+                  return json($this->ret);
+             }
+        }else{
+            return $this->fetch();
+        }
     }
     public function withdrawlog()
     {
         return $this->fetch();
     }
 
-    public function addwithdraw()
-    {
-        $arr = ['code'=>-200,'data'=>'','msg'=>'添加银行卡失败'];
-        if ($this->request->isAjax()) {
-             $data = input();
-             $user = U::where(['id'=>$this->id])->find();
-             if ($user['authentication']!=2) {
-                  $arr['msg'] = '请实名认证成功后再添加银行卡';
-                  return json_encode($arr);
-             }
-             $identity = I::where(['user_id'=>$this->id])->find();
-             if ($data['name']!=$identity['name']) {
-                  $arr['msg'] = '真实姓名和实名认证姓名不一致';
-                  return json_encode($arr);
-             }
-             $data['user_id'] = $this->id;
-             $data['create_time'] = time();
-             $add = B::insert($data);
-             if ($add) {
-                $arr['code'] = 1;
-                $arr['msg'] = '添加银行卡成功';
-                return json_encode($arr);
-             }else{
-                return json_encode($arr);
-             }
-        }else{
-            return $this->fetch();
-        }
-    }
+
+
+
     public function tiwithdraw()
     {
         $arr = ['code'=>-200,'data'=>'','msg'=>'提现失败'];

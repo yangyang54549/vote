@@ -191,7 +191,6 @@
 <input type="hidden" name="" id="datatype" value="" />
 			</ul>
 		<script src="__WEB__/js/mui.min.js"></script>
-		<script src="__WEB__/js/app.js"></script>
 		<script>
 			mui(".mui-input-row").on("tap", "#xuan", function() {
 				document.getElementById("mui_view").style.display = "block";
@@ -218,8 +217,26 @@
 
 								if(identity.value != "" || identity.value.length == 18) {
 									if(yh.value !="") {
-										mui.toast('添加成功');
-										window.top.location.href = "tx-jl.html";
+
+									mui.post("{:url('pay/addbank')}",{
+										name:name.value,
+										mobile:phone.value,
+										cardnum:identity.value,
+										bank_name:yh.value
+									},function(data){
+											//服务器返回响应，根据响应结果，分析是否登录成功；
+											if (data.code==1) {
+												mui.toast(data.msg);
+												setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+													window.location = "{:url('pay/list')}";
+												}, 1000);
+											}else{
+												mui.toast(data.msg);
+											}
+
+										},'json'
+									);
+
 									} else {
 										mui.toast('请选择银行');
 									}
