@@ -78,7 +78,19 @@
 				line-height: 30px;
 				font-size: 12px;
 			}
+/*position: fixed;
+   				left: 0;
+   				top: 0;
+   				box-sizing:border-box;
 
+				width: 102vw;
+				height: 100vh;
+				overflow:auto;
+				
+				padding: 0px;
+				padding-top: 50px;
+				display: none;
+				z-index: 100;*/
 			/*.mui-input-row
 			 {
 				height: auto !important;
@@ -89,15 +101,38 @@
 				position: fixed;
 				top: 0;
 				left: 0;
-				width: 100vw;
+				width: 102vw;
 				height: 100vh;
 				transition: all .5s ease-in .1s;
 				box-sizing: border-box;
-				padding: 44px 20px 0;
+				overflow:auto;
+				padding: 50px 0px 0px;
 				display: none;
 			}
-
-			.mui-table-view-cell.mui-active {
+			 #mui_view::-webkit-scrollbar-track
+    {
+        background-color: #ffffff;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
+    }
+    /*定义滚动条高宽及背景*/
+    #mui_view::-webkit-scrollbar
+    {
+        width: 3px;
+        background-color: rgba(255, 255, 255, 0.34);
+    }
+    /*定义滚动条*/
+    #mui_view::-webkit-scrollbar-thumb
+    {
+        background-color: #ffffff;
+        border-radius: 2px;
+    }
+			#mui_view .mui-table-view-cell{
+				border-bottom: 1px solid #c8c7cc;
+			}
+#mui_view .mui-table-view-cell:after {
+   opacity: 0;
+}
+			.mui-table-view-cell .mui-active {
 				background-color: #0062CC;
 			}
 		</style>
@@ -132,28 +167,29 @@
 				<button id='reg' class=" mui-btn-primary" style="width: 100%; ">添加</button>
 			</div>
 
-			<ul class="mui-table-view" id="mui_view">
-				<li class="mui-table-view-cell">中国邮政储蓄银行<input type="hidden" name="" id="" value="1" /></li>
-				<li class="mui-table-view-cell">中国农业银行<input type="hidden" name="" id="" value="2" /></li>
-				<li class="mui-table-view-cell">中国工商银行<input type="hidden" name="" id="" value="3" /></li>
-				<li class="mui-table-view-cell">建设银行<input type="hidden" name="" id="" value="4" /></li>
-				<li class="mui-table-view-cell">招商银行<input type="hidden" name="" id="" value="5" /></li>
-				<li class="mui-table-view-cell">交通银行<input type="hidden" name="" id="" value="6" /></li>
-				<li class="mui-table-view-cell">中国银行<input type="hidden" name="" id="" value="7" /></li>
-				<li class="mui-table-view-cell">中国民生银行 <input type="hidden" name="" id="" value="8" /></li>
-				<li class="mui-table-view-cell">中国光大银行<input type="hidden" name="" id="" value="9" /></li>
-				<li class="mui-table-view-cell">华夏银行<input type="hidden" name="" id="" value="10" /></li>
-				<li class="mui-table-view-cell">广东发展银行<input type="hidden" name="" id="" value="12" /></li>
-				<li class="mui-table-view-cell">福建兴业银行<input type="hidden" name="" id="" value="13" /></li>
-				<li class="mui-table-view-cell">深圳市商业银行<input type="hidden" name="" id="" value="14" /></li>
-				<li class="mui-table-view-cell">广州市商业银行<input type="hidden" name="" id="" value="15" /></li>
-				<li class="mui-table-view-cell">中信实业银行<input type="hidden" name="" id="" value="16" /></li>
-				<li class="mui-table-view-cell">农村信用社<input type="hidden" name="" id="" value="17" /></li>
-				<li class="mui-table-view-cell">上海浦东发展银行<input type="hidden" name="" id="" value="18" /></li>
-				<li class="mui-table-view-cell">上海银行<input type="hidden" name="" id="" value="19" /></li>
-
-			</ul>
+			
 		</div>
+		<ul class="mui-table-view" id="mui_view">
+				<li class="mui-table-view-cell" data-type = "1">中国邮政储蓄银行</li>
+				<li class="mui-table-view-cell" data-type = "2">中国农业银行</li>
+				<li class="mui-table-view-cell" data-type = "3">中国工商银行</li>
+				<li class="mui-table-view-cell" data-type = "4">建设银行</li>
+				<li class="mui-table-view-cell" data-type = "5">招商银行</li>
+				<li class="mui-table-view-cell" data-type = "6">交通银行</li>
+				<li class="mui-table-view-cell" data-type = "7">中国银行</li>
+				<li class="mui-table-view-cell" data-type = "8">中国民生银行 </li>
+				<li class="mui-table-view-cell" data-type = "9">中国光大银行</li>
+				<li class="mui-table-view-cell" data-type = "10">华夏银行</li>
+				<li class="mui-table-view-cell" data-type = "11">广东发展银行</li>
+				<li class="mui-table-view-cell" data-type = "12">福建兴业银行</li>
+				<li class="mui-table-view-cell" data-type = "13">深圳市商业银行</li>
+				<li class="mui-table-view-cell" data-type = "14">广州市商业银行</li>
+				<li class="mui-table-view-cell" data-type = "15">中信实业银行</li>
+				<li class="mui-table-view-cell" data-type = "16">农村信用社</li>
+				<li class="mui-table-view-cell" data-type = "17">上海浦东发展银行</li>
+				<li class="mui-table-view-cell" data-type = "18">上海银行</li>
+<input type="hidden" name="" id="datatype" value="" />
+			</ul>
 		<script src="__WEB__/js/mui.min.js"></script>
 		<script src="__WEB__/js/app.js"></script>
 		<script>
@@ -164,6 +200,7 @@
 			//mui.toast(this.firstChild.value);
 			//this.firstChild.value
 			document.getElementById("xuan").value = this.innerText;
+			document.getElementById("datatype").value = this.getAttribute("data-type");
 			document.getElementById("mui_view").style.display = "none";
 
 			})
@@ -172,7 +209,7 @@
 				var phone = document.getElementById("phone");
 				var identity = document.getElementById("identity");
 				var yh = document.getElementById("xuan");
-
+				var datas= document.getElementById("datatype").value;
 
 					if(name.value != "" || name.value.length > 1) {
 						if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
