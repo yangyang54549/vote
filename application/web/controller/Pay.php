@@ -29,11 +29,71 @@ class Pay extends Yang
     public function withdraw()
     {
         if ($this->request->isAjax()) {
+            $arr = input('');
+            $user = U::where(['id'=>$this->id])->find();
+            if ($arr['money']!=intval($arr['money'])) {
+                  $this->ret['msg'] = '提现金额必须为整数';
+                  $this->ret['code'] = -200;
+                  return json($this->ret);
+            }
+            if ($arr['money'] > intval($user['integral']/100)) {
+                  $this->ret['msg'] = '提现金额大于可提现金额';
+                  $this->ret['code'] = -200;
+                  return json($this->ret);
+            }
+            if ($arr['money']<99) {
+              $this->ret['msg'] = '提现金额必须大于或等于100';
+              return json($this->ret);
+            }
+            // 启动事务
+            Db::startTrans();
+            try{
+
+                $bank=B::where(['id'=>$bank_id])->find();
+                $data['user_id'] = $this->id;
+                $data['money'] = $money;
+                $data['charge'] = $charge;
+                $data['bank_id'] = $bank_id;
+                $data['bank_name'] = $bank['bank_name'];
+                $data['bank_card'] = $bank['cardnum'];
+                $data['create_time'] = time();
+                $data['update_time'] = time();
+
+                $arr['msg'] = '提现申请失败!';
+                $add = W::insert($data);
+                $userId = W::getLastInsID();
+
+                $row['user_id'] = $this->id;
+                $row['or'] = 2;
+                $row['money'] =$money;
+                $row['charge'] = $charge;
+                $row['comment'] = '提现';
+                $row['status'] = 0;
+                $row['create_time'] = time();
+                $row['withdraw_id'] = $userId;
+                $row['bank_id'] = $bank_id;
+                $row['accomplish_time'] = 0;
+                D::insert($row);
+
+                $balance = $user['balance'] - $money - $charge;
+                $id = $this->id;
+                $full = U::where(['id'=> $id])->update(['balance' => $balance]);
+                Session::set('user.balance',$balance);
+                $arr['code'] = 1;
+                $arr['msg'] = '提现申请成功';
+
+                // 提交事务
+                Db::commit();
+            } catch (\Exception $e) {
+                // 回滚事务
+                Db::rollback();
+            }
+
+
 
         }else{
             $id = input('id');
             $user = User::where(['id'=>$this->id])->find();
-            $user['integral'] = intval($user['integral']/100);
             $bank = Bank::where(['id'=>$id])->find();
             $bank['cardnum'] = substr($bank['cardnum'],-4);
             $this->assign('user',$user);
