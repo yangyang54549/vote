@@ -51,24 +51,11 @@
 		</style>
 	</head>
 
-	<body>
-		<!-- 主界面菜单同时移动 -->
-		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable">
-			<!-- 主页面容器 -->
-			<div class="mui-inner-wrap">
-				<!-- 菜单容器 -->
-				<aside class="mui-off-canvas-left" id="offCanvasSide">
-					<div class="mui-scroll-wrapper">
-						<div class="mui-scroll">
-							<!-- 菜单具体展示内容 -->
-
-						</div>
-					</div>
-				</aside>
+	<body class="mui-ios mui-ios-9 mui-ios-9-1">
+		
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
-					<div class="div" onclick="history.go(-1);"></div>
+					<div class="div" onclick="window.history.back()"></div>
 					<h1 class="mui-title mui-active">银行卡</h1>
 					<!--<a class=" mui-pull-right mui-btn-link">提现记录</a>-->
 				</header>
@@ -97,20 +84,14 @@
 
 					</div>
 				</div>
-				<div class="mui-off-canvas-backdrop"></div>
-			</div>
-		</div>
+			
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/muis.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init()
 			mui('.mui-input-row input').input();
-//			mui("#demo1").progressbar().show();
-			/*mui("#demo12").progressbar({
-				progress: 50
-			}).show();
-*/
+
 mui.init({
 gestureConfig:{
 tap: true, //默认为true

@@ -140,7 +140,7 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<div class="div" onclick="history.go(-1);"></div>
+			<div class="div" onclick="window.history.back()"></div>
 			<h1 class="mui-title">添加银行卡</h1>
 		</header>
 		<div class="mui-content">
@@ -204,15 +204,20 @@
 
 			})
 			mui(".mui-content-padded").on("tap", "#reg", function() {
+				var ths = this;
+				ths.className +=" mui-disabled";
+				
 				var name = document.getElementById("name");
 				var phone = document.getElementById("phone");
 				var identity = document.getElementById("identity");
 				var yh = document.getElementById("xuan");
 				var datas= document.getElementById("datatype").value;
-
+				
 					if(name.value != "" || name.value.length > 1) {
 						if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
 							mui.toast('手机号错误，请重新输入');
+							ths.classList.remove("mui-disabled");
+							
 						} else {
 
 								if(identity.value != "" || identity.value.length == 18) {
@@ -231,22 +236,23 @@
 													window.location = "{:url('pay/list')}";
 												}, 1000);
 											}else{
-												mui.toast(data.msg);
+												mui.toast(data.msg);ths.classList.remove("mui-disabled");
 											}
 
 										},'json'
 									);
 
 									} else {
-										mui.toast('请选择银行');
+										mui.toast('请选择银行');ths.classList.remove("mui-disabled");
 									}
 								} else {
-									mui.toast('请输入银行卡号');
+									mui.toast('请输入银行卡号');ths.classList.remove("mui-disabled");
 								}
 
 						}
 					} else {
 						mui.toast('请重新输入姓名');
+						ths.classList.remove("mui-disabled");
 					}
 
 				/*if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
