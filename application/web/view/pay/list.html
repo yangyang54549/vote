@@ -52,7 +52,7 @@
 	</head>
 
 	<body class="mui-ios mui-ios-9 mui-ios-9-1">
-		
+
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
 					<div class="div" onclick="window.history.back()"></div>
@@ -68,26 +68,26 @@
 						<p id="wu">暂无记录</p>
 						</div>
 					{volist name="bank" id="vo"}
-						<a href="{:url('pay/withdraw',['id'=>$vo.id])}" class="rows">
+						<a href="{:url('pay/withdraw',['id'=>$vo.id])}" class="rows" data-id="{$vo.id}">
 						<div class="mui-row"  >
 							<div class="mui-col-sm-4 mui-col-xs-4">
-								<img src="__WEB__/img/png/10.png"  />
+								<img src="{$vo.image}"  />
 							</div>
 							<div class="mui-col-sm-6 mui-col-xs-6">
 								<h4 style="line-height: 30px; margin-top:5px ; color: black;">{$vo.bank_name}</h4>
 								<p style="line-height: 20px;">尾号为{$vo.cardnum}的储蓄卡</p>
 							</div>
-						</div></a>
+						</div>
+						</a>
 					{/volist}
 
 						<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;">添加银行卡</button>
 
 					</div>
 				</div>
-			
+
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
-		<script src="__WEB__/js/muis.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init()
 			mui('.mui-input-row input').input();
@@ -107,26 +107,31 @@ release:false//默认为false，不监听
 mui('.mui-scroll').on('longtap', '.rows', function() {
 	var th = this;
 				mui.confirm("确认删除？", '删除', ['取消', '确认'], function(e) {
-
 					if(e.index == 0) {
-						//点击取消	this.text("123123");
 						setTimeout(function(){
 									mui.toast('取消删除');
 								},1000);
-
 					} else {
 
-						//确认
-						th.remove();
-						var ss = document.getElementsByClassName("rows").length;
-						if(ss<1){
-							document.getElementById("wu").style.display = "block";
-						}
-						setTimeout(function(){
-									mui.toast('删除成功');
-								},1000);
+						var id = th.getAttribute("data-id");
+						mui.post("{:url('pay/delete')}",{
+							id:id
+						},function(data){
+								//服务器返回响应，根据响应结果，分析是否登录成功；
+								if (data.code==1) {
+									//确认
+									th.remove();
+									var ss = document.getElementsByClassName("rows").length;
+									if(ss<1){
+										document.getElementById("wu").style.display = "block";
+									}
+									mui.toast(data.msg);
+								}else{
+									mui.toast(data.msg);
+								}
 
-
+							},'json'
+						);
 					}
 				}, 'div');
 				//mui.toast('取消删除成功');

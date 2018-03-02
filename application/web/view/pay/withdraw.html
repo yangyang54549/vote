@@ -42,7 +42,7 @@
 	<body>
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		
+
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
 					<div class="div" onclick="window.history.back()"></div>
@@ -56,7 +56,7 @@
 						<!-- 主界面具体展示内容 -->
 						<div class="mui-row" style="margin: 10px; background-color: white;">
 							<div class="mui-col-sm-4 mui-col-xs-4">
-								<img src="__WEB__/img/png/10.png" width="60" height="60" />
+								<img src="{$bank.image}" width="60" height="60" />
 							</div>
 							<div class="mui-col-sm-6 mui-col-xs-6">
 								<h4 style="line-height: 30px; margin-top:5px ;">{$bank.bank_name}</h4>
@@ -71,16 +71,16 @@
 							<div class="mui-input-row" style="height: auto;">
 
 								<p style="margin: 10px 10px 0px; ">积分：{$user.integral}</p>
-								<p style="margin: 5px 10px; font-size: 12px; ">100积分等于1元</p>
+								<p style="margin: 5px 10px; font-size: 12px; ">100积分等于1元,提现收取2%手续费,申请提现后一并扣除.可在提现记录中查看</p>
 
-								
+
 							</div>
-							
+
 						</form>
 						<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;">确认提现</button>
 					</div>
 				</div>
-			
+
 <script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 <script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 
@@ -95,36 +95,37 @@ mui('body').on('tap', 'a', function() {
 				ths.className +=" mui-disabled";
 				var user = "{$user.integral}";
 				var users = parseInt(parseInt(user)/100);
-				
+
 				var th = document.getElementById("number");
 				if(!th.value || th.value.trim() == "") {
 					var label = th.previousElementSibling;
 					mui.alert(label.innerText + "不允许为空");
 					ths.classList.remove("mui-disabled");
 				} else {
-					
+
 					if(th.value>users){
 					mui.alert("提现金额不能大于可提现金额");
 					ths.classList.remove("mui-disabled");
 					}else{
 						var bank_id = "{$bank.id}";
 					mui.post("{:url('pay/withdraw')}",{
-						
+						bank_id:bank_id,
+						money:th.value
 					},function(data){
 							//服务器返回响应，根据响应结果，分析是否登录成功；
-//							if (data.code==1) {
-//								mui.toast(data.msg);
-//								setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
-//									window.location = "{:url('index/index')}";
-//								}, 1000);
-//							}else{
-//								mui.toast(data.msg);
-//							}
+							if (data.code==1) {
+								mui.toast(data.msg);
+								setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+									window.location = "{:url('pay/list')}";
+								}, 1000);
+							}else{
+								mui.toast(data.msg);
+								ths.classList.remove("mui-disabled");//解除禁止
+							}
 						},'json'
 					);
-					mui.alert('验证通过!');
 					}
-					
+
 				}
 
 			});

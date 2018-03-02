@@ -86,7 +86,7 @@
 				width: 102vw;
 				height: 100vh;
 				overflow:auto;
-				
+
 				padding: 0px;
 				padding-top: 50px;
 				display: none;
@@ -167,7 +167,7 @@
 				<button id='reg' class=" mui-btn-primary" style="width: 100%; ">添加</button>
 			</div>
 
-			
+
 		</div>
 		<ul class="mui-table-view" id="mui_view">
 				<li class="mui-table-view-cell" data-type = "1">中国邮政储蓄银行</li>
@@ -206,18 +206,18 @@
 			mui(".mui-content-padded").on("tap", "#reg", function() {
 				var ths = this;
 				ths.className +=" mui-disabled";
-				
+
 				var name = document.getElementById("name");
 				var phone = document.getElementById("phone");
 				var identity = document.getElementById("identity");
 				var yh = document.getElementById("xuan");
 				var datas= document.getElementById("datatype").value;
-				
+
 					if(name.value != "" || name.value.length > 1) {
 						if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
 							mui.toast('手机号错误，请重新输入');
 							ths.classList.remove("mui-disabled");
-							
+
 						} else {
 
 								if(identity.value != "" || identity.value.length == 18) {
@@ -227,7 +227,8 @@
 										name:name.value,
 										mobile:phone.value,
 										cardnum:identity.value,
-										bank_name:yh.value
+										bank_name:yh.value,
+										image:datas
 									},function(data){
 											//服务器返回响应，根据响应结果，分析是否登录成功；
 											if (data.code==1) {
