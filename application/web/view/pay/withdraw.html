@@ -94,7 +94,7 @@ mui('body').on('tap', 'a', function() {
 				var ths = this;
 				ths.className +=" mui-disabled";
 				var user = "{$user.integral}";
-				user = parseInt(user);
+				var users = parseInt(parseInt(user)/100);
 				
 				var th = document.getElementById("number");
 				if(!th.value || th.value.trim() == "") {
@@ -103,7 +103,7 @@ mui('body').on('tap', 'a', function() {
 					ths.classList.remove("mui-disabled");
 				} else {
 					
-					if(th.value>user){
+					if(th.value>users){
 					mui.alert("提现金额不能大于可提现金额");
 					ths.classList.remove("mui-disabled");
 					}else{
