@@ -15,6 +15,8 @@ class Pay extends Yang
     }
     public function paylog()
     {
+        $arr = Detail::where(['user_id'=>$this->id,'or'=>1])->order('create_time desc')->select();
+        $this->assign('arr',$arr);
         return $this->fetch();
     }
     public function list()
@@ -122,7 +124,7 @@ class Pay extends Yang
     }
     public function withdrawlog()
     {
-        $arr = Detail::where(['user_id'=>$this->id])->order('create_time desc')->select();
+        $arr = Detail::where(['user_id'=>$this->id,'or'=>2])->order('create_time desc')->select();
         foreach ($arr as $k => $v) {
             $arr[$k]['bank_card'] = substr($v['bank_card'],-4);
             $arr[$k]['bank_name'] = $v['bank_name'];
