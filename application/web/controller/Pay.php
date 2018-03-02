@@ -4,6 +4,7 @@ namespace app\web\controller;
 use app\web\controller\Yang;
 use app\common\model\Bank;
 use app\common\model\User;
+use app\common\model\Detail;
 use think\Db;
 
 class Pay extends Yang
@@ -18,7 +19,6 @@ class Pay extends Yang
     }
     public function list()
     {
-
         $bank = Bank::where(['user_id'=>$this->id])->order('create_time desc')->select();
         foreach ($bank as $k => $v) {
             $bank[$k]['cardnum'] = substr($v['cardnum'],-4);
@@ -30,67 +30,60 @@ class Pay extends Yang
     {
         if ($this->request->isAjax()) {
             $arr = input('');
-            $user = U::where(['id'=>$this->id])->find();
+            $rate = db('rate')->find();
+            $user = User::where(['id'=>$this->id])->find();
             if ($arr['money']!=intval($arr['money'])) {
                   $this->ret['msg'] = '提现金额必须为整数';
                   $this->ret['code'] = -200;
                   return json($this->ret);
             }
-            if ($arr['money'] > intval($user['integral']/100)) {
+            if ($arr['money'] > $user['integral']/100) {
                   $this->ret['msg'] = '提现金额大于可提现金额';
                   $this->ret['code'] = -200;
                   return json($this->ret);
             }
             if ($arr['money']<99) {
-              $this->ret['msg'] = '提现金额必须大于或等于100';
-              return json($this->ret);
+                $this->ret['msg'] = '提现金额必须大于或等于100';
+                $this->ret['code'] = -200;
+                return json($this->ret);
+            }
+            $charge = intval($arr['money']*$rate['rate']);
+            $money = $charge+$arr['money']*100;
+            if ($money>$user['integral']) {
+                $this->ret['msg'] = '手续费和提现金额不可超过余额';
+                $this->ret['code'] = -200;
+                return json($this->ret);
             }
             // 启动事务
             Db::startTrans();
             try{
-
-                $bank=B::where(['id'=>$bank_id])->find();
-                $data['user_id'] = $this->id;
-                $data['money'] = $money;
-                $data['charge'] = $charge;
-                $data['bank_id'] = $bank_id;
-                $data['bank_name'] = $bank['bank_name'];
-                $data['bank_card'] = $bank['cardnum'];
-                $data['create_time'] = time();
-                $data['update_time'] = time();
-
-                $arr['msg'] = '提现申请失败!';
-                $add = W::insert($data);
-                $userId = W::getLastInsID();
-
+                $this->ret['msg'] = '提现失败';
+                $this->ret['code'] = -200;
+                $bank=Bank::where(['id'=>$arr['bank_id']])->find();
                 $row['user_id'] = $this->id;
                 $row['or'] = 2;
-                $row['money'] =$money;
-                $row['charge'] = $charge;
+                $row['money'] =$arr['money'];
+                $row['integral'] =$arr['money']*100;
+                $row['charge'] = $charge/100;
                 $row['comment'] = '提现';
                 $row['status'] = 0;
                 $row['create_time'] = time();
-                $row['withdraw_id'] = $userId;
-                $row['bank_id'] = $bank_id;
-                $row['accomplish_time'] = 0;
-                D::insert($row);
+                $row['bank_id'] = $arr['bank_id'];
+                $row['bank_name'] = $bank['bank_name'];
+                $row['bank_card'] = $bank['cardnum'];
+                Detail::insert($row);
 
-                $balance = $user['balance'] - $money - $charge;
-                $id = $this->id;
-                $full = U::where(['id'=> $id])->update(['balance' => $balance]);
-                Session::set('user.balance',$balance);
-                $arr['code'] = 1;
-                $arr['msg'] = '提现申请成功';
-
+                $integral = $user['integral'] - $money;
+                $full = User::where(['id'=> $this->id])->update(['integral' => $integral]);
+                $this->ret['msg'] = '提现申请成功';
+                $this->ret['code'] = 1;
                 // 提交事务
                 Db::commit();
             } catch (\Exception $e) {
                 // 回滚事务
                 Db::rollback();
             }
-
-
-
+            return json($this->ret);
         }else{
             $id = input('id');
             $user = User::where(['id'=>$this->id])->find();
@@ -112,6 +105,7 @@ class Pay extends Yang
                   return json($this->ret);
              }
              $arr['user_id'] = $this->id;
+             $arr['image'] = "/static/web/img/png/".$arr['image'].".png";
              $arr['create_time'] = time();
              $add = Bank::insert($arr);
              if ($add) {
@@ -128,115 +122,34 @@ class Pay extends Yang
     }
     public function withdrawlog()
     {
+        $arr = Detail::where(['user_id'=>$this->id])->order('create_time desc')->select();
+        foreach ($arr as $k => $v) {
+            $arr[$k]['bank_card'] = substr($v['bank_card'],-4);
+            $arr[$k]['bank_name'] = $v['bank_name'];
+        }
+        $this->assign('arr',$arr);
         return $this->fetch();
     }
-
-
-
-
-    public function tiwithdraw()
+    public function delete()
     {
-        $arr = ['code'=>-200,'data'=>'','msg'=>'提现失败'];
-        $user = U::where(['id'=>$this->id])->find();
-        $rate = RA::find();
-        $lilv = $rate['rate']/100;
-        $kbalance=intval($user['balance']);
         if ($this->request->isAjax()) {
-            $money = input('money');
-            $bank_id = input('bank_id');
-            $charge = substr(sprintf("%.3f",$money*($rate['rate']/100)),0,-1);
-            if ($money!=intval($money)) {
-              $arr['msg'] = '提现金额必须为整数';
-              return json_encode($arr);
-            }
-            if (($money+$charge) > $kbalance) {
-              $arr['msg'] = '提现金额大于可提现金额';
-              return json_encode($arr);
-            }
-            if ($user['mobile']=='') {
-             $arr['msg']='请先在设置中绑定手机号码';
-             return json_encode($arr);
-            }
-            if($user['authentication']==0){
-             $arr['msg']='请实名认证后提现';
-             return json_encode($arr);
-            }
-            if($user['authentication']==1){
-            $arr['msg']='请等待实名认证成功后提现';
-             return json_encode($arr);
-            }
-            if ($money<99) {
-              $arr['msg'] = '提现金额必须大于或等于100';
-              return json_encode($arr);
-            }
-            // 启动事务
-            Db::startTrans();
-            try{
-
-                $bank=B::where(['id'=>$bank_id])->find();
-                $data['user_id'] = $this->id;
-                $data['money'] = $money;
-                $data['charge'] = $charge;
-                $data['bank_id'] = $bank_id;
-                $data['bank_name'] = $bank['bank_name'];
-                $data['bank_card'] = $bank['cardnum'];
-                $data['create_time'] = time();
-                $data['update_time'] = time();
-
-                $arr['msg'] = '提现申请失败!';
-                $add = W::insert($data);
-                $userId = W::getLastInsID();
-
-                $row['user_id'] = $this->id;
-                $row['or'] = 2;
-                $row['money'] =$money;
-                $row['charge'] = $charge;
-                $row['comment'] = '提现';
-                $row['status'] = 0;
-                $row['create_time'] = time();
-                $row['withdraw_id'] = $userId;
-                $row['bank_id'] = $bank_id;
-                $row['accomplish_time'] = 0;
-                D::insert($row);
-
-                $balance = $user['balance'] - $money - $charge;
-                $id = $this->id;
-                $full = U::where(['id'=> $id])->update(['balance' => $balance]);
-                Session::set('user.balance',$balance);
-                $arr['code'] = 1;
-                $arr['msg'] = '提现申请成功';
-
-                // 提交事务
-                Db::commit();
-            } catch (\Exception $e) {
-                // 回滚事务
-                Db::rollback();
-            }
-            return json_encode($arr);
-
-        }else{
             $id = input('id');
-            $arr = B::where(['id'=>$id])->find();
-            $arr['cardnum'] = substr($arr['cardnum'],-4);
-            $arr['kbalance'] = $kbalance;
-            $arr['balance'] = $user['balance'];
-            $arr['lilv'] = $lilv;
-            $this->assign('arr',$arr);
-            return $this->fetch();
+            $detail = Detail::where(['bank_id'=>$id,'status'=>0])->find();
+            if (!empty($detail)) {
+              $this->ret['msg'] = '删除失败,您有提现申请还未审核';
+              $this->ret['code'] = -200;
+              return json($this->ret);
+            }
+            $bank=Bank::where(['id'=>$id])->delete();
+            if ($bank) {
+              $this->ret['msg'] = '删除成功';
+              return json($this->ret);
+            }else{
+              $this->ret['msg'] = '删除失败';
+              $this->ret['code'] = -200;
+              return json($this->ret);
+            }
         }
     }
-    // public function withdrawlog()
-    // {
-    //     $arr = W::where(['user_id'=>$this->id])->order('create_time desc')->select();
-    //     $money = W::where(['user_id'=>$this->id,'status'=>1])->sum('money');
-    //     foreach ($arr as $k => $v) {
-    //       $arr[$k]['bank_card'] = substr($v['bank_card'],-4);;
-    //     }
-    //     $this->assign('arr',$arr);
-    //     $this->assign('money',$money);
-    //     return $this->fetch();
-    // }
-
-
 
 }

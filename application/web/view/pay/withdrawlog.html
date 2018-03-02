@@ -42,7 +42,7 @@
 			.mui-col-xs-4 p {
 				width: 100%;
 				text-align: center;
-				margin: 10px 0;
+				margin: 5px 0;
 				line-height: 20px;
 			}
 
@@ -80,43 +80,23 @@
 				<!-- 主页面内容容器 -->
 				<div class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
-						<!-- 主界面具体展示内容 -->
 
-						<!--<div class="mui-row" >
-							<div class="mui-col-sm-12 mui-col-xs-12">
-								<p class="" style="margin: 10px 5px;">已提现总额：￥0.00</p>
-							</div>
-						</div>-->
+					{volist name="arr" id="vo"}
 						<div class="mui-row" >
 							<div class="mui-col-sm-4 mui-col-xs-4">
-								<p class="chtx a1">123.00元</p>
+								<p class="chtx a1">{$vo.money}元</p>
 								<p>操作金额</p>
-
+								<p class="chtx a1">{$vo.charge}元</p>
+								<p>手续费</p>
 							</div>
 							<div class="mui-col-sm-6 mui-col-xs-6">
-
-								<p>状态 : 审核中 </p>
-								<p>时间 : 18-01-16 04:08:14</p>
-								<p>银行 :交通银行</p>
-								<p>卡号 : 尾号2222储蓄卡</p>
-
+								<p>状态 : {if condition="$vo.status eq 0"}审核中{elseif condition="$vo.status eq 2"/}未通过{else/}已完成{/if} </p>
+								<p>时间 : {$vo.create_time|date="Y-m-d H:i",###}</p>
+								<p>银行 :{$vo.bank_name}</p>
+								<p>卡号 : 尾号{$vo.bank_card}储蓄卡</p>
 							</div>
 						</div>
-						<div class="mui-row" >
-							<div class="mui-col-sm-4 mui-col-xs-4">
-								<p class="chtx a1">123.00元</p>
-								<p>操作金额</p>
-
-							</div>
-							<div class="mui-col-sm-6 mui-col-xs-6">
-
-								<p>状态 : 审核中 </p>
-								<p>时间 : 18-01-16 04:08:14</p>
-								<p>银行 :交通银行</p>
-								<p>卡号 : 尾号2222储蓄卡</p>
-
-							</div>
-						</div>
+					{/volist}
 
 					</div>
 				</div>
