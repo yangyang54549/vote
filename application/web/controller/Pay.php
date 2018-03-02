@@ -4,6 +4,7 @@ namespace app\web\controller;
 use app\web\controller\Yang;
 use app\common\model\Bank;
 use app\common\model\User;
+use think\Db;
 
 class Pay extends Yang
 {
@@ -27,12 +28,18 @@ class Pay extends Yang
     }
     public function withdraw()
     {
-        $id = input('id');
-        $user = User::where(['id'=>$this->id])->find();
-        $bank = Bank::where(['id'=>$id])->find();
-        $this->assign('user',$user);
-        $this->assign('bank',$bank);
-        return $this->fetch();
+        if ($this->request->isAjax()) {
+
+        }else{
+            $id = input('id');
+            $user = User::where(['id'=>$this->id])->find();
+            $user['integral'] = intval($user['integral']/100);
+            $bank = Bank::where(['id'=>$id])->find();
+            $bank['cardnum'] = substr($bank['cardnum'],-4);
+            $this->assign('user',$user);
+            $this->assign('bank',$bank);
+            return $this->fetch();
+        }
     }
     public function addbank()
     {
