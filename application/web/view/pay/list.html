@@ -83,16 +83,17 @@
 			<div class="mui-scroll">
 				<!-- 主界面具体展示内容 -->
 				<div class="mui-row" style="background-color: rgba(0,0,0,0);  line-height: 15px; font-size: 15px;color: #8f8f94;">点击可申请提现（长按删除）
-						{if condition="!$bank"}
-					<div id="wu" style="display:block;>
+						{if condition="!$address"}
+					<div id="wu" style="display:block">
 						<p class="imgs"><img src="__WEB__/img/kong.png" /></p>
 						<p class="texts">暂无记录</p>
 					</div>
-						{/if}
+				{/if}
 					<div id="wu">
 						<p class="imgs"><img src="__WEB__/img/kong.png" /></p>
 						<p class="texts">暂无记录</p>
 					</div>
+				</div>
 				</div>
 
 				{volist name="bank" id="vo"}
