@@ -112,7 +112,6 @@ mui('.mui-scroll').on('longtap', '.rows', function() {
 									mui.toast('取消删除');
 								},1000);
 					} else {
-
 						var id = th.getAttribute("data-id");
 						mui.post("{:url('pay/delete')}",{
 							id:id
@@ -129,7 +128,6 @@ mui('.mui-scroll').on('longtap', '.rows', function() {
 								}else{
 									mui.toast(data.msg);
 								}
-
 							},'json'
 						);
 					}
