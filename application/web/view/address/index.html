@@ -73,9 +73,7 @@
 					<div class="mui-scroll">
 						<!-- 主界面具体展示内容 -->
 
-				<div class="mui-row" style="background-color: rgba(0,0,0,0);  line-height: 15px; font-size: 15px;color: #8f8f94;">点击可修改（长按删除）
-				<p id="wu">暂无记录</p></div>
-
+				<div class="mui-row" style="background-color: rgba(0,0,0,0);  line-height: 15px; font-size: 15px;color: #8f8f94;">点击可修改（长按删除）<p id="wu">暂无记录</p></div>
 					{volist name="address" id="vo"}
 						<a href="{:url('address/edit',['id'=>$vo.id])}" class="rows" data-id="{$vo.id}">
 							<div class="mui-row">
@@ -182,10 +180,11 @@ mui('.mui-scroll').on('longtap', '.rows', function() {
 				window.top.location.href = this.href;
 			});
 			mui('.mui-scroll').on('tap', '.mui-btn-primary', function() {
-				var th = document.getElementById("number");
-				var muiscroll = document.getElementsByClassName("mui-row");
-
-				if(muiscroll.length > 3) {
+//				var th = document.getElementById("number");
+//				var muiscroll = document.getElementsByClassName("rows");
+				var muiscrolls = $(".mui-scroll a.rows").length;
+				
+				if(muiscrolls> 3) {
 					mui.toast('最多有四条记录')
 				} else {
 					window.top.location.href = "{:url('address/add')}";
