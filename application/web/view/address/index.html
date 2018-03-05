@@ -148,7 +148,14 @@
 					release: false //默认为false，不监听
 				}
 			});
-
+function wus(){
+	var len = $(".mui-scroll a.rows").length;
+	if(len >0){
+		$("#wu").css("display","none");
+	}else{
+		$("#wu").css("display","block");
+	}
+}
 			mui('.mui-scroll').on('longtap', '.rows', function() {
 				var th = this;
 				mui.confirm("确认删除？", '删除', ['取消', '确认'], function(e) {
@@ -174,6 +181,7 @@
 								if(ss < 1) {
 									document.getElementById("wu").style.display = "block";
 								}
+								wus();
 								setTimeout(function() {
 									mui.toast('删除成功');
 								}, 1500);
