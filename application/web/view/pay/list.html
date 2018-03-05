@@ -27,36 +27,36 @@
 				border-left: 2px solid #007aff;
 				z-index: 100;
 			}
-			
+
 			.mui-row .mui-col-sm-6,
 			.mui-row .mui-col-xs-6 {
 				margin-top: 10px;
 			}
-			
+
 			.mui-row {
 				margin: 10px;
 				background-color: white;
 			}
-			
+
 			.mui-col-sm-4 img,
 			.mui-col-xs-4 img {
 				width: 40px;
 				height: 40px;
 				margin: 20px;
 			}
-			
+
 			#wu {
 				width: 100%;
 				display: none;
 			}
-			
+
 			#wu P.imgs,
 			#wu P.imgs img {
 				width: 150px;
 				height: 150px;
 				margin: 10px auto;
 			}
-			
+
 			#wu P.texts {
 				width: 100%;
 				text-align: center;
@@ -70,6 +70,7 @@
 
 	<body class="mui-ios mui-ios-9 mui-ios-9-1">
 
+
 		<!-- 主页面标题 -->
 		<header class="mui-bar mui-bar-nav">
 			<div class="div" onclick="window.history.back()"></div>
@@ -82,12 +83,18 @@
 			<div class="mui-scroll">
 				<!-- 主界面具体展示内容 -->
 				<div class="mui-row" style="background-color: rgba(0,0,0,0);  line-height: 15px; font-size: 15px;color: #8f8f94;">点击可申请提现（长按删除）
+						{if condition="!$bank"}
+					<div id="wu" style="display:block;>
+						<p class="imgs"><img src="__WEB__/img/kong.png" /></p>
+						<p class="texts">暂无记录</p>
+					</div>
+						{/if}
 					<div id="wu">
 						<p class="imgs"><img src="__WEB__/img/kong.png" /></p>
 						<p class="texts">暂无记录</p>
 					</div>
 				</div>
-				
+
 				{volist name="bank" id="vo"}
 				<a href="{:url('pay/withdraw',['id'=>$vo.id])}" class="rows" data-id="{$vo.id}">
 					<div class="mui-row">

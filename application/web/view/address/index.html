@@ -27,43 +27,43 @@
 				border-left: 2px solid #007aff;
 				z-index: 100;
 			}
-			
+
 			.mui-row {
 				box-sizing: border-box;
 				margin: 10px;
 				padding: 5px 10px;
 				background-color: white;
 			}
-			
+
 			.mui-row .rs {
 				text-align: right;
 				font-size: 15px;
 			}
-			
+
 			.mui-row p {
 				white-space: nowrap;
 				text-overflow: ellipsis;
 				overflow: hidden;
 			}
-			
+
 			#wu {
 				width: 100%;
 				display: none;
 			}
-			
+
 			#wu P.imgs,
 			#wu P.imgs img {
 				width: 150px;
 				height: 150px;
 				margin: 10px auto;
 			}
-			
+
 			#wu P.texts {
 				width: 100%;
 				text-align: center;
 				font-size: 16px;
 			}
-			
+
 			.mui-scroll div.mui-row {
 				height: auto;
 			}
@@ -73,7 +73,6 @@
 	<body>
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-
 		<!-- 主页面标题 -->
 		<header class="mui-bar mui-bar-nav">
 			<div class="div" onclick="window.history.back()"></div>
@@ -87,6 +86,12 @@
 				<!-- 主界面具体展示内容 -->
 
 				<div class="mui-row" style="background-color: rgba(0,0,0,0);  line-height: 15px; font-size: 15px;color: #8f8f94; height: auto;">点击可修改（长按删除）
+				{if condition="!$address"}
+					<div id="wu" style="display:block">
+						<p class="imgs"><img src="__WEB__/img/kong.png" /></p>
+						<p class="texts">暂无记录</p>
+					</div>
+				{/if}
 					<div id="wu">
 						<p class="imgs"><img src="__WEB__/img/kong.png" /></p>
 						<p class="texts">暂无记录</p>
@@ -116,14 +121,7 @@
 					</div>
 				</a>
 				{/volist}
-
-				<!--<div id="demo1" class="mui-progressbar mui-progressbar-infinite">
-							<span></span>
-						</div>-->
 				<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%; margin-left: 5%;">添加收货地址</button>
-				<!--<div id="demo12" class="mui-progressbar">
-	<span></span>
-</div>-->
 			</div>
 		</div>
 
