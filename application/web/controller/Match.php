@@ -19,7 +19,7 @@ class Match extends Yang
 
             $num = time().rand(100000,999999);
             $url = "./tmp/production/".$num.".jpg";
-            $base64_string= explode(',', $arr['img']);//截取data:image/png;base64, 这个逗号后的字符
+            $base64_string = explode(',', $arr['img']);//截取data:image/png;base64, 这个逗号后的字符
             $data = base64_decode($base64_string[1]);//对截取后的字符使用base64_decode进行解码
             $a = file_put_contents($url,$data);//写入文件并保存
             if ($a == 0) {
