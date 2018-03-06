@@ -5616,4 +5616,13 @@ body > .mui-progressbar
 .mui-toast-container {			
 				bottom: 50%;				
 			}
-			
+	@font-face {
+    font-family: kaiti;
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/kaiti.ttf') format('truetype');
+}
+
+*{  font-family: kaiti; color: black}
+ 
