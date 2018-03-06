@@ -187,10 +187,14 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 			</div>
 		</div>
 		<div class="mui-scrollbar mui-scrollbar-vertical"><div class="mui-scrollbar-indicator" style="transition-duration: 0ms; display: block; height: 8px; transform: translate3d(0px, 513px, 0px) translateZ(0px);"></div></div>
-		
+
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
+
+			var limit = {$limit};
+			var url = "__URLL__web/qunying/info/id/";
+
 			mui.init({
 				swipeBack: false,
 				pullRefresh: {
@@ -228,26 +232,40 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 			 * 上拉加载具体业务实现
 			 */
 			function pullupRefresh() {
-				setTimeout(function() {
-					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 4)); //参数为true代表没有更多数据了。 加载次数·
 					var table = document.body.querySelector('#card1 ');
-					var cells = document.body.querySelectorAll('#card1 .mui-table-view');
+					var cells = document.body.querySelectorAll('#card1 .mui-card');
 					var table2 = document.body.querySelector('#card2');
-					var cells2 = document.body.querySelectorAll('#card2 .mui-table-view');
+					var cells2 = document.body.querySelectorAll('#card2 .mui-card');
 
+						mui.post("{:url('index/load')}",{
+							limit:limit
+						},function(data){
+								//服务器返回响应，根据响应结果，分析是否登录成功；
+								if (data.code==1) {
+									mui.toast(data.msg);
+									limit = data['limit'];
+									var mi = 0;
+									for(var i = cells.length, len = i + data.data.length; i < len; i++) {
 
-					for(var i = cells.length, len = i + 4; i < len; i++) {
-						var li = document.createElement('div');
-						li.className = 'mui-card';
-						li.innerHTML = '<a href="{:url('index/info')}"><div class="mui-card-content"><img src="__WEB__/img/painting/gs/u=1012637593,3984533236&fm=27&gp=0.jpg" /></div><div class="mui-card-footer">名称</div></a>';
-						if(table.offsetHeight>table2.offsetHeight){
-							table2.appendChild(li);
-						}else{
-							table.appendChild(li);
-						}
+										var li = document.createElement('div');
+										li.className = 'mui-card';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="">点赞</span> </div>';
+										if(table.offsetHeight > table2.offsetHeight) {
+											table2.appendChild(li);
+										} else {
+											table.appendChild(li);
+										}
+										mi += 1;
 
-					}
-				}, 1000);
+									}
+								}else{
+
+									mui.toast(data.msg);
+								}
+								mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > data.data.length)); //参数为true代表没有更多数据了。 加载次数·
+
+							},'json'
+						);
 			}
 //			(function($) {
 //				$(".mui-scroll-wrapper").scroll({

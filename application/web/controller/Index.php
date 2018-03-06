@@ -14,13 +14,11 @@ class Index extends Yang
 
         }else{
             $barner = Barner::select();
-            // $column = Column::select();
-            $recommend = Recommend::select();
+            $recommend = Recommend::order('id desc')->limit(5)->select();
             $this->assign('barner',$barner);
-            // dump($barner[2]);die;
             $this->assign('zui',$barner[count($barner)-1]);
-            // $this->assign('column',$column);
             $this->assign('recommend',$recommend);
+            $this->assign('limit',count($recommend));
             return $this->fetch();
         }
     }
@@ -29,7 +27,7 @@ class Index extends Yang
     {
         if ($this->request->isAjax()) {
             $limit = input('limit');
-            $qunying = Q::order('create_time desc')->limit($limit,$limit+5)->select();
+            $qunying = Recommend::order('id desc')->limit($limit,$limit+5)->select();
             if(!empty($qunying)){
                 $this->ret['data'] = $qunying;
                 $this->ret['limit'] = $limit+count($qunying);

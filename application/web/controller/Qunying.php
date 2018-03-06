@@ -18,7 +18,7 @@ class Qunying extends Yang
         $this->assign('type',$type);
         $this->assign('qunying',$qunying);
         $this->assign('typecopy',$typecopy);
-        $this->assign('limit',1);
+        $this->assign('limit',count($qunying));
         return $this->fetch();
     }
 
