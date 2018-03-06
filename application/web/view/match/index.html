@@ -101,7 +101,7 @@
 				border-bottom: 1px solid #c8c7cc;
 			}
 
-			.mui-table-view-cell.mui-active {
+			.mui-table-view-cell li.mui-active {
 				background-color: #0062CC;
 			}
 
@@ -118,6 +118,9 @@
 			.mui-scroll{
 				-webkit-overflow-scrolling: touch;
 			}
+			.mui-bar-tab .mui-tab-item.mui-active {
+    color: #007aff;
+}
 		</style>
 
 	</head>
@@ -137,7 +140,7 @@
 					</a>
 					<a class="mui-tab-item mui-active" href="{:url('match/index')}">
 						<!--<span class=" mui-icon mui-icon-upload"></span>-->
-						<span class="mui-tab-label">我要参赛</span>
+						<span class="mui-tab-label mui-active">我要参赛</span>
 					</a>
 					<!--<a class="mui-tab-item">
 						<span class="mui-icon mui-icon-email"></span>
