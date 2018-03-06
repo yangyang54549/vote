@@ -48,6 +48,7 @@ class View
             '__CSS__'    => $root . '/static/css',
             '__JS__'     => $root . '/static/js',
             '__WEB__'     => $root . '/static/web',
+            '__URLL__'     => 'http://vote.com/',
         ];
         $this->replace = array_merge($baseReplace, (array) $replace);
     }

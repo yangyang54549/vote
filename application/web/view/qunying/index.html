@@ -199,6 +199,9 @@ font-family:KaiTi,
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
+			var limit = {$limit};
+			var url = "__URLL__web/qunying/info/id/";
+
 			var ad3 = document.getElementsByClassName('adc3');
 			var ad5 = document.getElementsByClassName('adc5');
 			var ad6 = document.getElementsByClassName('adc6');
@@ -253,39 +256,45 @@ font-family:KaiTi,
 			 * 上拉加载具体业务实现
 			 */
 			function pullupRefresh() {
-				setTimeout(function() {
-					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 4)); //参数为true代表没有更多数据了。 加载次数·
 					var table = document.body.querySelector('#card1 ');
 					var cells = document.body.querySelectorAll('#card1 .mui-card');
 					var table2 = document.body.querySelector('#card2');
 					var cells2 = document.body.querySelectorAll('#card2 .mui-card');
 
-					for(var i = cells.length, len = i + 4; i < len; i++) {
-						var li = document.createElement('div');
-						li.className = 'mui-card';
-						li.innerHTML = '<div class="mui-card-content"><a href="{:url('
-						qunying / info ')}"><img src="__WEB__/img/painting/gr/timg (26).jpg" /></a></div><div class="mui-card-footer">名称</div><div class="spans"><span class="">点赞</span> </div>';
-						if(table.offsetHeight > table2.offsetHeight) {
-							table2.appendChild(li);
-						} else {
-							table.appendChild(li);
-						}
+						mui.post("{:url('qunying/load')}",{
+							limit:limit
+						},function(data){
+								//服务器返回响应，根据响应结果，分析是否登录成功；
+								if (data.code==1) {
+									mui.toast(data.msg);
+									limit = data['limit'];
+									var mi = 0;
+									for(var i = cells.length, len = i + data.data.length; i < len; i++) {
 
-					}
-				}, 1000);
+										var li = document.createElement('div');
+										li.className = 'mui-card';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="">点赞</span> </div>';
+										if(table.offsetHeight > table2.offsetHeight) {
+											table2.appendChild(li);
+										} else {
+											table.appendChild(li);
+										}
+										mi += 1;
+
+									}
+								}else{
+
+									mui.toast(data.msg);
+								}
+								mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > data.data.length)); //参数为true代表没有更多数据了。 加载次数·
+
+							},'json'
+						);
 			}
-			//			(function($) {
-			//				$(".mui-scroll-wrapper").scroll({
-			//bounce: false,//滚动条是否有弹力默认是true
-			//				});
-			//			})(mui);
-			//mui下a标签href失效问题解决
 			mui('body').on('tap', 'a', function() {
 					window.top.location.href = this.href;
 					/*$(this).classList.remove("mui-active") */
-
 				}
-
 			);
 			var tt = 0;
 			var t1;
@@ -303,8 +312,6 @@ font-family:KaiTi,
 					tt = tt + 1;
 				}
 			});
-
-			//mask.close();//关闭遮罩
 			var ons = 3;
 			var onl;
 
@@ -313,26 +320,14 @@ font-family:KaiTi,
 				//当前对象直接就是--->this
 				var sq = this;
 				var tt = this.className.length;
-				/*this.parentNode.className*/
-				/*mui.toast(this.parentNode.parentNode.parentNode.className);*/
-				// var  ts = $$(".mui-table-view .mui-card").index(this.parentNode.parentNode);
-
-				/* mui.toast(this.parentNode.previousSibling.innerText);*/
 				if(tt > 1) {
 
 				} else {
 					if(ons > 0) {
-
 						this.classList.add('active');
 						ons = ons - 1;
 						mui.toast('点赞成功');
-						/*alert(this.className.length)
-						this.classList.add('active');
-						ons = ons-1;
-						alert(this.className.length)*/
 					} else {
-						/*alert("123123")*/
-						//mask.show();//显示遮罩
 						mui.toast('已使用完每天三次的点赞功能');
 					}
 				}
