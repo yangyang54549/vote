@@ -152,13 +152,13 @@ font-family:KaiTi,
 					{foreach name="type" item="vos" key="k"} {if condition="$vo.id eq $vos.father_id"} {if condition="$i eq 0 and $k eq 0"}
 					<li class="mui-table-view-cell mui-media adc{$vo.id}">
 						<a href="#">
-							<div class="mui-media-body active" id="act">{$vos.name}</div>
+							<div class="mui-media-body active" id="act"  data-id="{$vos.id}">{$vos.name}</div>
 						</a>
 					</li>
 					{else/}
-					<li class="mui-table-view-cell mui-media adc{$vo.id}">
+					<li class="mui-table-view-cell mui-media adc{$vo.id}" >
 						<a href="#">
-							<div class="mui-media-body">{$vos.name}</div>
+							<div class="mui-media-body" data-id="{$vos.id}">{$vos.name}</div>
 						</a>
 					</li>
 
@@ -195,13 +195,18 @@ font-family:KaiTi,
 			</div>
 		</div>
 <div class="mui-scrollbar mui-scrollbar-vertical"><div class="mui-scrollbar-indicator" style="transition-duration: 0ms; display: block; height: 8px; transform: translate3d(0px, 513px, 0px) translateZ(0px);"></div></div>
-		
-		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script >jQuery.noConflict()</script>
 		<script type="text/javascript">
+
 			mui.init();
 			var limit = {$limit};
 			var url = "__URLL__web/qunying/info/id/";
+			var type = 3;
+			var table = document.body.querySelector('#card1');
+			var table2 = document.body.querySelector('#card2');
 
 			var ad3 = document.getElementsByClassName('adc3');
 			var ad5 = document.getElementsByClassName('adc5');
@@ -230,6 +235,7 @@ font-family:KaiTi,
 					// },
 					up: {
 						contentrefresh: '正在加载...',
+						contentnomore:'没有更多数据了...',//可选，请求完毕若没有更多数据时显示的提醒内容
 						callback: pullupRefresh
 					}
 				}
@@ -257,13 +263,13 @@ font-family:KaiTi,
 			 * 上拉加载具体业务实现
 			 */
 			function pullupRefresh() {
-					var table = document.body.querySelector('#card1 ');
 					var cells = document.body.querySelectorAll('#card1 .mui-card');
-					var table2 = document.body.querySelector('#card2');
 					var cells2 = document.body.querySelectorAll('#card2 .mui-card');
-
+						table = document.body.querySelector('#card1');
+						table2 = document.body.querySelector('#card2');
 						mui.post("{:url('qunying/load')}",{
-							limit:limit
+							limit:limit,
+							type:type
 						},function(data){
 								//服务器返回响应，根据响应结果，分析是否登录成功；
 								if (data.code==1) {
@@ -299,7 +305,7 @@ font-family:KaiTi,
 			);
 			var tt = 0;
 			var t1;
-			mui(".mui-table-view ").on("tap", ".mui-table-view-cell a .mui-media-body", function() {
+			mui(".mui-table-view").on("tap", ".mui-table-view-cell a .mui-media-body", function() {
 				//当前对象直接就是--->this
 				if(tt > 0) {
 					t1.classList.remove("active");
@@ -311,6 +317,36 @@ font-family:KaiTi,
 					t1 = this;
 					this.classList.add('active');
 					tt = tt + 1;
+
+						var type = this.getAttribute("data-id");
+						mui.post("{:url('qunying/index')}",{
+							type:type
+						},function(data){
+								//服务器返回响应，根据响应结果，分析是否登录成功；
+								table.innerHTML = " ";
+								table2.innerHTML = " ";
+								if (data.code==1) {
+									mui.toast(data.msg);
+
+									limit = data['limit'];
+									for(var n = 0; n < data.data.length; n++) {
+
+										var li = document.createElement('div');
+										li.className = 'mui-card';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="">点赞</span> </div>';
+										if(table.offsetHeight > table2.offsetHeight) {
+											table2.appendChild(li);
+										} else {
+											table.appendChild(li);
+										}
+									}
+								}else{
+									mui.toast(data.msg);
+								}
+								mui('#pullrefresh').pullRefresh().refresh(true);
+
+							},'json'
+						);
 				}
 			});
 			var ons = 3;
