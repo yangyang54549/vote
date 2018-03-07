@@ -5625,4 +5625,10 @@ body > .mui-progressbar
 }
 
 *{  font-family: kaiti; }
- 
+ .mui-card-footer{
+ 	    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+ }

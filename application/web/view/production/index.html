@@ -150,60 +150,60 @@
 
 		<script type="text/javascript">
 			mui.init();
-			mui.init({
-				swipeBack: false,
-				pullRefresh: {
-					container: '#pullrefresh',
-					/*down: {
-						style: 'circle',
-						callback: pulldownRefresh
-					},*/
-					// up: {
-					// 	contentrefresh: '正在加载...',
-					// 	callback: pullupRefresh
-					// }
-				}
-			});
-			/**
-			 * 下拉刷新具体业务实现
-			 */
-						function pulldownRefresh() {
-						setTimeout(function() {
-								var table = document.body.querySelector('.mui-table-view');
-								var cells = document.body.querySelectorAll('.mui-table-view-cell');
-								for(var i = cells.length, len = i + 3; i < len; i++) {
-									/*var li = document.createElement('li');
-									li.className = 'mui-table-view-cell';
-									li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
-									//下拉刷新，新纪录插到最前面；
-									table.insertBefore(li, table.firstChild);*/
-								}
-								mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-								mui.toast('下拉刷新成功');
-							}, 1000);
-						}
-			var count = 0;
-			/**
-			 * 上拉加载具体业务实现
-			 */
-			function pullupRefresh() {
-				setTimeout(function() {
-					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 4)); //参数为true代表没有更多数据了。 加载次数·
-					var table = document.body.querySelector('#mui-media');
-					var cells = document.body.querySelectorAll('#mui-media .mui-card');
-					if(cells.length>0){
-					for(var i = cells.length, len = i + 4; i < len; i++) {
-						var li = document.createElement('div');
-						li.className = 'mui-card';
-						li.innerHTML = '<div class="mui-media-body" style="padding: 10px;">名家字画<p style="text-indent:2em;" class="text_p"> 吴败，字国旗，号画魔,云南江川人。4岁学习书画，其人画画成魔，15年不出家门。读周易，悟太极，理解宇宙变化原理，融和中国传统山水，花鸟。启功先生观其书画，书赠“少年老成”四字，既表认同，更多激励。中国艺术大师朱纪瞻先生在上海为吴败题写了“滇南鬼才”四字，以奖励后生。<img src="__WEB__/img/painting/gh/timg (12).jpg" /></p><span >18-01-29 16:50:35</span></div><div class="mui-card-content"><a href="#"><img src="__WEB__/img/painting/gh/timg (12).jpg" /></a></div>';
-							table.appendChild(li);
-					}
-					}else{
-						mui.toast('您还没有上传作品');
-					}
-
-				}, 1000);
-			}
+//			mui.init({
+//				swipeBack: false,
+//				pullRefresh: {
+//					container: '#pullrefresh',
+//					/*down: {
+//						style: 'circle',
+//						callback: pulldownRefresh
+//					},*/
+//					// up: {
+//					// 	contentrefresh: '正在加载...',
+//					// 	callback: pullupRefresh
+//					// }
+//				}
+//			});
+//			/**
+//			 * 下拉刷新具体业务实现
+//			 */
+//						function pulldownRefresh() {
+//						setTimeout(function() {
+//								var table = document.body.querySelector('.mui-table-view');
+//								var cells = document.body.querySelectorAll('.mui-table-view-cell');
+//								for(var i = cells.length, len = i + 3; i < len; i++) {
+//									/*var li = document.createElement('li');
+//									li.className = 'mui-table-view-cell';
+//									li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+//									//下拉刷新，新纪录插到最前面；
+//									table.insertBefore(li, table.firstChild);*/
+//								}
+//								mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+//								mui.toast('下拉刷新成功');
+//							}, 1000);
+//						}
+//			var count = 0;
+//			/**
+//			 * 上拉加载具体业务实现
+//			 */
+//			function pullupRefresh() {
+//				setTimeout(function() {
+//					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 4)); //参数为true代表没有更多数据了。 加载次数·
+//					var table = document.body.querySelector('#mui-media');
+//					var cells = document.body.querySelectorAll('#mui-media .mui-card');
+//					if(cells.length>0){
+//					for(var i = cells.length, len = i + 4; i < len; i++) {
+//						var li = document.createElement('div');
+//						li.className = 'mui-card';
+//						li.innerHTML = '<div class="mui-media-body" style="padding: 10px;">名家字画<p style="text-indent:2em;" class="text_p"> 吴败，字国旗，号画魔,云南江川人。4岁学习书画，其人画画成魔，15年不出家门。读周易，悟太极，理解宇宙变化原理，融和中国传统山水，花鸟。启功先生观其书画，书赠“少年老成”四字，既表认同，更多激励。中国艺术大师朱纪瞻先生在上海为吴败题写了“滇南鬼才”四字，以奖励后生。<img src="__WEB__/img/painting/gh/timg (12).jpg" /></p><span >18-01-29 16:50:35</span></div><div class="mui-card-content"><a href="#"><img src="__WEB__/img/painting/gh/timg (12).jpg" /></a></div>';
+//							table.appendChild(li);
+//					}
+//					}else{
+//						mui.toast('您还没有上传作品');
+//					}
+//
+//				}, 1000);
+//			}
 
 function lengths(){
 	var lens = $("#mui-media .mui-card").length;
@@ -212,12 +212,12 @@ function lengths(){
 	}
 }
 lengths();
-			//			(function($) {
-			//				$(".mui-scroll-wrapper").scroll({
-			//bounce: false,//滚动条是否有弹力默认是true
-			//indicators: false, //是否显示滚动条,默认是true
-			//				});
-			//			})(mui);
+						(function($) {
+							$(".mui-scroll-wrapper").scroll({
+			bounce: false,//滚动条是否有弹力默认是true
+			indicators: false, //是否显示滚动条,默认是true
+							});
+						})(mui);
 			//mui下a标签href失效问题解决
 			mui.init({
     beforeback: function(){
@@ -244,6 +244,8 @@ lengths();
 					this.setAttribute("class", "text_p");
 				}
 			});
+			
+			
 		</script>
 	</body>
 
