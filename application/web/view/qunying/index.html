@@ -175,7 +175,7 @@ font-family:KaiTi,
 								<a href="{:url('qunying/info',['id'=>$voss.id])}"><img src="{$voss.img}" /></a>
 							</div>
 							<div class="mui-card-footer">{$voss.title}</div>
-							<div class="spans"><span class="">点赞</span> </div>
+							<div class="spans"><span data-id="{$voss.id}">点赞</span></div>
 						</div>
 						{/eq} {/volist}
 					</ul>
@@ -186,7 +186,7 @@ font-family:KaiTi,
 								<a href="{:url('qunying/info',['id'=>$vosss.id])}"><img src="{$vosss.img}" /></a>
 							</div>
 							<div class="mui-card-footer">{$vosss.title}</div>
-							<div class="spans"><span class="">点赞</span> </div>
+							<div class="spans"><span data-id="{$vosss.id}">点赞</span></div>
 						</div>
 						{/eq} {/volist}
 					</ul>
@@ -280,7 +280,7 @@ font-family:KaiTi,
 
 										var li = document.createElement('div');
 										li.className = 'mui-card';
-										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="">点赞</span> </div>';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][mi]['id']+'">点赞</span></div>';
 										if(table.offsetHeight > table2.offsetHeight) {
 											table2.appendChild(li);
 										} else {
@@ -334,7 +334,7 @@ font-family:KaiTi,
 
 										var li = document.createElement('div');
 										li.className = 'mui-card';
-										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="">点赞</span> </div>';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][n]['id']+'">点赞</span> </div>';
 										if(table.offsetHeight > table2.offsetHeight) {
 											table2.appendChild(li);
 										} else {
@@ -359,17 +359,25 @@ font-family:KaiTi,
 				//当前对象直接就是--->this
 				var sq = this;
 				var tt = this.className.length;
-				if(tt > 1) {
-
-				} else {
 					if(ons > 0) {
-						this.classList.add('active');
-						ons = ons - 1;
-						mui.toast('点赞成功');
+						var id = this.getAttribute("data-id");
+						//连接后台
+						mui.post("{:url('qunying/toupiao')}",{
+							id:id
+						},function(data){
+								if (data.code==1) {
+									this.classList.add('active');
+									ons = ons - 1;
+									mui.toast('点赞成功');
+								}else{
+									mui.toast(data.msg);
+								}
+							},'json'
+						)
+
 					} else {
 						mui.toast('已使用完每天三次的点赞功能');
 					}
-				}
 			});
 		</script>
 	</body>

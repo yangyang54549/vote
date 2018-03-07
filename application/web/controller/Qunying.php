@@ -2,11 +2,13 @@
 namespace app\web\controller;
 
 use app\web\controller\Yang;
+use app\common\model\User;
+use app\common\model\Vote;
 use app\common\model\Column;
 use app\common\model\Type;
 use app\common\model\TypeCopy;
 use app\common\model\Qunying as Q;
-
+use think\Db;
 
 class Qunying extends Yang
 {
@@ -66,6 +68,51 @@ class Qunying extends Yang
 
     public function toupiao()
     {
+        //记录ip,点赞作品id,点赞时间,减去user表投票次数,为0时不可投票
+        if ($this->request->isAjax()) {
+            $qunying_id = input('id');
+            $vote = Vote::where(['user_id'=>$this->id,'qunying_id'=>$qunying_id])->whereTime('create_time','today')->find();
+            $user = User::where('id',$this->id)->find();
+            if (!empty($vote)) {
+                $this->ret['msg'] = '您已投过票';
+                $this->ret['code'] = -200;
+                return json($this->ret);
+            }
+            if ($user['vote']<=0) {
+                $this->ret['msg'] = '今日票数已用完,请明日投票';
+                $this->ret['code'] = -200;
+                return json($this->ret);
+            }
+
+            // 启动事务
+            Db::startTrans();
+            try{
+                $this->ret['code'] = -200;
+
+                $data['user_id'] = $this->id;
+                $data['qunying_id'] = $qunying_id;
+                $data['ip'] = $_SERVER['REMOTE_ADDR'];
+                $data['create_time'] = time();
+
+                $this->ret['msg'] = '添加记录失败';
+                Vote::insert($data);
+
+                $this->ret['msg'] = '修改票数失败';
+                Q::where('id',$qunying_id)->setInc('poll');
+
+                $this->ret['msg'] = '修改票数失败';
+                User::where('id',$this->id)->setDec('vote');
+                // 提交事务
+                Db::commit();
+            } catch (\Exception $e) {
+                // 回滚事务
+                return json($this->ret);
+                Db::rollback();
+            }
+            $this->ret['msg'] = '投票成功';
+            $this->ret['code'] = 1;
+            return json($this->ret);
+        }
     }
 
 }

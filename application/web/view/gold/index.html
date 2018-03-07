@@ -94,13 +94,13 @@
 							{foreach name="type" item="vos" key="k"} {if condition="$vo.id eq $vos.father_id"} {if condition="$i eq 0 and $k eq 0"}
 							<li class="mui-table-view-cell mui-media adc{$vo.id}">
 								<a href="#">
-									<div class="mui-media-body active" id="act">{$vos.name}</div>
+									<div class="mui-media-body active" id="act" data-id="{$vos.id}">{$vos.name}</div>
 								</a>
 							</li>
 							{else/}
 							<li class="mui-table-view-cell mui-media adc{$vo.id}">
 								<a href="#">
-									<div class="mui-media-body">{$vos.name}</div>
+									<div class="mui-media-body" data-id="{$vos.id}">{$vos.name}</div>
 								</a>
 							</li>
 
@@ -116,7 +116,6 @@
 										<a href="{:url('gold/info',['id'=>$voss.id])}"><img src="{$voss.img}" /></a>
 									</div>
 									<div class="mui-card-footer">{$voss.title}</div>
-									<div class="spans"><span class="">点赞</span> </div>
 								</div>
 								{/eq} {/volist}
 							</ul>
@@ -127,7 +126,6 @@
 										<a href="{:url('gold/info',['id'=>$vosss.id])}"><img src="{$vosss.img}" /></a>
 									</div>
 									<div class="mui-card-footer">{$vosss.title}</div>
-									<div class="spans"><span class="">点赞</span> </div>
 								</div>
 								{/eq} {/volist}
 							</ul>
@@ -141,7 +139,11 @@
 		<script type="text/javascript">
 			mui.init();
 			var limit = {$limit};
-			var url = "__URLL__web/qunying/info/id/";
+			var url = "__URLL__web/gold/info/id/";
+			var type = 3;
+			var table = document.body.querySelector('#card1');
+			var table2 = document.body.querySelector('#card2');
+
 			var ad3 = document.getElementsByClassName('adc3');
 			var ad5 = document.getElementsByClassName('adc5');
 			var ad6 = document.getElementsByClassName('adc6');
@@ -195,13 +197,14 @@
 			 * 上拉加载具体业务实现
 			 */
 			function pullupRefresh() {
-					var table = document.body.querySelector('#card1 ');
 					var cells = document.body.querySelectorAll('#card1 .mui-card');
-					var table2 = document.body.querySelector('#card2');
 					var cells2 = document.body.querySelectorAll('#card2 .mui-card');
+						table = document.body.querySelector('#card1');
+						table2 = document.body.querySelector('#card2');
 
 						mui.post("{:url('gold/load')}",{
-							limit:limit
+							limit:limit,
+							type:type
 						},function(data){
 								//服务器返回响应，根据响应结果，分析是否登录成功；
 								if (data.code==1) {
@@ -212,7 +215,7 @@
 
 										var li = document.createElement('div');
 										li.className = 'mui-card';
-										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="">点赞</span> </div>';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div>';
 										if(table.offsetHeight > table2.offsetHeight) {
 											table2.appendChild(li);
 										} else {
@@ -258,17 +261,38 @@
 				t1 = this;
 				this.classList.add('active');
 				tt = tt + 1;
-				}
-				/*var act = document.getElementById("act");act.classList.remove("active");
-				t1 = this;
-				this.classList.add('active');
-				tt = tt + 1;*/
-				/*mui.alert(username,"this");*/
-				/*alert(this.target)*/ //a href
-				/*//修改弹出框默认input类型为password
-			mui.prompt('text','deftext','title',['true','false'],null,'div')
-			document.querySelector('.mui-popup-input input').type='password' */
 
+						var type = this.getAttribute("data-id");
+						mui.post("{:url('gold/index')}",{
+							type:type
+						},function(data){
+								//服务器返回响应，根据响应结果，分析是否登录成功；
+								table.innerHTML = " ";
+								table2.innerHTML = " ";
+								if (data.code==1) {
+									mui.toast(data.msg);
+
+									limit = data['limit'];
+									for(var n = 0; n < data.data.length; n++) {
+
+										var li = document.createElement('div');
+										li.className = 'mui-card';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div>';
+										if(table.offsetHeight > table2.offsetHeight) {
+											table2.appendChild(li);
+										} else {
+											table.appendChild(li);
+										}
+									}
+								}else{
+									mui.toast(data.msg);
+								}
+								mui('#pullrefresh').pullRefresh().refresh(true);
+
+							},'json'
+						);
+
+				}
 			});
 
 			//mask.close();//关闭遮罩
