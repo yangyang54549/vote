@@ -261,19 +261,19 @@
 									type:leixid,
 									img:domimg.src
 								},function(data){
-
 										mui.toast(data.msg);
-										/*清空*/
-										document.getElementById("nextview").src = "__WEB__/img/a11.png";
-										name.value = "";
-										lei.value = "";
-										tes.value = "";
 										/*跳转*/
 										if (data.code==1) {
 											mui.toast(data.msg);
+											/*清空*/
+											document.getElementById("nextview").src = "__WEB__/img/a11.png";
+											name.value = "";
+											lei.value = "";
+											tes.value = "";
 											setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
 												window.location = "{:url('production/index')}";
 											}, 1000);
+
 										}else{
 											mui.toast(data.msg);
 										}

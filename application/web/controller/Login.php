@@ -57,6 +57,7 @@ class Login extends Yang
                 return json($this->ret);
             }
             unset($arr['yanz']);
+            $arr['integral'] = 100;
             $arr['image'] = '/static/web/img/painting/gh/timg (7).jpg';
             $arr['create_time'] = time();
             $arr['status'] = 0;
