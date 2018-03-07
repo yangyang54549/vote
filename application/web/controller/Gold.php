@@ -62,4 +62,9 @@ class Gold extends Yang
         $this->assign('qunying',$qunying);
         return $this->fetch();
     }
+
+    public function yupay()
+    {
+        return $this->fetch();
+    }
 }
