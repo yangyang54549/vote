@@ -12,7 +12,7 @@
 				display: flex;
 				justify-content: center;
 			}
-
+			
 			.spans .mui-icon {
 				width: 30px;
 				height: 30px;
@@ -21,8 +21,8 @@
 				border-radius: 50%;
 				margin-bottom: 10px;
 			}
+			
 			header>.div {
-
 				position: absolute;
 				top: 15px;
 				left: 15px;
@@ -41,15 +41,97 @@
 				border-left: 2px solid #007aff;
 				z-index: 100;
 			}
-
 			/*.mui-row div {
 				text-align: center;
 			}*/
-			.rights{
+			
+			.rights {
 				text-align: right;
 			}
-			.red{
+			
+			.red {
 				color: red;
+			}
+			
+			#mui_view {
+				position: fixed;
+				left: 0;
+				top: 0;
+				box-sizing: border-box;
+				width: 102vw;
+				height: 100vh;
+				overflow: auto;
+				/*transition: all .5s ease-in .1s;
+				box-sizing: border-box;*/
+				padding: 0px;
+				padding-top: 50px;
+				display: none;
+				z-index: 100;
+				/*background-image: url(__WEB__/img/painting/gr/u=10131947,1032570421&fm=27&gp=0.jpg);*/
+			}
+			/*作为IT界最前端的技术达人，页面上的每一个元素的样式我们都必须较真，就是滚动条我们也不会忽略。
+下面我给大家分享一下如何通过CSS来控制滚动条的样式，代码如下：*/
+			/*定义滚动条轨道*/
+			
+			#mui_view::-webkit-scrollbar-track {
+				background-color: #ffffff;
+				-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
+			}
+			/*定义滚动条高宽及背景*/
+			
+			#mui_view::-webkit-scrollbar {
+				width: 3px;
+				background-color: rgba(255, 255, 255, 0.34);
+			}
+			/*定义滚动条*/
+			
+			#mui_view::-webkit-scrollbar-thumb {
+				background-color: #ffffff;
+				border-radius: 2px;
+			}
+			
+			.mui-table-view-cell:after {
+				opacity: 0;
+			}
+			
+			.mui-table-view-cell {
+				border-bottom: 1px solid #c8c7cc;
+			}
+			
+			.mui-table-view-cell li.mui-active {
+				background-color: #0062CC;
+			}
+			
+			#nextview {
+				width: 100%;
+				height: auto;
+			}
+			
+			.mui-bar-tab {
+				top: 0px;
+			}
+			
+			.mui-scroll {
+				-webkit-overflow-scrolling: touch;
+			}
+			
+			.mui-bar-tab .mui-tab-item.mui-active {
+				color: #007aff;
+			}
+			
+			.mui-row .rs {
+				text-align: right;
+				font-size: 15px;
+			}
+			
+			.mui-table-view-cell {
+				padding: 8px 12px;
+			}
+			
+			.mui-table-view-cell p {
+				color: black;
+				font-size: 15px;
+				line-height: 25px;
 			}
 		</style>
 	</head>
@@ -65,90 +147,115 @@
 
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable">
-			<!-- 主页面容器 -->
-			<div class="mui-inner-wrap">
-				<!-- 菜单容器 -->
 
-				<!-- 主页面标题 -->
-				<header class="mui-bar mui-bar-nav">
-					<div class="div" onclick="history.go(-1);"></div>
-					<h1 class="mui-title mui-active">订单详情</h1>
-				</header>
+		<!-- 主页面标题 -->
+		<header class="mui-bar mui-bar-nav" style="z-index: 102;">
+			<div class="div" onclick="window.history.back()"></div>
+			<h1 class="mui-title mui-active">订单详情</h1>
+		</header>
 
-				<!-- 主页面内容容器 -->
-				<div class="mui-content mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<!-- 主界面具体展示内容 -->
-						<!--九宫格1-->
-						<!--下拉刷新容器-->
+		<!-- 主页面内容容器 -->
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				<!--九宫格1-->
+				<!--下拉刷新容器-->
 
-						<ul class="mui-media " style="padding: 0;">
+				<!--<ul class="mui-media " style="padding: 0;">
+<div class="mui-card mui-row" style="padding: 10px;">
+								mui-icon mui-icon-plusempty
 
-							<div class="mui-card mui-row" style="padding: 10px;">
-								<div class="mui-col-sm-6 mui-col-xs-6">
-									订单价格：
-								</div>
-								<div class="mui-col-sm-6 mui-col-xs-6 rights" id="gm">
-￥150
-								</div>
-								<div class="mui-col-sm-6 mui-col-xs-6">
-									李先生
-								</div>
-								<div class="mui-col-sm-6 mui-col-xs-6 rights" >
-13613820359
-								</div>
-								<div class="mui-col-sm-12 mui-col-xs-12">
-									深圳市南山区科技园南区R2-B三楼
-								</div>
+							</div>-->
+				<!--<ul class="mui-table-view" style="margin: 10px;">
 
-							</div>
-							<div class="mui-card">
+							<li class="mui-table-view-cell" id="quit">
+								<a class="mui-navigate-right" href="#">
+									<span class="mui-icon mui-icon-plusempty"></span>添加地址
+								</a>
+							</li>
+						</ul>-->
+				<ul class="mui-table-view" style="margin: 10px;">
+					<input type="button" name="leixing" id="leixing" value="+" style="margin: 0px; width: 100%;font-size: 24px;" />
+				</ul>
+				<!--<input type="text" name="leixing" id="leixing" value="" placeholder="选择地址" style="margin: 10px ; width: 100%; box-sizing: border-box;"  />-->
+				<div class="mui-card mui-row" style="padding: 10px;">
+					<div class="mui-col-sm-6 mui-col-xs-6">订单价格：</div>
+					<div class="mui-col-sm-6 mui-col-xs-6 rights" id="gm">￥150</div>
+					<div class="mui-col-sm-6 mui-col-xs-6">李先生</div>
+					<div class="mui-col-sm-6 mui-col-xs-6 rights">13613820359</div>
+					<div class="mui-col-sm-12 mui-col-xs-12">深圳市南山区科技园南区R2-B三楼</div>
+				</div>
+				<div class="mui-card">
 
-								<!--页眉，放置标题-->
-								<!--<div class="mui-card-header">页眉</div>-->
-								<!--内容区-->
-								<div class="mui-media-body" style="padding: 10px;">
-									名家字画
-									<p style="text-indent:2em;"> 吴败，字国旗，号画魔,云南江川人。4岁学习书画，其人画画成魔，15年不出家门。读周易，悟太极，理解宇宙变化原理，融和中国传统山水，花鸟。启功先生观其书画，书赠“少年老成”四字，既表认同，更多激励。中国艺术大师朱纪瞻先生在上海为吴败题写了“滇南鬼才”四字，以奖励后生。
-										<!--电话：13521352789
+					<!--页眉，放置标题-->
+					<!--<div class="mui-card-header">页眉</div>-->
+					<!--内容区-->
+					<div class="mui-media-body" style="padding: 10px;">
+						名家字画
+						<p style="text-indent:2em;"> 吴败，字国旗，号画魔,云南江川人。4岁学习书画，其人画画成魔，15年不出家门。读周易，悟太极，理解宇宙变化原理，融和中国传统山水，花鸟。启功先生观其书画，书赠“少年老成”四字，既表认同，更多激励。中国艺术大师朱纪瞻先生在上海为吴败题写了“滇南鬼才”四字，以奖励后生。
+							<!--电话：13521352789
   中国建设银行  户名：王 君   卡号：4367 4200 1350 0901 552-->
-									</p>
-								</div>
-								<div class="mui-card-content">
-									<a href="#"><img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" /></a>
-								</div>
-								<!--页脚，放置补充信息或支持的操作-->
-								<!--<div class="mui-card-footer">名称</div>-->
-
-							</div>
-							<div class="mui-card mui-row" style="padding: 10px;">
-								<div class="mui-col-sm-6 mui-col-xs-6">商品</div>
-								<div class="mui-col-sm-6 mui-col-xs-6 rights" >￥150</div>
-								<div class="mui-col-sm-6 mui-col-xs-6">运费</div>
-								<div class="mui-col-sm-6 mui-col-xs-6 rights" >￥0</div>
-								<div class="mui-col-sm-6 mui-col-xs-6">总计</div>
-								<div class="mui-col-sm-6 mui-col-xs-6 rights red" >￥150</div>
-
-							</div><div class="mui-card mui-row" style="padding: 10px;">
-								<div class="mui-col-sm-4 mui-col-xs-4">订单编号：</div>
-								<div class="mui-col-sm-8 mui-col-xs-8" > yx12313213514543013543</div>
-								<div class="mui-col-sm-4 mui-col-xs-4">创建时间</div>
-								<div class="mui-col-sm-8 mui-col-xs-8" > 18-01-30 16:40:50</div>
-
-							</div>
-							<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;">确认支付</button>
-
-						</ul>
-
+						</p>
 					</div>
-				</div>
-				<div class="mui-off-canvas-backdrop"></div>
-				<div class="mui-backdrop" style="display: none;">
+					<div class="mui-card-content">
+						<a href="#"><img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" /></a>
+					</div>
+					<!--页脚，放置补充信息或支持的操作-->
+					<!--<div class="mui-card-footer">名称</div>-->
 
 				</div>
+				<div class="mui-card mui-row" style="padding: 10px;">
+					<div class="mui-col-sm-6 mui-col-xs-6">商品</div>
+					<div class="mui-col-sm-6 mui-col-xs-6 rights">￥150</div>
+					<div class="mui-col-sm-6 mui-col-xs-6">运费</div>
+					<div class="mui-col-sm-6 mui-col-xs-6 rights">￥0</div>
+					<div class="mui-col-sm-6 mui-col-xs-6">总计</div>
+					<div class="mui-col-sm-6 mui-col-xs-6 rights red">￥150</div>
+
+				</div>
+				<div class="mui-card mui-row" style="padding: 10px;">
+					<div class="mui-col-sm-4 mui-col-xs-4">订单编号：</div>
+					<div class="mui-col-sm-8 mui-col-xs-8"> yx12313213514543013543</div>
+					<div class="mui-col-sm-4 mui-col-xs-4">创建时间</div>
+					<div class="mui-col-sm-8 mui-col-xs-8"> 18-01-30 16:40:50</div>
+
+				</div>
+				<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;">确认支付</button>
+
+				</ul>
+
 			</div>
 		</div>
+		<ul class="mui-table-view" id="mui_view">
+
+			<li class="mui-table-view-cell mui-row" data-type="1">
+				<p class="mui-col-sm-6 mui-col-xs-6">123123 </p>
+				<p class="mui-col-sm-6 mui-col-xs-6 rs">13203940281 </p>
+				<p class="mui-col-sm-12 mui-col-xs-12">123123 </p>
+			</li>
+			<li class="mui-table-view-cell mui-row" data-type="1">
+				<p class="mui-col-sm-6 mui-col-xs-6">123123 </p>
+				<p class="mui-col-sm-6 mui-col-xs-6 rs">13203940281 </p>
+				<p class="mui-col-sm-12 mui-col-xs-12">123123 </p>
+			</li>
+			<li class="mui-table-view-cell mui-row" data-type="1">
+				<p class="mui-col-sm-6 mui-col-xs-6">123123 </p>
+				<p class="mui-col-sm-6 mui-col-xs-6 rs">13203940281 </p>
+				<p class="mui-col-sm-12 mui-col-xs-12">123123 </p>
+			</li>
+			<li class="mui-table-view-cell mui-row" data-type="1">
+				<p class="mui-col-sm-6 mui-col-xs-6">123123 </p>
+				<p class="mui-col-sm-6 mui-col-xs-6 rs">13203940281 </p>
+				<p class="mui-col-sm-12 mui-col-xs-12">123123 </p>
+			</li>
+			<li class="mui-table-view-cell mui-row" data-type="1">
+				<p class="mui-col-sm-6 mui-col-xs-6">123123 </p>
+				<p class="mui-col-sm-6 mui-col-xs-6 rs">13203940281 </p>
+				<p class="mui-col-sm-12 mui-col-xs-12">123123 </p>
+			</li>
+
+			<input type="hidden" name="" id="mui_views" value="" />
+		</ul>
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
@@ -191,20 +298,24 @@
 				var th = this;
 				/*mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' }) */
 				mui.confirm("确认支付？", '支付', ['取消', '确认'], function(e) {
-
 					if(e.index == 0) {
 						//点击取消	this.text("123123");
-
-					} else {
-
-						//确认
-
-					}
+					} else {}
 				}, 'div');
-				//mui.alert("确认购买？",'提示',['确认'],null,'div')
-				//mui.prompt(" message", "placeholder", "title", ['取消','确认'], null,'div')
-
 			});
+			mui(".mui-table-view").on("tap", "#leixing", function() {
+				document.getElementById("mui_view").style.display = "block";
+			});
+
+			mui("#mui_view").on("tap", "#mui_view li", function() {
+				var datas = this.getAttribute("data-type");
+				/*var th = this;
+				var onetext = th.firstChild.innerText;
+				alert(onetext);*/
+				/*document.getElementById("mui_views").value = this.getAttribute("data-type");*/
+				document.getElementById("mui_view").style.display = "none";
+
+			})
 		</script>
 	</body>
 
