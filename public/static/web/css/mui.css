@@ -5624,8 +5624,9 @@ body > .mui-progressbar
     src: url('../fonts/kaiti.ttf') format('truetype');
 }
 
-*{  font-family: kaiti; }
-
+*{  font-family: kaiti !important; }
+.mui-icon {
+    font-family: Muiicons !important;}
  .mui-card-footer{
  	    word-break: break-all;
     display: -webkit-box;
