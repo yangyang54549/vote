@@ -12,7 +12,7 @@
 				display: flex;
 				justify-content: center;
 			}
-			
+
 			.spans .mui-icon {
 				width: 30px;
 				height: 30px;
@@ -21,7 +21,7 @@
 				border-radius: 50%;
 				margin-bottom: 10px;
 			}
-			
+
 			header>.div {
 				position: absolute;
 				top: 15px;
@@ -44,15 +44,15 @@
 			/*.mui-row div {
 				text-align: center;
 			}*/
-			
+
 			.rights {
 				text-align: right;
 			}
-			
+
 			.red {
 				color: red;
 			}
-			
+
 			#mui_view {
 				position: fixed;
 				left: 0;
@@ -72,62 +72,62 @@
 			/*作为IT界最前端的技术达人，页面上的每一个元素的样式我们都必须较真，就是滚动条我们也不会忽略。
 下面我给大家分享一下如何通过CSS来控制滚动条的样式，代码如下：*/
 			/*定义滚动条轨道*/
-			
+
 			#mui_view::-webkit-scrollbar-track {
 				background-color: #ffffff;
 				-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
 			}
 			/*定义滚动条高宽及背景*/
-			
+
 			#mui_view::-webkit-scrollbar {
 				width: 3px;
 				background-color: rgba(255, 255, 255, 0.34);
 			}
 			/*定义滚动条*/
-			
+
 			#mui_view::-webkit-scrollbar-thumb {
 				background-color: #ffffff;
 				border-radius: 2px;
 			}
-			
+
 			.mui-table-view-cell:after {
 				opacity: 0;
 			}
-			
+
 			.mui-table-view-cell {
 				border-bottom: 1px solid #c8c7cc;
 			}
-			
+
 			.mui-table-view-cell li.mui-active {
 				background-color: #0062CC;
 			}
-			
+
 			#nextview {
 				width: 100%;
 				height: auto;
 			}
-			
+
 			.mui-bar-tab {
 				top: 0px;
 			}
-			
+
 			.mui-scroll {
 				-webkit-overflow-scrolling: touch;
 			}
-			
+
 			.mui-bar-tab .mui-tab-item.mui-active {
 				color: #007aff;
 			}
-			
+
 			.mui-row .rs {
 				text-align: right;
 				font-size: 15px;
 			}
-			
+
 			.mui-table-view-cell {
 				padding: 8px 12px;
 			}
-			
+
 			.mui-table-view-cell p {
 				color: black;
 				font-size: 15px;
@@ -178,39 +178,28 @@
 					<input type="button" name="leixing" id="leixing" value="+" style="margin: 0px; width: 100%;font-size: 24px;" />
 				</ul>
 				<!--<input type="text" name="leixing" id="leixing" value="" placeholder="选择地址" style="margin: 10px ; width: 100%; box-sizing: border-box;"  />-->
-				<div class="mui-card mui-row" style="padding: 10px;">
-					<div class="mui-col-sm-6 mui-col-xs-6">订单价格：</div>
-					<div class="mui-col-sm-6 mui-col-xs-6 rights" id="gm">￥150</div>
-					<div class="mui-col-sm-6 mui-col-xs-6">李先生</div>
-					<div class="mui-col-sm-6 mui-col-xs-6 rights">13613820359</div>
-					<div class="mui-col-sm-12 mui-col-xs-12">深圳市南山区科技园南区R2-B三楼</div>
-				</div>
+                <div class="mui-card mui-row" style="padding: 10px;">
+                    <div class="mui-col-sm-6 mui-col-xs-6">李先生</div>
+                    <div class="mui-col-sm-6 mui-col-xs-6 rights">13613820359</div>
+                    <div class="mui-col-sm-12 mui-col-xs-12">深圳市南山区科技园南区R2-B三楼</div>
+                </div>
 				<div class="mui-card">
 
 					<!--页眉，放置标题-->
 					<!--<div class="mui-card-header">页眉</div>-->
 					<!--内容区-->
 					<div class="mui-media-body" style="padding: 10px;">
-						名家字画
-						<p style="text-indent:2em;"> 吴败，字国旗，号画魔,云南江川人。4岁学习书画，其人画画成魔，15年不出家门。读周易，悟太极，理解宇宙变化原理，融和中国传统山水，花鸟。启功先生观其书画，书赠“少年老成”四字，既表认同，更多激励。中国艺术大师朱纪瞻先生在上海为吴败题写了“滇南鬼才”四字，以奖励后生。
-							<!--电话：13521352789
-  中国建设银行  户名：王 君   卡号：4367 4200 1350 0901 552-->
-						</p>
+						{$qunying.title}
 					</div>
 					<div class="mui-card-content">
 						<a href="#"><img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" /></a>
 					</div>
-					<!--页脚，放置补充信息或支持的操作-->
-					<!--<div class="mui-card-footer">名称</div>-->
-
 				</div>
 				<div class="mui-card mui-row" style="padding: 10px;">
 					<div class="mui-col-sm-6 mui-col-xs-6">商品</div>
-					<div class="mui-col-sm-6 mui-col-xs-6 rights">￥150</div>
-					<div class="mui-col-sm-6 mui-col-xs-6">运费</div>
-					<div class="mui-col-sm-6 mui-col-xs-6 rights">￥0</div>
+					<div class="mui-col-sm-6 mui-col-xs-6 rights">{$qunying.integral} 积分</div>
 					<div class="mui-col-sm-6 mui-col-xs-6">总计</div>
-					<div class="mui-col-sm-6 mui-col-xs-6 rights red">￥150</div>
+					<div class="mui-col-sm-6 mui-col-xs-6 rights red">{$qunying.integral} 积分</div>
 
 				</div>
 				<div class="mui-card mui-row" style="padding: 10px;">
@@ -273,33 +262,16 @@
 			//mui下a标签href失效问题解决
 			mui('body').on('tap', 'a', function() {
 				window.top.location.href = this.href;
-				/*$(this).classList.remove("mui-active") */
 			});
 			var ons = 3;
 			var onl;
-			//var mask = mui.createMask(callback);//callback为用户点击蒙版时自动执行的回调；
-			/*mui(".mui-media").on("tap", ".mui-media .mui-card .spans .mui-icon", function() {
-				//当前对象直接就是--->this
-				var sq = this;
-				var tt = this.className.length;
 
-				if(tt > 32) {
-				} else {
-					if(ons > 0) {
-						this.classList.add('active');
-						ons = ons - 1;
-					} else {
-						 mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' })
-					}
-				}
-			});*/
 			mui(".mui-media").on("tap", ".mui-btn", function() {
 				//当前对象直接就是--->this
 				var th = this;
 				/*mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' }) */
 				mui.confirm("确认支付？", '支付', ['取消', '确认'], function(e) {
 					if(e.index == 0) {
-						//点击取消	this.text("123123");
 					} else {}
 				}, 'div');
 			});
@@ -309,10 +281,6 @@
 
 			mui("#mui_view").on("tap", "#mui_view li", function() {
 				var datas = this.getAttribute("data-type");
-				/*var th = this;
-				var onetext = th.firstChild.innerText;
-				alert(onetext);*/
-				/*document.getElementById("mui_views").value = this.getAttribute("data-type");*/
 				document.getElementById("mui_view").style.display = "none";
 
 			})
