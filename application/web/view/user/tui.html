@@ -22,20 +22,33 @@
 					<h1 class="mui-title mui-active">个人信息</h1>
 					<!--<a class=" mui-pull-right mui-btn-link">提现记录</a>-->
 				</header>
-				
+
 				<div class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
-						
 						<div class="mui-card mui-row" style="padding: 10px;">
-					<p class="mui-col-sm-12 mui-col-xs-12">1.推荐享受一代30积分，二代10积分！</p>
-				<p class="mui-col-sm-12 mui-col-xs-12 rs">2.积分购物享受两代5%。</p>
-				<p class="mui-col-sm-12 mui-col-xs-12">3.推荐会员和销售厂家，享受一代提现金额的2%，二代1%。</p>
-								<p class="mui-col-sm-12 mui-col-xs-12">4.本平台恒量发行1亿一勺积分。</p>
+							<p class="mui-col-sm-12 mui-col-xs-12">1.推荐享受一代30积分，二代10积分！</p>
+							<p class="mui-col-sm-12 mui-col-xs-12 rs">2.积分购物享受两代5%。</p>
+							<p class="mui-col-sm-12 mui-col-xs-12">3.推荐会员和销售厂家，享受一代提现金额的2%，二代1%。</p>
+						</div>
+						<div cols="20" id="biao1" style="display: none;">{:url('user/tui',['invite'=>$invite])}</div>
+						<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;" onClick="copyUrl2()">推荐</button>
+					</div>
 				</div>
-				
-				<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;">推荐</button>
-						</div></div>
-						<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
-		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
-	</body>
+<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+function copyUrl2()
+    {
+        var Url2=document.getElementById("biao1").innerText;
+        var oInput = document.createElement('input');
+        oInput.value = Url2;
+        document.body.appendChild(oInput);
+        oInput.select();//选择对象
+        document.execCommand("Copy");//执行浏览器复制命令
+        oInput.className = 'oInput';
+        oInput.style.display='none';
+        alert('复制成功');
+    }
+</script>
+</body>
 </html>

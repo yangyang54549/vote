@@ -48,4 +48,10 @@ class User extends Yang
             return $this->fetch();
         }
     }
+
+    public function tui()
+    {
+        $this->assign('invite',$this->id);
+        return $this->fetch();
+    }
 }
