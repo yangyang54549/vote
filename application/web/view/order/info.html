@@ -59,7 +59,7 @@
 
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		
+
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
 					<div class="div" onclick="window.history.back()"></div>
@@ -76,8 +76,8 @@
 						<ul class="mui-media " style="padding: 0;">
 							<div class="mui-card">
 								<div class="mui-media-body" style="padding: 10px;">
-									名家字画
-									<p style="text-indent:2em;"> 吴败，字国旗，号画魔,云南江川人。4岁学习书画，其人画画成魔，15年不出家门。读周易，悟太极，理解宇宙变化原理，融和中国传统山水，花鸟。启功先生观其书画，书赠“少年老成”四字，既表认同，更多激励。中国艺术大师朱纪瞻先生在上海为吴败题写了“滇南鬼才”四字，以奖励后生。
+									{$qunying.title}
+									<p style="text-indent:2em;"> {$qunying.content}
 										<!--电话：13521352789
   中国建设银行  户名：王 君   卡号：4367 4200 1350 0901 552-->
 									</p>
@@ -88,16 +88,16 @@
 									订单价格：
 								</div>
 								<div class="mui-col-sm-6 mui-col-xs-6" id="gm">
-150
+									{$qunying.integral} 积分
 								</div>
 								<div class="mui-col-sm-6 mui-col-xs-6">
-									李先生
+									{$address.name}
 								</div>
 								<div class="mui-col-sm-6 mui-col-xs-6" >
-13613820359
+									{$address.mobile}
 								</div>
 								<div class="mui-col-sm-12 mui-col-xs-12">
-									深圳市南山区科技园南区R2-B三楼
+									{$address.address}
 								</div>
 
 							</div>
@@ -115,15 +115,15 @@
 							</div>
 							<div class="mui-card mui-row" style="padding: 10px;">
 								<div class="mui-col-sm-6 mui-col-xs-6">商品</div>
-								<div class="mui-col-sm-6 mui-col-xs-6" > ￥ 150</div><div class="mui-col-sm-6 mui-col-xs-6">运费</div>
+								<div class="mui-col-sm-6 mui-col-xs-6" >{$qunying.integral} 积分</div><div class="mui-col-sm-6 mui-col-xs-6">运费</div>
 								<div class="mui-col-sm-6 mui-col-xs-6" > ￥ 0</div>
 								<div class="mui-col-sm-6 mui-col-xs-6">总计</div>
-								<div class="mui-col-sm-6 mui-col-xs-6" > ￥ 150</div>
+								<div class="mui-col-sm-6 mui-col-xs-6" >{$qunying.integral} 积分</div>
 							</div><div class="mui-card mui-row" style="padding: 10px;">
 								<div class="mui-col-sm-4 mui-col-xs-4">订单编号：</div>
-								<div class="mui-col-sm-8 mui-col-xs-8" > yx12313213514543013543</div>
+								<div class="mui-col-sm-8 mui-col-xs-8" > {$order.number}</div>
 								<div class="mui-col-sm-4 mui-col-xs-4">创建时间</div>
-								<div class="mui-col-sm-8 mui-col-xs-8" > 18-01-30 16:40:50</div>
+								<div class="mui-col-sm-8 mui-col-xs-8" > {$order.create_time|date="Y-m-d H:i",###}</div>
 
 							</div>
 
@@ -131,7 +131,7 @@
 
 					</div>
 				</div>
-				
+
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>

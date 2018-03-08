@@ -74,6 +74,11 @@ class Gold extends Yang
             $arr = input();
             $user = User::where('id',$this->id)->find();
             $qunying = Q::where('id',$arr['sp_id'])->find();
+            if ($qunying['status'] == 1 || $qunying['is_sell'] == 1) {
+                $this->ret['msg'] = '商品不在出售状态';
+                $this->ret['code'] = -200;
+                return json($this->ret);
+            }
 
             if ($user['integral']<$qunying['integral']) {
                 $this->ret['msg'] = '积分不足,请充值';
@@ -84,6 +89,7 @@ class Gold extends Yang
             $arr['number'] = time().rand(100000,999999);
             $arr['user_id'] = $this->id;
             $arr['sp_name'] = $qunying['title'];
+            $arr['img'] = $qunying['img'];
             $arr['integral'] = $qunying['integral'];
             $arr['create_time'] = time();
 
@@ -96,7 +102,7 @@ class Gold extends Yang
                 $order = Order::insert($arr);
                 User::where('id',$this->id)->setDec('integral',$qunying['integral']);
 
-                Q::where('id',$arr['sp_id'])->update(['status'=>1]);
+                Q::where('id',$arr['sp_id'])->update(['status'=>1,'is_sell'=>1]);
 
                 $row['user_id'] = $this->id;
                 $row['or'] = 3;
