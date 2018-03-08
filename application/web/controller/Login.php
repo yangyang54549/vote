@@ -28,7 +28,6 @@ class Login extends Yang
     {
         if ($this->request->isAjax()) {
             $arr = input('post.');
-
             // if (!isset($arr['mobile'])) {
             //     return json(['code'=>1, 'msg'=>'手机号不能为空']);
             // }
@@ -63,6 +62,12 @@ class Login extends Yang
             $arr['status'] = 0;
             $arr['password'] = md5($arr['password']);
             $user = User::insert($arr);
+
+            User::where('id',$arr['referrer'])->setInc('integral', 30);
+            $referrer = User::where('id',$arr['referrer'])->find();
+            if ($referrer['referrer'] != 0) {
+                User::where('id',$referrer['referrer'])->setInc('integral', 10);
+            }
             if($user){
                 return json($this->ret);
             }else{
