@@ -283,7 +283,6 @@
 
 			mui("#mui_view").on("tap", "#mui_view li", function() {
 				var datas = this.getAttribute("data-type");
-
 				var rss = this.innerText;			
 				/*用空格无法分割成数组，只能先把空格替换为逗号，用逗号分割成数组*/
 	var reg=new RegExp(" ","g"); //创建正则RegExp对象 
@@ -305,10 +304,8 @@ alert(qw[1]);*/
 				/*var th = this;
 				var onetext = th.firstChild.innerText;
 				alert(onetext);*/
-				/*document.getElementById("mui_views").value = this.getAttribute("data-type");*/
-
+				document.getElementById("mui_views").value = this.getAttribute("data-type");
 				document.getElementById("mui_view").style.display = "none";
-
 			})
 		</script>
 	</body>
