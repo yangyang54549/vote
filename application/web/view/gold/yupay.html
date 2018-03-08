@@ -213,16 +213,18 @@
 				</div>
 				<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;">确认支付</button>
 
-				</ul>
+				<!--</ul>-->
 
 			</div>
 		</div>
 		<ul class="mui-table-view" id="mui_view">
+			<!--mui-row p  text 加空格-->
 			{volist name="address" id="vo"}
 			<li class="mui-table-view-cell mui-row" data-type="{$vo.id}">
+				
 				<p class="mui-col-sm-6 mui-col-xs-6 ls">{$vo.name} </p>
 				<p class="mui-col-sm-6 mui-col-xs-6 rs">{$vo.mobile} </p>
-				<p class="mui-col-sm-12 mui-col-xs-12">{$vo.address}</p>
+				<p class="mui-col-sm-12 mui-col-xs-12">{$vo.address} </p>
 			</li>
 			{/volist}
 			<li class="mui-table-view-cell mui-row" data-type="1">
@@ -258,7 +260,7 @@
 			var ons = 3;
 			var onl;
 
-			mui(".mui-media").on("tap", ".mui-btn", function() {
+			mui(".mui-scroll").on("tap", ".mui-btn", function() {
 				//当前对象直接就是--->this
 				var th = this;
 				/*mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' }) */
