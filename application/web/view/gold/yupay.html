@@ -180,9 +180,16 @@
 				<!--<input type="text" name="leixing" id="leixing" value="" placeholder="选择地址" style="margin: 10px ; width: 100%; box-sizing: border-box;"  />-->
 
                 <div class="mui-card mui-row" style="padding: 10px;">
-                   <div class="mui-col-sm-6 mui-col-xs-6" id="names">{$address[0][name]}</div>
-					<div class="mui-col-sm-6 mui-col-xs-6 rights" id="phone">{$address[0][mobile]}</div>
-					<div class="mui-col-sm-12 mui-col-xs-12" id="site">{$address[0][address]}</div>
+                {if condition="$address"}
+                    <div class="mui-col-sm-6 mui-col-xs-6" id="names">{$address[0]['name']} </div>
+					<div class="mui-col-sm-6 mui-col-xs-6 rights" id="phone">{$address[0]['mobile']} </div>
+					<div class="mui-col-sm-12 mui-col-xs-12" id="site">{$address[0]['address']} </div>
+                {else/}
+                    <div class="mui-col-sm-6 mui-col-xs-6" id="names"> </div>
+					<div class="mui-col-sm-6 mui-col-xs-6 rights" id="phone"> </div>
+					<div class="mui-col-sm-12 mui-col-xs-12" id="site"> </div>
+                {/if}
+
                 </div>
 
 				<div class="mui-card">
@@ -218,24 +225,20 @@
 			</div>
 		</div>
 		<ul class="mui-table-view" id="mui_view">
-			{volist name="address" id="vo"}
-			<li class="mui-table-view-cell mui-row" data-type="{$vo.id}">
-				<p class="mui-col-sm-6 mui-col-xs-6 ls">{$vo.name} </p>
-				<p class="mui-col-sm-6 mui-col-xs-6 rs">{$vo.mobile} </p>
-				<p class="mui-col-sm-12 mui-col-xs-12">{$vo.address}</p>
-			</li>
-			{/volist}
-			<li class="mui-table-view-cell mui-row" data-type="1">
-				<p class="mui-col-sm-6 mui-col-xs-6 ls">123123 </p>
-				<p class="mui-col-sm-6 mui-col-xs-6 rs">13203940281 </p>
-				<p class="mui-col-sm-12 mui-col-xs-12">123123 </p>
-			</li>
-			<li class="mui-table-view-cell mui-row" data-type="2">
-				<p class="mui-col-sm-6 mui-col-xs-6 ls">123123 </p>
-				<p class="mui-col-sm-6 mui-col-xs-6 rs">13203940281 </p>
-				<p class="mui-col-sm-12 mui-col-xs-12">123123 </p>
-			</li>
-			<input type="hidden" id="ress" value="" />
+                {if condition="$address"}
+					{volist name="address" id="vo"}
+					<li class="mui-table-view-cell mui-row" data-type="{$vo.id}">
+						<p class="mui-col-sm-6 mui-col-xs-6 ls">{$vo.name} </p>
+						<p class="mui-col-sm-6 mui-col-xs-6 rs">{$vo.mobile} </p>
+						<p class="mui-col-sm-12 mui-col-xs-12">{$vo.address} </p>
+					</li>
+					{/volist}
+					<input type="hidden" id="ress" value="{$address[0]['id']}" />
+                {else/}
+					<div style="text-align:center;">请先添加收获地址</div>
+					<input type="hidden" id="ress" value="" />
+                {/if}
+
 		</ul>
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
@@ -258,7 +261,7 @@
 			var ons = 3;
 			var onl;
 
-			mui(".mui-media").on("tap", ".mui-btn", function() {
+			mui("body").on("tap", ".mui-btn-primary", function() {
 				//当前对象直接就是--->this
 				var th = this;
 				/*mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' }) */
@@ -277,27 +280,19 @@
 				var rss = this.innerText;
 
 				/*用空格无法分割成数组，只能先把空格替换为逗号，用逗号分割成数组*/
-	var reg=new RegExp(" ","g"); //创建正则RegExp对象
-var stringObj=rss;
-var newstr=stringObj.replace(reg,",");
-var qw = newstr.split(",");
-/*$("#site").text(qw[2]);
-$("#phone").text(qw[1]);
-$("#names").text(qw[0]);*/
-document.getElementById("site").innerText = qw[2];
-document.getElementById("phone").innerText = qw[1];
-document.getElementById("names").innerText = qw[0];
-/*alert(qw[1]);*/
+			var reg=new RegExp(" ","g"); //创建正则RegExp对象
+			var stringObj=rss;
+			var newstr=stringObj.replace(reg,",");
+			var qw = newstr.split(",");
+			/*$("#site").text(qw[2]);
+			$("#phone").text(qw[1]);
+			$("#names").text(qw[0]);*/
+			document.getElementById("site").innerText = qw[2];
+			document.getElementById("phone").innerText = qw[1];
+			document.getElementById("names").innerText = qw[0];
 
-/*用空格无法分割成数组*/
-/*var stringObj=rss;
-var qw = newstr.split(" ");
-alert(qw[1]);*/
-				/*var th = this;
-				var onetext = th.firstChild.innerText;
-				alert(onetext);*/
-				document.getElementById("ress").value = this.getAttribute("data-type");
-				document.getElementById("mui_view").style.display = "none";
+			document.getElementById("ress").value = this.getAttribute("data-type");
+			document.getElementById("mui_view").style.display = "none";
 			})
 		</script>
 	</body>
