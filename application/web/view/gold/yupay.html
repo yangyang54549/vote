@@ -283,11 +283,13 @@
 
 			mui("#mui_view").on("tap", "#mui_view li", function() {
 				var datas = this.getAttribute("data-type");
+
 				var rss = this.innerText;			
+
 				/*用空格无法分割成数组，只能先把空格替换为逗号，用逗号分割成数组*/
-	var reg=new RegExp(" ","g"); //创建正则RegExp对象 
-var stringObj=rss; 
-var newstr=stringObj.replace(reg,","); 
+	var reg=new RegExp(" ","g"); //创建正则RegExp对象
+var stringObj=rss;
+var newstr=stringObj.replace(reg,",");
 var qw = newstr.split(",");
 /*$("#site").text(qw[2]);
 $("#phone").text(qw[1]);
@@ -298,7 +300,7 @@ document.getElementById("names").innerText = qw[0];
 /*alert(qw[1]);*/
 
 /*用空格无法分割成数组*/
-/*var stringObj=rss; 
+/*var stringObj=rss;
 var qw = newstr.split(" ");
 alert(qw[1]);*/
 				/*var th = this;

@@ -9,7 +9,8 @@ class Order extends Yang
     public function index()
     {
 
-
+        $order = O::where(['user_id'=>$this->id])->select();
+        $this->assign('order',$order);
         return $this->fetch();
     }
     public function info()
