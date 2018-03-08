@@ -6,6 +6,7 @@ use app\common\model\Column;
 use app\common\model\Type;
 use app\common\model\TypeCopy;
 use app\common\model\Address;
+use app\common\model\Order;
 use app\common\model\Qunying as Q;
 
 class Gold extends Yang
@@ -66,11 +67,35 @@ class Gold extends Yang
 
     public function yupay()
     {
-        $id = input('id');
-        $qunying = Q::where('id',$id)->find();
-        $address = Address::where(['user_id'=>$this->id])->order('is_default desc')->select();
-        $this->assign('qunying',$qunying);
-        $this->assign('address',$address);
-        return $this->fetch();
+        if ($this->request->isAjax()) {
+            $arr = input();
+            $qunying = Q::where('id',$arr['sp_id'])->find();
+            $arr['number'] = time().rand(100000,999999);
+            $arr['user_id'] = $this->id;
+            $arr['sp_name'] = $qunying['name'];
+            $arr['integral'] = $qunying['integral'];
+            $arr['create_time'] = time();
+            $order = Order::insert($arr);
+
+
+
+            if(!empty($order)){
+                $this->ret['data'] = $qunying;
+                $this->ret['limit'] = $limit+count($qunying);
+                $this->ret['msg'] = '购买成功';
+                $this->ret['code'] = 1;
+            }else{
+                $this->ret['msg'] = '购买失败';
+                $this->ret['code'] = -200;
+            }
+
+        }else{
+            $id = input('id');
+            $qunying = Q::where('id',$id)->find();
+            $address = Address::where(['user_id'=>$this->id])->order('is_default desc')->select();
+            $this->assign('qunying',$qunying);
+            $this->assign('address',$address);
+            return $this->fetch();
+        }
     }
 }

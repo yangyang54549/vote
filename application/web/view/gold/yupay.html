@@ -157,27 +157,10 @@
 		<!-- 主页面内容容器 -->
 		<div class="mui-content mui-scroll-wrapper">
 			<div class="mui-scroll">
-				<!-- 主界面具体展示内容 -->
-				<!--九宫格1-->
-				<!--下拉刷新容器-->
 
-				<!--<ul class="mui-media " style="padding: 0;">
-<div class="mui-card mui-row" style="padding: 10px;">
-								mui-icon mui-icon-plusempty
-
-							</div>-->
-				<!--<ul class="mui-table-view" style="margin: 10px;">
-
-							<li class="mui-table-view-cell" id="quit">
-								<a class="mui-navigate-right" href="#">
-									<span class="mui-icon mui-icon-plusempty"></span>添加地址
-								</a>
-							</li>
-						</ul>-->
 				<ul class="mui-table-view" style="margin: 10px;">
 					<input type="button" name="leixing" id="leixing" value="+" style="margin: 0px; width: 100%;font-size: 24px;" />
 				</ul>
-				<!--<input type="text" name="leixing" id="leixing" value="" placeholder="选择地址" style="margin: 10px ; width: 100%; box-sizing: border-box;"  />-->
 
                 <div class="mui-card mui-row" style="padding: 10px;">
                 {if condition="$address"}
@@ -194,9 +177,6 @@
 
 				<div class="mui-card">
 
-					<!--页眉，放置标题-->
-					<!--<div class="mui-card-header">页眉</div>-->
-					<!--内容区-->
 					<div class="mui-media-body" style="padding: 10px;">
 						{$qunying.title}
 					</div>
@@ -220,8 +200,6 @@
 				</div>
 				<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;">确认支付</button>
 
-				</ul>
-
 			</div>
 		</div>
 		<ul class="mui-table-view" id="mui_view">
@@ -238,9 +216,7 @@
 					<div style="text-align:center;">请先添加收获地址</div>
 					<input type="hidden" id="ress" value="" />
                 {/if}
-
 		</ul>
-
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script>
@@ -262,13 +238,28 @@
 			var onl;
 
 			mui("body").on("tap", ".mui-btn-primary", function() {
-				//当前对象直接就是--->this
-				var th = this;
-				/*mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' }) */
-				mui.confirm("确认支付？", '支付', ['取消', '确认'], function(e) {
-					if(e.index == 0) {
-					} else {}
-				}, 'div');
+				var ress = document.getElementById("ress").value;
+				var sp_id = {$qunying.id};
+				if (ress=="") {
+					mui.toast("请选择收获地址!");return false;
+				}
+				mui.post("{:url('gold/yupay')}",{
+					ress:ress,
+					sp_id:sp_id
+				},function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if (data.code==1) {
+							mui.toast(data.msg);
+							setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+								window.location = "{:url('index/index')}";
+							}, 1000);
+						}else{
+							mui.toast(data.msg);
+						}
+
+					},'json'
+				);
+
 			});
 			mui(".mui-table-view").on("tap", "#leixing", function() {
 				document.getElementById("mui_view").style.display = "block";
