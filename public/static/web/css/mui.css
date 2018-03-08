@@ -5634,3 +5634,19 @@ body > .mui-progressbar
     -webkit-box-orient: vertical;
     overflow: hidden;
  }
+p,button,.mui-card-footer{
+	font-size: 16px !important;
+}
+span{
+	font-size: 15px  !important;
+}
+.mui-title {
+    font-size: 20px;}
+    
+.mui-icon {
+    
+    font-size: 24px !important; }
+    .mui-media-body {
+    	font-size: 16px !important;
+    }
+
