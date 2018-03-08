@@ -20,8 +20,13 @@
 			}
 			.mui-card {
 				background: rgba(255,255,255,0.3);
+<<<<<<< HEAD
 				
 				
+=======
+				margin-top: 30px;
+
+>>>>>>> af6b7c29b919be96e0d99555e8c236b77f2d4a50
 			}
 			.mui-card p{
 				color: black;
@@ -63,13 +68,15 @@
 							<p class="mui-col-sm-12 mui-col-xs-12 rs">2.推荐好友（推荐好友推荐的用户）购物您将获得交易金额5%的推广回报。</p>
 							<!--<p class="mui-col-sm-12 mui-col-xs-12">3.推荐会员和销售厂家，享受一代提现金额的2%，二代1%。</p>-->
 						</div>
-						<div cols="20" id="biao1" style="display: none;">{:url('user/tui',['invite'=>$invite])}</div>
+						<div cols="20" id="biao1" style="display: none;">__URLL__{:url('user/tui',['invite'=>$invite])}</div>
 						<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;" onClick="copyUrl2()">推荐</button>
 					</div>
 				</div>
 <script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 <script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+
+	mui.init();
 	$(".mui-scroll").css("height",($(window).height()-50));
 function copyUrl2()
     {
@@ -81,8 +88,7 @@ function copyUrl2()
         document.execCommand("Copy");//执行浏览器复制命令
         oInput.className = 'oInput';
         oInput.style.display='none';
-       /* alert('复制成功');*/
-        mui.toast('复制成功'); 
+		mui.toast('邀请链接复制成功,快发送给好友吧!')
     }
 </script>
 </body>

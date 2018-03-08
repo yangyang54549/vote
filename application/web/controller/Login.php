@@ -72,6 +72,10 @@ class Login extends Yang
             }
 
         }else{
+            $referrer = input('referrer');
+            if (!empty($referrer)) {
+                $this->assign('referrer',$referrer);
+            }
             return $this->fetch();
         }
     }
