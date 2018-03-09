@@ -14,14 +14,20 @@ class Match extends Yang
     public function index()
     {
         if ($this->request->isAjax()) {
+            $arr = input('');
             $user = User::where('id',$this->id)->find();
             if ($user['integral']<1000) {
                 $this->ret['msg'] = '积分不足,请充值后上传作品';
                 $this->ret['code'] = -200;
                 return json($this->ret);
             }
+            $qunying = Qunying::where(['type'=>$arr['type'],'status'=>0,'is_gold'=>0])->count();
+            if ($qunying>99) {
+                $this->ret['msg'] = '每天每个栏目限制上传100幅作品';
+                $this->ret['code'] = -200;
+                return json($this->ret);
+            }
 
-            $arr = input('');
             $arr['user_id'] = $this->id;
             $arr['user_name'] = session('user.name');
             $arr['create_time'] = time();
