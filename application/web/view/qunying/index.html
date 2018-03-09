@@ -367,7 +367,8 @@ font-family:KaiTi,
 							id:id
 						},function(data){
 								if (data.code==1) {
-									sp.classList.add('active');
+									sq.className = 'active';
+									
 									ons = ons - 1;
 									mui.toast('点赞成功',{ duration:'long', type:'div' });toasts();
 								}else{
@@ -381,13 +382,13 @@ font-family:KaiTi,
 					}
 			});
 			function toasts(){
-				setTimeout(function() {
-					var ss = $("body .mui-toast-container");
+				/*setTimeout(function() {
+					
 				
 				if(ss.length>0){
 					ss.remove();
 				}
-				}, 3000);
+				}, 3000);*/
 				
 			}
 		</script>
