@@ -4,35 +4,61 @@
     <form class="form form-horizontal" id="form" method="post" action="{:\\think\\Request::instance()->baseUrl()}">
         <input type="hidden" name="id" value="{$vo.id ?? ''}">
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">订单编号：</label>
+            <label class="form-label col-xs-3 col-sm-3">：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="订单编号" name="number" value="{$vo.number ?? ''}" >
+                <input type="text" class="input-text" placeholder="" name="number" value="{$vo.number ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">用户id：</label>
+            <label class="form-label col-xs-3 col-sm-3">：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="用户id" name="user_id" value="{$vo.user_id ?? ''}" >
+                <input type="text" class="input-text" placeholder="" name="user_id" value="{$vo.user_id ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">商品id：</label>
+            <label class="form-label col-xs-3 col-sm-3">：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="商品id" name="sp_id" value="{$vo.sp_id ?? ''}" >
+                <input type="text" class="input-text" placeholder="" name="sp_id" value="{$vo.sp_id ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">price：</label>
+            <label class="form-label col-xs-3 col-sm-3">：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="price" name="price" value="{$vo.price ?? ''}" >
+                <textarea class="textarea" placeholder="" name="sp_name" onKeyUp="textarealength(this, 100)">{$vo.sp_name ?? ''}</textarea>
+                <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">状态：</label>
+            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <div class="select-box">
+                    <select name="img" class="select">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <input type="text" class="input-text" placeholder="" name="integral" value="{$vo.integral ?? ''}" >
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <input type="text" class="input-text" placeholder="" name="ress" value="{$vo.ress ?? ''}" >
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3">：</label>
             <div class="formControls col-xs-6 col-sm-6 skin-minimal">
                 <div class="radio-box">
                     <input type="radio" name="status" id="status-1" value="1">
@@ -42,6 +68,13 @@
                     <input type="radio" name="status" id="status-0" value="0">
                     <label for="status-0">禁用</label>
                 </div>
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <input type="text" class="input-text" placeholder="" name="yes_time" value="{$vo.yes_time ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
@@ -60,6 +93,7 @@
 <script>
     $(function () {
         $("[name='status'][value='{$vo.status ?? ''}']").prop("checked", true);
+        $("[name='img']").find("[value='{$vo.img ?? ''}']").attr("selected", true);
 
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',

@@ -88,6 +88,7 @@ class Gold extends Yang
 
             $arr['number'] = time().rand(100000,999999);
             $arr['user_id'] = $this->id;
+            $arr['set_user_id'] = $qunying['user_id'];
             $arr['sp_name'] = $qunying['title'];
             $arr['img'] = $qunying['img'];
             $arr['integral'] = $qunying['integral'];
