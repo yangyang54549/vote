@@ -255,7 +255,7 @@ font-family:KaiTi,
 						table.insertBefore(li, table.firstChild);*/
 					}
 					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-					mui.toast('下拉刷新成功');
+					mui.toast('下拉刷新成功',{ duration:'long', type:'div' });
 				}, 1000);
 			}
 			var count = 0;
@@ -273,7 +273,7 @@ font-family:KaiTi,
 						},function(data){
 								//服务器返回响应，根据响应结果，分析是否登录成功；
 								if (data.code==1) {
-									mui.toast(data.msg);
+									mui.toast(data.msg,{ duration:'long', type:'div' });
 									limit = data['limit'];
 									var mi = 0;
 									for(var i = cells.length, len = i + data.data.length; i < len; i++) {
@@ -291,7 +291,7 @@ font-family:KaiTi,
 									}
 								}else{
 
-									mui.toast(data.msg);
+									mui.toast(data.msg,{ duration:'long', type:'div' });
 								}
 								mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > data.data.length)); //参数为true代表没有更多数据了。 加载次数·
 
@@ -303,6 +303,7 @@ font-family:KaiTi,
 					/*$(this).classList.remove("mui-active") */
 				}
 			);
+			
 			var tt = 0;
 			var t1;
 			mui(".mui-table-view").on("tap", ".mui-table-view-cell a .mui-media-body", function() {
@@ -327,7 +328,7 @@ font-family:KaiTi,
 								table.innerHTML = " ";
 								table2.innerHTML = " ";
 								if (data.code==1) {
-									mui.toast(data.msg);
+									mui.toast(data.msg,{ duration:'long', type:'div' });
 
 									limit = data['limit'];
 									for(var n = 0; n < data.data.length; n++) {
@@ -342,7 +343,7 @@ font-family:KaiTi,
 										}
 									}
 								}else{
-									mui.toast(data.msg);
+									mui.toast(data.msg,{ duration:'long', type:'div' });
 								}
 								mui('#pullrefresh').pullRefresh().refresh(true);
 
@@ -368,17 +369,18 @@ font-family:KaiTi,
 								if (data.code==1) {
 									sp.classList.add('active');
 									ons = ons - 1;
-									mui.toast('点赞成功');
+									mui.toast('点赞成功',{ duration:'long', type:'div' });
 								}else{
-									mui.toast(data.msg);
+									mui.toast(data.msg,{ duration:'long', type:'div' });
 								}
 							},'json'
 						)
 
 					} else {
-						mui.toast('已使用完每天三次的点赞功能');
+						mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' });
 					}
 			});
+			
 		</script>
 	</body>
 
