@@ -255,7 +255,7 @@ font-family:KaiTi,
 						table.insertBefore(li, table.firstChild);*/
 					}
 					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-					mui.toast('下拉刷新成功',{ duration:'long', type:'div' });
+					mui.toast('下拉刷新成功',{ duration:'long', type:'div' });toasts();
 				}, 1000);
 			}
 			var count = 0;
@@ -291,7 +291,7 @@ font-family:KaiTi,
 									}
 								}else{
 
-									mui.toast(data.msg,{ duration:'long', type:'div' });
+									mui.toast(data.msg,{ duration:'long', type:'div' });toasts();
 								}
 								mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > data.data.length)); //参数为true代表没有更多数据了。 加载次数·
 
@@ -343,7 +343,7 @@ font-family:KaiTi,
 										}
 									}
 								}else{
-									mui.toast(data.msg,{ duration:'long', type:'div' });
+									mui.toast(data.msg,{ duration:'long', type:'div' });toasts();
 								}
 								mui('#pullrefresh').pullRefresh().refresh(true);
 
@@ -369,18 +369,27 @@ font-family:KaiTi,
 								if (data.code==1) {
 									sp.classList.add('active');
 									ons = ons - 1;
-									mui.toast('点赞成功',{ duration:'long', type:'div' });
+									mui.toast('点赞成功',{ duration:'long', type:'div' });toasts();
 								}else{
-									mui.toast(data.msg,{ duration:'long', type:'div' });
+									mui.toast(data.msg,{ duration:'long', type:'div' });toasts();
 								}
 							},'json'
 						)
 
 					} else {
-						mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' });
+						mui.toast('已使用完每天三次的点赞功能',{ duration:'long', type:'div' });toasts();
 					}
 			});
-			
+			function toasts(){
+				setTimeout(function() {
+					var ss = $("body .mui-toast-container");
+				
+				if(ss.length>0){
+					ss.remove();
+				}
+				}, 3000);
+				
+			}
 		</script>
 	</body>
 
