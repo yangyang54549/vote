@@ -285,6 +285,10 @@
 			document.getElementById("ress").value = this.getAttribute("data-type");
 			document.getElementById("mui_view").style.display = "none";
 			})
+			mui("body").on("tap", "#mui_view", function() {			
+				$("#mui_view").css("display","none");
+//			document.getElementById("mui_view").style.display = "none";
+			})
 		</script>
 	</body>
 
