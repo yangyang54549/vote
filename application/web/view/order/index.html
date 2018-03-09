@@ -535,22 +535,23 @@ form,input,label{
 			<div class="main">
 				<div class="case">
 					<ul class="entire">
+					{volist name="order" id="vo"}
 						<li>
 							<div class="top">
-								<p> <span>无邪作品（作品名）</span></p>
-								<p class=" ">待发货</p>
+								<p> <span>{$vo.sp_name}</span></p>
+								<p class=" ">{if condition="$vo.status eq 1"}待发货{elseif condition="$vo.status eq 2"/}已发货{else/}已完成{/if}</p>
 							</div>
-							<div class="center">
+							<div class="center" onclick="window.location.href = '{:url("order/info",["id"=>$vo.id])}';">
 								<div class="fl">
 									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
+										<img src="{$vo.img}" />
 									</div>
 
 
 								</div>
 								<div class="fr">
 									<span>
-										...共<i></i>件
+										...共<i>1</i>件
 									</span>
 									<span class="fa fa-angle-right">
 
@@ -558,117 +559,34 @@ form,input,label{
 								</div>
 							</div>
 							<div class="bottom">
-								<p class="fu"><span>实付款：￥</span><span>132.00</span></p>
+								<p class="fu"><span>实付积分：</span><span>{$vo.integral}</span></p>
 
 								<p class="button">联系客服</p>
 
 							</div>
 						</li>
-						<li>
-							<div class="top">
-								<p> <span>无邪作品（作品名）</span></p>
-								<p class=" ">待发货</p>
-							</div>
-							<div class="center">
-								<div class="fl">
-									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
-									</div>
+					{/volist}
 
-
-								</div>
-								<div class="fr">
-									<span>
-										...共<i></i>件
-									</span>
-									<span class="fa fa-angle-right">
-
-									</span>
-								</div>
-							</div>
-							<div class="bottom">
-								<p class="fu"><span>实付款：￥</span><span>132.00</span></p>
-
-								<p class="button">联系客服</p>
-
-							</div>
-						</li>
-						<li>
-							<div class="top">
-								<p> <span>无邪作品（作品名）</span></p>
-								<p>已完成</p>
-							</div>
-							<div class="center">
-								<div class="fl">
-									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
-									</div>
-
-								</div>
-								<div class="fr">
-									<span>
-										...共<i></i>件
-									</span>
-									<span class="fa fa-angle-right">
-
-									</span>
-								</div>
-							</div>
-							<div class="bottom">
-								<p class="fu"><span>实付款：￥</span><span>132.00</span></p>
-								<p class="button">联系客服</p>
-
-								<!--<p class="button">追加评价</p>-->
-							</div>
-						</li>
-						<li>
-							<div class="top">
-								<p> <span>无邪作品（作品名）</span></p>
-								<p>待发货</p>
-							</div>
-							<div class="center">
-								<div class="fl">
-									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
-									</div>
-
-								</div>
-								<div class="fr">
-									<span>
-										...共<i></i>件
-									</span>
-									<span class="fa fa-angle-right">
-
-									</span>
-								</div>
-							</div>
-							<div class="bottom">
-								<p class="fu"><span>实付款：￥</span><span>132.00</span></p>
-								<!--
-								<p class="button">追加评价</p>-->
-								<p class="button">联系客服</p>
-
-							</div>
-						</li>
 					</ul>
 
 					<ul class="send">
-
+					{volist name="order" id="vos"}
+					{if condition="$vos.status eq 1"}
 						<li>
 							<div class="top">
-								<p> <span>无邪作品（作品名）</span></p>
+								<p> <span>{$vos.sp_name}</span></p>
 								<p>待发货</p>
 							</div>
-							<div class="center">
+							<div class="center" onclick="window.location.href = '{:url("order/info",["id"=>$vos.id])}';">
 								<div class="fl">
 									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
+										<img src="{$vos.img}" />
 									</div>
 
 								</div>
 								<div class="fr">
 									<span>
-										...共<i></i>件
+										...共<i>1</i>件
 									</span>
 									<span class="fa fa-angle-right">
 
@@ -676,28 +594,32 @@ form,input,label{
 								</div>
 							</div>
 							<div class="bottom">
-								<p class="fu"><span>实付款：￥</span><span>132.00</span></p>
+								<p class="fu"><span>实付积分：</span><span>{$vos.integral}</span></p>
 								<p class="button">联系客服</p>
 
 							</div>
 						</li>
+					{/if}
+					{/volist}
 					</ul>
 					<ul class="receiving">
+					{volist name="order" id="voss"}
+					{if condition="$voss.status eq 2"}
 						<li>
 							<div class="top">
-								<p> <span>无邪作品（作品名）</span></p>
+								<p> <span>{$voss.sp_name}</span></p>
 								<p>已发货</p>
 							</div>
-							<div class="center">
+							<div class="center" onclick="window.location.href = '{:url("order/info",["id"=>$voss.id])}';">
 								<div class="fl">
 									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
+										<img src="{$voss.img}" />
 									</div>
 
 								</div>
 								<div class="fr">
 									<span>
-										...共<i></i>件
+										...共<i>1</i>件
 									</span>
 									<span class="fa fa-angle-right">
 
@@ -705,94 +627,32 @@ form,input,label{
 								</div>
 							</div>
 							<div class="bottom">
-								<p class="fu"><span>实付款：￥</span><span>132.00</span></p>
+								<p class="fu"><span>实付积分：</span><span>{$voss.integral}</span></p>
 								<p class="button">联系客服</p>
 
 							</div>
 						</li>
-						<li>
-							<div class="top">
-								<p> <span>无邪作品（作品名）</span></p>
-								<p>已发货</p>
-							</div>
-							<div class="center">
-								<div class="fl">
-									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
-									</div>
-
-								</div>
-								<div class="fr">
-									<span>
-										...共<i></i>件
-									</span>
-									<span class="fa fa-angle-right">
-
-									</span>
-								</div>
-							</div>
-							<div class="bottom">
-								<p class="fu"><span>实付款：￥</span><span>132.00</span></p>
-								<p class="button">联系客服</p>
-
-							</div>
-						</li>
-						<li>
-							<div class="top">
-								<p> <span>无邪作品（作品名）</span></p>
-								<p>已发货</p>
-							</div>
-							<div class="center">
-								<div class="fl">
-									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
-									</div>
-
-								</div>
-								<div class="fr">
-									<span>
-										...共<i></i>件
-									</span>
-									<span class="fa fa-angle-right">
-
-									</span>
-								</div>
-							</div>
-							<div class="bottom">
-								<p class="fu"><span>实付款：￥</span><span>132.00</span></p>
-								<p class="button">联系客服</p>
-
-							</div>
-						</li>
+					{/if}
+					{/volist}
 					</ul>
 					<ul class="accomplish">
-
-						<!--<li>
+					{volist name="order" id="vosss"}
+					{if condition="$vosss.status eq 3"}
+						<li>
 							<div class="top">
-								<p> <span>无邪作品（作品名）</span></p>
-								<p>交易成功</p>
+								<p> <span>{$vosss.sp_name}</span></p>
+								<p>已完成</p>
 							</div>
-							<div class="center">
+							<div class="center" onclick="window.location.href = '{:url("order/info",["id"=>$vosss.id])}';">
 								<div class="fl">
 									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
+										<img src="{$vosss.img}" />
 									</div>
-									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
-									</div>
-									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
-									</div>
-									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
-									</div>
-									<div class="">
-										<img src="__WEB__/img/painting/gh/faedab64034f78f0aab4203a73310a55b2191cbf.jpg" />
-									</div>
+
 								</div>
 								<div class="fr">
 									<span>
-										...共<i></i>件
+										...共<i>1</i>件
 									</span>
 									<span class="fa fa-angle-right">
 
@@ -800,11 +660,13 @@ form,input,label{
 								</div>
 							</div>
 							<div class="bottom">
-								<p class="fu"><span>实付款：￥</span><span>132.00</span></p>
+								<p class="fu"><span>实付积分：</span><span>{$vosss.integral}</span></p>
+								<p class="button">联系客服</p>
 
-								<p class="button">追加评价</p>
 							</div>
-						</li>-->
+						</li>
+					{/if}
+					{/volist}
 					</ul>
 				</div>
 			</div>
@@ -891,12 +753,6 @@ form,input,label{
 				}*/
 			})
 
-			$(".center .fl").click(function() {
-				window.location.href = "{:url('order/info')}";
-			});
-			$(".center .fr").click(function() {
-				window.location.href = "{:url('order/info')}";
-			})
 			/*弹窗确定的删除*/
 			$(".modal-button-bold").click(function() {
 				if($(".modal1_p1").text() == "是否删除本条记录？") {
