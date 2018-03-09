@@ -512,6 +512,9 @@ form,input,label{
 	font-family: kaiti;
 }
 
+.case ul li{
+	    border-bottom: 2px solid #F3F3F3;
+}
 		</style>
 	</head>
 
@@ -712,25 +715,31 @@ form,input,label{
 				}
 			}
 			$(".order p").click(function() {
-				$(".order p").removeClass("red");
-				$(this).addClass("red");
 				var tt = $(".order p").index($(this));
-				$(".main .case").css("margin-left", -tt * 100 + "%");
-				var ulheight = $(".case ul:nth-child(" + (tt + 1) + ")").height();
+				clickp(tt);
+			})
+			/*p 点击切换*/
+			function clickp(t){
+				$(".order p").removeClass("red");
+				$(".order p:nth-child("+(t + 1)+")").addClass("red");
+				$(".main .case").css("margin-left", -t * 100 + "%");
+				var ulheight = $(".case ul:nth-child(" + (t + 1) + ")").height();
 				var win = $(window).height() - 71;
 				if(ulheight > win) {
 					$(".main").css("height", ulheight + "px");
+
 				} else {
 					$(".main").css("height", win + "px");
+					$(".main").css("overflow", "hidden");
+					
 				}
-				if($(".case ul:nth-child(" + (tt + 1) + ") li").length == 0) {
-					if($(".case ul:nth-child(" + (tt + 1) + ") .without").length == 0) {
-						$(".case ul:nth-child(" + (tt + 1) + ") ").prepend($("body>div.without").clone(true));
-					}
-					$(".case ul:nth-child(" + (tt + 1) + ") .without").css("display", "block");
+			
+				if($(".case ul:nth-child(" + (t + 1) + ") li").length == 0) {										
+					$(".without").css("display", "block");
+				}else{
+					$(".without").css("display", "none");
 				}
-
-			})
+			}
 			var nas;
 			$(".bottom .button").click(function() {
 				if($(this).text() == "联系客服") {
