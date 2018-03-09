@@ -468,7 +468,14 @@
 				-moz-opacity: 0.65;
 				opacity: 0.65;
 			}
-
+.without {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    margin-top: -100px;
+    display: none;
+    z-index: 150;
+}
 			.without,
 			.without p {
 				width: 100%;
@@ -485,14 +492,14 @@
 			}
 
 			.without a {
-				width: 100px;
-				height: 40px;
+				
+				
 				line-height: 40px;
 				color: white;
 				background-color: #007aff;
 				border-radius: 10px;
 				text-align: center;
-				padding: 5px 10px;
+				padding: 10px 20px;
 				margin: 0px auto;
 			}
 
@@ -514,6 +521,9 @@ form,input,label{
 
 .case ul li{
 	    border-bottom: 2px solid #F3F3F3;
+}
+.case ul{
+	min-height: 200px;
 }
 		</style>
 	</head>
@@ -716,12 +726,13 @@ form,input,label{
 			}
 			$(".order p").click(function() {
 				var tt = $(".order p").index($(this));
+				$(".order p").removeClass("red");
+				$(this).addClass("red");
 				clickp(tt);
 			})
 			/*p 点击切换*/
 			function clickp(t){
-				$(".order p").removeClass("red");
-				$(".order p:nth-child("+(t + 1)+")").addClass("red");
+				
 				$(".main .case").css("margin-left", -t * 100 + "%");
 				var ulheight = $(".case ul:nth-child(" + (t + 1) + ")").height();
 				var win = $(window).height() - 71;
