@@ -102,7 +102,6 @@ class Gold extends Yang
 
                 $order = Order::insert($arr);
                 User::where('id',$this->id)->setDec('integral',$qunying['integral']);
-
                 Q::where('id',$arr['sp_id'])->update(['status'=>1,'is_sell'=>1]);
 
                 $row['user_id'] = $this->id;
