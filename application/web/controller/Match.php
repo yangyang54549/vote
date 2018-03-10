@@ -21,17 +21,20 @@ class Match extends Yang
                 $this->ret['code'] = -200;
                 return json($this->ret);
             }
-            $qunying = Qunying::where(['type'=>$arr['type'],'status'=>0,'is_gold'=>0])->count();
-            if ($qunying>99) {
-                $this->ret['msg'] = '每天每个栏目限制上传100幅作品';
-                $this->ret['code'] = -200;
-                return json($this->ret);
-            }
+            // $qunying = Qunying::where(['type'=>$arr['type'],'status'=>0,'is_gold'=>0])->count();
+            // if ($qunying>99) {
+            //     $this->ret['msg'] = '每天每个栏目限制上传100幅作品';
+            //     $this->ret['code'] = -200;
+            //     return json($this->ret);
+            // }
+            $dateStr = date('Y-m-d', time());
+            $timestamp24 = strtotime($dateStr) + 86402;
 
             $arr['user_id'] = $this->id;
             $arr['user_name'] = session('user.name');
             $arr['create_time'] = time();
-            $arr['status'] = 0;
+            $arr['time'] = $timestamp24;
+            $arr['status'] = 1;
             $num = time().rand(100000,999999);
             $url = "./tmp/production/".$num.".jpg";
             $base64_string = explode(',', $arr['img']);//截取data:image/png;base64, 这个逗号后的字符
