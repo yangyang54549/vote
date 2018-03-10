@@ -136,6 +136,7 @@
 
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
 			var limit = {$limit};
@@ -189,7 +190,7 @@
 						table.insertBefore(li, table.firstChild);
 					}
 					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-					mui.toast('下拉刷新成功');
+					mui.toast('下拉刷新成功');toasts();
 				}, 1000);
 			}
 			var count = 0;
@@ -208,7 +209,7 @@
 						},function(data){
 								//服务器返回响应，根据响应结果，分析是否登录成功；
 								if (data.code==1) {
-									mui.toast(data.msg);
+									mui.toast(data.msg);toasts();
 									limit = data['limit'];
 									var mi = 0;
 									for(var i = cells.length, len = i + data.data.length; i < len; i++) {
@@ -226,7 +227,7 @@
 									}
 								}else{
 
-									mui.toast(data.msg);
+									mui.toast(data.msg);toasts();
 								}
 								mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > data.data.length)); //参数为true代表没有更多数据了。 加载次数·
 
@@ -270,7 +271,7 @@
 								table.innerHTML = " ";
 								table2.innerHTML = " ";
 								if (data.code==1) {
-									mui.toast(data.msg);
+									mui.toast(data.msg);toasts();
 
 									limit = data['limit'];
 									for(var n = 0; n < data.data.length; n++) {
@@ -285,7 +286,7 @@
 										}
 									}
 								}else{
-									mui.toast(data.msg);
+									mui.toast(data.msg);toasts();
 								}
 								mui('#pullrefresh').pullRefresh().refresh(true);
 
@@ -321,7 +322,7 @@
 						mui.toast('已使用完每天三次的点赞功能', {
 							duration: 'long',
 							type: 'div'
-						})
+						});toasts();
 
 					}
 

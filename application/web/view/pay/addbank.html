@@ -192,6 +192,7 @@
 <input type="hidden" name="" id="datatype" value="" />
 			</ul>
 		<script src="__WEB__/js/mui.min.js"></script>
+		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			(function($) {
 				$(".mui-scroll-wrapper").scroll({
@@ -222,7 +223,7 @@
 
 					if(name.value != "" || name.value.length > 1) {
 						if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
-							mui.toast('手机号错误，请重新输入');
+							mui.toast('手机号错误，请重新输入');toasts();
 							ths.classList.remove("mui-disabled");
 
 						} else {
@@ -239,27 +240,31 @@
 									},function(data){
 											//服务器返回响应，根据响应结果，分析是否登录成功；
 											if (data.code==1) {
-												mui.toast(data.msg);
-												setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+												mui.toast(data.msg);toasts();
+												name.value="",
+										phone.value="",
+									identity.value="",
+										yh.value="",
+												setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒																									
 													window.location = "{:url('pay/list')}";
 												}, 1000);
 											}else{
-												mui.toast(data.msg);ths.classList.remove("mui-disabled");
+												mui.toast(data.msg);ths.classList.remove("mui-disabled");toasts();
 											}
 
 										},'json'
 									);
 
 									} else {
-										mui.toast('请选择银行');ths.classList.remove("mui-disabled");
+										mui.toast('请选择银行');ths.classList.remove("mui-disabled");toasts();
 									}
 								} else {
-									mui.toast('请输入银行卡号');ths.classList.remove("mui-disabled");
+									mui.toast('请输入银行卡号');ths.classList.remove("mui-disabled");toasts();
 								}
 
 						}
 					} else {
-						mui.toast('请重新输入姓名');
+						mui.toast('请重新输入姓名');toasts();
 						ths.classList.remove("mui-disabled");
 					}
 

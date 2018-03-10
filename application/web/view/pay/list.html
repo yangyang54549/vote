@@ -118,6 +118,7 @@
 
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init()
 			mui('.mui-input-row input').input();
@@ -144,7 +145,7 @@
 				mui.confirm("确认删除？", '删除', ['取消', '确认'], function(e) {
 					if(e.index == 0) {
 						setTimeout(function() {
-							mui.toast('取消删除');
+							mui.toast('取消删除');toasts();
 						}, 1000);
 					} else {
 						var id = th.getAttribute("data-id");
@@ -159,9 +160,9 @@
 								if(ss < 1) {
 									document.getElementById("wu").style.display = "block";
 								}
-								mui.toast(data.msg);
+								mui.toast(data.msg);toasts();
 							} else {
-								mui.toast(data.msg);
+								mui.toast(data.msg);toasts();
 							}
 						}, 'json');
 					}
@@ -172,14 +173,10 @@
 				window.top.location.href = this.href;
 			});
 			mui('.mui-scroll').on('tap', '.mui-btn-primary', function() {
-				//				var th = document.getElementById("number");
-				//				var muiscroll = document.getElementsByClassName("mui-scroll");
 				var muiscrolls = $(".mui-scroll a.rows").length;
-
 				if(muiscrolls > 3) {
-					mui.toast('最多有四条记录')
-				} else {
-					/*mui.toast('可添加记录')*/
+					mui.toast('最多有四条记录');toasts();
+				} else {				
 					window.top.location.href = "{:url('pay/addbank')}";
 				}
 

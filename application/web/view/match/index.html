@@ -198,6 +198,7 @@
 				</div>
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
 			var up = document.getElementById("upFile");
@@ -250,7 +251,7 @@
 								var leixid = leixid.value;
 
 								if (domimg.src == "") {
-									mui.toast('请上传图片');
+									mui.toast('请上传图片');toasts();
 									return false;
 								}
 								console.log(domimg.src);
@@ -261,34 +262,32 @@
 									type:leixid,
 									img:domimg.src
 								},function(data){
-										mui.toast(data.msg);
+										mui.toast(data.msg);toasts();
 										/*跳转*/
 										if (data.code==1) {
-											mui.toast(data.msg);
+											mui.toast(data.msg);toasts();
 											/*清空*/
 											document.getElementById("nextview").src = "__WEB__/img/a11.png";
-											name.value = "";
-											lei.value = "";
-											tes.value = "";
+											document.getElementByTagName("input").value = "";
 											setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
 												window.location = "{:url('production/index')}";
 											}, 1000);
 
 										}else{
-											mui.toast(data.msg);
+											mui.toast(data.msg);toasts();
 										}
 
 									},'json'
 								);
 
 							} else {
-								mui.toast('请选择分类')
+								mui.toast('请选择分类');toasts();
 							}
 						} else {
-							mui.toast('请输入作品简介')
+							mui.toast('请输入作品简介');toasts();
 						}
 					} else {
-						mui.toast('请输入作品名称')
+						mui.toast('请输入作品名称');toasts();
 					}
 				}
 			})

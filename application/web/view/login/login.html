@@ -141,7 +141,7 @@ body {
 			</div>
 		</div>
 		<script src="__WEB__/js/mui.min.js"></script>
-
+<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			mui.init();
 			(function($) {
@@ -166,22 +166,25 @@ body {
 						},function(data){
 								//服务器返回响应，根据响应结果，分析是否登录成功；
 								if (data.code==1) {
-									mui.toast(data.msg);
+									mui.toast(data.msg);toasts();
+								account.value="";
+							passworda.value="";
 									setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+										
 										window.location = "{:url('index/index')}";
 									}, 1000);
 								}else{
-									mui.toast(data.msg);
+									mui.toast(data.msg);toasts();
 								}
 
 							},'json'
 						);
 
 					}else{
-						mui.toast('请输入密码');
+						mui.toast('请输入密码');toasts();
 					}
 				}else{
-					mui.toast('请输入账号');
+					mui.toast('请输入账号');toasts();
 				}
 			})
 		</script>

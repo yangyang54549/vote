@@ -94,7 +94,7 @@
 				</div>
 			
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
-		 
+		 <script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			
 			mui.init();
@@ -114,7 +114,7 @@
 				var ths = this;
 				if(name.value !=""){
 					if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
-							mui.toast('手机号错误，请重新输入');
+							mui.toast('手机号错误，请重新输入');toasts();
 						} else {
 						if(texts.value!=""){
 							if(yb.value!=""||yb.value.length==6){
@@ -134,13 +134,16 @@
 								},function(data){
 										//服务器返回响应，根据响应结果，分析是否登录成功；
 										if (data.code==1) {
-											mui.toast(data.msg);
+											mui.toast(data.msg);toasts();
+											name.value = "";
+											phone.value= "";
+											texts.value= "";
+											yb.value= "";
 											setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
-												ths.classList.remove("mui-disabled");
 												window.location = "{:url('address/index')}";
 											}, 1000);
 										}else{
-											mui.toast(data.msg);
+											mui.toast(data.msg);toasts();
 											ths.classList.remove("mui-disabled");
 										}
 
@@ -149,14 +152,14 @@
 
 
 							}else{
-								mui.toast('请重新输入邮编');
+								mui.toast('请重新输入邮编');toasts();
 							}
 						}else{
-							mui.toast('请输入详细地址');
+							mui.toast('请输入详细地址');toasts();
 						}
 					}
 				}else{
-					mui.toast('请输入姓名')
+					mui.toast('请输入姓名');toasts();
 				}
 			});
 

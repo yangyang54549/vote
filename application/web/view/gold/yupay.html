@@ -222,6 +222,7 @@
 		</ul>
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			jQuery.noConflict()
 		</script>
@@ -252,12 +253,12 @@
 				},function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if (data.code==1) {
-							mui.toast(data.msg);
+							mui.toast(data.msg);toasts();
 							setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
 								window.location = "{:url('index/index')}";
 							}, 1000);
 						}else{
-							mui.toast(data.msg);
+							mui.toast(data.msg);toasts();
 						}
 
 					},'json'
@@ -285,7 +286,7 @@
 			})
 			mui("body").on("tap", "#mui_view", function() {			
 				$("#mui_view").css("display","none");
-//			document.getElementById("mui_view").style.display = "none";
+
 			})
 		</script>
 	</body>

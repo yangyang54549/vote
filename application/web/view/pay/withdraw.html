@@ -46,7 +46,7 @@
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
 					<div class="div" onclick="window.history.back()"></div>
-					<h1 class="mui-title mui-active">  提现</h1>
+					<h1 class="mui-title mui-active"> 提现</h1>
 					<a class=" mui-pull-right mui-btn-link as" href="{:url('pay/withdrawlog')}">提现记录</a>
 				</header>
 
@@ -83,7 +83,7 @@
 
 <script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 <script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
-
+<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 
 mui.init();
@@ -98,21 +98,20 @@ mui('body').on('tap', 'a', function() {
 			});
 			mui('.mui-scroll').on('tap', '.mui-btn-primary', function() {
 				var ths = this;
-				ths.className +=" mui-disabled";
+				
 				var user = "{$user.integral}";
 				var users = parseInt(parseInt(user)/100);
 
 				var th = document.getElementById("number");
 				if(!th.value || th.value.trim() == "") {
 					var label = th.previousElementSibling;
-					mui.alert(label.innerText + "不允许为空");
-					ths.classList.remove("mui-disabled");
+					mui.alert(label.innerText + "不允许为空");					
 				} else {
-
 					if(th.value>users){
 					mui.alert("提现金额不能大于可提现金额");
-					ths.classList.remove("mui-disabled");
+					
 					}else{
+						ths.className +=" mui-disabled";
 						var bank_id = "{$bank.id}";
 					mui.post("{:url('pay/withdraw')}",{
 						bank_id:bank_id,
@@ -120,12 +119,14 @@ mui('body').on('tap', 'a', function() {
 					},function(data){
 							//服务器返回响应，根据响应结果，分析是否登录成功；
 							if (data.code==1) {
-								mui.toast(data.msg);
+								mui.toast(data.msg);toasts();
+								th.value="";
 								setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+									
 									window.location = "{:url('pay/list')}";
 								}, 1000);
 							}else{
-								mui.toast(data.msg);
+								mui.toast(data.msg);toasts();
 								ths.classList.remove("mui-disabled");//解除禁止
 							}
 						},'json'

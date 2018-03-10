@@ -105,7 +105,7 @@
 			
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
-		<script src="__WEB__/js/muis.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
 
@@ -118,9 +118,9 @@
 				mui(".mui-input-row").on("tap", "#text_p", function() {
 					var phone = document.getElementById("phone");
 					if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
-						mui.toast('请重新输入手机号');
+						mui.toast('请重新输入手机号');toasts();
 					} else {
-						mui.toast('已发送短信');
+						mui.toast('已发送短信');toasts();
 						this.value = "60s";
 						document.getElementById("text_p").disabled = true;
 						document.getElementById("text_p").style.opacity = "0.9";
@@ -146,25 +146,26 @@
 					var password2 = document.getElementById("passwords");
 					if(phone.value != "") {
 						if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
-							mui.toast('手机号错误，请重新输入');
+							mui.toast('手机号错误，请重新输入');toasts();
 						} else {
 							if(yanz.value.length == 6) {
 								if(password1.value > 6) {
 									if(password1.value == password2.value) {
 										//验证完成
-										mui.toast('密码修改完成');
+										mui.toast('密码修改完成');toasts();
+										
 									} else {
-										mui.toast('确认密码与密码不一致');
+										mui.toast('确认密码与密码不一致');toasts();
 									}
 								} else {
-									mui.toast('请重新输入密码');
+									mui.toast('请重新输入密码');toasts();
 								}
 							} else {
-								mui.toast('请重新输入短信验证码');
+								mui.toast('请重新输入短信验证码');toasts();
 							}
 						}
 					} else {
-						mui.toast('请重新输入手机号');
+						mui.toast('请重新输入手机号');toasts();
 					}
 				})
 			})(mui);

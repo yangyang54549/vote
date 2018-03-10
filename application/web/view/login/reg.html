@@ -137,6 +137,7 @@
 
 		<!-- <script src="__WEB__/js/mui.enterfocus.js"></script> -->
 		<!-- <script src="__WEB__/js/app.js"></script> -->
+		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			mui.init();
 			(function($) {
@@ -148,9 +149,9 @@
 			mui(".mui-input-rows").on("tap", "#wait", function() {
 					var phone = document.getElementById("phone");
 				if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
-						mui.toast('请重新输入手机号');
+						mui.toast('请重新输入手机号');toasts();
 					} else {
-						mui.toast('已发送短信');
+						mui.toast('已发送短信');toasts();
 						this.value = "60s";
 						document.getElementById("wait").disabled = true;
 						document.getElementById("wait").style.opacity = "0.9";
@@ -180,7 +181,7 @@
 					if(names.value !=""||names.value.length>3){
 						if(name.value !=""||name.value.length>1){
 							if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
-								mui.toast('手机号错误，请重新输入');
+								mui.toast('手机号错误，请重新输入');toasts();
 							} else {
 								if(yanz.value.length==6){
 									if(identity.value != ""||identity.value.length ==18){
@@ -199,35 +200,42 @@
 												},function(data){
 														//服务器返回响应，根据响应结果，分析是否登录成功；
 														if (data.code==1) {
-															mui.toast(data.msg);
-															setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+															mui.toast(data.msg);toasts();
+															names="";
+															phone="";
+															yanz="";
+															name="";
+															identity="";
+															password1="";
+															referrer="";
+															setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒															
 																window.location = "{:url('login/login')}";
 															}, 1000);
 														}else{
-															mui.toast(data.msg);
+															mui.toast(data.msg);toasts();
 														}
 
 													},'json'
 												);
 
 											}else{
-												mui.toast('确认密码与密码不一致');
+												mui.toast('确认密码与密码不一致');toasts();
 											}
 										}else{
-											mui.toast('请重新输入密码');
+											mui.toast('请重新输入密码');toasts();
 										}
 									}else{
-										mui.toast('请输入身份证号');
+										mui.toast('请输入身份证号');toasts();
 									}
 								}else{
-									mui.toast('请重新输入短信验证码');
+									mui.toast('请重新输入短信验证码');toasts();
 								}
 							}
 						}else{
-							mui.toast('请重新输入姓名');
+							mui.toast('请重新输入姓名');toasts();
 						}
 					}else{
-						mui.toast('请重新输入昵称');
+						mui.toast('请重新输入昵称');toasts();
 					}
 				/*if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
 						mui.toast('手机号错误，请重新输入');

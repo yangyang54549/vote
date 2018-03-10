@@ -192,6 +192,7 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 		<div class="mui-scrollbar mui-scrollbar-vertical"><div class="mui-scrollbar-indicator" style="transition-duration: 0ms; display: block; height: 8px; transform: translate3d(0px, 513px, 0px) translateZ(0px);"></div></div>
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
 
@@ -227,7 +228,7 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 						table.insertBefore(li, table.firstChild);*/
 					}
 					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-					mui.toast('下拉刷新成功');
+					mui.toast('下拉刷新成功');toasts();
 				}, 1000);
 			}
 			var count = 0;
@@ -245,7 +246,7 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 						},function(data){
 								//服务器返回响应，根据响应结果，分析是否登录成功；
 								if (data.code==1) {
-									mui.toast(data.msg);
+									mui.toast(data.msg);toasts();
 									limit = data['limit'];
 									var mi = 0;
 									for(var i = cells.length, len = i + data.data.length; i < len; i++) {
@@ -264,7 +265,7 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 										mi += 1;
 									}
 								}else{
-									mui.toast(data.msg);
+									mui.toast(data.msg);toasts();
 								}
 								mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > data.data.length)); //参数为true代表没有更多数据了。 加载次数·
 							},'json'

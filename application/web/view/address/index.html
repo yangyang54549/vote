@@ -127,6 +127,7 @@
 
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init()
 			mui('.mui-input-row input').input();
@@ -168,7 +169,7 @@ function wus(){
 					if(e.index == 0) {
 						//点击取消	this.text("123123");
 						setTimeout(function() {
-							mui.toast('取消删除');
+							mui.toast('取消删除');toasts();
 						}, 1500);
 
 					} else {
@@ -188,11 +189,11 @@ function wus(){
 								}
 								wus();
 								setTimeout(function() {
-									mui.toast('删除成功');
+									mui.toast('删除成功');toasts();
 								}, 1500);
 
 							} else {
-								mui.toast(data.msg);
+								mui.toast(data.msg);toasts();
 							}
 
 						}, 'json');
@@ -210,7 +211,7 @@ function wus(){
 				var muiscrolls = $(".mui-scroll a.rows").length;
 
 				if(muiscrolls > 3) {
-					mui.toast('最多有四条记录')
+					mui.toast('最多有四条记录');toasts();
 				} else {
 					window.top.location.href = "{:url('address/add')}";
 				}
