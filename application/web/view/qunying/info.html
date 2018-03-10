@@ -237,6 +237,19 @@
 				border-left: 2px solid #007aff;
 				z-index: 100;
 			}
+			.spans span {
+				display: block;
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: black;
+    /* color: #6fd6ea; */
+    margin: 10px  auto;
+}
 		</style>
 	</head>
 
@@ -296,11 +309,13 @@
 								<div class="mui-col-sm-6 mui-col-xs-6">
 									当前票数
 								</div>
-								<div class="mui-col-sm-6 mui-col-xs-6"   >
+								<div class="mui-col-sm-6 mui-col-xs-6"   id="piao">
 									{$qunying.poll}
 								</div>
+								
 							</div>
 							</div>
+							<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%; margin-left: 5%;">投票</button>
 
 						</ul>
 
@@ -328,7 +343,35 @@
 		mui.init({
 			swipeBack:true //启用右滑关闭功能
 		});
+mui(".mui-media").on("tap", ".mui-btn-primary", function() {
+				//当前对象直接就是--->this
+				/*var sq = this;
+				var tt = this.className.length;
+				sq.className = 'active';*/
+				var ss={$qunying.poll};
+				document.getElementById("piao").innerText = ss+1;
+				mui.toast('投票成功');toasts();
+					/*if(ons > 0) {
+						var id = this.getAttribute("data-id");
+						//连接后台
+						mui.post("{:url('qunying/toupiao')}",{
+							id:id
+						},function(data){
+								if (data.code==1) {
+									sq.className = 'active';
+									
+									ons = ons - 1;
+									mui.toast('投票成功',{ duration:'long', type:'div' });toasts();
+								}else{
+									mui.toast(data.msg,{ duration:'long', type:'div' });toasts();
+								}
+							},'json'
+						)
 
+					} else {
+						mui.toast('已使用完每天三次的投票功能',{ duration:'long', type:'div' });toasts();
+					}*/
+			});
 		</script>
 	</body>
 
