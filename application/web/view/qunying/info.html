@@ -343,14 +343,21 @@
 		mui.init({
 			swipeBack:true //启用右滑关闭功能
 		});
+		var buts = 0;
 mui(".mui-media").on("tap", ".mui-btn-primary", function() {
 				//当前对象直接就是--->this
 				/*var sq = this;
 				var tt = this.className.length;
 				sq.className = 'active';*/
-				var ss={$qunying.poll};
+				if(buts==0){
+					buts++;
+					var ss={$qunying.poll};
 				document.getElementById("piao").innerText = ss+1;
 				mui.toast('投票成功');toasts();
+				}else{
+					mui.toast('已投票');toasts();
+				}
+				
 					/*if(ons > 0) {
 						var id = this.getAttribute("data-id");
 						//连接后台
