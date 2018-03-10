@@ -255,7 +255,7 @@
 						if (data.code==1) {
 							mui.toast(data.msg);toasts();
 							setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
-								window.location = "{:url('index/index')}";
+								window.location = "{:url('order/index')}";
 							}, 1000);
 						}else{
 							mui.toast(data.msg);toasts();
@@ -276,7 +276,7 @@
 			var reg=new RegExp(" ","g"); //创建正则RegExp对象
 			var stringObj=rss;
 			var newstr=stringObj.replace(reg,",");
-			var qw = newstr.split(",");			
+			var qw = newstr.split(",");
 			document.getElementById("site").innerText = qw[2];
 			document.getElementById("phone").innerText = qw[1];
 			document.getElementById("names").innerText = qw[0];
@@ -284,7 +284,8 @@
 			document.getElementById("ress").value = this.getAttribute("data-type");
 			document.getElementById("mui_view").style.display = "none";
 			})
-			mui("body").on("tap", "#mui_view", function() {			
+
+			mui("body").on("tap", "#mui_view", function() {
 				/*$("#mui_view").css("display","none");*/
 				this.style.display = "none";
 			})
