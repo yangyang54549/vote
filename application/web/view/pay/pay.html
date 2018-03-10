@@ -83,7 +83,12 @@ header>.div {
 			mui.init()
 			mui('.mui-input-row input').input();
 			document.getElementById('checkbox').setAttribute("readOnly", 'true'); //复选框 禁止点击
-
+(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					//bounce: false,//滚动条是否有弹力默认是true
+					//indicators: false, //是否显示滚动条,默认是true
+				});
+			})(mui);
 			mui('.mui-input-row').on('tap', '.mui-checkbox', function() {
 				var ths = document.getElementById("zf");
 				/*if(ths.innerText == "微信支付") {

@@ -106,6 +106,12 @@
 						</div>
 <script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+	(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					//bounce: false,//滚动条是否有弹力默认是true
+					//indicators: false, //是否显示滚动条,默认是true
+				});
+			})(mui);
 	mui(".mui-content-padded").on("tap", "#reg", function() {
 
 		if($("#name").val()!= ""){

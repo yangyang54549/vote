@@ -193,6 +193,12 @@
 			</ul>
 		<script src="__WEB__/js/mui.min.js"></script>
 		<script>
+			(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					//bounce: false,//滚动条是否有弹力默认是true
+					//indicators: false, //是否显示滚动条,默认是true
+				});
+			})(mui);
 			mui(".mui-input-row").on("tap", "#xuan", function() {
 				document.getElementById("mui_view").style.display = "block";
 			})

@@ -94,9 +94,16 @@
 				</div>
 			
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
-		<script src="__WEB__/js/muis.js" type="text/javascript" charset="utf-8"></script>
+		 
 		<script type="text/javascript">
-			mui.init()
+			
+			mui.init();
+			(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					//bounce: false,//滚动条是否有弹力默认是true
+					//indicators: false, //是否显示滚动条,默认是true
+				});
+			})(mui);
 			mui('.mui-input-row input').input();
 			mui('.mui-scroll').on('tap', '.mui-scroll .mui-btn-primary', function() {
 				var name = document.getElementById("name");
@@ -104,7 +111,7 @@
 				var texts = document.getElementById("texts");
 				var yb = document.getElementById("yb");
 				var ofs = document.getElementById("off");
-
+				var ths = this;
 				if(name.value !=""){
 					if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
 							mui.toast('手机号错误，请重新输入');
@@ -117,6 +124,7 @@
 									is_default = 1;
 								}
 
+								ths.className +=" mui-disabled";
 								mui.post("{:url('address/add')}",{
 									name:name.value,
 									mobile:phone.value,
@@ -128,10 +136,12 @@
 										if (data.code==1) {
 											mui.toast(data.msg);
 											setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+												ths.classList.remove("mui-disabled");
 												window.location = "{:url('address/index')}";
 											}, 1000);
 										}else{
 											mui.toast(data.msg);
+											ths.classList.remove("mui-disabled");
 										}
 
 									},'json'

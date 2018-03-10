@@ -270,17 +270,12 @@
 
 			mui("#mui_view").on("tap", "#mui_view li", function() {
 				var datas = this.getAttribute("data-type");
-
 				var rss = this.innerText;
-
 				/*用空格无法分割成数组，只能先把空格替换为逗号，用逗号分割成数组*/
 			var reg=new RegExp(" ","g"); //创建正则RegExp对象
 			var stringObj=rss;
 			var newstr=stringObj.replace(reg,",");
-			var qw = newstr.split(",");
-			/*$("#site").text(qw[2]);
-			$("#phone").text(qw[1]);
-			$("#names").text(qw[0]);*/
+			var qw = newstr.split(",");			
 			document.getElementById("site").innerText = qw[2];
 			document.getElementById("phone").innerText = qw[1];
 			document.getElementById("names").innerText = qw[0];
