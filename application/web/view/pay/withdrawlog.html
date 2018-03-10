@@ -46,8 +46,8 @@
 				line-height: 20px;
 			}
 
-			.mui-col-sm-6 p,
-			.mui-col-xs-6 p {
+			.mui-col-sm-8 p,
+			.mui-col-xs-8 p {
 				width: 100%;
 				margin: 5px 0;
 				line-height: 20px;
@@ -58,18 +58,7 @@
 	<body>
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable">
-			<!-- 主页面容器 -->
-			<div class="mui-inner-wrap">
-				<!-- 菜单容器 -->
-				<aside class="mui-off-canvas-left" id="offCanvasSide">
-					<div class="mui-scroll-wrapper">
-						<div class="mui-scroll">
-							<!-- 菜单具体展示内容 -->
-
-						</div>
-					</div>
-				</aside>
+		
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
 					<div class="div" onclick="window.history.back()"></div>
@@ -89,7 +78,7 @@
 								<p class="chtx a1">{$vo.charge}元</p>
 								<p>手续费</p>
 							</div>
-							<div class="mui-col-sm-6 mui-col-xs-6">
+							<div class="mui-col-sm-8 mui-col-xs-8">
 								<p>状态 : {if condition="$vo.status eq 0"}审核中{elseif condition="$vo.status eq 2"/}未通过{else/}已完成{/if} </p>
 								<p>时间 : {$vo.create_time|date="Y-m-d H:i",###}</p>
 								<p>银行 :{$vo.bank_name}</p>
@@ -100,9 +89,7 @@
 
 					</div>
 				</div>
-				<div class="mui-off-canvas-backdrop"></div>
-			</div>
-		</div>
+			
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 
