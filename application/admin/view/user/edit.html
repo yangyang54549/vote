@@ -4,30 +4,9 @@
     <form class="form form-horizontal" id="form" method="post" action="{:\\think\\Request::instance()->baseUrl()}">
         <input type="hidden" name="id" value="{$vo.id ?? ''}">
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">微信id：</label>
-            <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="微信id" name="openid" value="{$vo.openid ?? ''}" >
-            </div>
-            <div class="col-xs-3 col-sm-3"></div>
-        </div>
-        <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3">手机号码：</label>
             <div class="formControls col-xs-6 col-sm-6">
                 <input type="text" class="input-text" placeholder="手机号码" name="mobile" value="{$vo.mobile ?? ''}" >
-            </div>
-            <div class="col-xs-3 col-sm-3"></div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">密码：</label>
-            <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="密码" name="password" value="{$vo.password ?? ''}" >
-            </div>
-            <div class="col-xs-3 col-sm-3"></div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">头像：</label>
-            <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="头像" name="image" value="{$vo.image ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
@@ -42,20 +21,6 @@
             <label class="form-label col-xs-3 col-sm-3">用户昵称：</label>
             <div class="formControls col-xs-6 col-sm-6">
                 <input type="text" class="input-text" placeholder="用户昵称" name="name" value="{$vo.name ?? ''}" >
-            </div>
-            <div class="col-xs-3 col-sm-3"></div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">状态：</label>
-            <div class="formControls col-xs-6 col-sm-6 skin-minimal">
-                <div class="radio-box">
-                    <input type="radio" name="status" id="status-1" value="1">
-                    <label for="status-1">启用</label>
-                </div>
-                <div class="radio-box">
-                    <input type="radio" name="status" id="status-0" value="0">
-                    <label for="status-0">禁用</label>
-                </div>
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
@@ -77,6 +42,13 @@
             <label class="form-label col-xs-3 col-sm-3">真实姓名：</label>
             <div class="formControls col-xs-6 col-sm-6">
                 <input type="text" class="input-text" placeholder="真实姓名" name="id_name" value="{$vo.id_name ?? ''}" >
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3">票数：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <input type="text" class="input-text" placeholder="票数" name="vote" value="{$vo.vote ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
