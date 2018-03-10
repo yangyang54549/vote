@@ -14,14 +14,19 @@
 				font-size: 18px;
 			}
 
-			.mui-media-body span {
+			.mui-media-body span{
 				position: absolute;
 				top: 30px;
-				right: 10px;
+				
 				font-size: 14px;
 				opacity: 0.5;
 			}
-
+			.mui-media-body span.times{
+				right: 10px;
+			}
+			.mui-media-body span.number{
+				left: 10px;
+			}
 			.mui-media-body p {
 				padding-top: 20px;
 				text-align: left;
@@ -133,8 +138,11 @@
 							{$vo.content}
 								<img src="{$vo.img}" />
 							</p>
-							<span id="">
+							<span id="" class="times">
 								{$vo.create_time|date="Y-m-d H:i",###}
+							</span>
+							<span id="" class="number">
+								票数
 							</span>
 						</div>
 					</div>
@@ -195,7 +203,7 @@
 //					for(var i = cells.length, len = i + 4; i < len; i++) {
 //						var li = document.createElement('div');
 //						li.className = 'mui-card';
-//						li.innerHTML = '<div class="mui-media-body" style="padding: 10px;">名家字画<p style="text-indent:2em;" class="text_p"> 吴败，字国旗，号画魔,云南江川人。4岁学习书画，其人画画成魔，15年不出家门。读周易，悟太极，理解宇宙变化原理，融和中国传统山水，花鸟。启功先生观其书画，书赠“少年老成”四字，既表认同，更多激励。中国艺术大师朱纪瞻先生在上海为吴败题写了“滇南鬼才”四字，以奖励后生。<img src="__WEB__/img/painting/gh/timg (12).jpg" /></p><span >18-01-29 16:50:35</span></div><div class="mui-card-content"><a href="#"><img src="__WEB__/img/painting/gh/timg (12).jpg" /></a></div>';
+//						li.innerHTML = '<div class="mui-media-body" style="padding: 10px;">名家字画<p style="text-indent:2em;" class="text_p"> 吴败，字国旗，号画魔,云南江川人。4岁学习书画，其人画画成魔，15年不出家门。读周易，悟太极，理解宇宙变化原理，融和中国传统山水，花鸟。启功先生观其书画，书赠“少年老成”四字，既表认同，更多激励。中国艺术大师朱纪瞻先生在上海为吴败题写了“滇南鬼才”四字，以奖励后生。<img src="__WEB__/img/painting/gh/timg (12).jpg" /></p><span >18-01-29 16:50:35</span></div><div class="mui-card-content"><a href="javascript:void(0)"><img src="__WEB__/img/painting/gh/timg (12).jpg" /></a></div>';
 //							table.appendChild(li);
 //					}
 //					}else{

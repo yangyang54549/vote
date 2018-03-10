@@ -145,19 +145,19 @@ font-family:KaiTi,
 					{foreach name="typecopy" item="vo" key="i" }
 					<li class="mui-table-view-cell mui-media onclis">
 
-						<a href="#" disabled>
+						<a href="javascript:void(0)" disabled>
 							<div class="mui-media-body onclis">{$vo.name}：</div>
 						</a>
 					</li>
 					{foreach name="type" item="vos" key="k"} {if condition="$vo.id eq $vos.father_id"} {if condition="$i eq 0 and $k eq 0"}
 					<li class="mui-table-view-cell mui-media adc{$vo.id}">
-						<a href="#">
+						<a href="javascript:void(0)">
 							<div class="mui-media-body active" id="act"  data-id="{$vos.id}">{$vos.name}</div>
 						</a>
 					</li>
 					{else/}
 					<li class="mui-table-view-cell mui-media adc{$vo.id}" >
-						<a href="#">
+						<a href="javascript:void(0)">
 							<div class="mui-media-body" data-id="{$vos.id}">{$vos.name}</div>
 						</a>
 					</li>
