@@ -325,12 +325,8 @@
 			})(mui);
 			//mui下a标签href失效问题解决
 			mui('body').on('tap', 'a', function() {
-					window.top.location.href = this.href;
-					/*$(this).classList.remove("mui-active") */
-
-				}
-
-			);
+					window.top.location.href = this.href;					
+			});
 
 		</script>
 	</body>
