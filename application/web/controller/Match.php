@@ -66,7 +66,7 @@ class Match extends Yang
             return json($this->ret);
 
         }else{
-            $type = Type::select();
+            $type = Type::order('father_id')->select();
             $this->assign('type',$type);
             return $this->fetch();
         }
