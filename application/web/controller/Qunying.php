@@ -16,7 +16,7 @@ class Qunying extends Yang
     {
         if ($this->request->isAjax()) {
             $type = input('type');
-            $qunying = Q::where(['type'=>$type,'status'=>0])->order('create_time desc')->limit(10)->select();
+            $qunying = Q::where(['type'=>$type,'status'=>0,'is_gold'=>0])->order('create_time desc')->limit(10)->select();
             if(!empty($qunying)){
                 $this->ret['data'] = $qunying;
                 $this->ret['limit'] = count($qunying);
@@ -30,7 +30,7 @@ class Qunying extends Yang
         }else{
             $type = Type::order('father_id')->select();
             $typecopy = TypeCopy::select();
-            $qunying = Q::where(['type'=>3,'status'=>0])->order('create_time desc')->limit(10)->select();
+            $qunying = Q::where(['type'=>3,'status'=>0,'is_gold'=>0])->order('create_time desc')->limit(10)->select();
             $this->assign('type',$type);
             $this->assign('qunying',$qunying);
             $this->assign('typecopy',$typecopy);
@@ -44,7 +44,7 @@ class Qunying extends Yang
         if ($this->request->isAjax()) {
             $limit = input('limit');
             $type = input('type');
-            $qunying = Q::where(['type'=>$type,'status'=>0])->order('create_time desc')->limit($limit,$limit+5)->select();
+            $qunying = Q::where(['type'=>$type,'status'=>0,'is_gold'=>0])->order('create_time desc')->limit($limit,$limit+5)->select();
             if(!empty($qunying)){
                 $this->ret['data'] = $qunying;
                 $this->ret['limit'] = $limit+count($qunying);
