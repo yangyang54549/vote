@@ -129,8 +129,9 @@
 										//服务器返回响应，根据响应结果，分析是否登录成功；
 										if (data.code==1) {
 											mui.toast(data.msg);toasts();
+											
 											setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
-												document.getElementByTagName("input").value = "";
+											
 												window.location = "{:url('address/index')}";
 											}, 1000);
 										}else{

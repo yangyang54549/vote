@@ -60,7 +60,7 @@ header>.div {
 								<label>充值方式：</label>
 								<div class="mui-input-row mui-checkbox" style="width: 75%; position: absolute; top: 0;right: 0;">
 									<label id="zf">微信支付</label>
-									<input name="checkbox1" id="checkbox" value="Item 1" type="checkbox" checked style="margin-top: 10px;">
+									<input name="checkbox1" id="checkbox" value="Item " type="checkbox" checked disabled style="margin-top: 10px;">
 								</div>
 							</div>
 
@@ -90,14 +90,7 @@ header>.div {
 					//indicators: false, //是否显示滚动条,默认是true
 				});
 			})(mui);
-			mui('.mui-input-row').on('tap', '.mui-checkbox', function() {
-				var ths = document.getElementById("zf");
-				/*if(ths.innerText == "微信支付") {
-					ths.innerText = "支付包支付";
-				} else {
-					ths.innerText = "微信支付";
-				}*/
-			});
+
 mui('body').on('tap', 'a', function() {
 				window.top.location.href = this.href;
 			});
