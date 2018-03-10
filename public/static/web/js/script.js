@@ -1,10 +1,12 @@
 function toasts(){					
 				setTimeout(function() {
-					var ss = document.getElementsByClassName("mui-toast-container");
-					if(ss.length>0){
-					ss.style.display = "none";	
-					}
-				
+//					var ss = document.getElementsByClassName("mui-toast-container");
+//					if(ss.length>0){
+//					/*ss.style.display = "none";	*/
+//					ss.style.opacity = 0;
+//					
+//					}
+//				
 				}, 5000);				
 			}
 //			$(document).bind("contextmenu copy selectstart", function(){
