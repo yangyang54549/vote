@@ -70,10 +70,10 @@ class Order extends Yang
             }
 
             $row['user_id'] = $orders['set_user_id'];
-            $row['or'] = 4;
+            $row['or'] = 5;
             $row['money'] = $orders['integral']/100;
             $row['integral'] =$orders['integral'];
-            $row['comment'] = '字画交易';
+            $row['comment'] = '收益';
             $row['status'] = 1;
             $row['create_time'] = time();
             Detail::insert($row);

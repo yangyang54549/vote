@@ -128,4 +128,12 @@ class Detail extends Controller
         }
     }
 
+    public function bank()
+    {
+        $id = input('id');
+        $bank = Db::table('tp_bank')->where('id',$id)->select();
+        $this->view->assign('list',$bank);
+        return $this->view->fetch();
+    }
+
 }

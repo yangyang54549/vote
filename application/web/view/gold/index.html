@@ -113,7 +113,7 @@
 								{volist name="qunying" id="voss" mod="2"} {eq name="mod" value="0"}
 								<div class="mui-card">
 									<div class="mui-card-content">
-										<a href="{:url('gold/info',['id'=>$voss.id])}"><img src="{$voss.img}" /></a>
+										<a href="{:url('gold/info',['id'=>$voss.id])}"><img src="{$voss.suoimg}" /></a>
 									</div>
 									<div class="mui-card-footer">{$voss.title}</div>
 								</div>
@@ -123,7 +123,7 @@
 								{volist name="qunying" id="vosss" mod="2" key="two"} {eq name="mod" value="1"}
 								<div class="mui-card">
 									<div class="mui-card-content">
-										<a href="{:url('gold/info',['id'=>$vosss.id])}"><img src="{$vosss.img}" /></a>
+										<a href="{:url('gold/info',['id'=>$vosss.id])}"><img src="{$vosss.suoimg}" /></a>
 									</div>
 									<div class="mui-card-footer">{$vosss.title}</div>
 								</div>
@@ -216,7 +216,7 @@
 
 										var li = document.createElement('div');
 										li.className = 'mui-card';
-										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div>';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div>';
 										if(table.offsetHeight > table2.offsetHeight) {
 											table2.appendChild(li);
 										} else {
@@ -278,7 +278,7 @@
 
 										var li = document.createElement('div');
 										li.className = 'mui-card';
-										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div>';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div>';
 										if(table.offsetHeight > table2.offsetHeight) {
 											table2.appendChild(li);
 										} else {

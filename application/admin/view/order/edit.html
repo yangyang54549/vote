@@ -4,61 +4,63 @@
     <form class="form form-horizontal" id="form" method="post" action="{:\\think\\Request::instance()->baseUrl()}">
         <input type="hidden" name="id" value="{$vo.id ?? ''}">
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <label class="form-label col-xs-3 col-sm-3">订单编号：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="" name="number" value="{$vo.number ?? ''}" >
+                <input type="text" class="input-text" placeholder="订单编号" name="number" value="{$vo.number ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <label class="form-label col-xs-3 col-sm-3">用户id：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="" name="user_id" value="{$vo.user_id ?? ''}" >
+                <input type="text" class="input-text" placeholder="用户id" name="user_id" value="{$vo.user_id ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <label class="form-label col-xs-3 col-sm-3">卖家用户id：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="" name="sp_id" value="{$vo.sp_id ?? ''}" >
+                <input type="text" class="input-text" placeholder="卖家用户id" name="set_user_id" value="{$vo.set_user_id ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <label class="form-label col-xs-3 col-sm-3">商品id：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <textarea class="textarea" placeholder="" name="sp_name" onKeyUp="textarealength(this, 100)">{$vo.sp_name ?? ''}</textarea>
-                <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+                <input type="text" class="input-text" placeholder="商品id" name="sp_id" value="{$vo.sp_id ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <label class="form-label col-xs-3 col-sm-3">商品名称：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <div class="select-box">
-                    <select name="img" class="select">
-                        <option value=""></option>
-                    </select>
-                </div>
+                <input type="text" class="input-text" placeholder="商品名称" name="sp_name" value="{$vo.sp_name ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <label class="form-label col-xs-3 col-sm-3">图片：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="" name="integral" value="{$vo.integral ?? ''}" >
+                <input type="text" class="input-text" placeholder="图片" name="img" value="{$vo.img ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <label class="form-label col-xs-3 col-sm-3">积分：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="" name="ress" value="{$vo.ress ?? ''}" >
+                <input type="text" class="input-text" placeholder="积分" name="integral" value="{$vo.integral ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <label class="form-label col-xs-3 col-sm-3">地址id：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <input type="text" class="input-text" placeholder="地址id" name="ress" value="{$vo.ress ?? ''}" >
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3">状态：</label>
             <div class="formControls col-xs-6 col-sm-6 skin-minimal">
                 <div class="radio-box">
                     <input type="radio" name="status" id="status-1" value="1">
@@ -72,9 +74,9 @@
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">：</label>
+            <label class="form-label col-xs-3 col-sm-3">完成时间：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="" name="yes_time" value="{$vo.yes_time ?? ''}" >
+                <input type="text" class="input-text" placeholder="完成时间" name="yes_time" value="{$vo.yes_time ?? ''}" >
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
@@ -93,7 +95,6 @@
 <script>
     $(function () {
         $("[name='status'][value='{$vo.status ?? ''}']").prop("checked", true);
-        $("[name='img']").find("[value='{$vo.img ?? ''}']").attr("selected", true);
 
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',
