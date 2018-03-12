@@ -294,6 +294,13 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 				var act = document.getElementById("act");act.classList.remove("active");
 				t1 = this;
 				this.classList.add('active');
+				var ns = t1.parentNode.getAttribute("href");
+				if(ns!="javascript:void(0)"){
+					setTimeout(function(){
+						this.classList.remove("active");
+					},3000);
+				}
+				
 				tt = tt + 1;
 			});
 

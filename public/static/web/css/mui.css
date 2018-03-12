@@ -16,6 +16,15 @@ body
 {
     margin: 0;
 }
+body{
+	/*-webkit-touch-callout: none;*/
+				-moz-user-select: none;/*firefox私有属性*/
+				-webkit-user-select: none;/*webkit内核私有属性*/
+				-ms-user-select: none;/*ie 私有属性*/
+				-khtml-user-select:none;/*khtml 内核私有属性*/
+				-o-user-select:none;/*Opera 私有属性*/
+				user-select:none; /*css3 属性*/
+			}
 
 article,
 aside,
