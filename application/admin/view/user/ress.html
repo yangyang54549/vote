@@ -1,0 +1,29 @@
+{extend name="template/base" /}
+{block name="content"}
+<div class="page-container">
+    <table class="table table-border table-bordered table-hover table-bg mt-20">
+        <thead>
+        <tr class="text-c">
+            <th width="">用户id</th>
+            <th width="">联系人</th>
+            <th width="">手机号</th>
+            <th width="">详细地址</th>
+            <th width="">邮编</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name="list" id="vo"}
+        <tr class="text-c">
+            <td>{$vo.user_id}</td>
+            <td>{$vo.name}</td>
+            <td>{$vo.mobile}</td>
+            <td>{$vo.address}</td>
+            <td>{$vo.postcode}</td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+    <div class="page-bootstrap">{$page ?? ''}</div>
+</div>
+{/block}
+

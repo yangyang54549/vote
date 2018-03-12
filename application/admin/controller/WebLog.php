@@ -156,4 +156,14 @@ class WebLog extends Controller
 
         return str_replace($replace, $data, $comment);
     }
+
+    public function info()
+    {
+        $id = input('id');
+        $user = Db::table('tp_user')->where('id',$id)->select();
+        ///var_dump($user);die;
+        $this->view->assign('list',$user);
+        return $this->view->fetch();
+    }
+
 }

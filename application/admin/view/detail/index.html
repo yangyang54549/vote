@@ -37,15 +37,17 @@
         <tr class="text-c">
             <td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
             <td>{$vo.id}</td>
-            <td>{$vo.user_id|high_light=$Request.param.user_id}</td>
-            <td>{$vo.or |high_light=$Request.param.or }</td>
+            <td onclick="layer_open('用户详情', '/admin/user/info/id/{$vo.user_id}.html')">{$vo.user_id|high_light=$Request.param.user_id}</td>
+            <td>
+                {if condition="$vo.or eq 1"}充值{elseif condition="$vo.or eq 2" /}提现{elseif condition="$vo.or eq 3" /}购买{elseif condition="$vo.or eq 4"  /}推荐返利{else/}收益{/if}
+            </td>
             <td>{$vo.money}</td>
             <td>{$vo.integral}</td>
             <td>{$vo.charge}</td>
             <td>{$vo.comment}</td>
             <td style="color:red">{if condition="$vo.status eq 1"}已完成{elseif condition="$vo.status eq 2" /}未通过{else/}未完成{/if}</td>
             <td>{$vo.create_time|date="y-m-d h:i",###}</td>
-            <td>{$vo.bank_id|high_light=$Request.param.bank_id}</td>
+            <td onclick="layer_open('银行信息', '/admin/detail/bank/id/{$vo.bank_id}.html')">{$vo.bank_id|high_light=$Request.param.bank_id}</td>
             <td class="f-14">
                 {tp:menu menu='sedit' /}
                 {tp:menu menu='sdeleteforever' /}

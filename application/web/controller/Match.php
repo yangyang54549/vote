@@ -48,6 +48,18 @@ class Match extends Yang
             $url = "/tmp/production/".$num.".jpg";
             $arr['img'] = $url;
 
+            $url = "./tmp/production/".$num.".jpg";
+            $urlsuo = "./tmp/production/".$num."suo.jpg";
+            $suo = $this->image_png_size_add($url,$urlsuo);
+
+            if (!$suo) {
+                $this->ret['msg'] = '上传缩略图失败,请重试';
+                $this->ret['code'] = -200;
+                return json($this->ret);
+            }
+            $urlsuo = "/tmp/production/".$num."suo.jpg";
+            $arr['suoimg'] = $urlsuo;
+
             // 启动事务
             Db::startTrans();
             try{
@@ -55,6 +67,16 @@ class Match extends Yang
                 $this->ret['code'] = -200;
                 Qunying::insert($arr);
                 User::where('id',$this->id)->setDec('integral',1000);
+
+                $row['user_id'] = $this->id;
+                $row['or'] = 3;
+                $row['money'] =10;
+                $row['integral'] =1000;
+                $row['comment'] = '上传作品';
+                $row['status'] = 1;
+                $row['create_time'] = time();
+                Detail::insert($row);
+
                 // 提交事务
                 Db::commit();
             } catch (\Exception $e) {
@@ -76,4 +98,56 @@ class Match extends Yang
     {
         return $this->fetch();
     }
+
+
+   /*
+    * desription 压缩图片
+    * @param sting $imgsrc 图片路径
+    * @param string $imgdst 压缩后保存路径
+    */
+    public function image_png_size_add($imgsrc,$imgdst){
+      list($width,$height,$type)=getimagesize($imgsrc);
+      //等比例缩小
+
+      $new_width = 400;
+      $new_height = $height/($width/400);
+
+      // $new_width = 200;
+      // $new_height =1500;
+
+      switch($type){
+        case 1:
+
+            $image_wp=imagecreatetruecolor($new_width, $new_height);
+            $image = imagecreatefromgif($imgsrc);
+            imagecopyresampled($image_wp, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+            imagejpeg($image_wp, $imgdst,100);
+            imagedestroy($image_wp);
+            return true;
+            break;
+        case 2:
+
+            $image_wp=imagecreatetruecolor($new_width, $new_height);
+            $image = imagecreatefromjpeg($imgsrc);
+            imagecopyresampled($image_wp, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+            imagejpeg($image_wp, $imgdst,100);
+            imagedestroy($image_wp);
+            return true;
+            break;
+        case 3:
+
+            $image_wp=imagecreatetruecolor($new_width, $new_height);
+            $image = imagecreatefrompng($imgsrc);
+            imagecopyresampled($image_wp, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+            imagejpeg($image_wp, $imgdst,100);
+            imagedestroy($image_wp);
+            return true;
+            break;
+        default:
+
+            return false;
+      }
+      return false;
+    }
+
 }

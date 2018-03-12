@@ -1,0 +1,29 @@
+{extend name="template/base" /}
+{block name="content"}
+<div class="page-container">
+    <table class="table table-border table-bordered table-hover table-bg mt-20">
+        <thead>
+        <tr class="text-c">
+            <th width="">持卡人名称</th>
+            <th width="">用户id</th>
+            <th width="">预留手机号码</th>
+            <th width="">卡号</th>
+            <th width="">银行名称</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name="list" id="vo"}
+        <tr class="text-c">
+            <td>{$vo.name}</td>
+            <td>{$vo.user_id}</td>
+            <td>{$vo.mobile}</td>
+            <td>{$vo.cardnum}</td>
+            <td>{$vo.bank_name}</td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+    <div class="page-bootstrap">{$page ?? ''}</div>
+</div>
+{/block}
+

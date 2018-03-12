@@ -172,7 +172,7 @@ font-family:KaiTi,
 						{volist name="qunying" id="voss" mod="2"} {eq name="mod" value="0"}
 						<div class="mui-card">
 							<div class="mui-card-content">
-								<a href="{:url('qunying/info',['id'=>$voss.id])}"><img src="{$voss.img}" /></a>
+								<a href="{:url('qunying/info',['id'=>$voss.id])}"><img src="{$voss.suoimg}" /></a>
 							</div>
 							<div class="mui-card-footer">{$voss.title}</div>
 							<div class="spans"><span data-id="{$voss.id}">投票</span></div>
@@ -183,7 +183,7 @@ font-family:KaiTi,
 						{volist name="qunying" id="vosss" mod="2" key="two"} {eq name="mod" value="1"}
 						<div class="mui-card">
 							<div class="mui-card-content">
-								<a href="{:url('qunying/info',['id'=>$vosss.id])}"><img src="{$vosss.img}" /></a>
+								<a href="{:url('qunying/info',['id'=>$vosss.id])}"><img src="{$vosss.suoimg}" /></a>
 							</div>
 							<div class="mui-card-footer">{$vosss.title}</div>
 							<div class="spans"><span data-id="{$vosss.id}">投票</span></div>
@@ -281,7 +281,7 @@ font-family:KaiTi,
 
 										var li = document.createElement('div');
 										li.className = 'mui-card';
-										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][mi]['id']+'">投票</span></div>';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][mi]['id']+'">投票</span></div>';
 										if(table.offsetHeight > table2.offsetHeight) {
 											table2.appendChild(li);
 										} else {
@@ -336,7 +336,7 @@ font-family:KaiTi,
 
 										var li = document.createElement('div');
 										li.className = 'mui-card';
-										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['img']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][n]['id']+'">投票</span> </div>';
+										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][n]['id']+'">投票</span> </div>';
 										if(table.offsetHeight > table2.offsetHeight) {
 											table2.appendChild(li);
 										} else {
@@ -369,7 +369,7 @@ font-family:KaiTi,
 						},function(data){
 								if (data.code==1) {
 									sq.className = 'active';
-									
+
 									ons = ons - 1;
 									mui.toast('投票成功',{ duration:'long', type:'div' });toasts();
 								}else{
@@ -382,7 +382,7 @@ font-family:KaiTi,
 						mui.toast('已使用完每天三次的投票功能',{ duration:'long', type:'div' });toasts();
 					}
 			});
-			
+
 		</script>
 	</body>
 
