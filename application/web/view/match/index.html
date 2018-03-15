@@ -56,39 +56,35 @@
 				padding: 5px 0px;
 			}
 
-			#mui_view {
+			#mui_view,#mui_sheng{
 				position: fixed;
    				left: 0;
    				top: 0;
    				box-sizing:border-box;
-
 				width: 102vw;
 				height: 100vh;
-				overflow:auto;
-				/*transition: all .5s ease-in .1s;
-				box-sizing: border-box;*/
+				overflow:auto;				
 				padding: 0px;
 				padding-top: 50px;
 				display: none;
-				z-index: 100;
-				/*background-image: url(__WEB__/img/painting/gr/u=10131947,1032570421&fm=27&gp=0.jpg);*/
+				z-index: 100;				
 			}
 /*作为IT界最前端的技术达人，页面上的每一个元素的样式我们都必须较真，就是滚动条我们也不会忽略。
 下面我给大家分享一下如何通过CSS来控制滚动条的样式，代码如下：*/
  /*定义滚动条轨道*/
-    #mui_view::-webkit-scrollbar-track
+    #mui_view::-webkit-scrollbar-track,#mui_sheng::-webkit-scrollbar-track
     {
         background-color: #ffffff;
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
     }
     /*定义滚动条高宽及背景*/
-    #mui_view::-webkit-scrollbar
+    #mui_view::-webkit-scrollbar,#mui_sheng::-webkit-scrollbar
     {
         width: 3px;
         background-color: rgba(255, 255, 255, 0.34);
     }
     /*定义滚动条*/
-    #mui_view::-webkit-scrollbar-thumb
+    #mui_view::-webkit-scrollbar-thumb,#mui_sheng::-webkit-scrollbar-thumb
     {
         background-color: #ffffff;
         border-radius: 2px;
@@ -168,6 +164,10 @@
 							<img src="__WEB__/img/a11.png" id="nextview" />
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">作品名称</p>
 							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" name="title" id="name" type="text" value="" placeholder="输入作品名称（最多15字）" maxlength="15" />
+							<p class="mui-col-sm-12 mui-col-xs-12 muip">作者姓名</p>
+							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" id="zname" type="text" value="" placeholder="输入作者姓名" maxlength="10" />
+							<p class="mui-col-sm-12 mui-col-xs-12 muip">选择省份</p>							
+							<input type="text" name="leixing" id="sheng" value="" placeholder="选择省份" style="margin: 10px 0;" readOnly='readOnly' />
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">作品简介</p>
 							<textarea name="content" rows="3" cols="" id="text_s" placeholder="输入作品简介（最多150字）" maxlength="150"></textarea>
 							<input type="text" name="leixing" id="leixing" value="" placeholder="选择分类" style="margin: 10px 0;" readOnly='readOnly' />
@@ -195,6 +195,46 @@
 
 							<input type="hidden" name="" id="mui_views" value="" />
 						</ul>
+						<ul class="mui-table-view" id="mui_sheng">							
+							<li class="mui-table-view-cell">北京市</li>
+							<li class="mui-table-view-cell">上海市</li>
+							<li class="mui-table-view-cell">重庆市</li>
+							<li class="mui-table-view-cell">黑龙江省</li>
+							<li class="mui-table-view-cell">辽宁省</li>
+							<li class="mui-table-view-cell">吉林省</li>
+							<li class="mui-table-view-cell">河北省</li>
+							<li class="mui-table-view-cell">河南省</li>
+							
+							<li class="mui-table-view-cell">湖北省</li>
+							<li class="mui-table-view-cell">湖南省</li>
+							<li class="mui-table-view-cell">山东省</li>
+							<li class="mui-table-view-cell">山西省</li>
+							<li class="mui-table-view-cell">陕西省</li>
+							<li class="mui-table-view-cell">安徽省</li>
+							<li class="mui-table-view-cell">浙江省</li>
+							<li class="mui-table-view-cell">江苏省</li>
+							
+							<li class="mui-table-view-cell">福建省</li>
+							<li class="mui-table-view-cell">广东省</li>
+							<li class="mui-table-view-cell">海南省</li>
+							
+							<li class="mui-table-view-cell">四川省</li>
+							<li class="mui-table-view-cell">云南省</li>
+							
+							<li class="mui-table-view-cell">贵州省</li>
+							<li class="mui-table-view-cell">青海省</li>
+							<li class="mui-table-view-cell">甘肃省</li>
+							<li class="mui-table-view-cell">江西省</li>
+							<li class="mui-table-view-cell">台湾省</li>
+							<li class="mui-table-view-cell">内蒙古自治区</li>
+							<li class="mui-table-view-cell">宁夏回族自治区</li>
+							<li class="mui-table-view-cell">新疆维吾尔自治区</li>
+							<li class="mui-table-view-cell">西藏自治区</li>
+							<li class="mui-table-view-cell">广西壮族自治区</li>
+							<li class="mui-table-view-cell">香港特别行政区</li>
+							<li class="mui-table-view-cell">澳门特别行政区</li>
+							<input type="hidden" name="" id="mui_shengs" value="" />
+						</ul>
 				</div>
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
@@ -218,12 +258,22 @@
 			mui(".mui-row").on("tap", "#leixing", function() {
 				document.getElementById("mui_view").style.display = "block";
 			})
+			mui(".mui-row").on("tap", "#sheng", function() {
+				document.getElementById("mui_sheng").style.display = "block";
+			})
 
 			mui("#mui_view").on("tap", "#mui_view li", function() {
 				var datas = this.getAttribute("data-type");
 				document.getElementById("leixing").value = this.innerText;
 				document.getElementById("mui_views").value = this.getAttribute("data-type");
 				document.getElementById("mui_view").style.display = "none";
+
+			})
+			mui("#mui_sheng").on("tap", "#mui_sheng li", function() {
+				
+				document.getElementById("sheng").value = this.innerText;
+				document.getElementById("mui_shengs").value = this.innerText;
+				document.getElementById("mui_sheng").style.display = "none";
 
 			})
 			var img = document.getElementById("nextview");
@@ -235,13 +285,18 @@
 
 				var name = document.getElementById("name");
 				var tes = document.getElementById("text_s");
+				var sheng = document.getElementById("sheng");
 				var lei = document.getElementById("leixing");
 				var leixid = document.getElementById("mui_views");
 				var domimg = document.getElementById("preview");
+				var zname = document.getElementById("zname");
 				if(ss1 == s1) {
 					mui.toast('请上传图片')
 				} else {
 					if(name.value != "") {
+						
+						if(zname.value != "") {
+						if(sheng.value != "") {
 						if(tes.value != "") {
 							if(lei.value != "") {
 								/*获取值*/
@@ -249,7 +304,9 @@
 								var content = tes.value;
 								var leix = lei.value;
 								var leixid = leixid.value;
-
+								
+								var shengt = sheng.value;
+								var znames = zname.value;
 								if (domimg.src == "") {
 									mui.toast('请上传图片');toasts();
 									return false;
@@ -261,6 +318,7 @@
 									content:content,
 									type:leixid,
 									img:domimg.src
+									
 								},function(data){
 										mui.toast(data.msg);toasts();
 										/*跳转*/
@@ -270,9 +328,11 @@
 											document.getElementById("nextview").src = "__WEB__/img/a11.png";
 											
 											name.value= "";
-								tes.value= "";
-								lei.value= "";
-								leixid.value= "";
+											tes.value= "";
+											lei.value= "";
+											leixid.value= "";
+											sheng.value = "";
+											zname.value = "";
 											setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
 												window.location = "{:url('production/index')}";
 											}, 1000);
@@ -289,6 +349,12 @@
 							}
 						} else {
 							mui.toast('请输入作品简介');toasts();
+						}
+						} else {
+							mui.toast('请选择省份');toasts();
+						}
+						} else {
+							mui.toast('请输入作者姓名');toasts();
 						}
 					} else {
 						mui.toast('请输入作品名称');toasts();

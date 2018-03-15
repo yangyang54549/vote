@@ -54,9 +54,9 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 					<div class="mui-scroll">
 						<!-- 主界面具体展示内容 -->
 						<!--轮播-->
-						<div id="slider" class="mui-slider">
+						<div id="slider" class="mui-slider" style="display: none;">
 							<div class="mui-slider-group mui-slider-loop">
-								<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+								
 								<div class="mui-slider-item mui-slider-item-duplicate">
 									<a href="{$zui.url}">
 										<img src="{$zui.img}">
@@ -71,7 +71,7 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 								</div>
 								{/volist}
 
-								<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+								
 								<div class="mui-slider-item mui-slider-item-duplicate">
 									<a href="{$barner.0.url}">
 										<img src="{$barner.0.img}">
@@ -90,59 +90,63 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 
 							</div>
 						</div>
+						<div class="mui-card" style="margin: 0;" >
+									
+										
+										<div class="mui-card-content"><img id="jie24" src="{$zui.img}" /></div>
+										
+										
+									
+								</div>
 						<!--九宫格-->
 						<ul class="mui-table-view mui-grid-view mui-grid-9" style="padding: 0;" id="jiu">
-							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+							
+							<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
 								<a href="{:url('qunying/index')}">
 									<!--<span class="mui-icon mui-icon-home"></span>-->
 									<div class="mui-media-body " id="act">群英逐鹿</div>
 								</a>
 							</li>
-							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-								<a href="javascript:void(0)" class="wu">
-									<!--信息数量-->
-									<!--<span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>-->
-									<div class="mui-media-body">释玄解妙</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-								<a href="javascript:void(0)" class="wu"class="wu">
-									<!--<span class="mui-icon mui-icon-chatbubble"></span>-->
-									<div class="mui-media-body" >动漫花园</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-								<a href="javascript:void(0)" class="wu">
-									<!-- <span class="mui-icon mui-icon-location"></span>-->
-									<div class="mui-media-body">温故知新</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-								<a href="javascript:void(0)" class="wu">
-									<!-- <span class="mui-icon mui-icon-search"></span>-->
-									<div class="mui-media-body">娱乐之家</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-								<a href="javascript:void(0)" class="wu">
-									<!-- <span class="mui-icon mui-icon-phone"></span>-->
-									<div class="mui-media-body">商城贸易</div>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+							<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" >
 								<a href="{:url('gold/index')}">
 									<!-- <span class="mui-icon mui-icon-location"></span>-->
 									<div class="mui-media-body">黄金榜</div>
 								</a>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-								<a href="javascript:void(0)" class="wu">
-									<!-- <span class="mui-icon mui-icon-search"></span>-->
-									<div class="mui-media-body">会员中心</div>
+								<a href="javascript:void(0)"   >
+									<!--信息数量-->
+									<!--<span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>-->
+									<div class="mui-media-body">释玄解妙</div>
 								</a>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-								<a href="javascript:void(0)" class="wu">
+								<a href="javascript:void(0)"     >
+									<!--<span class="mui-icon mui-icon-chatbubble"></span>-->
+									<div class="mui-media-body" >动漫花园</div>
+								</a>
+							</li> <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+								<a href="javascript:void(0)"   >
+									<!-- <span class="mui-icon mui-icon-location"></span>-->
+									<div class="mui-media-body">温故知新</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+								<a href="javascript:void(0)"   >
+									<!-- <span class="mui-icon mui-icon-search"></span>-->
+									<div class="mui-media-body">娱乐之家</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+								<a href="javascript:void(0)"   >
+									<!-- <span class="mui-icon mui-icon-phone"></span>-->
+									<div class="mui-media-body">集市琳琅</div>
+								</a>
+							</li>
+							
+							
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+								<a href="javascript:void(0)"   >
 									<!-- <span class="mui-icon mui-icon-phone"></span>-->
 									<div class="mui-media-body">系统消息</div>
 								</a>
@@ -291,15 +295,16 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 				if(tt > 0) {
 					t1.classList.remove("active");
 				}
-				var act = document.getElementById("act");act.classList.remove("active");
+				var act = document.getElementById("act");
+				act.classList.remove("active");
 				t1 = this;
 				this.classList.add('active');
 				var ns = t1.parentNode.getAttribute("href");
-				if(ns!="javascript:void(0)"){
+				/*if(ns!=""){
 					setTimeout(function(){
 						this.classList.remove("active");
 					},3000);
-				}
+				}*/
 				
 				tt = tt + 1;
 			});
