@@ -98,6 +98,19 @@
 			#mui-media div.mui-row {
 				height: auto;
 			}
+			.mui-card{
+				position: relative;
+			}
+			.mui-card .top{
+				position: absolute;
+				top: 5px;
+				right: 0;
+				color: #007aff;
+				/*color: red;*/
+				height: 30px;
+				line-height: 30px;
+				transform: rotate(45deg);
+			}
 		</style>
 	</head>
 
@@ -135,6 +148,7 @@
 					</div>
 					{volist name="qunying" id="vo"}
 					<div class="mui-card">
+						
 						<div class="mui-media-body" style="padding: 10px;">
 							{$vo.title}
 							<p style="text-indent:2em;" class="text_p">
@@ -147,6 +161,9 @@
 							<span id="" class="number">
 								票数 : {$vo.poll}
 							</span>
+						</div>
+						<div class="top">
+							已售出
 						</div>
 					</div>
 					{/volist}

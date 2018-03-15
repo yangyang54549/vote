@@ -199,8 +199,12 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
-
-			var limit = {$limit};
+			(function($) {
+				/*$(".mui-scroll-wrapper").scroll({
+					bounce: false,//滚动条是否有弹力默认是true
+					indicators: false, //是否显示滚动条,默认是true
+				});*/
+				var limit = {$limit};
 			var url = "__URLL__web/index/info/id/";
 
 			mui.init({
@@ -275,12 +279,7 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 							},'json'
 						);
 			}
-//			(function($) {
-//				$(".mui-scroll-wrapper").scroll({
-					//bounce: false,//滚动条是否有弹力默认是true
-					//indicators: false, //是否显示滚动条,默认是true
-//				});
-//			})(mui);
+
 			//mui下a标签href失效问题解决
 			mui('body').on('tap','a',function(){window.top.location.href=this.href;});
 			var gallery = mui('.mui-slider');
@@ -302,6 +301,9 @@ s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefor
 
 				tt = tt + 1;
 			});
+			})(mui);
+
+			
 
 		</script>
 
