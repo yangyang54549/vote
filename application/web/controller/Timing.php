@@ -14,7 +14,7 @@ class Timing extends Yang
         //每天每个栏目点赞数前十名进入第二天(清除票数),其他改变状态,把时间创建是昨天的作品改变状态
         //每个用户每天有三票
         $Type = Type::select();
-
+        file_put_contents("yyyyy.txt",time()." * ",FILE_APPEND);
         // 启动事务
         Db::startTrans();
         try{
@@ -24,13 +24,8 @@ class Timing extends Yang
                 Qunying::where(['is_gold'=>0,'status'=>0,'type'=>$value['id']])
                 ->order('poll desc')
                 ->limit(10)
-                ->update(['time'=>strtotime($dateStr)+2,'poll'=>0]);
+                ->update(['time'=>strtotime($dateStr)+3,'poll'=>0]);
 
-                // Qunying::where(['is_gold'=>0,'status'=>0,'type'=>$value['id']])
-                // ->update(['status'=>1]);
-
-                // Qunying::where(['status'=>2])
-                // ->update(['status'=>0]);
                 $qunying = Qunying::where(['is_gold'=>0,'status'=>0,'type'=>$value['id']])
                 ->order('poll desc')
                 ->select();

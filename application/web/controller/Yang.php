@@ -7,7 +7,7 @@ use think\Cookie;
 class Yang extends Controller
 {
 
-    protected $arr = ['Index/index','Index/load','Login/login','Login/wxlogin','Login/password','Login/reg','Login/admin','Login/getaccess_token','Login/codemsg','Wxpay/weixinjsapnotify'];
+    protected $arr = ['Index/index','Index/load','Login/login','Login/wxlogin','Login/password','Login/reg','Login/admin','Login/getaccess_token','Login/codemsg','Wxpay/weixinjsapnotify','Timing/index','Timing/gold'];
     public $id = null;
 
     public function __construct()

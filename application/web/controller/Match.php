@@ -21,12 +21,14 @@ class Match extends Yang
                 $this->ret['code'] = -200;
                 return json($this->ret);
             }
-            // $qunying = Qunying::where(['type'=>$arr['type'],'status'=>0,'is_gold'=>0])->count();
-            // if ($qunying>99) {
-            //     $this->ret['msg'] = '每天每个栏目限制上传100幅作品';
-            //     $this->ret['code'] = -200;
-            //     return json($this->ret);
-            // }
+
+            $qunying = Qunying::whereTime('create_time', 'today')->where(['type'=>$arr['type'],'status'=>1,'is_gold'=>0])->count();
+            if ($qunying>99) {
+                $this->ret['msg'] = '每天每个栏目限制上传100幅作品';
+                $this->ret['code'] = -200;
+                return json($this->ret);
+            }
+
             $dateStr = date('Y-m-d', time());
             $timestamp24 = strtotime($dateStr) + 86402;
 

@@ -288,24 +288,26 @@
 									</p>
 								</div>
 							</div>
-							<div class="mui-card mui-row" style="padding: 10px;">
-								<div class="mui-col-sm-6 mui-col-xs-6">
+
+							{if condition="$qunying.is_sell eq 0"}
+							<div class="mui-card mui-row" style="padding: 10px;color:black;">
+								<div class="mui-col-sm-6 mui-col-xs-6" style="color:black;">
 									单价：{$qunying.integral}积分
 								</div>
-								<div class="mui-col-sm-6 mui-col-xs-6" id="gm">
+								<div class="mui-col-sm-6 mui-col-xs-6" id="gm" style="color:black;">
 									购买
 								</div>
-
 							</div>
+							{else/}
 							<div class="mui-card mui-row" style="padding: 10px;">
-								<div class="mui-col-sm-6 mui-col-xs-6">
+								<div class="mui-col-sm-6 mui-col-xs-6" style="color:black;">
 									单价：{$qunying.integral}积分
 								</div>
-								<div class="mui-col-sm-6 mui-col-xs-6" >
-									购买
+								<div class="mui-col-sm-6 mui-col-xs-6" style="color:black;">
+									已售出
 								</div>
-
 							</div>
+							{/if}
 							<!--<div class="mui-card mui-row" style="padding: 10px;">
 								<div class="mui-col-sm-6 mui-col-xs-6">
 								</div>
