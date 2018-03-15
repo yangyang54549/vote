@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>诗词书画大赛</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<style type="text/css">
+			header>.div {
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				/* IE 9 */
+				-moz-transform: rotate(45deg);
+				/* Firefox */
+				-webkit-transform: rotate(45deg);
+				/* Safari 和 Chrome */
+				-o-transform: rotate(45deg);
+				/* Opera */
+				width: 13px;
+				height: 13px;
+				border-bottom: 2px solid #007aff;
+				border-left: 2px solid #007aff;
+				z-index: 100;
+			}
+			
+			.mui-media-body{
+				font-size: 20px !important;
+			}
+			.mui-media-body p{
+				font-size: 16px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="div" onclick="history.go(-1);"></div>
+			<h1 class="mui-title mui-active">系统消息</h1>
+		</header>
+		<!-- 主页面内容容器 -->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				<div class="mui-card">
+					<!--页眉，放置标题-->
+					<div class="mui-card-header mui-card-media">
+						<img src="../img/tie/laba.png" />
+						<div class="mui-media-body">
+							系统消息
+							<p>2018-0-3 15:30</p>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<!--页眉，放置标题-->
+					<div class="mui-card-header mui-card-media">
+						<img src="../img/tie/laba.png" />
+						<div class="mui-media-body">
+							系统消息
+							<p>2018-0-3 15:30</p>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<!--页眉，放置标题-->
+					<div class="mui-card-header mui-card-media">
+						<img src="../img/tie/laba.png" />
+						<div class="mui-media-body">
+							系统消息
+							<p>2018-0-3 15:30</p>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<!--页眉，放置标题-->
+					<div class="mui-card-header mui-card-media">
+						<img src="../img/tie/laba.png" />
+						<div class="mui-media-body">
+							系统消息
+							<p>2018-0-3 15:30</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					bounce: false, //滚动条是否有弹力默认是true
+					indicators: false, //是否显示滚动条,默认是true
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>诗词书画大赛</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<style type="text/css">
+			.mui-grid-9 {
+				width: 100%;
+				padding: 10px;
+			}
+			
+			header>.div {
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				/* IE 9 */
+				-moz-transform: rotate(45deg);
+				/* Firefox */
+				-webkit-transform: rotate(45deg);
+				/* Safari 和 Chrome */
+				-o-transform: rotate(45deg);
+				/* Opera */
+				width: 13px;
+				height: 13px;
+				border-bottom: 2px solid #007aff;
+				border-left: 2px solid #007aff;
+				z-index: 100;
+			}
+			
+			#jiu li.mui-col-xs-6 {
+				padding: 10px !important;
+			}
+			#jiu li.mui-col-xs-6  .mui-media-body{
+				padding: 8px 0 !important;
+				    border-radius: 15px !important;
+				    font-size: 18px;
+			}
+			.mui-collapse-content p{
+				text-indent:2em;
+				font-size: 16px;
+				line-height: 25px;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="div" onclick="history.go(-1);"></div>
+			<h1 class="mui-title mui-active">释玄解妙</h1>
+		</header>
+		<!-- 主页面内容容器 -->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				<ul class="mui-table-view mui-grid-view mui-grid-9" id="jiu">
+					<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<a href="javascript:void(0)">
+							<!--<span class="mui-icon mui-icon-home"></span>-->
+							<div class="mui-media-body  active" data-type="1" id="act1">专家讲座</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<a href="javascript:void(0)">
+							<!-- <span class="mui-icon mui-icon-location"></span>-->
+							<div class="mui-media-body" data-type="2" id="act2">知识普及</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view mui-grid-view mui-grid-9" id="card">
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" id="card1">
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>								
+								<div class="mui-card-footer">视频1</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频2</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频3</div>
+							</a>
+						</div>
+					</ul>
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" id="card2">
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频4</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频5</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频6</div>
+							</a>
+						</div>
+
+					</ul>
+
+				</ul>
+				<ul class="mui-table-view" id="act2s" style="display: none;">
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">书法字画应该如何保管</a>
+						<div class="mui-collapse-content">
+							<p>保管已经破损的古旧书画更要谨慎,一时不能修复的不要随意展示,以避免书画再度破损。如果是已破碎的书画则更要防止散片丢失,以免给将来修复带来困难。无论是新旧书画,只要原裱尚能悬挂,画心尚无破损,一般不要急于揭裱修复,因揭裱一次就会对书画的纸素损伤一次。如果原裱书画脱落或画心破损严重,则应及时进行揭裱修复。</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">书画裱件存放</a>
+						<div class="mui-collapse-content">
+							<p>书画裱件存放时不宜卷得过紧或过松,更不可反卷。如果卷得过紧,天地头两侧就会留下画心与边料接缝的压痕,影响书画的美观,还可能导致裱件的变形或出现脱落;如果卷的过松,容易折毁书画;如果反卷,会使书画出现一道道折痕,特别是古旧书画损害更大。</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">悬挂和展示书画</a>
+						<div class="mui-collapse-content">
+							<p>悬挂书画时要一手持画钗挑住画绳,一手托住书画未展开的部分,然后慢慢放开来将书画挂起,取下画钗。展示书画时要一人牵引画绳,另一人两手持轴头将书画展开,切忌两手向上持书画中间部分,否则手5指会将书画划出折痕。对于无轴头的书画作品,展示时要用两指夹住,使画件从指缝中通过。此外,还应注意,书画不宜长期悬挂,挂一段时期后要卷起收藏一段时间;对久存的书画要定期挂出来通风。</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">书画片保</a>
+						<div class="mui-collapse-content">
+							<p>暂不装裱的书画片不可随便折叠摞起,否则存放时间一久就会从折叠处折断,或在折处留下黑色折痕,以至装裱后影响美观。如果要临时欣赏,切不可用图钉钉于墙上或用浆糊粘于墙上,否则会直接损坏书画片。书法字画应该如何保管?正确保存书画片的方法是:可将书画片下面衬一层幅面相当的薄宣纸或皮纸,以纸卷为轴将书画片卷起,并用白纸或塑料膜包装,放在画盒内或书橱内。</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">书画装裱后保存注意</a>
+						<div class="mui-collapse-content">
+							<p>书画装裱后更应妥善保存,存放在地方首先要考虑防潮、防蛀、防鼠、防霉烂、防玷污等。书法字画应该如何保管?可将每件书画装入一个塑料袋或布袋,也可用白纸包好,存放时要平放,切勿竖置,更不要在书画上面放置重物使书画受压。如果有条件,可根据书画规格配制画盒,并在盒内放些樟脑和吸潮剂。</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					bounce: false, //滚动条是否有弹力默认是true
+					indicators: false, //是否显示滚动条,默认是true
+				});
+				//mui下a标签href失效问题解决
+				mui('body').on('tap', 'a', function() {
+					window.top.location.href = this.href;
+				});
+				mui(".mui-table-view ").on("tap", ".mui-table-view-cell a .mui-media-body", function() {
+					//当前对象直接就是--->this
+					var datas = this.getAttribute("data-type");
+					var act1 = document.getElementById("act1");
+					var act2 = document.getElementById("act2");
+					
+					var card = document.getElementById("card");
+					var act2s = document.getElementById("act2s");
+					if(datas == 1) {
+						act1.className = "mui-media-body  active";
+						card.style.display = "block";
+						act2.className = "mui-media-body";
+						act2s.style.display = "none";						
+					} else {
+						act2.className = "mui-media-body  active";
+						act2s.style.display = "block";
+						act1.className = "mui-media-body";
+						card.style.display = "none";
+					}
+					/*var act = document.getElementById("act");
+					act.classList.remove("active");
+					t1 = this;
+					this.classList.add('active');*/
+
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>诗词书画大赛</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<style type="text/css">
+			.mui-grid-9 {
+				width: 100%;
+				padding: 10px;
+			}
+			
+			header>.div {
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				/* IE 9 */
+				-moz-transform: rotate(45deg);
+				/* Firefox */
+				-webkit-transform: rotate(45deg);
+				/* Safari 和 Chrome */
+				-o-transform: rotate(45deg);
+				/* Opera */
+				width: 13px;
+				height: 13px;
+				border-bottom: 2px solid #007aff;
+				border-left: 2px solid #007aff;
+				z-index: 100;
+			}
+			
+			#jiu li.mui-col-xs-6 {
+				padding: 10px !important;
+			}
+			#jiu li.mui-col-xs-6  .mui-media-body{
+				padding: 8px 0 !important;
+				    border-radius: 15px !important;
+				    font-size: 18px;
+			}
+			.mui-collapse-content p{
+				text-indent:2em;
+				font-size: 16px;
+				line-height: 25px;
+				
+			}
+			.mui-col-sm-12{
+				padding: 0px 10px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="div" onclick="history.go(-1);"></div>
+			<h1 class="mui-title mui-active">娱乐之家</h1>
+		</header>
+		<!-- 主页面内容容器 -->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				
+				<ul class="mui-table-view mui-grid-view mui-grid-9" id="card">
+					<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-col-sm-12">
+						<a href="javascript:void(0)">							 
+							<div class="mui-media-body">以本平台作品谱曲演唱的作品，音乐或视频</div>
+						</a>
+					</li>
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" id="card1">
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>								
+								<div class="mui-card-footer">视频1</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频2</div>
+							</a>
+						</div>
+						
+					</ul>
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" id="card2">
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频4</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频5</div>
+							</a>
+						</div>
+						
+
+					</ul>
+
+				</ul>
+				<ul class="mui-table-view mui-grid-view mui-grid-9" id="card">
+					<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-col-sm-12">
+						<a href="javascript:void(0)">							 
+							<div class="mui-media-body">各类以民族乐器演奏的音乐，乐曲或视频</div>
+						</a>
+					</li>
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" id="card1">
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>								
+								<div class="mui-card-footer">视频1</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频2</div>
+							</a>
+						</div>
+						
+					</ul>
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6" id="card2">
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频4</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">视频5</div>
+							</a>
+						</div>
+						
+
+					</ul>
+
+				</ul>
+				<ul class="mui-table-view mui-grid-view mui-grid-9" id="card">
+					<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-col-sm-12">
+						<a href="javascript:void(0)">							 
+							<div class="mui-media-body">一勺茶馆</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-col-sm-12">
+						<a href="javascript:void(0)">							 
+							<div class="mui-media-body" style="opacity: 0.5;">暂未开放</div>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					bounce: false, //滚动条是否有弹力默认是true
+					indicators: false, //是否显示滚动条,默认是true
+				});
+				//mui下a标签href失效问题解决
+				mui('body').on('tap', 'a', function() {
+					window.top.location.href = this.href;
+				});
+				
+			})(mui);
+		</script>
+	</body>
+
+</html>

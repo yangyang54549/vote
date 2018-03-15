@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>诗词书画大赛</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<style type="text/css">
+			.mui-grid-9 {
+				width: 100%;
+				padding: 10px;
+			}
+			
+			header>.div {
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				/* IE 9 */
+				-moz-transform: rotate(45deg);
+				/* Firefox */
+				-webkit-transform: rotate(45deg);
+				/* Safari 和 Chrome */
+				-o-transform: rotate(45deg);
+				/* Opera */
+				width: 13px;
+				height: 13px;
+				border-bottom: 2px solid #007aff;
+				border-left: 2px solid #007aff;
+				z-index: 100;
+			}
+			
+			#jiu li.mui-col-xs-6 {
+				padding: 0px 10px !important;
+			}
+			#jiu li.mui-col-xs-6  .mui-media-body{
+				padding: 8px 0 !important;
+				    border-radius: 15px !important;
+				   
+			}			
+			.mui-grid-9 ul{
+				padding: 0 !important;
+			}
+			#card2,#card3,#card4{
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="div" onclick="history.go(-1);"></div>
+			<h1 class="mui-title mui-active">动漫花园</h1>
+		</header>
+		<!-- 主页面内容容器 -->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				<ul class="mui-table-view mui-grid-view mui-grid-9" id="jiu">
+					<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<a href="javascript:void(0)">
+							<!--<span class="mui-icon mui-icon-home"></span>-->
+							<div class="mui-media-body  active" data-type="1" id="act1">成语动漫</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<a href="javascript:void(0)">
+							<!-- <span class="mui-icon mui-icon-location"></span>-->
+							<div class="mui-media-body" data-type="2" id="act2">神话动漫</div>
+						</a>
+					</li><li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<a href="javascript:void(0)">
+							<!--<span class="mui-icon mui-icon-home"></span>-->
+							<div class="mui-media-body" data-type="3" id="act3">寓言动漫</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<a href="javascript:void(0)">
+							<!-- <span class="mui-icon mui-icon-location"></span>-->
+							<div class="mui-media-body" data-type="4" id="act4">励志动漫</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view mui-grid-view mui-grid-9 card" id="card1">
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>								
+								<div class="mui-card-footer">成语动漫</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">成语动漫</div>
+							</a>
+						</div>					
+					</ul>
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">成语动漫</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">成语动漫</div>
+							</a>
+						</div>						
+					</ul>
+				</ul>
+				<ul class="mui-table-view mui-grid-view mui-grid-9 card" id="card2">
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>								
+								<div class="mui-card-footer">神话动漫</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">神话动漫</div>
+							</a>
+						</div>					
+					</ul>
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">神话动漫</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">神话动漫</div>
+							</a>
+						</div>						
+					</ul>
+				</ul>
+				<ul class="mui-table-view mui-grid-view mui-grid-9 card" id="card3">
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>								
+								<div class="mui-card-footer">寓言动漫</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">寓言动漫</div>
+							</a>
+						</div>					
+					</ul>
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">寓言动漫</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">寓言动漫</div>
+							</a>
+						</div>						
+					</ul>
+				</ul>
+				<ul class="mui-table-view mui-grid-view mui-grid-9 card" id="card4">
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>								
+								<div class="mui-card-footer">励志动漫</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">								
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">励志动漫</div>
+							</a>
+						</div>					
+					</ul>
+					<ul class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">励志动漫</div>
+							</a>
+						</div>
+						<div class="mui-card">
+							<a href="javascript:void(0)">
+								<div class="mui-card-content"><img src="../img/vedio_pic.jpg" /></div>
+								<div class="mui-card-footer">励志动漫</div>
+							</a>
+						</div>						
+					</ul>
+				</ul>
+				
+			</div>
+		</div>
+		<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			mui.init();
+			(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					bounce: false, //滚动条是否有弹力默认是true
+					indicators: false, //是否显示滚动条,默认是true
+				});
+				//mui下a标签href失效问题解决
+				mui('body').on('tap', 'a', function() {
+					window.top.location.href = this.href;
+				});
+				var ts = 0;
+				var tss;
+				mui(".mui-table-view ").on("tap", ".mui-table-view-cell a .mui-media-body", function() {
+					//当前对象直接就是--->this
+					if(ts==0){
+						document.getElementById("act1").className = "mui-media-body";
+					}else{
+						tss.classList.remove("active");
+					}
+					var datas = this.getAttribute("data-type");															
+					tss = this;					
+					this.className += " active";
+					var card1 = document.getElementById("card1");
+					var card2 = document.getElementById("card2");
+					var card3 = document.getElementById("card3");
+					var card4 = document.getElementById("card4");										
+					ts = ts+1;				
+					if(datas == 1) {
+						card1.style.display = "block";
+						card2.style.display = "none";
+						card3.style.display = "none";
+						card4.style.display = "none";
+					}else if(datas == 2){
+						card1.style.display = "none";
+						card2.style.display = "block";
+						card3.style.display = "none";
+						card4.style.display = "none";
+					}else if(datas == 3){
+						card1.style.display = "none";
+						card2.style.display = "none";
+						card3.style.display = "block";
+						card4.style.display = "none";
+					}else if(datas == 4){
+						card1.style.display = "none";
+						card2.style.display = "none";
+						card3.style.display = "none";
+						card4.style.display = "block";
+					}else {
+						
+					}				
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>
