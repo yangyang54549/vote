@@ -27,7 +27,7 @@ class Index extends Yang
     {
         if ($this->request->isAjax()) {
             $limit = input('limit');
-            $qunying = Recommend::order('id desc')->limit($limit,$limit+5)->select();
+            $qunying = Recommend::order('id desc')->limit($limit,5)->select();
             if(!empty($qunying)){
                 $this->ret['data'] = $qunying;
                 $this->ret['limit'] = $limit+count($qunying);

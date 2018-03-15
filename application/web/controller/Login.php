@@ -60,6 +60,7 @@ class Login extends Yang
             $arr['image'] = '/static/web/img/painting/gh/timg (7).jpg';
             $arr['create_time'] = time();
             $arr['status'] = 0;
+            $arr['vote'] = 3;
             $arr['password'] = md5($arr['password']);
             $user = User::insert($arr);
 
@@ -135,6 +136,55 @@ class Login extends Yang
             return $this->fetch();
         }
     }
+
+    /*
+     * 短信公共方法 根据不同model使用不同的模版
+     * mobile 手机号码
+     * model 1登录 2注册 3忘记密码修改密码 4修改支付密码 5修改手机号码
+     */
+    public function message($mobile,$model)
+    {
+        $cons = '';
+        $randStr = str_shuffle('1234567890');
+        $rand = substr($randStr,0,6);
+
+        if ($model==1) {
+            $cons = "【诗词书画鉴赏】您正在修改密码,验证码是:".$rand."，5分钟后过期，请您及时验证!";
+        }elseif($model==3){
+            $cons = "【诗词书画鉴赏】您正在绑定手机号码,验证码是:".$rand."，5分钟后过期，请您及时验证!";
+        }
+
+        Session::set($mobile,$rand);
+        Session::set($rand,time());
+        $url='http://117.78.52.216:9003';//系统接口地址
+        $conss = iconv('UTF-8', 'gbk', $cons);
+        $content=urlencode($conss);
+        $username="13613820359";//用户名
+        $password="ODIwMzU5";//密码百度BASE64加密后密文
+        $url=$url."/servlet/UserServiceAPI?method=sendSMS&extenno=&isLongSms=0&username=".$username."&password=".$password."&smstype=0&mobile=".$mobile."&content=".$content;
+        $data = $this->concurl($url);
+        return $data;
+    }
+    /*
+     * 发送get请求
+     */
+    public function concurl($url)
+    {
+            //初始化curl
+            $ch = curl_init($url);
+            //设置超时
+            curl_setopt($ch, CURLOPT_TIMEOUT,30);
+            curl_setopt($ch, CURLOPT_HEADER,FALSE);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER,TRUE);
+            //运行curl，结果以jason形式返回
+            $res = curl_exec($ch);
+            curl_close($ch);
+         //　　//打印获得的数据
+             //$data=json_decode($res,true);
+             return $res;
+    }
+
+
     /*
      * 退出
      */

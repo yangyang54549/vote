@@ -170,7 +170,7 @@
 					<input id='email' type="email" class="mui-input-clear mui-input" placeholder="请输入邮箱">
 				</div>-->
 			</form>
-			<p style="margin: 10px;">注册需支付1元，注册后将有100积分</p>
+			<p style="margin: 10px;">注册需支付100积分(1元)，注册后将会充值进您的账户余额中</p>
 			<div class="mui-content-padded" style="margin: 10px;">
 				<button id='reg' class=" mui-btn-primary" style="width: 100%; ">注册</button>
 				<button id='regs' class="mui-btn-primary" style="margin: 10px  0px;">返回登录</button>
@@ -178,7 +178,7 @@
 			<div class="mui-content-padded">
 				<!--<p>注册真实可用，注册成功后的用户可用于登录，但是示例程序并未和服务端交互，用户相关数据仅存储于本地。</p>-->
 			</div>
-			
+
 		</div>
 		<ul class="mui-table-view" id="mui_sheng">
 <!-- 							<li class="mui-table-view-cell">北京市</li>
@@ -236,8 +236,8 @@
 			})(mui);
 			mui(".mui-input-row").on("tap", "#sheng", function() {
 				document.getElementById("mui_sheng").style.display = "block";
-				
-			})		
+
+			})
 			mui("#mui_sheng").on("tap", "#mui_sheng li", function() {
 				document.getElementById("sheng").value = this.innerText;
 				document.getElementById("mui_shengs").value = this.innerText;
@@ -276,7 +276,7 @@
 					var identity = document.getElementById("identity");
 					var password1 = document.getElementById("password");
 					var password2 = document.getElementById("password_confirm");
-					
+
 					var sheng = document.getElementById("sheng");
 					if(names.value !=""||names.value.length>3){
 						if(name.value !=""||name.value.length>1){
@@ -291,8 +291,8 @@
 												if(sheng.value==""){
 													mui.toast('选择省份');toasts();
 												}else{
-													
-												
+
+
 												var names = document.getElementById("names").value;
 												var name = document.getElementById("name").value;
 												var phone = document.getElementById("phone").value;
@@ -302,7 +302,7 @@
 												var referrer = document.getElementById("referrer").value;
 												var shengt = sheng.value;
 												mui.post("{:url('login/reg')}",{
-													name:names,mobile:phone,yanz:yanz,id_name:name,id_card:identity,password:password1,referrer:referrer
+													name:names,mobile:phone,yanz:yanz,id_name:name,id_card:identity,password:password1,referrer:referrer,province:shengt
 												},function(data){
 														//服务器返回响应，根据响应结果，分析是否登录成功；
 														if (data.code==1) {
@@ -314,7 +314,7 @@
 															identity="";
 															password1="";
 															referrer="";
-															setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒															
+															setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
 																window.location = "{:url('login/login')}";
 															}, 1000);
 														}else{
