@@ -48,7 +48,7 @@ class View
             '__CSS__'    => $root . '/static/css',
             '__JS__'     => $root . '/static/js',
             '__WEB__'     => $root . '/static/web',
-            '__URLL__'     => 'http://vote.com/',
+            '__URLL__'     => 'http://47.94.212.132/',
         ];
         $this->replace = array_merge($baseReplace, (array) $replace);
     }

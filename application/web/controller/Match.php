@@ -33,7 +33,6 @@ class Match extends Yang
             $timestamp24 = strtotime($dateStr) + 86402;
 
             $arr['user_id'] = $this->id;
-            $arr['user_name'] = session('user.name');
             $arr['create_time'] = time();
             $arr['time'] = $timestamp24;
             $arr['status'] = 1;

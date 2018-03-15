@@ -63,11 +63,11 @@
    				box-sizing:border-box;
 				width: 102vw;
 				height: 100vh;
-				overflow:auto;				
+				overflow:auto;
 				padding: 0px;
 				padding-top: 50px;
 				display: none;
-				z-index: 100;				
+				z-index: 100;
 			}
 /*作为IT界最前端的技术达人，页面上的每一个元素的样式我们都必须较真，就是滚动条我们也不会忽略。
 下面我给大家分享一下如何通过CSS来控制滚动条的样式，代码如下：*/
@@ -164,9 +164,9 @@
 							<img src="__WEB__/img/a11.png" id="nextview" />
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">作品名称</p>
 							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" name="title" id="name" type="text" value="" placeholder="输入作品名称（最多15字）" maxlength="15" />
-							<p class="mui-col-sm-12 mui-col-xs-12 muip">作者姓名</p>
+							<p class="mui-col-sm-12 mui-col-xs-12 muip">作者名称</p>
 							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" id="zname" type="text" value="" placeholder="输入作者姓名" maxlength="10" />
-							<p class="mui-col-sm-12 mui-col-xs-12 muip">选择省份</p>							
+							<p class="mui-col-sm-12 mui-col-xs-12 muip">选择省份</p>
 							<input type="text" name="leixing" id="sheng" value="" placeholder="选择省份" style="margin: 10px 0;" readOnly='readOnly' />
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">作品简介</p>
 							<textarea name="content" rows="3" cols="" id="text_s" placeholder="输入作品简介（最多150字）" maxlength="150"></textarea>
@@ -195,16 +195,16 @@
 
 							<input type="hidden" name="" id="mui_views" value="" />
 						</ul>
-						<ul class="mui-table-view" id="mui_sheng">							
-							<li class="mui-table-view-cell">北京市</li>
+						<ul class="mui-table-view" id="mui_sheng">
+<!-- 							<li class="mui-table-view-cell">北京市</li>
 							<li class="mui-table-view-cell">上海市</li>
-							<li class="mui-table-view-cell">重庆市</li>
+							<li class="mui-table-view-cell">重庆市</li> -->
 							<li class="mui-table-view-cell">黑龙江省</li>
 							<li class="mui-table-view-cell">辽宁省</li>
 							<li class="mui-table-view-cell">吉林省</li>
 							<li class="mui-table-view-cell">河北省</li>
 							<li class="mui-table-view-cell">河南省</li>
-							
+
 							<li class="mui-table-view-cell">湖北省</li>
 							<li class="mui-table-view-cell">湖南省</li>
 							<li class="mui-table-view-cell">山东省</li>
@@ -213,14 +213,14 @@
 							<li class="mui-table-view-cell">安徽省</li>
 							<li class="mui-table-view-cell">浙江省</li>
 							<li class="mui-table-view-cell">江苏省</li>
-							
+
 							<li class="mui-table-view-cell">福建省</li>
 							<li class="mui-table-view-cell">广东省</li>
 							<li class="mui-table-view-cell">海南省</li>
-							
+
 							<li class="mui-table-view-cell">四川省</li>
 							<li class="mui-table-view-cell">云南省</li>
-							
+
 							<li class="mui-table-view-cell">贵州省</li>
 							<li class="mui-table-view-cell">青海省</li>
 							<li class="mui-table-view-cell">甘肃省</li>
@@ -231,8 +231,8 @@
 							<li class="mui-table-view-cell">新疆维吾尔自治区</li>
 							<li class="mui-table-view-cell">西藏自治区</li>
 							<li class="mui-table-view-cell">广西壮族自治区</li>
-							<li class="mui-table-view-cell">香港特别行政区</li>
-							<li class="mui-table-view-cell">澳门特别行政区</li>
+<!-- 							<li class="mui-table-view-cell">香港特别行政区</li>
+							<li class="mui-table-view-cell">澳门特别行政区</li> -->
 							<input type="hidden" name="" id="mui_shengs" value="" />
 						</ul>
 				</div>
@@ -270,7 +270,7 @@
 
 			})
 			mui("#mui_sheng").on("tap", "#mui_sheng li", function() {
-				
+
 				document.getElementById("sheng").value = this.innerText;
 				document.getElementById("mui_shengs").value = this.innerText;
 				document.getElementById("mui_sheng").style.display = "none";
@@ -294,7 +294,7 @@
 					mui.toast('请上传图片')
 				} else {
 					if(name.value != "") {
-						
+
 						if(zname.value != "") {
 						if(sheng.value != "") {
 						if(tes.value != "") {
@@ -304,7 +304,7 @@
 								var content = tes.value;
 								var leix = lei.value;
 								var leixid = leixid.value;
-								
+
 								var shengt = sheng.value;
 								var znames = zname.value;
 								if (domimg.src == "") {
@@ -318,7 +318,8 @@
 									content:content,
 									type:leixid,
 									img:domimg.src
-									
+									province:shengt,
+									user_name:znames
 								},function(data){
 										mui.toast(data.msg);toasts();
 										/*跳转*/
