@@ -76,11 +76,51 @@
 .mui-input-row label,.mui-input-row input{
 	font-family: kaiti;
 }
+#mui_sheng{
+				position: fixed;
+   				left: 0;
+   				top: 0;
+   				box-sizing:border-box;
+				width: 102vw;
+				height: 100vh;
+				overflow:auto;
+				padding: 0px;
+				padding-top: 50px;
+				display: none;
+				z-index: 100;
+			}
+/*作为IT界最前端的技术达人，页面上的每一个元素的样式我们都必须较真，就是滚动条我们也不会忽略。
+下面我给大家分享一下如何通过CSS来控制滚动条的样式，代码如下：*/
+ /*定义滚动条轨道*/
+  #mui_sheng::-webkit-scrollbar-track
+    {
+        background-color: #ffffff;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
+    }
+    /*定义滚动条高宽及背景*/
+    #mui_sheng::-webkit-scrollbar
+    {
+        width: 3px;
+        background-color: rgba(255, 255, 255, 0.34);
+    }
+    /*定义滚动条*/
+    #mui_sheng::-webkit-scrollbar-thumb
+    {
+        background-color: #ffffff;
+        border-radius: 2px;
+    }
+			.mui-table-view-cell:after {
+				opacity: 0;
+			}
+
+			.mui-table-view-cell {
+				border-bottom: 1px solid #c8c7cc;
+			}
 		</style>
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav">
+		<header class="mui-bar mui-bar-nav" style="z-index: 150;">
 			<div class="div" onclick="window.history.back()"></div>
 			<h1 class="mui-title">注册</h1>
 		</header>
@@ -110,6 +150,13 @@
 					<input id='identity' type="tel" class="mui-input-clear mui-input" placeholder="请输入身份证号" maxlength="18">
 				</div>
 				<div class="mui-input-row">
+					<label>选择省份</label>
+					<!--<input id='identity' type="tel" class="mui-input-clear mui-input" placeholder="请输入身份证号" maxlength="18">-->
+					<input type="text"  id="sheng"  value="" placeholder="选择省份"  readOnly='readOnly' />
+				</div>
+				<!--<p class="mui-col-sm-12 mui-col-xs-12 muip">选择省份</p>
+							<input type="text" name="leixing" id="sheng" value="" placeholder="选择省份" style="margin: 10px 0;" readOnly='readOnly' />-->
+				<div class="mui-input-row">
 					<label>设置密码</label>
 					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码" maxlength="16">
 				</div>
@@ -131,7 +178,48 @@
 			<div class="mui-content-padded">
 				<!--<p>注册真实可用，注册成功后的用户可用于登录，但是示例程序并未和服务端交互，用户相关数据仅存储于本地。</p>-->
 			</div>
+			
 		</div>
+		<ul class="mui-table-view" id="mui_sheng">
+<!-- 							<li class="mui-table-view-cell">北京市</li>
+							<li class="mui-table-view-cell">上海市</li>
+							<li class="mui-table-view-cell">重庆市</li> -->
+							<li class="mui-table-view-cell">黑龙江省</li>
+							<li class="mui-table-view-cell">辽宁省</li>
+							<li class="mui-table-view-cell">吉林省</li>
+							<li class="mui-table-view-cell">河北省</li>
+							<li class="mui-table-view-cell">河南省</li>
+
+							<li class="mui-table-view-cell">湖北省</li>
+							<li class="mui-table-view-cell">湖南省</li>
+							<li class="mui-table-view-cell">山东省</li>
+							<li class="mui-table-view-cell">山西省</li>
+							<li class="mui-table-view-cell">陕西省</li>
+							<li class="mui-table-view-cell">安徽省</li>
+							<li class="mui-table-view-cell">浙江省</li>
+							<li class="mui-table-view-cell">江苏省</li>
+
+							<li class="mui-table-view-cell">福建省</li>
+							<li class="mui-table-view-cell">广东省</li>
+							<li class="mui-table-view-cell">海南省</li>
+
+							<li class="mui-table-view-cell">四川省</li>
+							<li class="mui-table-view-cell">云南省</li>
+
+							<li class="mui-table-view-cell">贵州省</li>
+							<li class="mui-table-view-cell">青海省</li>
+							<li class="mui-table-view-cell">甘肃省</li>
+							<li class="mui-table-view-cell">江西省</li>
+							<li class="mui-table-view-cell">台湾省</li>
+							<li class="mui-table-view-cell">内蒙古自治区</li>
+							<li class="mui-table-view-cell">宁夏回族自治区</li>
+							<li class="mui-table-view-cell">新疆维吾尔自治区</li>
+							<li class="mui-table-view-cell">西藏自治区</li>
+							<li class="mui-table-view-cell">广西壮族自治区</li>
+<!-- 							<li class="mui-table-view-cell">香港特别行政区</li>
+							<li class="mui-table-view-cell">澳门特别行政区</li> -->
+							<input type="hidden" name="" id="mui_shengs" value="" />
+						</ul>
 		<script src="__WEB__/js/mui.min.js"></script>
 		<!-- <script src="__WEB__/js/jquery.js"></script> -->
 
@@ -146,6 +234,16 @@
 					//indicators: false, //是否显示滚动条,默认是true
 				});
 			})(mui);
+			mui(".mui-input-row").on("tap", "#sheng", function() {
+				document.getElementById("mui_sheng").style.display = "block";
+				
+			})		
+			mui("#mui_sheng").on("tap", "#mui_sheng li", function() {
+				document.getElementById("sheng").value = this.innerText;
+				document.getElementById("mui_shengs").value = this.innerText;
+				document.getElementById("mui_sheng").style.display = "none";
+
+			})
 			mui(".mui-input-rows").on("tap", "#wait", function() {
 					var phone = document.getElementById("phone");
 				if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
@@ -178,6 +276,8 @@
 					var identity = document.getElementById("identity");
 					var password1 = document.getElementById("password");
 					var password2 = document.getElementById("password_confirm");
+					
+					var sheng = document.getElementById("sheng");
 					if(names.value !=""||names.value.length>3){
 						if(name.value !=""||name.value.length>1){
 							if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
@@ -188,6 +288,11 @@
 										if(password1.value>6){
 											if(password1.value==password2.value){
 												//验证完成
+												if(sheng.value==""){
+													mui.toast('选择省份');toasts();
+												}else{
+													
+												
 												var names = document.getElementById("names").value;
 												var name = document.getElementById("name").value;
 												var phone = document.getElementById("phone").value;
@@ -195,6 +300,7 @@
 												var identity = document.getElementById("identity").value;
 												var password1 = document.getElementById("password").value;
 												var referrer = document.getElementById("referrer").value;
+												var shengt = sheng.value;
 												mui.post("{:url('login/reg')}",{
 													name:names,mobile:phone,yanz:yanz,id_name:name,id_card:identity,password:password1,referrer:referrer
 												},function(data){
@@ -217,6 +323,7 @@
 
 													},'json'
 												);
+												}
 
 											}else{
 												mui.toast('确认密码与密码不一致');toasts();
