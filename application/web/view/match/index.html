@@ -165,7 +165,7 @@
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">作品名称</p>
 							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" name="title" id="name" type="text" value="" placeholder="输入作品名称（最多15字）" maxlength="15" />
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">作者名称</p>
-							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" id="zname" type="text" value="" placeholder="输入作者姓名" maxlength="10" />
+							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" id="zname" type="text" value="" placeholder="输入作者姓名或别号" maxlength="10" />
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">选择省份</p>
 							<input type="text" name="leixing" id="sheng" value="" placeholder="选择省份" style="margin: 10px 0;" readOnly='readOnly' />
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">作品简介</p>
@@ -352,7 +352,7 @@
 							mui.toast('请选择省份');toasts();
 						}
 						} else {
-							mui.toast('请输入作者姓名');toasts();
+							mui.toast('输入作者姓名或别号');toasts();
 						}
 					} else {
 						mui.toast('请输入作品名称');toasts();
@@ -362,7 +362,7 @@
 			})(mui);
 
 			//mui下a标签href失效问题解决
-			
+
 		</script>
 	</body>
 
