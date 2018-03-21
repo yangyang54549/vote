@@ -102,6 +102,7 @@ class Qunying extends Yang
 
                 $this->ret['msg'] = '修改票数失败';
                 User::where('id',$this->id)->setDec('vote');
+                User::where('id',$this->id)->setInc('integral',rand(0,2));
                 // 提交事务
                 Db::commit();
             } catch (\Exception $e) {

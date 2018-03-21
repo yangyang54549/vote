@@ -5622,8 +5622,8 @@ body > .mui-progressbar
     border: 0;
 }
 /* 个人*/
-.mui-toast-container {			
-				bottom: 50%;				
+.mui-toast-container {
+				bottom: 50%;
 			}
 	@font-face {
     font-family: kaiti;
@@ -5633,7 +5633,7 @@ body > .mui-progressbar
     src: url('../fonts/kaiti.ttf') format('truetype');
 }
 
-*{  font-family: kaiti !important; }
+/**{  font-family: kaiti !important; }*/
 .mui-icon {
     font-family: Muiicons !important;}
  .mui-card-footer{
@@ -5651,9 +5651,9 @@ span{
 }
 .mui-title {
     font-size: 20px;}
-    
+
 .mui-icon {
-    
+
     font-size: 24px !important; }
     .mui-media-body {
     	font-size: 16px !important;
