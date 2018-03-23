@@ -151,13 +151,13 @@ font-family:KaiTi,
 					</li>
 					{foreach name="type" item="vos" key="k"} {if condition="$vo.id eq $vos.father_id"} {if condition="$i eq 0 and $k eq 0"}
 					<li class="mui-table-view-cell mui-media adc{$vo.id}">
-						<a href="##" target="_blank">
+						<a href="javascript:void(0)" target="_blank">
 							<div class="mui-media-body active" id="act"  data-id="{$vos.id}">{$vos.name}</div>
 						</a>
 					</li>
 					{else/}
 					<li class="mui-table-view-cell mui-media adc{$vo.id}" >
-						<a href="##" target="_blank">
+						<a href="javascript:void(0)" target="_blank">
 							<div class="mui-media-body" data-id="{$vos.id}">{$vos.name}</div>
 						</a>
 					</li>
