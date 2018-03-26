@@ -175,7 +175,13 @@ font-family:KaiTi,
 								<a href="{:url('qunying/info',['id'=>$voss.id])}" target="_blank"><img src="{$voss.suoimg}" /></a>
 							</div>
 							<div class="mui-card-footer">{$voss.title}</div>
-							<div class="spans"><span data-id="{$voss.id}">投票</span></div>
+							<div class="spans">
+							{if condition="in_array($voss.id,$arr)"}
+							<span data-id="{$voss.id}" class="active">投票</span>
+							{else /}
+							<span data-id="{$voss.id}">投票</span>
+							{/if}
+							</div>
 						</div>
 						{/eq} {/volist}
 					</ul>
@@ -186,11 +192,16 @@ font-family:KaiTi,
 								<a href="{:url('qunying/info',['id'=>$vosss.id])}" target="_blank"><img src="{$vosss.suoimg}" /></a>
 							</div>
 							<div class="mui-card-footer">{$vosss.title}</div>
-							<div class="spans"><span data-id="{$vosss.id}">投票</span></div>
+							<div class="spans">
+							{if condition="in_array($vosss.id,$arr)"}
+							<span data-id="{$voss.id}" class="active">投票</span>
+							{else /}
+							<span data-id="{$voss.id}">投票</span>
+							{/if}
+							</div>
 						</div>
 						{/eq} {/volist}
 					</ul>
-
 				</ul>
 			</div>
 		</div>
@@ -205,6 +216,8 @@ font-family:KaiTi,
 			mui.init();
 			var limit = {$limit};
 			var url = "__URLL__web/qunying/info/id/";
+			var arrj = {$arrj};
+			console.log(arrj);
 			var type = 3;
 			var table = document.body.querySelector('#card1');
 			var table2 = document.body.querySelector('#card2');
@@ -259,6 +272,14 @@ font-family:KaiTi,
 					mui.toast('下拉刷新成功',{ duration:'long', type:'div' });toasts();
 				}, 1000);
 			}
+
+
+Array.prototype.in_array=function(e){
+var r=new RegExp(','+e+',');
+return (r.test(','+this.join(this.S)+','));
+}
+
+
 			var count = 0;
 			/**
 			 * 上拉加载具体业务实现
@@ -281,7 +302,17 @@ font-family:KaiTi,
 
 										var li = document.createElement('div');
 										li.className = 'mui-card';
-										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][mi]['id']+'">投票</span></div>';
+
+										if (arrj.in_array(data['data'][mi]['id'])) {
+
+											li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="active" data-id="'+data['data'][mi]['id']+'">投票</span></div>';
+
+										}else{
+
+											li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][mi]['id']+'">投票</span></div>';
+
+										}
+
 										if(table.offsetHeight > table2.offsetHeight) {
 											table2.appendChild(li);
 										} else {
@@ -336,7 +367,17 @@ font-family:KaiTi,
 
 										var li = document.createElement('div');
 										li.className = 'mui-card';
-										li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][n]['id']+'">投票</span> </div>';
+
+										if (arrj.in_array(data['data'][n]['id'])) {
+
+											li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="active" data-id="'+data['data'][n]['id']+'">投票</span> </div>';
+
+										}else{
+
+											li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][n]['id']+'">投票</span> </div>';
+
+										}
+
 										if(table.offsetHeight > table2.offsetHeight) {
 											table2.appendChild(li);
 										} else {

@@ -9,6 +9,8 @@ use app\common\model\Type;
 use app\common\model\TypeCopy;
 use app\common\model\Qunying as Q;
 use think\Db;
+use think\Session;
+use think\Cookie;
 
 class Qunying extends Yang
 {
@@ -31,6 +33,13 @@ class Qunying extends Yang
             $type = Type::order('father_id')->select();
             $typecopy = TypeCopy::select();
             $qunying = Q::where(['type'=>3,'status'=>0,'is_gold'=>0])->order('create_time desc')->limit(5)->select();
+            $arr = Cookie::get('toupiao');
+            $arr = json_decode($arr, true);
+            $arr[] = 0;
+            //var_dump($arr);die;
+            $arrj = json_encode($arr);
+            $this->assign('arrj',$arrj);
+            $this->assign('arr',$arr);
             $this->assign('type',$type);
             $this->assign('qunying',$qunying);
             $this->assign('typecopy',$typecopy);
@@ -103,6 +112,12 @@ class Qunying extends Yang
                 $this->ret['msg'] = '修改票数失败';
                 User::where('id',$this->id)->setDec('vote');
                 User::where('id',$this->id)->setInc('integral',rand(0,2));
+
+                $arr = Cookie::get('toupiao');
+                $arr = json_decode($arr, true);
+                $arr[] = $qunying_id;
+                Cookie::set('toupiao',json_encode($arr),2592000);
+
                 // 提交事务
                 Db::commit();
             } catch (\Exception $e) {

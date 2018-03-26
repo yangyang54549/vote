@@ -249,6 +249,9 @@
 				border-left: 2px solid #007aff;
 				z-index: 100;
 			}
+			.mui-card-header:after{
+				opacity: 0;
+			}
 		</style>
 	</head>
 
@@ -318,7 +321,7 @@
 							<div class="mui-card">
 
 								<!--页眉，放置标题-->
-								<div class="mui-card-header">页眉</div>
+								<div class="mui-card-header">作者:{$qunying.user_name}</div>
 								<!--内容区-->
 								<div class="mui-card-content">
 									<a href="javascript:void(0)"><img src="{$qunying.img}" data-preview-src="" data-preview-group="1" /></a>
