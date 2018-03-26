@@ -117,6 +117,28 @@
 			.mui-bar-tab .mui-tab-item.mui-active {
     color: #007aff;
 }
+#text_row{
+	margin: 10px 0px;
+	padding: 0px;
+}
+#text_row>div{
+	display: flex;
+	    border: 1px solid rgba(0, 0, 0, .2);
+}
+#text_row>div input{
+	width: 80%;
+	border: none;
+	line-height: 40px;
+	height: 40px;
+	
+}
+#text_row>div p{
+	width: 20%;
+	background-color: #007aff;
+	text-align: center;
+	line-height: 40px;
+	
+}
 		</style>
 
 	</head>
@@ -152,16 +174,22 @@
 						<!-- 主界面具体展示内容 -->
 						<form class="mui-row" id="from">
 
-							<!--文件选择input-->
+							<!--文件选择input-->,
 							<!--<h3>文件选择：</h3>-->
 							<input class="btn btn-default mui-col-sm-12 mui-col-xs-12" type="file" id="upFile" />
 							<!--所选文件压缩前预览-->
 							<!--<h3>压缩前预览：</h3>-->
 							<img src="" id="preview" style="width: 100%; display: none;" />
-
+							
 							<!--所选文件压缩后预览-->
 							<!--<h3>压缩后预览：</h3>-->
 							<img src="__WEB__/img/a11.png" id="nextview" />
+							
+							<div class="mui-row" id="text_row">
+								<div class="mui-col-sm-12 mui-col-xs-12">
+								<input type="" name="" id="" value="" /><p>+</p>
+								</div>
+							</div>
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">作品名称</p>
 							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" name="title" id="name" type="text" value="" placeholder="输入作品名称（最多15字）" maxlength="15" />
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">作者名称</p>
