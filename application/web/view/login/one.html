@@ -3,15 +3,173 @@
 
 	<head>
 		<meta charset="UTF-8" />
-		<title>支付一元激活帐号</title>
+		<title>激活帐号</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="__WEB__/css/mui.css" />
+		<style type="text/css">
+			.main {
+				width: 100%;
+				height: auto;
+				padding-top: 100px;
+			}
+
+			a {
+				display: block;
+				text-align: center;
+				font-size: 20px;
+				margin-top: 200px;
+			}
+
+			.loadEffect {
+				width: 50px;
+				height: 50px;
+				margin: 0 auto;
+				margin-top: 100px;
+				position: relative;
+			}
+
+			.loadEffect div {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				-webkit-animation: load 2.08s linear infinite;
+			}
+
+			.loadEffect div span {
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: lightgreen;
+				position: absolute;
+				left: 50%;
+				margin-top: -10px;
+				margin-left: -10px;
+			}
+
+			@-webkit-keyframes load {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				10% {
+					-webkit-transform: rotate(45deg);
+				}
+				50% {
+					opacity: 1;
+					-webkit-transform: rotate(160deg);
+				}
+				62% {
+					opacity: 0;
+				}
+				65% {
+					opacity: 0;
+					-webkit-transform: rotate(200deg);
+				}
+				90% {
+					-webkit-transform: rotate(340deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}
+
+			.loadEffect div:nth-child(1) {
+				-webkit-animation-delay: 0.2s;
+			}
+
+			.loadEffect div:nth-child(2) {
+				-webkit-animation-delay: 0.4s;
+			}
+
+			.loadEffect div:nth-child(3) {
+				-webkit-animation-delay: 0.6s;
+			}
+
+			.loadEffect div:nth-child(4) {
+				-webkit-animation-delay: 0.8s;
+			}
+
+			#badge {
+				position: fixed;
+				top: 0px;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				background-color: rgba(0, 0, 0, 0.5);
+				z-index: 500;
+			}
+
+			.badge {
+				display: none;
+			}
+
+
+			button {
+				width: 30%;
+				margin: 5px auto;
+			}
+			.mui-card{
+				margin: 0px;
+				height: 100%;
+				padding-top: 200px;
+				box-sizing: border-box;
+
+			}
+			.mui-card div,
+			.mui-card p {
+				color: black;
+				font-weight: bold;
+				padding: 10px 15px;
+				line-height: 25px;
+			}
+			.mui-card div{
+				padding: 40px 15px;
+			}
+		</style>
 	</head>
 
 	<body>
+		<!-- 主界面不动、菜单移动 -->
+		<!-- 侧滑导航根容器 -->
 
-		<div style="width: 100px;height:100px;background-color: red;" onclick="jihuo()" id="chufa">
-			<span onclick="jihuo()" id="chufa" >点击激活</span>
+		<!-- 主页面标题 -->
+		<header class="mui-bar mui-bar-nav" 1 style="background-color: rgba(255,255,255,0.8);">
+
+			<h1 class="mui-title">激活</h1>
+		</header>
+		<div class="badge" id="badge">
+			<div class="main">
+				<div class="loadEffect">
+					<div><span></span></div>
+					<div><span></span></div>
+					<div><span></span></div>
+					<div><span></span></div>
+				</div>
+			</div>
 		</div>
+
+		<div class="mui-content mui-scroll-wrapper" style="background-image: url(__WEB__/img/timess.jpg); -moz-background-size:100% 100%; background-size:100% 100%;">
+			<div class="mui-scroll" style="height: 100%;">
+				<!-- 主界面具体展示内容 -->
+
+				<div class="mui-card" style=" background-color: rgba(255,255,255,0.8);     box-shadow: 0 4px 20px 2px rgba(28, 57, 81, 0.18);">
+					<!--页眉，放置标题-->
+
+					<!--内容区-->
+					<div class="mui-card-content">
+						<div class="mui-media-body" >
+
+							<p>点击下方按钮，直接激活账号，成为会员，即送100积分。</p>
+						</div>
+					</div>
+					<!--页脚，放置补充信息或支持的操作-->
+					<div class="mui-card-footer"><button type="button" class="mui-btn mui-btn-primary " onclick="jihuo()" id="chufa" style="    width: 155px;">激活帐号</button></div>
+				</div>
+
+			</div>
+		</div>
+
+		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			function callpay(data) {
@@ -65,6 +223,15 @@
 						})
 			}
 
+			//mui.init()
+
+			//mui('body').on('tap', 'button', function() {
+				//mui.alert("asdada");
+				// document.getElementById("badge").classList.add("badge");
+
+				//document.getElementById("badge").classList.remove("badge");
+			//});
 		</script>
 	</body>
+
 </html>
