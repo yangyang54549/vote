@@ -120,24 +120,68 @@
 #text_row{
 	margin: 10px 0px;
 	padding: 0px;
+	display: none;
 }
 #text_row>div{
 	display: flex;
 	    border: 1px solid rgba(0, 0, 0, .2);
+	    height: 42px;
+	    padding: 0px;
+	    margin: 10px  0px;
+	    position: relative;
 }
 #text_row>div input{
-	width: 80%;
+	width: 90%;
 	border: none;
 	line-height: 40px;
 	height: 40px;
+	margin: 0px  ;
+	padding: 0px 5px;
 	
 }
 #text_row>div p{
-	width: 20%;
+	width: 50px;
 	background-color: #007aff;
 	text-align: center;
 	line-height: 40px;
+	height: 40px;
+	color: white;
+	font-size: 24px;
+	position: absolute;
+	top: 0px ;
+	right: 0px;
 	
+}
+/*#from{
+	border: 1px solid red;
+}
+
+#from p{
+	border: 1px solid red;
+}
+#from input{
+	border: 1px dashed red;
+}
+#from textarea{
+	border: 1px solid blue;
+}
+.mui-content>ul{
+	border: 1px solid darkcyan;
+	background-color: white;
+}
+
+.mui-scroll{
+	border: 5px dashed red;
+}
+.mui-scrollbar{
+	background-color: black;
+}*/
+
+.mui-content>ul li{
+	background-color: white;
+	position: relative;
+	
+	z-index: 999;
 }
 		</style>
 
@@ -174,8 +218,10 @@
 						<!-- 主界面具体展示内容 -->
 						<form class="mui-row" id="from">
 
-							<!--文件选择input-->,
+							<!--文件选择input-->
+							
 							<!--<h3>文件选择：</h3>-->
+							
 							<input class="btn btn-default mui-col-sm-12 mui-col-xs-12" type="file" id="upFile" />
 							<!--所选文件压缩前预览-->
 							<!--<h3>压缩前预览：</h3>-->
@@ -187,8 +233,9 @@
 							
 							<div class="mui-row" id="text_row">
 								<div class="mui-col-sm-12 mui-col-xs-12">
-								<input type="" name="" id="" value="" /><p>+</p>
+								<input type="text" name="" id="" value="" placeholder="第一行，每行不能超过14字"maxlength="14" /><p>+</p>
 								</div>
+								
 							</div>
 							<p class="mui-col-sm-12 mui-col-xs-12 muip">作品名称</p>
 							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" name="title" id="name" type="text" value="" placeholder="输入作品名称（最多15字）" maxlength="15" />
