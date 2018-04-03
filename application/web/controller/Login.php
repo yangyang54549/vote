@@ -4,6 +4,7 @@ namespace app\web\controller;
 use app\web\controller\Yang;
 use app\common\model\User;
 use think\Session;
+use app\common\getuser\Getuser;
 
 class Login extends Yang
 {
@@ -59,7 +60,7 @@ class Login extends Yang
             $arr['integral'] = 100;
             $arr['image'] = '/static/web/img/painting/gh/timg (7).jpg';
             $arr['create_time'] = time();
-            $arr['status'] = 0;
+            $arr['status'] = 0;//0为未支付一元激活
             $arr['vote'] = 3;
             $arr['password'] = md5($arr['password']);
             $user = User::insert($arr);
@@ -84,6 +85,37 @@ class Login extends Yang
             }
             return $this->fetch();
         }
+    }
+    //注册完成后跳转到此页面获取用户openid
+    public function openid()
+    {
+        if (strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false) {
+            $code = input('code');
+            $getuser = new Getuser;
+            if (isset($code)) {
+
+                $result = $getuser->getaccess_token($code);
+                if ($result) {
+                    User::where('id',$this->id)->update(['openid'=>$result]);
+                    Session::set('user.openid',$result);
+                    $this->redirect(url('login/one'));
+                }else{
+                    echo "微信获取失败,请从新登录!";
+                }
+            }else{
+                $url = $getuser->geturl();
+                $this->redirect($url);
+            }
+        }else{
+            echo "请在微信内打开,激活帐号";
+        }
+    }
+    /*注册后支付一元*/
+    public function one()
+    {
+        $url = URLL;
+        $this->assign('url',$url);
+        return $this->fetch();
     }
     /*修改密码*/
     public function edit()

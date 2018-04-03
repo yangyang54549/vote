@@ -3,11 +3,14 @@ namespace app\web\controller;
 use think\Controller;
 use think\Session;
 use think\Cookie;
+use app\common\model\User as L;
 
 class Yang extends Controller
 {
 
-    protected $arr = ['Index/index','Index/load','Login/login','Login/wxlogin','Login/password','Login/reg','Login/admin','Login/getaccess_token','Login/codemsg','Wxpay/weixinjsapnotify','Timing/index','Timing/gold'];
+    //protected $arr = ['Index/index','Index/load','Login/login','Login/wxlogin','Login/password','Login/reg','Login/admin','Login/getaccess_token','Login/codemsg','Wxpay/weixinjsapnotify','Wxpay/weixinactivate','Timing/index','Timing/gold'];
+    protected $arr = ['Login/login','Login/wxlogin','Login/password','Login/reg','Wxpay/weixinjsapnotify','Wxpay/weixinactivate','Timing/index','Timing/gold'];
+
     public $id = null;
 
     public function __construct()
@@ -29,6 +32,17 @@ class Yang extends Controller
                 }
                 $this->redirect('login/login');
             }
+
+            //登录完帐号没有激活
+            if ($url != 'Login/openid' && $url != 'Login/one' && $url != 'Wxpay/activate') {
+                if(session('user.status')==0){
+                    $user = L::where('id',session('user.id'))->find();
+                    if ($user['status']==0) {
+                        $this->redirect('login/openid');
+                    }
+                }
+            }
+
             //已登录又点击链接跳转至首页
             if($url == 'User/tui'){
                 $invite = input('invite');

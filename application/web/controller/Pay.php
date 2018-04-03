@@ -19,7 +19,7 @@ class Pay extends Yang
         $this->assign('arr',$arr);
         return $this->fetch();
     }
-    public function list()
+    public function lists()
     {
         $bank = Bank::where(['user_id'=>$this->id])->order('create_time desc')->select();
         foreach ($bank as $k => $v) {

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>支付一元激活帐号</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+
+	<body>
+
+		<div style="width: 100px;height:100px;background-color: red;" onclick="jihuo()" id="chufa">
+			<span onclick="jihuo()" id="chufa" >点击激活</span>
+		</div>
+		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function callpay(data) {
+				if(typeof WeixinJSBridge == "undefined") {
+					if(document.addEventListener) {
+						document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+					} else if(document.attachEvent) {
+						document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+						document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+					}
+				} else {
+					jsApiCall(data);
+				}
+			}
+			//调用微信JS api 支付
+			function jsApiCall(data) {
+				WeixinJSBridge.invoke(
+					'getBrandWCPayRequest',
+					data,
+					function(res) {
+						WeixinJSBridge.log(res.err_msg);
+						console.log(res.err_msg);
+						if(res.err_msg == "get_brand_wcpay_request:ok") {
+							//成功
+							alert("充值成功");
+							window.location.href="{$url}";
+						}else{
+							alert("充值失败");
+						}
+					}
+				);
+			}
+
+			function jihuo()
+			{
+						var money = 0.01;
+						$.ajax({
+							//一个Ajax过程
+							type: "post", //以post方式与后台沟通
+							url: "{:url('wxpay/activate')}", //与此php页面沟通
+							dataType: 'json', //从php返回的值以 JSON方式 解释
+							data: {
+								'money': money
+							}, //发给php的数据有两项，分别是上面传来的u和p
+							success: function(json) {
+								//console.log(json);return false;
+
+								eval('var data = ' + json);
+								callpay(data);
+							}
+						})
+			}
+
+		</script>
+	</body>
+</html>
