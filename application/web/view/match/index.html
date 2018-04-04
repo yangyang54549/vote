@@ -387,6 +387,25 @@
 					document.getElementById("mui_sheng").style.display = "none";
 
 				})
+				/*图文切换*/
+				var ofs = 0;
+				mui("form").on("tap", "#off", function() {
+					var ofs = document.getElementById("off");
+					ofs.classList.contains("mui-active")
+					if(ofs.classList.contains("mui-active")) {
+						/*wen*/
+						document.getElementById("imgs").classList.add("nones");
+						document.getElementById("text_row").classList.remove("nones");
+						ofs = 1;
+
+					} else {
+						/*tu*/
+						document.getElementById("text_row").classList.add("nones");
+						document.getElementById("imgs").classList.remove("nones");
+						ofs = 0;
+					}
+
+				})
 
 				/*tu*/
 				var img = document.getElementById("nextview");
@@ -464,12 +483,7 @@
 												if(i==0){
 													tesss = tesss+xx[i].value;
 												}else{
-													/*tesss = tesss+","+xx[i].value;
-													if(xx[xx.length-1].value!=""){
 													
-													}else{
-														tesss=tesss.Substring(0,tesss.Length-1);
-													}*/
 													if(i>=(xx.length-2)){
 														if(xx[xx.length-1].value!=""){
 													tesss = tesss+","+xx[i].value;
@@ -479,35 +493,17 @@
 													}else{
 														tesss = tesss+","+xx[i].value;
 													}
-												}
-												
-												/*if(xx[xx.length-1].value!=""){
-													if(i==(xx.length-1)){
-														tesss = tesss+xx[i].value;
-													}else{														
-															tesss = tesss+xx[i].value+",";																								
-													}
-												}else{
-													if(i==(xx.length-1)){
-														tesss = tesss+xx[i].value;
-													}else{														
-															tesss = tesss+xx[i].value+",";																								
-													}
-												}
-												if(i==(xx.length-1)){
-													mui.alert(xx[i].value);
-												}else{
-													
-												}
-												if(xx[i].value!=""){
-													tesss = tesss+xx[i].value+",";
-												}*/
-												
+												}																																				
 											}
 										}else{
-											mui.alert(text1);
+											mui.alert(text1);/*文字单行字符串*/
 										}
-										mui.alert(tesss);
+										mui.alert(tesss);/*文字多行字符串*/
+										if(ofs!=1){
+											/*img*/
+										}else{
+											/*text*/
+										}
 										var Names = name.value;
 										var content = tes.value;
 										var leix = lei.value;
@@ -595,21 +591,7 @@
 					}
 
 				})
-				mui("form").on("tap", "#off", function() {
-					var ofs = document.getElementById("off");
-					ofs.classList.contains("mui-active")
-					if(ofs.classList.contains("mui-active")) {
-						/*wen*/
-						document.getElementById("imgs").classList.add("nones");
-						document.getElementById("text_row").classList.remove("nones");
-
-					} else {
-						/*tu*/
-						document.getElementById("text_row").classList.add("nones");
-						document.getElementById("imgs").classList.remove("nones");
-					}
-
-				})
+				
 			})(mui);
 		</script>
 	</body>
