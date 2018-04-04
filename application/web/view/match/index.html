@@ -138,7 +138,7 @@
 			}
 			
 			#text_row>div input {
-				width: 90%;
+				width: 80%;
 				border: none;
 				line-height: 40px;
 				height: 40px;
@@ -268,7 +268,7 @@
 					</div>
 					<div class="mui-row nones" id="text_row">
 						<div class="mui-col-sm-12 mui-col-xs-12">
-							<input type="text" name="" id="tri1" value="" placeholder="第一行，每行不能超过14字" maxlength="14" />
+							<input type="text" name="" id="tri1" value="" placeholder="第一行，每行不能超过16字" maxlength="16" />
 							<p>+</p>
 						</div>
 
@@ -457,11 +457,52 @@
 										
 										var dd = document.getElementById('text_row');
 										var xx = dd.getElementsByTagName('input');
-										var tesss = "input共有"+xx.length+"个，";
+										var tesss = "";
 										
 										if(xx.length>1){
 											for(var i=0;i<xx.length;i++){
-												tesss = tesss+"第"+(i+1)+"行内容"+xx[i].value+"，";
+												if(i==0){
+													tesss = tesss+xx[i].value;
+												}else{
+													/*tesss = tesss+","+xx[i].value;
+													if(xx[xx.length-1].value!=""){
+													
+													}else{
+														tesss=tesss.Substring(0,tesss.Length-1);
+													}*/
+													if(i>=(xx.length-2)){
+														if(xx[xx.length-1].value!=""){
+													tesss = tesss+","+xx[i].value;
+														}else{
+															tesss = tesss+xx[i].value;
+														}
+													}else{
+														tesss = tesss+","+xx[i].value;
+													}
+												}
+												
+												/*if(xx[xx.length-1].value!=""){
+													if(i==(xx.length-1)){
+														tesss = tesss+xx[i].value;
+													}else{														
+															tesss = tesss+xx[i].value+",";																								
+													}
+												}else{
+													if(i==(xx.length-1)){
+														tesss = tesss+xx[i].value;
+													}else{														
+															tesss = tesss+xx[i].value+",";																								
+													}
+												}
+												if(i==(xx.length-1)){
+													mui.alert(xx[i].value);
+												}else{
+													
+												}
+												if(xx[i].value!=""){
+													tesss = tesss+xx[i].value+",";
+												}*/
+												
 											}
 										}else{
 											mui.alert(text1);
