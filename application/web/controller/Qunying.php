@@ -11,6 +11,7 @@ use app\common\model\Qunying as Q;
 use think\Db;
 use think\Session;
 use think\Cookie;
+use think\Request;
 
 class Qunying extends Yang
 {
@@ -37,6 +38,10 @@ class Qunying extends Yang
             $arr = json_decode($arr, true);
             $arr[] = 0;
             //var_dump($arr);die;
+            $request = Request::instance();
+            $url=$request->domain();
+
+            $this->assign('url',$url);
             $arrj = json_encode($arr);
             $this->assign('arrj',$arrj);
             $this->assign('arr',$arr);
