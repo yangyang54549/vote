@@ -376,11 +376,12 @@
 						document.getElementById("imgs").classList.add("nones");
 						document.getElementById("text_row").classList.remove("nones");
 						ofs = 1;
-
+						document.getElementById("nextview").src = "__WEB__/img/a11.png";
 					} else {
 						/*tu*/
 						document.getElementById("text_row").classList.add("nones");
-						document.getElementById("imgs").classList.remove("nones");
+						document.getElementById("imgs").classList.remove("nones");											
+						document.getElementById('text_row').innerHTML = '<div class="mui-col-sm-12 mui-col-xs-12"><input type="text" name="" id="tri1" value="" placeholder="第一行，每行不能超过16字" maxlength="16" /><p>+</p></div>';						
 						ofs = 0;
 					}
 
