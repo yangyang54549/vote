@@ -19,19 +19,19 @@
 				/*font-family: "楷体","楷体_GB2312";*/
 				font-family: 楷体_GB2312, 楷体;
 			}
-
+			
 			input {
 				height: 36px;
 				line-height: 36px;
 			}
-
+			
 			.mui-row {
 				margin: 10px;
 				background-color: white;
 				box-sizing: border-box;
 				padding: 5px 10px;
 			}
-
+			
 			#upFile {
 				position: absolute;
 				top: 0px;
@@ -40,119 +40,129 @@
 				height: 250px;
 				opacity: 0;
 			}
-
+			
 			.ns {
 				opacity: 0;
 			}
-
+			
 			.muiinp {
 				margin-bottom: 0px !important;
 			}
-
+			
 			.muip {
 				color: black;
 				font-weight: bold;
 				margin: 0;
 				padding: 5px 0px;
 			}
-
-			#mui_view,#mui_sheng{
+			
+			#mui_view,
+			#mui_sheng {
 				position: fixed;
-   				left: 0;
-   				top: 0;
-   				box-sizing:border-box;
+				left: 0;
+				top: 0;
+				box-sizing: border-box;
 				width: 102vw;
 				height: 100vh;
-				overflow:auto;
+				overflow: auto;
 				padding: 0px;
 				padding-top: 50px;
 				display: none;
 				z-index: 100;
 			}
-/*作为IT界最前端的技术达人，页面上的每一个元素的样式我们都必须较真，就是滚动条我们也不会忽略。
+			/*作为IT界最前端的技术达人，页面上的每一个元素的样式我们都必须较真，就是滚动条我们也不会忽略。
 下面我给大家分享一下如何通过CSS来控制滚动条的样式，代码如下：*/
- /*定义滚动条轨道*/
-    #mui_view::-webkit-scrollbar-track,#mui_sheng::-webkit-scrollbar-track
-    {
-        background-color: #ffffff;
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
-    }
-    /*定义滚动条高宽及背景*/
-    #mui_view::-webkit-scrollbar,#mui_sheng::-webkit-scrollbar
-    {
-        width: 3px;
-        background-color: rgba(255, 255, 255, 0.34);
-    }
-    /*定义滚动条*/
-    #mui_view::-webkit-scrollbar-thumb,#mui_sheng::-webkit-scrollbar-thumb
-    {
-        background-color: #ffffff;
-        border-radius: 2px;
-    }
+			/*定义滚动条轨道*/
+			
+			#mui_view::-webkit-scrollbar-track,
+			#mui_sheng::-webkit-scrollbar-track {
+				background-color: #ffffff;
+				-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
+			}
+			/*定义滚动条高宽及背景*/
+			
+			#mui_view::-webkit-scrollbar,
+			#mui_sheng::-webkit-scrollbar {
+				width: 3px;
+				background-color: rgba(255, 255, 255, 0.34);
+			}
+			/*定义滚动条*/
+			
+			#mui_view::-webkit-scrollbar-thumb,
+			#mui_sheng::-webkit-scrollbar-thumb {
+				background-color: #ffffff;
+				border-radius: 2px;
+			}
+			
 			.mui-table-view-cell:after {
 				opacity: 0;
 			}
-
+			
 			.mui-table-view-cell {
 				border-bottom: 1px solid #c8c7cc;
 			}
-
+			
 			.mui-table-view-cell li.mui-active {
 				background-color: #0062CC;
 			}
-
+			
 			#nextview {
 				width: 100%;
 				height: auto;
 			}
-
-
-
+			
 			.mui-bar-tab {
 				top: 0px;
 			}
-			.mui-scroll{
+			
+			.mui-scroll {
 				-webkit-overflow-scrolling: touch;
 			}
+			
 			.mui-bar-tab .mui-tab-item.mui-active {
-    color: #007aff;
-}
-#text_row{
-	margin: 10px 0px;
-	padding: 0px;
-	display: none;
-}
-#text_row>div{
-	display: flex;
-	    border: 1px solid rgba(0, 0, 0, .2);
-	    height: 42px;
-	    padding: 0px;
-	    margin: 10px  0px;
-	    position: relative;
-}
-#text_row>div input{
-	width: 90%;
-	border: none;
-	line-height: 40px;
-	height: 40px;
-	margin: 0px  ;
-	padding: 0px 5px;
-	
-}
-#text_row>div p{
-	width: 50px;
-	background-color: #007aff;
-	text-align: center;
-	line-height: 40px;
-	height: 40px;
-	color: white;
-	font-size: 24px;
-	position: absolute;
-	top: 0px ;
-	right: 0px;
-	
-}
-/*#from{
+				color: #007aff;
+			}
+			
+			#text_row {
+				margin: 10px 0px;
+				padding: 0px;
+				
+			}
+			
+			#text_row>div {
+				display: flex;
+				border: 1px solid rgba(0, 0, 0, .2);
+				height: 42px;
+				padding: 0px;
+				margin: 10px 0px;
+				position: relative;
+			}
+			
+			#text_row>div input {
+				width: 90%;
+				border: none;
+				line-height: 40px;
+				height: 40px;
+				margin: 0px;
+				padding: 0px 5px;
+			}
+			
+			#text_row>div p {
+				width: 50px;
+				background-color: #007aff;
+				text-align: center;
+				line-height: 40px;
+				height: 40px;
+				color: white;
+				font-size: 24px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			.nones{
+				display: none;
+			}
+			/*#from{
 	border: 1px solid red;
 }
 
@@ -176,13 +186,38 @@
 .mui-scrollbar{
 	background-color: black;
 }*/
-
-.mui-content>ul li{
-	background-color: white;
-	position: relative;
-	
-	z-index: 999;
-}
+			
+			.mui-content>ul li {
+				background-color: white;
+				position: relative;
+				z-index: 999;
+			}
+			
+			form.mui-row {
+				position: relative;
+			}
+			
+			#off {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 500;
+			}
+			
+			.mui-switch:before {
+				content: '图片';
+				line-height: 20px;
+			}
+			
+			.mui-switch.mui-active:before {
+				line-height: 20px;
+				content: '文字';
+				display: ;
+			}
+			
+			.nones {
+				display: none !important;
+			}
 		</style>
 
 	</head>
@@ -190,127 +225,131 @@
 	<body>
 		<!-- 主界面移动、菜单不动 -->
 
-				<!-- 主页面标题 -->
-				<!--<header class="mui-bar mui-bar-nav">
+		<!-- 主页面标题 -->
+		<!--<header class="mui-bar mui-bar-nav">
 
 					<h1 class="mui-title">我要参赛</h1>
 				</header>-->
-				<nav class="mui-bar mui-bar-tab">
-					<a class="mui-tab-item " href="{:url('index/index')}">
-						<!--<span class="mui-icon mui-icon-home"></span>-->
-						<span class="mui-tab-label">首页</span>
-					</a>
-					<a class="mui-tab-item mui-active" href="/">
-						<!--<span class=" mui-icon mui-icon-upload"></span>-->
-						<span class="mui-tab-label mui-active">我要参赛</span>
-					</a>
-					<!--<a class="mui-tab-item">
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item " href="{:url('index/index')}">
+				<!--<span class="mui-icon mui-icon-home"></span>-->
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="/">
+				<!--<span class=" mui-icon mui-icon-upload"></span>-->
+				<span class="mui-tab-label mui-active">我要参赛</span>
+			</a>
+			<!--<a class="mui-tab-item">
 						<span class="mui-icon mui-icon-email"></span>
 						<span class="mui-tab-label">邮件</span>
 					</a>-->
-					<a class="mui-tab-item" href="{:url('user/index')}">
-						<!--<span class="mui-icon mui-icon-contact"></span>-->
-						<span class="mui-tab-label">个人中心</span>
-					</a>
-				</nav>
-				<div class="mui-content mui-scroll-wrapper" style="padding-top: 50px;">
-					<div class="mui-scroll">
-						<!-- 主界面具体展示内容 -->
-						<form class="mui-row" id="from">
+			<a class="mui-tab-item" href="{:url('user/index')}">
+				<!--<span class="mui-icon mui-icon-contact"></span>-->
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+		<div class="mui-content mui-scroll-wrapper" style="padding-top: 50px;">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				<form class="mui-row" id="from">
 
-							<!--文件选择input-->
-							
-							<!--<h3>文件选择：</h3>-->
-							
-							<input class="btn btn-default mui-col-sm-12 mui-col-xs-12" type="file" id="upFile" />
-							<!--所选文件压缩前预览-->
-							<!--<h3>压缩前预览：</h3>-->
-							<img src="" id="preview" style="width: 100%; display: none;" />
-							
-							<!--所选文件压缩后预览-->
-							<!--<h3>压缩后预览：</h3>-->
-							<img src="__WEB__/img/a11.png" id="nextview" />
-							
-							<div class="mui-row" id="text_row">
-								<div class="mui-col-sm-12 mui-col-xs-12">
-								<input type="text" name="" id="" value="" placeholder="第一行，每行不能超过14字"maxlength="14" /><p>+</p>
-								</div>
-								
-							</div>
-							<p class="mui-col-sm-12 mui-col-xs-12 muip">作品名称</p>
-							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" name="title" id="name" type="text" value="" placeholder="输入作品名称（最多15字）" maxlength="15" />
-							<p class="mui-col-sm-12 mui-col-xs-12 muip">作者名称</p>
-							<input class="mui-col-sm-12 mui-col-xs-12 muiinp" id="zname" type="text" value="" placeholder="输入作者姓名或别号" maxlength="10" />
-							<p class="mui-col-sm-12 mui-col-xs-12 muip">选择省份</p>
-							<input type="text" name="leixing" id="sheng" value="" placeholder="选择省份" style="margin: 10px 0;" readOnly='readOnly' />
-							<p class="mui-col-sm-12 mui-col-xs-12 muip">作品简介</p>
-							<textarea name="content" rows="3" cols="" id="text_s" placeholder="输入作品简介（最多150字）" maxlength="150"></textarea>
-							<input type="text" name="leixing" id="leixing" value="" placeholder="选择分类" style="margin: 10px 0;" readOnly='readOnly' />
-							<!--文件选择input中已选择文件重置(采用form表单的reset重置按钮重置)-->
+					<!--文件选择input-->
 
-							<!--<h3>重置文件选择：</h3>-->
-							<input class="btn btn-default mui-col-sm-6 mui-col-xs-6 ns" type="reset" id="reBtn" value="清空" style="display: none;" />
+					<!--<h3>文件选择：</h3>-->
+					<div class="" id="imgs">
+						<input class="btn btn-default mui-col-sm-12 mui-col-xs-12" type="file" id="upFile" />
+						<!--所选文件压缩前预览-->
+						<!--<h3>压缩前预览：</h3>-->
+						<img src="" id="preview" style="width: 100%; display: none;" />
 
-							<!--提交压缩后的base64文件数据给后台-->
-							<!--<h3>传给后台</h3>-->
-							<input class="btn btn-default mui-col-sm-6 mui-col-xs-6 ns" type="button" id="upTo" value="提交" style="display: none;"/>
-							<p style="font-size: 14px;">每次每幅上传需1000积分（10元）</p>
-							<button type="button" id="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;margin-bottom: 15px;">确认提交</button>
-							<!--后台所要获取的文件base64-->
-							<!--<h3>后台获取base64文件数据：(一个隐藏域)</h3>-->
-							<input id="imgOne" name="imgOne" type="hidden" />
-
-						</form>
+						<!--所选文件压缩后预览-->
+						<!--<h3>压缩后预览：</h3>-->
+						<img src="__WEB__/img/a11.png" id="nextview" />
+					</div>
+					<div class="mui-row nones" id="text_row">
+						<div class="mui-col-sm-12 mui-col-xs-12">
+							<input type="text" name="" id="tri1" value="" placeholder="第一行，每行不能超过14字" maxlength="14" />
+							<p>+</p>
+						</div>
 
 					</div>
-					<ul class="mui-table-view" id="mui_view">
-							{volist name="type" id="vo"}
-							<li class="mui-table-view-cell" data-type = "{$vo.id}">{$vo.name}</li>
-							{/volist}
+					<div class="mui-switch mui-switch-blue" id="off">
+						<div class="mui-switch-handle"></div>
+					</div>
+					<p class="mui-col-sm-12 mui-col-xs-12 muip">作品名称</p>
+					<input class="mui-col-sm-12 mui-col-xs-12 muiinp" name="title" id="name" type="text" value="" placeholder="输入作品名称（最多15字）" maxlength="15" />
+					<p class="mui-col-sm-12 mui-col-xs-12 muip">作者名称</p>
+					<input class="mui-col-sm-12 mui-col-xs-12 muiinp" id="zname" type="text" value="" placeholder="输入作者姓名或别号" maxlength="10" />
+					<p class="mui-col-sm-12 mui-col-xs-12 muip">选择省份</p>
+					<input type="text" name="leixing" id="sheng" value="" placeholder="选择省份" style="margin: 10px 0;" readOnly='readOnly' />
+					<p class="mui-col-sm-12 mui-col-xs-12 muip">作品简介</p>
+					<textarea name="content" rows="3" cols="" id="text_s" placeholder="输入作品简介（最多150字）" maxlength="150"></textarea>
+					<input type="text" name="leixing" id="leixing" value="" placeholder="选择分类" style="margin: 10px 0;" readOnly='readOnly' />
+					<!--文件选择input中已选择文件重置(采用form表单的reset重置按钮重置)-->
 
-							<input type="hidden" name="" id="mui_views" value="" />
-						</ul>
-						<ul class="mui-table-view" id="mui_sheng">
-<!-- 							<li class="mui-table-view-cell">北京市</li>
+					<!--<h3>重置文件选择：</h3>-->
+					<input class="btn btn-default mui-col-sm-6 mui-col-xs-6 ns" type="reset" id="reBtn" value="清空" style="display: none;" />
+
+					<!--提交压缩后的base64文件数据给后台-->
+					<!--<h3>传给后台</h3>-->
+					<input class="btn btn-default mui-col-sm-6 mui-col-xs-6 ns" type="button" id="upTo" value="提交" style="display: none;" />
+					<p style="font-size: 14px;">每次每幅上传需1000积分（10元）</p>
+					<button type="button" id="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;margin-bottom: 15px;">确认提交</button>
+					<!--后台所要获取的文件base64-->
+					<!--<h3>后台获取base64文件数据：(一个隐藏域)</h3>-->
+					<input id="imgOne" name="imgOne" type="hidden" />
+
+				</form>
+
+			</div>
+			<ul class="mui-table-view" id="mui_view">
+				{volist name="type" id="vo"}
+				<li class="mui-table-view-cell" data-type="{$vo.id}">{$vo.name}</li>
+				{/volist}
+
+				<input type="hidden" name="" id="mui_views" value="" />
+			</ul>
+			<ul class="mui-table-view" id="mui_sheng">
+				<!-- 							<li class="mui-table-view-cell">北京市</li>
 							<li class="mui-table-view-cell">上海市</li>
 							<li class="mui-table-view-cell">重庆市</li> -->
-							<li class="mui-table-view-cell">黑龙江省</li>
-							<li class="mui-table-view-cell">辽宁省</li>
-							<li class="mui-table-view-cell">吉林省</li>
-							<li class="mui-table-view-cell">河北省</li>
-							<li class="mui-table-view-cell">河南省</li>
+				<li class="mui-table-view-cell">黑龙江省</li>
+				<li class="mui-table-view-cell">辽宁省</li>
+				<li class="mui-table-view-cell">吉林省</li>
+				<li class="mui-table-view-cell">河北省</li>
+				<li class="mui-table-view-cell">河南省</li>
 
-							<li class="mui-table-view-cell">湖北省</li>
-							<li class="mui-table-view-cell">湖南省</li>
-							<li class="mui-table-view-cell">山东省</li>
-							<li class="mui-table-view-cell">山西省</li>
-							<li class="mui-table-view-cell">陕西省</li>
-							<li class="mui-table-view-cell">安徽省</li>
-							<li class="mui-table-view-cell">浙江省</li>
-							<li class="mui-table-view-cell">江苏省</li>
+				<li class="mui-table-view-cell">湖北省</li>
+				<li class="mui-table-view-cell">湖南省</li>
+				<li class="mui-table-view-cell">山东省</li>
+				<li class="mui-table-view-cell">山西省</li>
+				<li class="mui-table-view-cell">陕西省</li>
+				<li class="mui-table-view-cell">安徽省</li>
+				<li class="mui-table-view-cell">浙江省</li>
+				<li class="mui-table-view-cell">江苏省</li>
 
-							<li class="mui-table-view-cell">福建省</li>
-							<li class="mui-table-view-cell">广东省</li>
-							<li class="mui-table-view-cell">海南省</li>
+				<li class="mui-table-view-cell">福建省</li>
+				<li class="mui-table-view-cell">广东省</li>
+				<li class="mui-table-view-cell">海南省</li>
 
-							<li class="mui-table-view-cell">四川省</li>
-							<li class="mui-table-view-cell">云南省</li>
+				<li class="mui-table-view-cell">四川省</li>
+				<li class="mui-table-view-cell">云南省</li>
 
-							<li class="mui-table-view-cell">贵州省</li>
-							<li class="mui-table-view-cell">青海省</li>
-							<li class="mui-table-view-cell">甘肃省</li>
-							<li class="mui-table-view-cell">江西省</li>
-							<li class="mui-table-view-cell">台湾省</li>
-							<li class="mui-table-view-cell">内蒙古自治区</li>
-							<li class="mui-table-view-cell">宁夏回族自治区</li>
-							<li class="mui-table-view-cell">新疆维吾尔自治区</li>
-							<li class="mui-table-view-cell">西藏自治区</li>
-							<li class="mui-table-view-cell">广西壮族自治区</li>
-<!-- 							<li class="mui-table-view-cell">香港特别行政区</li>
+				<li class="mui-table-view-cell">贵州省</li>
+				<li class="mui-table-view-cell">青海省</li>
+				<li class="mui-table-view-cell">甘肃省</li>
+				<li class="mui-table-view-cell">江西省</li>
+				<li class="mui-table-view-cell">台湾省</li>
+				<li class="mui-table-view-cell">内蒙古自治区</li>
+				<li class="mui-table-view-cell">宁夏回族自治区</li>
+				<li class="mui-table-view-cell">新疆维吾尔自治区</li>
+				<li class="mui-table-view-cell">西藏自治区</li>
+				<li class="mui-table-view-cell">广西壮族自治区</li>
+				<!-- 							<li class="mui-table-view-cell">香港特别行政区</li>
 							<li class="mui-table-view-cell">澳门特别行政区</li> -->
-							<input type="hidden" name="" id="mui_shengs" value="" />
-						</ul>
-				</div>
+				<input type="hidden" name="" id="mui_shengs" value="" />
+			</ul>
+		</div>
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
@@ -325,119 +364,209 @@
 					// indicators: false, //是否显示滚动条,默认是true
 				});
 				mui('body').on('tap', 'a', function() {
-				window.top.location.href = this.href;
-			});
-			mui(".mui-row").on("tap", "#leixing", function() {
-				document.getElementById("mui_view").style.display = "block";
-			})
-			mui(".mui-row").on("tap", "#sheng", function() {
-				document.getElementById("mui_sheng").style.display = "block";
-			})
+					window.top.location.href = this.href;
+				});
+				mui(".mui-row").on("tap", "#leixing", function() {
+					document.getElementById("mui_view").style.display = "block";
+				})
+				mui(".mui-row").on("tap", "#sheng", function() {
+					document.getElementById("mui_sheng").style.display = "block";
+				})
 
-			mui("#mui_view").on("tap", "#mui_view li", function() {
-				var datas = this.getAttribute("data-type");
-				document.getElementById("leixing").value = this.innerText;
-				document.getElementById("mui_views").value = this.getAttribute("data-type");
-				document.getElementById("mui_view").style.display = "none";
+				mui("#mui_view").on("tap", "#mui_view li", function() {
+					var datas = this.getAttribute("data-type");
+					document.getElementById("leixing").value = this.innerText;
+					document.getElementById("mui_views").value = this.getAttribute("data-type");
+					document.getElementById("mui_view").style.display = "none";
 
-			})
-			mui("#mui_sheng").on("tap", "#mui_sheng li", function() {
+				})
+				mui("#mui_sheng").on("tap", "#mui_sheng li", function() {
 
-				document.getElementById("sheng").value = this.innerText;
-				document.getElementById("mui_shengs").value = this.innerText;
-				document.getElementById("mui_sheng").style.display = "none";
+					document.getElementById("sheng").value = this.innerText;
+					document.getElementById("mui_shengs").value = this.innerText;
+					document.getElementById("mui_sheng").style.display = "none";
 
-			})
-			var img = document.getElementById("nextview");
-			var ss = img.src;
-			var ss1 = ss.substring(ss.lastIndexOf("/") + 1);
-			mui(".mui-row").on("tap", "#submit", function() {
-				var s = img.src;
-				var s1 = s.substring(s.lastIndexOf("/") + 1);
+				})
 
-				var name = document.getElementById("name");
-				var tes = document.getElementById("text_s");
-				var sheng = document.getElementById("sheng");
-				var lei = document.getElementById("leixing");
-				var leixid = document.getElementById("mui_views");
-				var domimg = document.getElementById("preview");
-				var zname = document.getElementById("zname");
-				if(ss1 == s1) {
-					mui.toast('请上传图片')
-				} else {
+				
+				/*tu*/
+				var img = document.getElementById("nextview");
+				var ss = img.src;
+				var ss1 = ss.substring(ss.lastIndexOf("/") + 1);
+				/*wen*/
+				var text1;
+				mui(".mui-row").on("tap", "#submit", function() {
+					/*var s = img.src;
+					var s1 = s.substring(s.lastIndexOf("/") + 1);
+
+					if(ss1 == s1) {
+						mui.toast('请上传图片')
+					} else {
+
+					}*/
+					var ofs = document.getElementById("off");
+				ofs.classList.contains("mui-active")
+				if(ofs.classList.contains("mui-active")){
+					var n = 1;
+					var dd = document.getElementById('text_row');
+					var xx = dd.getElementsByTagName('input');
+					if(xx.length ==1){
+						/*xx[0].value*/
+						/*mui.alert(xx[0].value);*/
+						if(xx[0].value!=""){
+							text1 = xx[0].value;
+							texts();
+							
+						}else{
+							mui.toast('请输入内容');
+						}
+					}else{
+						texts();
+						
+						
+					}
+					
+				}else{
+					/*tu*/
+					var n = 2;
+					var s = img.src;
+					var s1 = s.substring(s.lastIndexOf("/") + 1);				
+					if(ss1 == s1) {
+						mui.toast('请上传图片');
+						
+					} else {
+						texts();
+					}
+					
+				}
+				})
+function texts() {
+					var name = document.getElementById("name");
+					var tes = document.getElementById("text_s");
+					var sheng = document.getElementById("sheng");
+					var lei = document.getElementById("leixing");
+					var leixid = document.getElementById("mui_views");
+					var domimg = document.getElementById("preview");
+					var zname = document.getElementById("zname");
 					if(name.value != "") {
 
 						if(zname.value != "") {
-						if(sheng.value != "") {
-						if(tes.value != "") {
-							if(lei.value != "") {
-								/*获取值*/
-								var Names = name.value;
-								var content = tes.value;
-								var leix = lei.value;
-								var leixid = leixid.value;
+							if(sheng.value != "") {
+								if(tes.value != "") {
+									if(lei.value != "") {
+										/*获取值*/
+										/*if() {
 
-								var shengt = sheng.value;
-								var znames = zname.value;
-								if (domimg.src == "") {
-									mui.toast('请上传图片');toasts();
-									return false;
+										} else {
+
+										}*/
+										/*mui.alert(text1);*/
+										var Names = name.value;
+				var content = tes.value;
+				var leix = lei.value;
+				var leixid = leixid.value;
+
+				var shengt = sheng.value;
+				var znames = zname.value;
+				if(domimg.src == "") {
+					mui.toast('请上传图片');
+					toasts();
+					return false;
+				}
+				console.log(domimg.src);
+
+				mui.post("{:url('match/index')}", {
+					title: Names,
+					content: content,
+					type: leixid,
+					img: domimg.src,
+					province: shengt,
+					user_name: znames
+				}, function(data) {
+					mui.toast(data.msg);
+					toasts();
+					/*跳转*/
+					if(data.code == 1) {
+						mui.toast(data.msg);
+						toasts();
+						/*清空*/
+						document.getElementById("nextview").src = "__WEB__/img/a11.png";
+
+						name.value = "";
+						tes.value = "";
+						lei.value = "";
+						leixid.value = "";
+						sheng.value = "";
+						zname.value = "";
+						setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+							window.location = "{:url('production/index')}";
+						}, 1000);
+
+					} else {
+						mui.toast(data.msg);
+						toasts();
+					}
+
+				}, 'json');
+
+									} else {
+										mui.toast('请选择分类');
+										toasts();
+									}
+								} else {
+									mui.toast('请输入作品简介');
+									toasts();
 								}
-								console.log(domimg.src);
-
-								mui.post("{:url('match/index')}",{
-									title:Names,
-									content:content,
-									type:leixid,
-									img:domimg.src,
-									province:shengt,
-									user_name:znames
-								},function(data){
-										mui.toast(data.msg);toasts();
-										/*跳转*/
-										if (data.code==1) {
-											mui.toast(data.msg);toasts();
-											/*清空*/
-											document.getElementById("nextview").src = "__WEB__/img/a11.png";
-
-											name.value= "";
-											tes.value= "";
-											lei.value= "";
-											leixid.value= "";
-											sheng.value = "";
-											zname.value = "";
-											setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
-												window.location = "{:url('production/index')}";
-											}, 1000);
-
-										}else{
-											mui.toast(data.msg);toasts();
-										}
-
-									},'json'
-								);
-
 							} else {
-								mui.toast('请选择分类');toasts();
+								mui.toast('请选择省份');
+								toasts();
 							}
 						} else {
-							mui.toast('请输入作品简介');toasts();
-						}
-						} else {
-							mui.toast('请选择省份');toasts();
-						}
-						} else {
-							mui.toast('输入作者姓名或别号');toasts();
+							mui.toast('输入作者姓名或别号');
+							toasts();
 						}
 					} else {
-						mui.toast('请输入作品名称');toasts();
+						mui.toast('请输入作品名称');
+						toasts();
 					}
 				}
-			})
+				mui("#text_row").on("tap", ".mui-col-sm-12 p", function() {
+					/*var values = this.previousSibling;*/
+					/*document.getElementById("tri1").value*/
+					var cells2 = document.body.querySelectorAll('#text_row .mui-col-sm-12').length;
+					var table2 = document.body.querySelector('#text_row');
+					var vas = document.getElementById("tri"+cells2+"").value;
+					var inputs = document.body.querySelectorAll('#text_row  input');
+					if(vas != "") {
+						var cel = cells2 + 1;
+						var li = document.createElement('div');
+						li.className = 'mui-col-sm-12 mui-col-xs-12';
+						li.innerHTML = '<input type="text" name="" id="tri'+cel+'" value="" placeholder="第' + cel + '行，每行不能超过14字"maxlength="14" /><p>+</p>';
+						table2.appendChild(li);
+					} else {
+						mui.alert("第" + cells2 + "行内容为空，无法添加下一行。");
+					}
+					
+				})
+				mui("form").on("tap", "#off", function() {
+					var ofs = document.getElementById("off");
+					ofs.classList.contains("mui-active")
+					if(ofs.classList.contains("mui-active")) {
+						/*wen*/
+						document.getElementById("imgs").classList.add("nones");
+						document.getElementById("text_row").classList.remove("nones");
+
+					} else {
+						/*tu*/
+						document.getElementById("text_row").classList.add("nones");
+						document.getElementById("imgs").classList.remove("nones");
+					}
+
+				})
 			})(mui);
-
-			//mui下a标签href失效问题解决
-
+			function() {
+				
+			}
 		</script>
 	</body>
 
