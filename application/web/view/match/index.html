@@ -19,15 +19,16 @@
 				/*font-family: "楷体","楷体_GB2312";*/
 				font-family: 楷体_GB2312, 楷体;
 			}
-			
+
 			input {
 				height: 36px;
 				line-height: 36px;
 			}
-			#imgs{
+			/* #imgs{
 				width: 100%;
 				position: relative;
-			}
+			} */
+
 			.mui-row {
 				margin: 10px;
 				background-color: white;
@@ -35,7 +36,7 @@
 				padding: 5px 10px;
 			padding-top: 40px;
 			}
-			
+
 			#upFile {
 				position: absolute;
 				top: 0px;
@@ -44,22 +45,22 @@
 				height: 250px;
 				opacity: 0;
 			}
-			
+
 			.ns {
 				opacity: 0;
 			}
-			
+
 			.muiinp {
 				margin-bottom: 0px !important;
 			}
-			
+
 			.muip {
 				color: black;
 				font-weight: bold;
 				margin: 0;
 				padding: 5px 0px;
 			}
-			
+
 			#mui_view,
 			#mui_sheng {
 				position: fixed;
@@ -74,64 +75,62 @@
 				display: none;
 				z-index: 100;
 			}
-			/*作为IT界最前端的技术达人，页面上的每一个元素的样式我们都必须较真，就是滚动条我们也不会忽略。
-下面我给大家分享一下如何通过CSS来控制滚动条的样式，代码如下：*/
 			/*定义滚动条轨道*/
-			
+
 			#mui_view::-webkit-scrollbar-track,
 			#mui_sheng::-webkit-scrollbar-track {
 				background-color: #ffffff;
 				-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
 			}
 			/*定义滚动条高宽及背景*/
-			
+
 			#mui_view::-webkit-scrollbar,
 			#mui_sheng::-webkit-scrollbar {
 				width: 3px;
 				background-color: rgba(255, 255, 255, 0.34);
 			}
 			/*定义滚动条*/
-			
+
 			#mui_view::-webkit-scrollbar-thumb,
 			#mui_sheng::-webkit-scrollbar-thumb {
 				background-color: #ffffff;
 				border-radius: 2px;
 			}
-			
+
 			.mui-table-view-cell:after {
 				opacity: 0;
 			}
-			
+
 			.mui-table-view-cell {
 				border-bottom: 1px solid #c8c7cc;
 			}
-			
+
 			.mui-table-view-cell li.mui-active {
 				background-color: #0062CC;
 			}
-			
+
 			#nextview {
 				width: 100%;
 				height: auto;
 			}
-			
+
 			.mui-bar-tab {
 				top: 0px;
 			}
-			
+
 			.mui-scroll {
 				-webkit-overflow-scrolling: touch;
 			}
-			
+
 			.mui-bar-tab .mui-tab-item.mui-active {
 				color: #007aff;
 			}
-			
+
 			#text_row {
 				margin: 0px;
 				padding: 0px;
 			}
-			
+
 			#text_row>div {
 				display: flex;
 				border: 1px solid rgba(0, 0, 0, .2);
@@ -140,7 +139,7 @@
 				margin: 10px 0px;
 				position: relative;
 			}
-			
+
 			#text_row>div input {
 				width: 80%;
 				border: none;
@@ -149,7 +148,7 @@
 				margin: 0px;
 				padding: 0px 5px;
 			}
-			
+
 			#text_row>div p {
 				width: 50px;
 				background-color: #007aff;
@@ -162,40 +161,39 @@
 				top: 0px;
 				right: 0px;
 			}
-			
+
 			.nones {
 				display: none;
 			}
 
-			
 			.mui-content>ul li {
 				background-color: white;
 				position: relative;
 				z-index: 999;
 			}
-			
+
 			form.mui-row {
 				position: relative;
 			}
-			
+
 			#off {
 				position: absolute;
 				top: 5px;
 				left: 10px;
 				z-index: 500;
 			}
-			
+
 			.mui-switch:before {
 				content: '图片';
 				line-height: 20px;
 			}
-			
+
 			.mui-switch.mui-active:before {
 				line-height: 20px;
 				content: '文字';
 				display: ;
 			}
-			
+
 			.nones {
 				display: none !important;
 			}
@@ -404,7 +402,7 @@
 					} else {
 
 					}*/
-					var ofs = document.getElementById("off"); 
+					var ofs = document.getElementById("off");
 					ofs.classList.contains("mui-active")
 					if(ofs.classList.contains("mui-active")) {
 						var n = 1;
@@ -455,17 +453,17 @@
 								if(tes.value != "") {
 									if(lei.value != "") {
 										/*获取值*/
-										
+
 										var dd = document.getElementById('text_row');
 										var xx = dd.getElementsByTagName('input');
 										var tesss = "";
-										
+
 										if(xx.length>1){
 											for(var i=0;i<xx.length;i++){
 												if(i==0){
 													tesss = tesss+xx[i].value;
 												}else{
-													
+
 													if(i>=(xx.length-2)){
 														if(xx[xx.length-1].value!=""){
 													tesss = tesss+","+xx[i].value;
@@ -475,7 +473,7 @@
 													}else{
 														tesss = tesss+","+xx[i].value;
 													}
-												}																																				
+												}
 											}
 										}else{
 											mui.alert(text1);/*文字单行字符串*/
@@ -573,7 +571,7 @@
 					}
 
 				})
-				
+
 			})(mui);
 		</script>
 	</body>
