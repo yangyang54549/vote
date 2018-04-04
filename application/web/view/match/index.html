@@ -126,7 +126,6 @@
 			#text_row {
 				margin: 10px 0px;
 				padding: 0px;
-				
 			}
 			
 			#text_row>div {
@@ -159,7 +158,8 @@
 				top: 0px;
 				right: 0px;
 			}
-			.nones{
+			
+			.nones {
 				display: none;
 			}
 			/*#from{
@@ -388,7 +388,6 @@
 
 				})
 
-				
 				/*tu*/
 				var img = document.getElementById("nextview");
 				var ss = img.src;
@@ -404,43 +403,43 @@
 					} else {
 
 					}*/
-					var ofs = document.getElementById("off");
-				ofs.classList.contains("mui-active")
-				if(ofs.classList.contains("mui-active")){
-					var n = 1;
-					var dd = document.getElementById('text_row');
-					var xx = dd.getElementsByTagName('input');
-					if(xx.length ==1){
-						/*xx[0].value*/
-						/*mui.alert(xx[0].value);*/
-						if(xx[0].value!=""){
-							text1 = xx[0].value;
+					var ofs = document.getElementById("off"); 
+					ofs.classList.contains("mui-active")
+					if(ofs.classList.contains("mui-active")) {
+						var n = 1;
+						var dd = document.getElementById('text_row');
+						var xx = dd.getElementsByTagName('input');
+						if(xx.length == 1) {
+							/*xx[0].value*/
+							/*mui.alert(xx[0].value);*/
+							if(xx[0].value != "") {
+								text1 = xx[0].value;
+								texts();
+
+							} else {
+								mui.toast('请输入内容');
+							}
+						} else {
 							texts();
-							
-						}else{
-							mui.toast('请输入内容');
+
 						}
-					}else{
-						texts();
-						
-						
-					}
-					
-				}else{
-					/*tu*/
-					var n = 2;
-					var s = img.src;
-					var s1 = s.substring(s.lastIndexOf("/") + 1);				
-					if(ss1 == s1) {
-						mui.toast('请上传图片');
-						
+
 					} else {
-						texts();
+						/*tu*/
+						var n = 2;
+						var s = img.src;
+						var s1 = s.substring(s.lastIndexOf("/") + 1);
+						if(ss1 == s1) {
+							mui.toast('请上传图片');
+
+						} else {
+							texts();
+						}
+
 					}
-					
-				}
 				})
-function texts() {
+
+				function texts() {
 					var name = document.getElementById("name");
 					var tes = document.getElementById("text_s");
 					var sheng = document.getElementById("sheng");
@@ -455,59 +454,66 @@ function texts() {
 								if(tes.value != "") {
 									if(lei.value != "") {
 										/*获取值*/
-										/*if() {
-
-										} else {
-
-										}*/
-										/*mui.alert(text1);*/
+										
+										var dd = document.getElementById('text_row');
+										var xx = dd.getElementsByTagName('input');
+										var tesss = "input共有"+xx.length+"个，";
+										
+										if(xx.length>1){
+											for(var i=0;i<xx.length;i++){
+												tesss = tesss+"第"+(i+1)+"行内容"+xx[i].value+"，";
+											}
+										}else{
+											mui.alert(text1);
+										}
+										mui.alert(tesss);
 										var Names = name.value;
-				var content = tes.value;
-				var leix = lei.value;
-				var leixid = leixid.value;
+										var content = tes.value;
+										var leix = lei.value;
+										var leixid = leixid.value;
 
-				var shengt = sheng.value;
-				var znames = zname.value;
-				if(domimg.src == "") {
-					mui.toast('请上传图片');
-					toasts();
-					return false;
-				}
-				console.log(domimg.src);
+										var shengt = sheng.value;
+										var znames = zname.value;
+										if(domimg.src == "") {
+											mui.toast('请上传图片');
+											toasts();
+											return false;
+										}
+										console.log(domimg.src);
 
-				mui.post("{:url('match/index')}", {
-					title: Names,
-					content: content,
-					type: leixid,
-					img: domimg.src,
-					province: shengt,
-					user_name: znames
-				}, function(data) {
-					mui.toast(data.msg);
-					toasts();
-					/*跳转*/
-					if(data.code == 1) {
-						mui.toast(data.msg);
-						toasts();
-						/*清空*/
-						document.getElementById("nextview").src = "__WEB__/img/a11.png";
+										mui.post("{:url('match/index')}", {
+											title: Names,
+											content: content,
+											type: leixid,
+											img: domimg.src,
+											province: shengt,
+											user_name: znames
+										}, function(data) {
+											mui.toast(data.msg);
+											toasts();
+											/*跳转*/
+											if(data.code == 1) {
+												mui.toast(data.msg);
+												toasts();
+												/*清空*/
+												document.getElementById("nextview").src = "__WEB__/img/a11.png";
 
-						name.value = "";
-						tes.value = "";
-						lei.value = "";
-						leixid.value = "";
-						sheng.value = "";
-						zname.value = "";
-						setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
-							window.location = "{:url('production/index')}";
-						}, 1000);
+												name.value = "";
+												tes.value = "";
+												lei.value = "";
+												leixid.value = "";
+												sheng.value = "";
+												zname.value = "";
+												setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+													window.location = "{:url('production/index')}";
+												}, 1000);
 
-					} else {
-						mui.toast(data.msg);
-						toasts();
-					}
+											} else {
+												mui.toast(data.msg);
+												toasts();
+											}
 
-				}, 'json');
+										}, 'json');
 
 									} else {
 										mui.toast('请选择分类');
@@ -535,18 +541,18 @@ function texts() {
 					/*document.getElementById("tri1").value*/
 					var cells2 = document.body.querySelectorAll('#text_row .mui-col-sm-12').length;
 					var table2 = document.body.querySelector('#text_row');
-					var vas = document.getElementById("tri"+cells2+"").value;
+					var vas = document.getElementById("tri" + cells2 + "").value;
 					var inputs = document.body.querySelectorAll('#text_row  input');
 					if(vas != "") {
 						var cel = cells2 + 1;
 						var li = document.createElement('div');
 						li.className = 'mui-col-sm-12 mui-col-xs-12';
-						li.innerHTML = '<input type="text" name="" id="tri'+cel+'" value="" placeholder="第' + cel + '行，每行不能超过14字"maxlength="14" /><p>+</p>';
+						li.innerHTML = '<input type="text" name="" id="tri' + cel + '" value="" placeholder="第' + cel + '行，每行不能超过14字"maxlength="14" /><p>+</p>';
 						table2.appendChild(li);
 					} else {
 						mui.alert("第" + cells2 + "行内容为空，无法添加下一行。");
 					}
-					
+
 				})
 				mui("form").on("tap", "#off", function() {
 					var ofs = document.getElementById("off");
@@ -564,10 +570,6 @@ function texts() {
 
 				})
 			})(mui);
-			function() {
-				
-			}
 		</script>
 	</body>
-
 </html>
