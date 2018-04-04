@@ -227,17 +227,17 @@ class Match extends Yang
     }
 
 
-        if (isset($msg)) $text->msg = $msg; // 需要显示的文字
-        if (isset($font)) $text->font = $font; // 字体
-        if (isset($size)) $text->size = $size; // 文字大小
-        if (isset($rot)) $text->rot = $rot; // 旋转角度
-        if (isset($pad)) $text->pad = $pad; // padding
-        if (isset($red)) $text->red = $red; // 文字颜色
-        if (isset($grn)) $text->grn = $grn; // ..
-        if (isset($blu)) $text->blu = $blu; // ..
-        if (isset($bg_red)) $text->bg_red = $bg_red; // 背景颜色.
-        if (isset($bg_grn)) $text->bg_grn = $bg_grn; // ..
-        if (isset($bg_blu)) $text->bg_blu = $bg_blu; // ..
-        if (isset($tr)) $text->transparent = $tr; // 透明度 (boolean).
+        // if (isset($msg)) $text->msg = $msg; // 需要显示的文字
+        // if (isset($font)) $text->font = $font; // 字体
+        // if (isset($size)) $text->size = $size; // 文字大小
+        // if (isset($rot)) $text->rot = $rot; // 旋转角度
+        // if (isset($pad)) $text->pad = $pad; // padding
+        // if (isset($red)) $text->red = $red; // 文字颜色
+        // if (isset($grn)) $text->grn = $grn; // ..
+        // if (isset($blu)) $text->blu = $blu; // ..
+        // if (isset($bg_red)) $text->bg_red = $bg_red; // 背景颜色.
+        // if (isset($bg_grn)) $text->bg_grn = $bg_grn; // ..
+        // if (isset($bg_blu)) $text->bg_blu = $bg_blu; // ..
+        // if (isset($tr)) $text->transparent = $tr; // 透明度 (boolean).
 
 }
