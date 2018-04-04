@@ -11,6 +11,7 @@ use app\common\model\Order;
 use app\common\model\User;
 use app\common\model\Detail;
 use app\common\model\Qunying as Q;
+use think\Request;
 
 class Gold extends Yang
 {
@@ -33,6 +34,11 @@ class Gold extends Yang
             $type = Type::order('father_id')->select();
             $typecopy = TypeCopy::select();
             $qunying = Q::where(['type'=>3,'is_gold'=>1,'status'=>0])->order('create_time desc')->limit(10)->select();
+
+            $request = Request::instance();
+            $url=$request->domain();
+
+            $this->assign('url',$url);
             $this->assign('type',$type);
             $this->assign('qunying',$qunying);
             $this->assign('typecopy',$typecopy);
