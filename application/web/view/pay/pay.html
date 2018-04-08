@@ -102,10 +102,10 @@ mui('body').on('tap', 'a', function() {
 				} else {
 
 					var ua = navigator.userAgent.toLowerCase(); //获取判断用的对象
-					// if(ua.match(/MicroMessenger/i) != "micromessenger") {
-					// 	mui.alert("请在微信中打开");
-					// 	return false;
-					// }
+					if(ua.match(/MicroMessenger/i) != "micromessenger") {
+						mui.alert("请在微信中打开");
+						return false;
+					}
 					var money = th.value;
 					$.ajax({
 						//一个Ajax过程
@@ -116,8 +116,7 @@ mui('body').on('tap', 'a', function() {
 							'money': money
 						}, //发给php的数据有两项，分别是上面传来的u和p
 						success: function(json) {
-							//var data=JSON.stringify(json);
-							//console.log(json.appId);
+
 							eval('var data = ' + json);
 							callpay(data);
 						}
