@@ -250,23 +250,34 @@
 				if(!(/^1[3456789]\d{9}$/.test(phone.value))) {
 						mui.toast('请重新输入手机号');toasts();
 					} else {
-						mui.toast('已发送短信');toasts();
-						this.value = "60s";
-						document.getElementById("wait").disabled = true;
-						document.getElementById("wait").style.opacity = "0.9";
-						var ss= 60;
-								setInterval(function(){
 
-									if(ss==0){
-
-										document.getElementById("wait").value = "重新获取"
+						var mobile = phone.value;
+						mui.post("{:url('login/message')}",{
+							mobile:mobile,
+							model:1
+						},function(result){
+								//服务器返回响应，根据响应结果，分析是否登录成功；
+								if (result.code==1) {
+									mui.toast('已发送短信');toasts();
+									this.value = "60s";
+									document.getElementById("wait").disabled = true;
+									document.getElementById("wait").style.opacity = "0.9";
+									var ss= 60;
+									setInterval(function(){
+										if(ss==0){
+											document.getElementById("wait").value = "重新获取"
 											document.getElementById('wait').disabled = false;
-									}else{
-										ss =ss-1;
-										document.getElementById("wait").value = ss+"s"
-									}
+										}else{
+											ss =ss-1;
+											document.getElementById("wait").value = ss+"s"
+										}
+									},1100);
+								}else{
+									mui.toast(result.msg);toasts();
+								}
 
-								},1100);
+							},'json'
+						);
 					}
 			})
 			mui(".mui-content-padded").on("tap", "#reg", function() {
@@ -292,7 +303,6 @@
 												if(sheng.value==""){
 													mui.toast('选择省份');toasts();
 												}else{
-
 
 												var names = document.getElementById("names").value;
 												var name = document.getElementById("name").value;

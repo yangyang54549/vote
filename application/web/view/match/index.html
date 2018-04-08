@@ -376,7 +376,7 @@
 						document.getElementById("imgs").classList.add("nones");
 						document.getElementById("text_row").classList.remove("nones");
 						ofs = 1;
-						document.getElementById("nextview").src = "__WEB__/img/a11.png";
+						//document.getElementById("nextview").src = "__WEB__/img/a11.png";
 					} else {
 						/*tu*/
 						document.getElementById("text_row").classList.add("nones");
@@ -488,13 +488,12 @@
 
 										var shengt = sheng.value;
 										var znames = zname.value;
-										var img
-										if (ofs!=1) {
-											//文字
+										var img;
 
+										if (ofs==1) {
+											//文字
 											img = tesss;
 										}else{
-
 											//图片
 											if(domimg.src == "") {
 												mui.toast('请上传图片');
