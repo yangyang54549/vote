@@ -53,7 +53,8 @@ class Match extends Yang
             $arr['status'] = 0;
 
             $num = time().rand(100000,999999);
-            if ($arr['isimg']!=1) {
+
+            if ($arr['isimg']==1) {
                 //文字
                 $str = explode(",",$arr['img']);
                 $this->msg = implode("\n",$str);

@@ -7,7 +7,7 @@ use app\common\model\User as L;
 
 class Yang extends Controller
 {
-    protected $arr = ['Login/login','Login/wxlogin','Login/password','Login/reg','Wxpay/weixinjsapnotify','Wxpay/weixinactivate','Timing/index','Timing/gold'];
+    protected $arr = ['Login/login','Login/wxlogin','Login/password','Login/reg','Login/message','Login/noadmin','Wxpay/weixinjsapnotify','Wxpay/weixinactivate','Timing/index','Timing/gold'];
 
     public $id = null;
 
