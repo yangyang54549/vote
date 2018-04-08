@@ -235,7 +235,7 @@
 					<!--文件选择input-->
 
 					<!--<h3>文件选择：</h3>-->
-					<div class="" id="imgs">
+					<div class="" id="imgs" style="position: relative;">
 						<input class="btn btn-default mui-col-sm-12 mui-col-xs-12" type="file" id="upFile" />
 						<!--所选文件压缩前预览-->
 						<!--<h3>压缩前预览：</h3>-->
@@ -376,7 +376,6 @@
 						document.getElementById("imgs").classList.add("nones");
 						document.getElementById("text_row").classList.remove("nones");
 						ofs = 1;
-						//document.getElementById("nextview").src = "__WEB__/img/a11.png";
 					} else {
 						/*tu*/
 						document.getElementById("text_row").classList.add("nones");
@@ -387,7 +386,17 @@
 
 				})
 
-				/*tu*/
+//mui("#imgs").on("tap", "#upFile", function() {
+//	var pw = document.getElementById("preview").src;
+//	var pw1 = pw.substring(pw.lastIndexOf("/") + 1);
+//	var  sn = document.getElementById("nextview").src;
+//	var sn1 = sn.substring(sn.lastIndexOf("/") + 1);
+//	/*mui.alert(pw1);*/
+//	if(pw1!=sn1){
+//		document.getElementById("nextview").src = document.getElementById("preview").src;
+//	}
+//})
+//				/*tu*/
 				var img = document.getElementById("nextview");
 				var ss = img.src;
 				var ss1 = ss.substring(ss.lastIndexOf("/") + 1);
