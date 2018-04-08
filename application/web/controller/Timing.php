@@ -37,7 +37,7 @@ class Timing extends Yang
                 }
             }
             //昨天上传的作品改变状态
-            Qunying::where(['is_gold'=>0,'status'=>1])->whereTime('create_time', 'yesterday')->update(['status'=>0]);
+            //Qunying::where(['is_gold'=>0,'status'=>1])->whereTime('create_time', 'yesterday')->update(['status'=>0]);
 
             //每个用户每天三票
             User::where(['status'=>0])->update(['vote'=>3]);

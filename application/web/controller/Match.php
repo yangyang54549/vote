@@ -14,10 +14,10 @@ class Match extends Yang
 
     var $font = 'static/web/fonts/kaiti.ttf'; //默认字体. 相对于脚本存放目录的相对路径.
     var $msg = "undefined"; // 默认文字.
-    var $size = 24;
+    var $size = 35;
     var $rot = 0; // 旋转角度.
-    var $pad = 0; // 填充.
-    var $transparent = 1; // 文字透明度.
+    var $pad = 30; // 填充.
+    var $transparent = 0; // 文字透明度.
     var $red = 0; // 在黑色背景中...
     var $grn = 0;
     var $blu = 0;
@@ -33,7 +33,7 @@ class Match extends Yang
             $user = User::where('id',$this->id)->find();
             if ($user['integral']<1000) {
                 $this->ret['msg'] = '积分不足,请充值后上传作品';
-                $this->ret['code'] = -200;
+                $this->ret['code'] = 200;
                 return json($this->ret);
             }
 
@@ -50,19 +50,39 @@ class Match extends Yang
             $arr['user_id'] = $this->id;
             $arr['create_time'] = time();
             $arr['time'] = $timestamp24;
-            $arr['status'] = 1;
+            $arr['status'] = 0;
+
             $num = time().rand(100000,999999);
-            $url = "./tmp/production/".$num.".jpg";
-            $base64_string = explode(',', $arr['img']);//截取data:image/png;base64, 这个逗号后的字符
-            $data = base64_decode($base64_string[1]);//对截取后的字符使用base64_decode进行解码
-            $a = file_put_contents($url,$data);//写入文件并保存
-            if ($a == 0) {
-                $this->ret['msg'] = '上传失败,请重试';
-                $this->ret['code'] = -200;
-                return json($this->ret);
+            if ($arr['isimg']!=1) {
+                //文字
+                $str = explode(",",$arr['img']);
+                $this->msg = implode("\n",$str);
+                $url = "./tmp/production/".$num.".jpg";
+                $a = $this->draw($url);
+                if ($a != true) {
+                    $this->ret['msg'] = '文字上传失败,请重试';
+                    $this->ret['code'] = -200;
+                    return json($this->ret);
+                }
+                $url = "/tmp/production/".$num.".jpg";
+                $arr['img'] = $url;
+            }else{
+                //图片
+                /*上传图片*/
+                $url = "./tmp/production/".$num.".jpg";
+                $base64_string = explode(',', $arr['img']);//截取data:image/png;base64, 这个逗号后的字符
+                $data = base64_decode($base64_string[1]);//对截取后的字符使用base64_decode进行解码
+                $a = file_put_contents($url,$data);//写入文件并保存
+                if ($a == 0) {
+                    $this->ret['msg'] = '上传失败,请重试';
+                    $this->ret['code'] = -200;
+                    return json($this->ret);
+                }
+                $url = "/tmp/production/".$num.".jpg";
+                $arr['img'] = $url;
+                /*上传图片*/
             }
-            $url = "/tmp/production/".$num.".jpg";
-            $arr['img'] = $url;
+            unset($arr['isimg']);
 
             $url = "./tmp/production/".$num.".jpg";
             $urlsuo = "./tmp/production/".$num."suo.jpg";
@@ -171,7 +191,7 @@ class Match extends Yang
     * @param sting $imgsrc 图片路径
     * @param string $imgdst 压缩后保存路径
     */
-    public function draw() {
+    public function draw($dir) {
         $width = 0;
         $height = 0;
         $offset_x = 0;
@@ -223,21 +243,8 @@ class Match extends Yang
         ImageTTFText($image, $this->size, $this->rot, $offset_x+$this->pad, $offset_y+$this->pad, $foreground, $this->font, $this->msg);
 
         // 输出为png格式.
-        imagePNG($image);
+        imagejpeg($image,$dir,100);
+        imagedestroy($image);
+        return true;
     }
-
-
-        // if (isset($msg)) $text->msg = $msg; // 需要显示的文字
-        // if (isset($font)) $text->font = $font; // 字体
-        // if (isset($size)) $text->size = $size; // 文字大小
-        // if (isset($rot)) $text->rot = $rot; // 旋转角度
-        // if (isset($pad)) $text->pad = $pad; // padding
-        // if (isset($red)) $text->red = $red; // 文字颜色
-        // if (isset($grn)) $text->grn = $grn; // ..
-        // if (isset($blu)) $text->blu = $blu; // ..
-        // if (isset($bg_red)) $text->bg_red = $bg_red; // 背景颜色.
-        // if (isset($bg_grn)) $text->bg_grn = $bg_grn; // ..
-        // if (isset($bg_blu)) $text->bg_blu = $bg_blu; // ..
-        // if (isset($tr)) $text->transparent = $tr; // 透明度 (boolean).
-
 }

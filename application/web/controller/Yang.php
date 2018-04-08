@@ -7,8 +7,6 @@ use app\common\model\User as L;
 
 class Yang extends Controller
 {
-
-    //protected $arr = ['Index/index','Index/load','Login/login','Login/wxlogin','Login/password','Login/reg','Login/admin','Login/getaccess_token','Login/codemsg','Wxpay/weixinjsapnotify','Wxpay/weixinactivate','Timing/index','Timing/gold'];
     protected $arr = ['Login/login','Login/wxlogin','Login/password','Login/reg','Wxpay/weixinjsapnotify','Wxpay/weixinactivate','Timing/index','Timing/gold'];
 
     public $id = null;
@@ -22,15 +20,23 @@ class Yang extends Controller
         $act = $request->action();
         $url = $con.'/'.$act;
         if (!in_array($url,$this->arr)) {
+            //session未登录
             $suser = session('user');
             if (!isset($suser)) {
-                //未登录
-                if($url == 'User/tui'){
-                    $invite = input('invite');
-                    //cookie('referrer',$invite,2592000);
-                    $this->redirect('login/reg', ['referrer' => $invite]);
+                $cuser = Cookie::get('user_id');
+                if (!isset($cuser)) {
+                    //无cookie
+                    if($url == 'User/tui'){
+                        $invite = input('invite');
+                        $this->redirect('login/reg', ['referrer' => $invite]);
+                    }
+                    $this->redirect('login/login');
+                }else{
+                    //有cookie
+                    $user = L::where(['id'=>$cuser])->find();
+                    Session::set('user',$user);
+                    $this->id =Session::get('user.id');
                 }
-                $this->redirect('login/login');
             }
 
             //登录完帐号没有激活

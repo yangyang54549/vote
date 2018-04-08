@@ -382,8 +382,8 @@
 					} else {
 						/*tu*/
 						document.getElementById("text_row").classList.add("nones");
-						document.getElementById("imgs").classList.remove("nones");											
-						document.getElementById('text_row').innerHTML = '<div class="mui-col-sm-12 mui-col-xs-12"><input type="text" name="" id="tri1" value="" placeholder="第一行，每行不能超过16字" maxlength="16" /><p>+</p></div>';						
+						document.getElementById("imgs").classList.remove("nones");
+						document.getElementById('text_row').innerHTML = '<div class="mui-col-sm-12 mui-col-xs-12"><input type="text" name="" id="tri1" value="" placeholder="第一行，每行不能超过16字" maxlength="16" /><p>+</p></div>';
 						ofs = 0;
 					}
 
@@ -490,12 +490,9 @@
 										}else{
 											mui.alert(text1);/*文字单行字符串*/
 										}
+
 										//mui.alert(tesss);/*文字多行字符串*/
-										if(ofs!=1){
-											/*img*/
-										}else{
-											/*text*/
-										}
+										//ofs==1;//是文字
 										var Names = name.value;
 										var content = tes.value;
 										var leix = lei.value;
@@ -503,20 +500,30 @@
 
 										var shengt = sheng.value;
 										var znames = zname.value;
-										if(domimg.src == "") {
-											mui.toast('请上传图片');
-											toasts();
-											return false;
+										var img
+										if (ofs!=1) {
+											//文字
+
+											img = tesss;
+										}else{
+
+											//图片
+											if(domimg.src == "") {
+												mui.toast('请上传图片');
+												toasts();
+												return false;
+											}
+											img = domimg.src;
 										}
-										console.log(domimg.src);
 
 										mui.post("{:url('match/index')}", {
 											title: Names,
 											content: content,
 											type: leixid,
-											img: domimg.src,
+											img: img,
 											province: shengt,
-											user_name: znames
+											user_name: znames,
+											isimg:ofs
 										}, function(data) {
 											/*跳转*/
 											if(data.code == 1) {
@@ -536,8 +543,16 @@
 												}, 1000);
 
 											} else {
-												mui.toast(data.msg);
-												toasts();
+												if (data.code == 200) {
+													mui.toast(data.msg);
+													toasts();
+													setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+														window.location = "{:url('pay/pay')}";
+													}, 1000);
+												}else{
+													mui.toast(data.msg);
+													toasts();
+												}
 											}
 
 										}, 'json');

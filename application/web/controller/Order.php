@@ -13,7 +13,7 @@ class Order extends Yang
 {
     public function index()
     {
-        $order = O::where(['user_id'=>$this->id])->select();
+        $order = O::where(['user_id'=>$this->id])->order('create_time desc')->select();
         $this->assign('order',$order);
         return $this->fetch();
     }

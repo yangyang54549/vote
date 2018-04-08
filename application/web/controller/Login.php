@@ -4,6 +4,7 @@ namespace app\web\controller;
 use app\web\controller\Yang;
 use app\common\model\User;
 use think\Session;
+use think\Cookie;
 use app\common\getuser\Getuser;
 
 class Login extends Yang
@@ -18,6 +19,7 @@ class Login extends Yang
                 $this->ret['code'] = -200;
                 return json($this->ret);
             }
+            Cookie::set('user_id',$user['id'],2592000);
             Session::set('user',$user);
             return json($this->ret);
 
