@@ -61,7 +61,7 @@
 				padding: 5px 0px;
 			}
 
-			#mui_view,
+			/*#mui_view,
 			#mui_sheng {
 				position: fixed;
 				left: 0;
@@ -74,6 +74,13 @@
 				padding-top: 50px;
 				display: none;
 				z-index: 100;
+			}*/
+			#mui_view,
+			#mui_sheng {
+			
+				
+				display: none;
+				
 			}
 			/*定义滚动条轨道*/
 
@@ -281,7 +288,55 @@
 				</form>
 
 			</div>
-			<ul class="mui-table-view" id="mui_view">
+			<!--<ul class="mui-table-view" id="mui_view">
+				{volist name="type" id="vo"}
+				<li class="mui-table-view-cell" data-type="{$vo.id}">{$vo.name}</li>
+				{/volist}
+
+				<input type="hidden" name="" id="mui_views" value="" />
+			</ul>
+			<ul class="mui-table-view" id="mui_sheng">
+				
+				<li class="mui-table-view-cell">黑龙江省</li>
+				<li class="mui-table-view-cell">辽宁省</li>
+				<li class="mui-table-view-cell">吉林省</li>
+				<li class="mui-table-view-cell">河北省</li>
+				<li class="mui-table-view-cell">河南省</li>
+
+				<li class="mui-table-view-cell">湖北省</li>
+				<li class="mui-table-view-cell">湖南省</li>
+				<li class="mui-table-view-cell">山东省</li>
+				<li class="mui-table-view-cell">山西省</li>
+				<li class="mui-table-view-cell">陕西省</li>
+				<li class="mui-table-view-cell">安徽省</li>
+				<li class="mui-table-view-cell">浙江省</li>
+				<li class="mui-table-view-cell">江苏省</li>
+
+				<li class="mui-table-view-cell">福建省</li>
+				<li class="mui-table-view-cell">广东省</li>
+				<li class="mui-table-view-cell">海南省</li>
+
+				<li class="mui-table-view-cell">四川省</li>
+				<li class="mui-table-view-cell">云南省</li>
+
+				<li class="mui-table-view-cell">贵州省</li>
+				<li class="mui-table-view-cell">青海省</li>
+				<li class="mui-table-view-cell">甘肃省</li>
+				<li class="mui-table-view-cell">江西省</li>
+				<li class="mui-table-view-cell">台湾省</li>
+				<li class="mui-table-view-cell">内蒙古自治区</li>
+				<li class="mui-table-view-cell">宁夏回族自治区</li>
+				<li class="mui-table-view-cell">新疆维吾尔自治区</li>
+				<li class="mui-table-view-cell">西藏自治区</li>
+				<li class="mui-table-view-cell">广西壮族自治区</li>
+				
+				<input type="hidden" name="" id="mui_shengs" value="" />
+			</ul>-->
+		</div>
+		<div class="mui-content mui-scroll-wrapper" style="padding-top: 50px; display: none;" id="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				<ul class="mui-table-view" id="mui_view">
 				{volist name="type" id="vo"}
 				<li class="mui-table-view-cell" data-type="{$vo.id}">{$vo.name}</li>
 				{/volist}
@@ -328,6 +383,9 @@
 							<li class="mui-table-view-cell">澳门特别行政区</li> -->
 				<input type="hidden" name="" id="mui_shengs" value="" />
 			</ul>
+
+			</div>
+			
 		</div>
 
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
@@ -346,9 +404,11 @@
 					window.top.location.href = this.href;
 				});
 				mui(".mui-row").on("tap", "#leixing", function() {
+					document.getElementById("mui-scroll-wrapper").style.display = "block";
 					document.getElementById("mui_view").style.display = "block";
 				})
 				mui(".mui-row").on("tap", "#sheng", function() {
+					document.getElementById("mui-scroll-wrapper").style.display = "block";
 					document.getElementById("mui_sheng").style.display = "block";
 				})
 
@@ -357,6 +417,7 @@
 					document.getElementById("leixing").value = this.innerText;
 					document.getElementById("mui_views").value = this.getAttribute("data-type");
 					document.getElementById("mui_view").style.display = "none";
+					document.getElementById("mui-scroll-wrapper").style.display = "none";
 
 				})
 				mui("#mui_sheng").on("tap", "#mui_sheng li", function() {
@@ -364,6 +425,7 @@
 					document.getElementById("sheng").value = this.innerText;
 					document.getElementById("mui_shengs").value = this.innerText;
 					document.getElementById("mui_sheng").style.display = "none";
+					document.getElementById("mui-scroll-wrapper").style.display = "none";
 
 				})
 				/*图文切换*/0
