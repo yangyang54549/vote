@@ -40,7 +40,7 @@ class Timing extends Yang
             //Qunying::where(['is_gold'=>0,'status'=>1])->whereTime('create_time', 'yesterday')->update(['status'=>0]);
 
             //每个用户每天三票
-            User::where(['status'=>0])->update(['vote'=>3]);
+            User::where(['status'=>1])->update(['vote'=>3]);
             // 提交事务
             Db::commit();
         } catch (\Exception $e) {

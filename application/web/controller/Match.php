@@ -54,7 +54,7 @@ class Match extends Yang
 
             $num = time().rand(100000,999999);
 
-            if ($arr['isimg']==1) {
+            if (strpos($arr['img'],'base64') === false) {
                 //文字
                 $str = explode(",",$arr['img']);
                 $this->msg = implode("\n",$str);

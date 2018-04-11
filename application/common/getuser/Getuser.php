@@ -3,7 +3,7 @@
  * @Author: Marte
  * @Date:   2018-01-07 13:49:50
  * @Last Modified by:   Marte
- * @Last Modified time: 2018-04-02 16:06:27
+ * @Last Modified time: 2018-04-10 10:37:21
  */
 namespace  app\common\getuser;
 use think\Session;
@@ -23,11 +23,11 @@ class Getuser
 
     function __construct()
     {
-    $this->appid = 'wx3dc1191b24a06e74';
+    $this->appid = 'wx34fd656d22bef335';
     $this->redirect_uri = urlencode(URLL.url('login/openid'));
     $this->scope = 'snsapi_base';
     $this->state = 'succeed';
-    $this->secret = 'c44186b3f39d8205890824d8144ff4ff';
+    $this->secret = '2a49e37063dc57c44bc342c83935e9c2';
     }
     /*
      * 请求授权地址

@@ -48,10 +48,16 @@ class WxPayConf_pub {
 	const APPSECRET = '22b36eb8146bb90a9d36ed33d62c0efd';*/
 
 
-	const APPID = 'wx3dc1191b24a06e74';
-	const MCHID = '1282191401';
-	const KEY = '2eef374f423bdce7a80a2f8cc541d310';
-	const APPSECRET = 'c44186b3f39d8205890824d8144ff4ff';
+	// const APPID = 'wx3dc1191b24a06e74';
+	// const MCHID = '1282191401';
+	// const KEY = '2eef374f423bdce7a80a2f8cc541d310';
+	// const APPSECRET = 'c44186b3f39d8205890824d8144ff4ff';
+
+	const APPID = 'wx34fd656d22bef335';
+	const MCHID = '1500668461';
+	const KEY = 'TykAFddfx83E9RHrUfgmrXz3pDEVo91d';
+	const APPSECRET = '2a49e37063dc57c44bc342c83935e9c2';
+
 	//=======【JSAPI路径设置】===================================
 	//获取access_token过程中的跳转uri，通过跳转将code传入jsapi支付页面
 	//const JS_API_CALL_URL = '';
