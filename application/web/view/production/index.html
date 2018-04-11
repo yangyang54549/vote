@@ -149,7 +149,7 @@
 						<div class="mui-media-body" style="padding: 10px;" data-id="{$vo.id}">
 
 							{$vo.title}
-							<p style="text-indent:2em;" class="text_p" id="y0">
+							<p style="text-indent:2em;" class="text_p" id="y{$vo.id}">
 								{$vo.content}
 								<img src="{$vo.img}" />
 							</p>
@@ -214,11 +214,14 @@
 
 			mui('.mui-card ').on('tap', '.mui-media-body', function() {
 				/*this.classList.remove('text_p');*/
+				var ts = this.getAttribute("data-id");
+				var ns = document.getElementById("y"+ts);
+				
 				//判断是否包含这个类名
-				if(this.classList.contains('text_p')) {
-					this.classList.remove('text_p');
+				if(ns.classList.contains('text_p')) {
+					ns.classList.remove('text_p');
 				} else {
-					this.setAttribute("class", "text_p");
+					ns.setAttribute("class", "text_p");
 				}
 			});
 		</script>
