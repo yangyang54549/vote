@@ -51,7 +51,8 @@ class User extends Yang
 
     public function tui()
     {
-        $this->assign('invite',$this->id);
+        $url = URLL.url("user/tui",["invite"=>$this->id]);
+        $this->assign('url',$url);
         return $this->fetch();
     }
 }

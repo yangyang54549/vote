@@ -40,7 +40,7 @@
             <td>{$vo.number|high_light=$Request.param.number}</td>
             <td onclick="layer_open('用户详情', '/admin/user/info/id/{$vo.user_id}.html')">{$vo.user_id|high_light=$Request.param.user_id}</td>
             <td onclick="layer_open('用户详情', '/admin/user/info/id/{$vo.set_user_id}.html')">{$vo.set_user_id|high_light=$Request.param.set_user_id}</td>
-            <td>{$vo.sp_id}</td>
+            <td onclick="layer_open('商品详情', '/admin/qunying/indexinfo/id/{$vo.user_id}.html')">{$vo.sp_id}</td>
             <td>{$vo.sp_name}</td>
             <td><img src="{$vo.img}" style="height: 120px;"></td>
             <td>{$vo.integral}</td>

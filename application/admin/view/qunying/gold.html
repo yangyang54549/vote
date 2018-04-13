@@ -41,8 +41,14 @@
             <td onclick="layer_open('用户详情', '/admin/user/info/id/{$vo.user_id}.html')">{$vo.user_id|high_light=$Request.param.user_id}</td>
             <td>{$vo.user_name}</td>
             <td>{$vo.title|high_light=$Request.param.title}</td>
-            <td><img src="{$vo.img}" style="height: 50px;"></td>
-            <td>{$vo.type|high_light=$Request.param.type}</td>
+            <td><img src="{$vo.suoimg}" style="height: 50px;"></td>
+            <td>
+            {volist name="type" id="vos"}
+                {if condition="$vo.type eq $vos.id"}
+                {$vos.name}
+                {/if}
+            {/volist}
+            </td>
             <td>{$vo.create_time|date="Y-m-d H:i",###}</td>
             <td>{eq name="0" value="$vo.status"}已启用{else/}已禁用{/eq}</td>
             <td>{$vo.is_sell|get_status}</td>
