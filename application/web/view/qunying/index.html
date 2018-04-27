@@ -232,16 +232,16 @@ font-family:KaiTi,
 							<div class="mui-card" id="ones">
 
 								<!--页眉，放置标题-->
-								<div class="mui-card-header">作者:{$qunying.user_name}</div>
+								<div class="mui-card-header">作者:</div>
 								<!--内容区-->
 								<div class="mui-card-content">
-									<a href="javascript:void(0)"><img src="{$qunying.img}" data-preview-src="" data-preview-group="1" /></a>
+									<a href="javascript:void(0)"><img src="" data-preview-src="" data-preview-group="1" /></a>
 								</div>
 								<!--页脚，放置补充信息或支持的操作-->
 								<div class="mui-media-body" style="padding: 10px;">
-									{$qunying.title}
+									
 									<p style="text-indent:2em;">
-									{$qunying.content}
+									
 									</p>
 								</div>
 <div class="mui-card mui-row" >
@@ -249,7 +249,7 @@ font-family:KaiTi,
 									当前票数
 								</div>
 								<div class="mui-col-sm-6 mui-col-xs-6"   id="piao">
-									{$qunying.poll}
+									
 								</div>
 
 							</div>
@@ -479,36 +479,7 @@ return (r.test(','+this.join(this.S)+','));
 						mui.toast('已使用完每天三次的投票功能',{ duration:'long', type:'div' });toasts();
 					}
 			});
-mui.init({
-			swipeBack:true //启用右滑关闭功能
-		});
-		var buts = 0;
-mui("#a .mui-media").on("tap", ".mui-btn-primary", function() {
-				//当前对象直接就是--->this
-				/*var sq = this;
-				var tt = this.className.length;
-				sq.className = 'active';*/
-				if(buts==0){
-					var id = {$qunying.id};
-					//连接后台
-					mui.post("{:url('qunying/toupiao')}",{
-						id:id
-					},function(data){
-							if (data.code==1) {
-								buts++;
-								var ss={$qunying.poll};
-								document.getElementById("piao").innerText = ss+1;
-								mui.toast('投票成功');toasts();
-							}else{
-								mui.toast(data.msg,{ duration:'long', type:'div' });toasts();
-							}
-						},'json'
-					)
 
-				}else{
-					mui.toast('已投票');toasts();
-				}
-			});
 		</script>
 	</body>
 	
