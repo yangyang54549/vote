@@ -244,17 +244,18 @@ font-family:KaiTi,
 
 		<script >jQuery.noConflict()</script>
 		<script type="text/javascript">
-			
+
 			console.log(window.history);
 
 			mui.init();
-				
+
 			(function($) {
-				$(".mui-scroll-wrapper2").scroll({
-						bounce: false, //滚动条是否有弹力默认是true
-						indicators: false, //是否显示滚动条,默认是true
-					});
-			
+				$("#mui-scroll-wrapper2").scroll({
+					bounce: false,
+					indicators: false,
+				});
+
+
 			var limit = {$limit};
 			var url = "/web/qunying/info/id/";
 			var arrj = {$arrj};
