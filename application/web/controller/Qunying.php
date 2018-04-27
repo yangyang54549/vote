@@ -80,6 +80,18 @@ class Qunying extends Yang
         return $this->fetch();
     }
 
+    public function infoajax()
+    {
+        if ($this->request->isAjax()) {
+
+            $id = input('id');
+            $qunying = Q::where('id',$id)->find();
+            $this->ret['data'] = $qunying;
+            $this->ret['code'] = 1;
+            return json($this->ret);
+        }
+    }
+
     public function toupiao()
     {
         //记录ip,点赞作品id,点赞时间,减去user表投票次数,为0时不可投票
