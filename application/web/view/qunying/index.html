@@ -112,7 +112,7 @@ font-family:KaiTi,
 			/*#jiu .adc3:first-child,#jiu .adc5:first-child,#jiu .adc6:first-child{
        			margin: 0 !important;
        		}*/
-       		#a{
+       		#mui-scroll-wrappe2{
        			position: fixed;
        			top: 0;
        			left: 100vw;
@@ -214,7 +214,7 @@ font-family:KaiTi,
 		</div>
 <div class="mui-scrollbar mui-scrollbar-vertical"><div class="mui-scrollbar-indicator" style="transition-duration: 0ms; display: block; height: 8px; transform: translate3d(0px, 513px, 0px) translateZ(0px);"></div></div>
 <link rel="stylesheet" type="text/css" href="__WEB__/css/info.css" />
-<div class="mui-content mui-scroll-wrapper" id="a">
+<div class="mui-content mui-scroll-wrapper" id="mui-scroll-wrappe2">
 					<div class="mui-scroll">
 						<ul class="mui-media " style="padding: 0;">
 							<div class="mui-card" id="ones">
@@ -244,9 +244,17 @@ font-family:KaiTi,
 
 		<script >jQuery.noConflict()</script>
 		<script type="text/javascript">
+			
 			console.log(window.history);
 
 			mui.init();
+				
+			(function($) {
+				$("#mui-scroll-wrapper2").scroll({
+					//bounce: false,//滚动条是否有弹力默认是true
+					//indicators: false, //是否显示滚动条,默认是true
+				});
+			
 			var limit = {$limit};
 			var url = "/web/qunying/info/id/";
 			var arrj = {$arrj};
@@ -472,7 +480,7 @@ return (r.test(','+this.join(this.S)+','));
 								document.getElementById("content").innerHTML = data.data.content;
 								document.getElementById("piao").innerHTML = data.data.poll;
 								document.getElementById("buttons").dataset.id = data.data.id;
-								document.getElementById("a").style.left = "0vw";
+								document.getElementById("mui-scroll-wrappe2").style.left = "0vw";
 							}else{
 
 								mui.toast(data.msg);toasts();
@@ -483,7 +491,7 @@ return (r.test(','+this.join(this.S)+','));
 			});
 
 			window.addEventListener("popstate", function(e) {
-					document.getElementById("a").style.left = "100vw";
+					document.getElementById("mui-scroll-wrappe2").style.left = "100vw";
 			}, false);
 
 			mui(".mui-scroll").on("tap", "button", function() {
@@ -505,7 +513,7 @@ return (r.test(','+this.join(this.S)+','));
 						mui.toast('已使用完每天三次的投票功能',{ duration:'long', type:'div' });toasts();
 					}
 			});
-
+})(mui);
 		</script>
 	</body>
 </html>

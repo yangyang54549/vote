@@ -285,12 +285,12 @@
 							},'json'
 						);
 			}
-//			(function($) {
-//				$(".mui-scroll-wrapper").scroll({
-					//bounce: false,//滚动条是否有弹力默认是true
-					//indicators: false, //是否显示滚动条,默认是true
-//				});
-//			})(mui);
+	
+			
+				$("#mui-scroll-wrapper2").scroll({
+					bounce: false,//滚动条是否有弹力默认是true
+					indicators: false, //是否显示滚动条,默认是true
+				});
 			//mui下a标签href失效问题解决
 			mui('body').on('tap', 'a', function() {
 					window.top.location.href = this.href;
