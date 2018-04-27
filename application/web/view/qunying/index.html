@@ -116,7 +116,7 @@ font-family:KaiTi,
        			position: fixed;
        			top: 0;
        			left: 100vw;
-       			z-index: 500;
+       			z-index: 2;
        		}
 		</style>
 	</head>
@@ -535,7 +535,8 @@ return (r.test(','+this.join(this.S)+','));
      })
  }
 
-tyle="white-space:pre;">    </span>//跳转详情页的方法（点击列表某一行时，调用）
+/*tyle="white-space:pre;">    </span>*/
+//跳转详情页的方法（点击列表某一行时，调用）
  function ToDetail(id) {
      state = { pageIndex: pageIndex, numID: numID, historyData: historyData };
      sessionStorage.setItem("listData", JSON.stringify(state));
