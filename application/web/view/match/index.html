@@ -205,9 +205,7 @@
 				display: none !important;
 			}
 			.main{
-	  		
 			display: none;
-			
     	}
 		</style>
 
@@ -544,7 +542,7 @@
 										/*loading*/
 										document.getElementById("mui-scroll-wrapper").style.display = "block";
 										document.getElementById("main").style.display = "block";
-										/*获取值*/										
+										/*获取值*/
 										var dd = document.getElementById('text_row');
 										var xx = dd.getElementsByTagName('input');
 										var tesss = "";
@@ -600,10 +598,10 @@
 										}, function(data) {
 											document.getElementById("main").style.display = "none";
 											document.getElementById("mui-scroll-wrapper").style.display = "none";
-										
+
 											/*跳转*/
 											if(data.code == 1) {
-												
+
 												mui.toast(data.msg);
 												toasts();
 												/*清空*/
@@ -620,7 +618,7 @@
 												}, 1000);
 
 											} else {
-												
+
 												if (data.code == 200) {
 													mui.toast(data.msg);
 													toasts();
@@ -632,7 +630,7 @@
 													toasts();
 												}
 											}
-											
+
 
 										}, 'json');
 
