@@ -441,6 +441,7 @@ return (r.test(','+this.join(this.S)+','));
 			//var mask = mui.createMask(callback);//callback为用户点击蒙版时自动执行的回调；
 			mui("#card ").on("tap", ".mui-media .mui-card .spans span", function() {
 				//当前对象直接就是--->this
+
 				var sq = this;
 				var tt = this.className.length;
 					if(ons > 0) {
@@ -465,6 +466,8 @@ return (r.test(','+this.join(this.S)+','));
 					}
 			});
 			mui("#card").on("tap", "img", function() {
+					//显示过度动画
+
 					infoid = this.dataset.id;
 					var stateObject = "{name:'yangyang'}";
 					var title = "hello world";
@@ -483,8 +486,10 @@ return (r.test(','+this.join(this.S)+','));
 								document.getElementById("piao").innerHTML = data.data.poll;
 								document.getElementById("buttons").dataset.id = data.data.id;
 								document.getElementById("mui-scroll-wrappe2").style.left = "0vw";
-							}else{
 
+								//结束过度动画
+							}else{
+								//结束过度动画
 								mui.toast(data.msg);toasts();
 							}
 
