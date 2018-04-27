@@ -43,7 +43,7 @@
             <td>{$vo.create_time|date="y-m-d h:i",###}</td>
             <td onclick="layer_open('银行信息', '/admin/detail/bank/id/{$vo.bank_id}.html')">{$vo.bank_id|high_light=$Request.param.bank_id}</td>
             <td class="f-14">
-                <a title="编辑" href="dingdanxiangqing.html" onclick="layer_open('编辑','/admin/detail/wedit/id/{$vo.id}.html')" style="text-decoration:none" class="ml-5"><i class="Hui-iconfont"></i></a>
+                <a title="编辑" href="#" onclick="layer_open('编辑','/admin/detail/wedit/id/{$vo.id}.html')" style="text-decoration:none" class="ml-5"><i class="Hui-iconfont"></i></a>
                 {tp:menu menu='sdeleteforever' /}
             </td>
         </tr>
