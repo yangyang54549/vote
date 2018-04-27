@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" type="text/css" href="__WEB__/css/mui.css" />
 		<link rel="stylesheet" type="text/css" href="__WEB__/css/style.css" />
-		
+
 		<style type="text/css">
 			/*			@font-face {
 font-family:KaiTi,
@@ -179,7 +179,7 @@ font-family:KaiTi,
 						{volist name="qunying" id="voss" mod="2"} {eq name="mod" value="0"}
 						<div class="mui-card">
 							<div class="mui-card-content">
-								<a href="{:url('qunying/info',['id'=>$voss.id])}#" target="_blank"><img src="{$voss.suoimg}" /></a>
+								<img src="{$voss.suoimg}" class="infoajax" data-id="{$voss.id}"/>
 							</div>
 							<div class="mui-card-footer">{$voss.title}</div>
 							<div class="spans">
@@ -196,7 +196,7 @@ font-family:KaiTi,
 						{volist name="qunying" id="vosss" mod="2" key="two"} {eq name="mod" value="1"}
 						<div class="mui-card">
 							<div class="mui-card-content">
-								<a href="{:url('qunying/info',['id'=>$vosss.id])}#" target="_blank"><img src="{$vosss.suoimg}" /></a>
+								<img src="{$vosss.suoimg}" class="infoajax" data-id="{$vosss.id}" />
 							</div>
 							<div class="mui-card-footer">{$vosss.title}</div>
 							<div class="spans">
@@ -216,49 +216,24 @@ font-family:KaiTi,
 <link rel="stylesheet" type="text/css" href="__WEB__/css/info.css" />
 <div class="mui-content mui-scroll-wrapper" id="a">
 					<div class="mui-scroll">
-						<!-- 主界面具体展示内容 -->
-						<!--九宫格1-->
-						<!--下拉刷新容器-->
-
 						<ul class="mui-media " style="padding: 0;">
-
-							<!--<div class="mui-card mui-row" style="padding: 10px;">
-								<div class="mui-col-sm-6 mui-col-xs-6">
-									当前票数
-								</div>
-								<div class="mui-col-sm-6 mui-col-xs-6"   >
-									150
-								</div>
-							</div>-->
 							<div class="mui-card" id="ones">
-
-								<!--页眉，放置标题-->
-								<div class="mui-card-header">作者:</div>
-								<!--内容区-->
+								<div class="mui-card-header">作者:<span id="user_name">user_name</span></div>
 								<div class="mui-card-content">
-									<a href="javascript:void(0)"><img src="" data-preview-src="" data-preview-group="1" /></a>
+									<a href="javascript:void(0)"><img src="" data-preview-src="" data-preview-group="1" id="image" /></a>
 								</div>
-								<!--页脚，放置补充信息或支持的操作-->
 								<div class="mui-media-body" style="padding: 10px;">
-									
-									<p style="text-indent:2em;">
-									
+									<span id="title"></span>
+									<p style="text-indent:2em;" id="content">
 									</p>
 								</div>
-<div class="mui-card mui-row" >
-								<div class="mui-col-sm-6 mui-col-xs-6">
-									当前票数
+								<div class="mui-card mui-row" >
+									<div class="mui-col-sm-6 mui-col-xs-6">当前票数</div>
+									<div class="mui-col-sm-6 mui-col-xs-6" id="piao"> </div>
 								</div>
-								<div class="mui-col-sm-6 mui-col-xs-6"   id="piao">
-									
-								</div>
-
 							</div>
-							</div>
-							<button type="button" type="submit" class="mui-btn mui-btn-primary" style="width: 90%; margin-left: 5%;">投票</button>
-
+					<button class="mui-btn mui-btn-primary" style="width: 90%; margin-left: 5%;" id="buttons" data-id="">投票</button>
 						</ul>
-
 					</div>
 				</div>
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
@@ -266,14 +241,14 @@ font-family:KaiTi,
 		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/mui.zoom.js"></script>
 		<script src="__WEB__/js/mui.pre.js"></script>
-		
+
 		<script >jQuery.noConflict()</script>
 		<script type="text/javascript">
 			console.log(window.history);
 
 			mui.init();
 			var limit = {$limit};
-			var url = "{$url}"+"/web/qunying/info/id/";
+			var url = "/web/qunying/info/id/";
 			var arrj = {$arrj};
 			console.log(arrj);
 			var type = 3;
@@ -336,8 +311,6 @@ Array.prototype.in_array=function(e){
 var r=new RegExp(','+e+',');
 return (r.test(','+this.join(this.S)+','));
 }
-
-
 			var count = 0;
 			/**
 			 * 上拉加载具体业务实现
@@ -363,11 +336,11 @@ return (r.test(','+this.join(this.S)+','));
 
 										if (arrj.in_array(data['data'][mi]['id'])) {
 
-											li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="active" data-id="'+data['data'][mi]['id']+'">投票</span></div>';
+											li.innerHTML = '<div class="mui-card-content"><img src="'+data['data'][mi]['suoimg']+'"  class="infoajax" data-id="'+data['data'][mi]['id']+'" /></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="active" data-id="'+data['data'][mi]['id']+'">投票</span></div>';
 
 										}else{
 
-											li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][mi]['id']+'"><img src="'+data['data'][mi]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][mi]['id']+'">投票</span></div>';
+											li.innerHTML = '<div class="mui-card-content"><img src="'+data['data'][mi]['suoimg']+'"  class="infoajax" data-id="'+data['data'][mi]['id']+'" /></div><div class="mui-card-footer">'+data['data'][mi]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][mi]['id']+'">投票</span></div>';
 
 										}
 
@@ -420,12 +393,6 @@ return (r.test(','+this.join(this.S)+','));
 								if (data.code==1) {
 									mui.toast(data.msg,{ duration:'long', type:'div' });
 
-		var stateObject = "{name:'yangyang'}";
-		var title = "hello world";
-		var url = "/id/445";
-		window.history.pushState(stateObject, title, url)
-		console.log(window.history);
-
 									limit = data['limit'];
 									for(var n = 0; n < data.data.length; n++) {
 
@@ -434,11 +401,11 @@ return (r.test(','+this.join(this.S)+','));
 
 										if (arrj.in_array(data['data'][n]['id'])) {
 
-											li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="active" data-id="'+data['data'][n]['id']+'">投票</span> </div>';
+											li.innerHTML = '<div class="mui-card-content"><img src="'+data['data'][n]['suoimg']+'"  class="infoajax" data-id="'+data['data'][n]['id']+'" /></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="active" data-id="'+data['data'][n]['id']+'">投票</span> </div>';
 
 										}else{
 
-											li.innerHTML = '<div class="mui-card-content"><a href="'+url+data['data'][n]['id']+'"><img src="'+data['data'][n]['suoimg']+'" /></a></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][n]['id']+'">投票</span> </div>';
+											li.innerHTML = '<div class="mui-card-content"><img src="'+data['data'][n]['suoimg']+'"  class="infoajax" data-id="'+data['data'][n]['id']+'"/></div><div class="mui-card-footer">'+data['data'][n]['title']+'</div><div class="spans"><span class="" data-id="'+data['data'][n]['id']+'">投票</span> </div>';
 
 										}
 
@@ -487,16 +454,58 @@ return (r.test(','+this.join(this.S)+','));
 						mui.toast('已使用完每天三次的投票功能',{ duration:'long', type:'div' });toasts();
 					}
 			});
-			mui("header").on("tap", "h1", function() {
-				//当前对象直接就是--->this
-				document.getElementById("a").style.left = "0vw";
+			mui("#card").on("tap", "img", function() {
+					infoid = this.dataset.id;
+					var stateObject = "{name:'yangyang'}";
+					var title = "hello world";
+					var url = "/web/qunying/info/id/"+infoid+".html";
+					window.history.pushState(stateObject, title, url)
+
+					mui.post("{:url('qunying/infoajax')}",{
+						id:infoid
+					},function(data){
+						console.log(data);
+							if (data.code==1) {
+								document.getElementById("user_name").innerHTML = data.data.user_name;
+								document.getElementById("image").src = data.data.img;
+								document.getElementById("title").innerHTML = data.data.title;
+								document.getElementById("content").innerHTML = data.data.content;
+								document.getElementById("piao").innerHTML = data.data.poll;
+								document.getElementById("buttons").dataset.id = data.data.id;
+								document.getElementById("a").style.left = "0vw";
+							}else{
+
+								mui.toast(data.msg);toasts();
+							}
+
+						},'json'
+					)
+			});
+
+			window.addEventListener("popstate", function(e) {
+					document.getElementById("a").style.left = "100vw";
+			}, false);
+
+			mui(".mui-scroll").on("tap", "button", function() {
+					if(ons > 0) {
+						var id = this.getAttribute("data-id");
+						//连接后台
+						mui.post("{:url('qunying/toupiao')}",{
+							id:id
+						},function(data){
+								if (data.code==1) {
+									mui.toast("投票成功");toasts();
+								}else{
+									mui.toast(data.msg);toasts();
+								}
+							},'json'
+						)
+
+					} else {
+						mui.toast('已使用完每天三次的投票功能',{ duration:'long', type:'div' });toasts();
+					}
 			});
 
 		</script>
-
-	
-
 	</body>
-	
-
 </html>
