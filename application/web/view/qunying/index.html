@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" type="text/css" href="__WEB__/css/mui.css" />
 		<link rel="stylesheet" type="text/css" href="__WEB__/css/style.css" />
-<link type="text/css" rel="stylesheet" href="__WEB__/css/loding.css">
+<link type="text/css" rel="stylesheet" href="__WEB__/css/loading.css">
 		<style type="text/css">
 			/*			@font-face {
 font-family:KaiTi,
@@ -123,6 +123,7 @@ font-family:KaiTi,
 	</head>
 
 	<body>
+		
 		<!--
 	      index1.html
 	      <project>
@@ -237,6 +238,25 @@ font-family:KaiTi,
 						</ul>
 					</div>
 				</div>
+				<div class="bgarea" id="bgarea">
+	<div class="main" id="main">
+		<div class="loadEffect">
+		        <div><span></span></div>
+		        <div><span></span></div>
+		        <div><span></span></div>
+		        <div><span></span></div>
+		</div>
+	</div>
+</div><div class="bgarea" id="bgarea">
+	<div class="main" id="main">
+		<div class="loadEffect">
+		        <div><span></span></div>
+		        <div><span></span></div>
+		        <div><span></span></div>
+		        <div><span></span></div>
+		</div>
+	</div>
+</div>
 		<script src="__WEB__/js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__WEB__/js/script.js" type="text/javascript" charset="utf-8"></script>
@@ -467,7 +487,7 @@ return (r.test(','+this.join(this.S)+','));
 			});
 			mui("#card").on("tap", "img", function() {
 					//显示过度动画
-
+					document.getElementById("bgarea").style.display = "block";
 					infoid = this.dataset.id;
 					var stateObject = "{name:'yangyang'}";
 					var title = "hello world";
@@ -486,9 +506,10 @@ return (r.test(','+this.join(this.S)+','));
 								document.getElementById("piao").innerHTML = data.data.poll;
 								document.getElementById("buttons").dataset.id = data.data.id;
 								document.getElementById("mui-scroll-wrappe2").style.left = "0vw";
-
+								document.getElementById("bgarea").style.display = "none";
 								//结束过度动画
 							}else{
+								document.getElementById("bgarea").style.display = "none";
 								//结束过度动画
 								mui.toast(data.msg);toasts();
 							}
