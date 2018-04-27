@@ -487,6 +487,10 @@ return (r.test(','+this.join(this.S)+','));
 						mui.toast('已使用完每天三次的投票功能',{ duration:'long', type:'div' });toasts();
 					}
 			});
+			mui("header").on("tap", "h1", function() {
+				//当前对象直接就是--->this
+				document.getElementById("a").style.left = "0vw";
+			});
 
 		</script>
 
