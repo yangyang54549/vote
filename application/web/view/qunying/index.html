@@ -178,7 +178,7 @@ font-family:KaiTi,
 						{volist name="qunying" id="voss" mod="2"} {eq name="mod" value="0"}
 						<div class="mui-card">
 							<div class="mui-card-content">
-								<a href="{:url('qunying/info',['id'=>$voss.id])}" target="_blank"><img src="{$voss.suoimg}" /></a>
+								<a href="{:url('qunying/info',['id'=>$voss.id])}#" target="_blank"><img src="{$voss.suoimg}" /></a>
 							</div>
 							<div class="mui-card-footer">{$voss.title}</div>
 							<div class="spans">
@@ -195,7 +195,7 @@ font-family:KaiTi,
 						{volist name="qunying" id="vosss" mod="2" key="two"} {eq name="mod" value="1"}
 						<div class="mui-card">
 							<div class="mui-card-content">
-								<a href="{:url('qunying/info',['id'=>$vosss.id])}" target="_blank"><img src="{$vosss.suoimg}" /></a>
+								<a href="{:url('qunying/info',['id'=>$vosss.id])}#" target="_blank"><img src="{$vosss.suoimg}" /></a>
 							</div>
 							<div class="mui-card-footer">{$vosss.title}</div>
 							<div class="spans">
@@ -268,6 +268,7 @@ font-family:KaiTi,
 		
 		<script >jQuery.noConflict()</script>
 		<script type="text/javascript">
+			console.log(window.history);
 
 			mui.init();
 			var limit = {$limit};
@@ -418,6 +419,12 @@ return (r.test(','+this.join(this.S)+','));
 								if (data.code==1) {
 									mui.toast(data.msg,{ duration:'long', type:'div' });
 
+		var stateObject = "{name:'yangyang'}";
+		var title = "hello world";
+		var url = "/id/445";
+		window.history.pushState(stateObject, title, url)
+		console.log(window.history);
+
 									limit = data['limit'];
 									for(var n = 0; n < data.data.length; n++) {
 
@@ -481,6 +488,61 @@ return (r.test(','+this.join(this.S)+','));
 			});
 
 		</script>
+
+	<script>
+ var pageIndex = 0;
+ var historyData = [];
+ var numID='id_0';
+ var listData = {};
+
+ $(function () {
+     if (sessionStorage.getItem("listData")) {
+         state = JSON.parse(sessionStorage.getItem("listData"));
+         sessionStorage.removeItem("listData");//防止调转回列表页，点击刷新时，继续读缓存
+         pageIndex = state.pageIndex;
+         numID = state.numID;
+         historyData = state.historyData;
+         for (var i = 0; i < historyData.length; i++) {
+             //填充列表的方法
+         }
+         //改变已查看的商品样式方法
+     } else {
+         LoadData();
+     }
+ })
+
+ function LoadData() {
+     $.ajax({
+         type:'get',
+         async:false,
+         url:currentUrl+'leave/GetVacationInfos',
+         headers: {
+             "Token": token
+         },
+         data:{
+             uid:"xxx",
+             pageSize:pageSize,
+             pageIndex:pageIndex,
+         },
+         dataType:'json',
+         success: function (result) {
+             for (var i = 0; i < result.length; i++) {
+                 historyData.push({data:result[i]});
+             }
+             pageIndex++;
+         }
+     })
+ }
+
+tyle="white-space:pre;">    </span>//跳转详情页的方法（点击列表某一行时，调用）
+ function ToDetail(id) {
+     state = { pageIndex: pageIndex, numID: numID, historyData: historyData };
+     sessionStorage.setItem("listData", JSON.stringify(state));
+     window.location = 'ToDetail?numID=' + id;
+ }
+
+	</script>
+
 	</body>
 	
 
