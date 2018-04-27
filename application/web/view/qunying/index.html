@@ -159,7 +159,7 @@ font-family:KaiTi,
 					{foreach name="type" item="vos" key="k"} {if condition="$vo.id eq $vos.father_id"} {if condition="$i eq 0 and $k eq 0"}
 					<li class="mui-table-view-cell mui-media adc{$vo.id}">
 						<a href="javascript:void(0)" target="_blank">
-							<div class="mui-media-body active" id="act"  data-id="{$vos.id}">{$vos.name}</div>
+							<div class="mui-media-body" id="act"  data-id="{$vos.id}">{$vos.name}</div><!-- active -->
 						</a>
 					</li>
 					{else/}
@@ -176,7 +176,7 @@ font-family:KaiTi,
 
 				<ul class="mui-table-view mui-grid-view mui-grid-9" id="card">
 					<ul class=" mui-media mui-col-xs-6 mui-col-sm-6" id="card1">
-						{volist name="qunying" id="voss" mod="2"} {eq name="mod" value="0"}
+						<!-- {volist name="qunying" id="voss" mod="2"} {eq name="mod" value="0"}
 						<div class="mui-card">
 							<div class="mui-card-content">
 								<img src="{$voss.suoimg}" class="infoajax" data-id="{$voss.id}"/>
@@ -190,10 +190,10 @@ font-family:KaiTi,
 							{/if}
 							</div>
 						</div>
-						{/eq} {/volist}
+						{/eq} {/volist} -->
 					</ul>
 					<ul class="mui-media mui-col-xs-6 mui-col-sm-6" id="card2">
-						{volist name="qunying" id="vosss" mod="2" key="two"} {eq name="mod" value="1"}
+						<!-- {volist name="qunying" id="vosss" mod="2" key="two"} {eq name="mod" value="1"}
 						<div class="mui-card">
 							<div class="mui-card-content">
 								<img src="{$vosss.suoimg}" class="infoajax" data-id="{$vosss.id}" />
@@ -207,7 +207,7 @@ font-family:KaiTi,
 							{/if}
 							</div>
 						</div>
-						{/eq} {/volist}
+						{/eq} {/volist} -->
 					</ul>
 				</ul>
 			</div>
