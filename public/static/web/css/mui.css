@@ -5624,25 +5624,25 @@ body > .mui-progressbar
 /* 个人*/
 .mui-toast-container {
 				bottom: 50%;
-			}
-	@font-face {
+}
+/* @font-face {
     font-family: kaiti;
     font-weight: normal;
     font-style: normal;
 
     src: url('../fonts/kaiti.ttf') format('truetype');
-}
+} */
 
 /**{  font-family: kaiti !important; }*/
-.mui-icon {
+/* .mui-icon {
     font-family: Muiicons !important;}
  .mui-card-footer{
- 	    word-break: break-all;
+         word-break: break-all;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
- }
+ } */
 p,button,.mui-card-footer{
 	font-size: 16px !important;
 }
