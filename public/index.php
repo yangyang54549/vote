@@ -13,6 +13,6 @@
 
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
-define('URLL', "http://zihua.yingjisong.com/");
+define('URLL', "http://www.yszdwh.com/");
 // 加载框架引导文件
 require __DIR__ . '/../thinkphp/start.php';

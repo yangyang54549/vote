@@ -48,7 +48,7 @@
             <div class="formControls col-xs-6 col-sm-6">
                 <div class="select-box">
                     <select name="type" class="select">
-                    {if condition="$vo.type"}
+                    {if condition="$vo.type ?? ''"}
                     {volist name="type" id="data"}
                         <option value="{$data.id}" {eq name="$data.id" value="$vo.type"}selected="selected"{/eq}>{$data.name}</option>
                     {/volist}

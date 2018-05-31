@@ -165,6 +165,8 @@ class Qunying extends Controller
             // 添加
             $type = Type::select();
             $this->view->assign("type", $type);
+            //dump($type);die;
+
             return $this->view->fetch(isset($this->template) ? $this->template : 'edit');
         }
     }
@@ -229,7 +231,6 @@ class Qunying extends Controller
             }
             $type = Type::select();
             $this->view->assign("type", $type);
-
             $this->view->assign("vo", $vo);
             return $this->view->fetch();
         }

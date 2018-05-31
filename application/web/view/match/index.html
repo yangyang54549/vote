@@ -278,7 +278,7 @@
 					<!--提交压缩后的base64文件数据给后台-->
 					<!--<h3>传给后台</h3>-->
 					<input class="btn btn-default mui-col-sm-6 mui-col-xs-6 ns" type="button" id="upTo" value="提交" style="display: none;" />
-					<p style="font-size: 14px;">每次每幅上传需1000积分（10元）</p>
+					<p style="font-size: 14px;">每次每幅上传需100积分（1元）</p>
 					<button type="button" id="submit" class="mui-btn mui-btn-primary" style="width: 90%;margin-left: 5%;margin-bottom: 15px;">确认提交</button>
 					<!--后台所要获取的文件base64-->
 					<!--<h3>后台获取base64文件数据：(一个隐藏域)</h3>-->
@@ -351,9 +351,10 @@
 				<input type="hidden" name="" id="mui_views" value="" />
 			</ul>
 			<ul class="mui-table-view" id="mui_sheng">
-				<!-- 							<li class="mui-table-view-cell">北京市</li>
-							<li class="mui-table-view-cell">上海市</li>
-							<li class="mui-table-view-cell">重庆市</li> -->
+				<li class="mui-table-view-cell">北京市</li>
+				<li class="mui-table-view-cell">上海市</li>
+				<li class="mui-table-view-cell">天津市</li>
+				<li class="mui-table-view-cell">重庆市</li>
 				<li class="mui-table-view-cell">黑龙江省</li>
 				<li class="mui-table-view-cell">辽宁省</li>
 				<li class="mui-table-view-cell">吉林省</li>
@@ -386,8 +387,8 @@
 				<li class="mui-table-view-cell">新疆维吾尔自治区</li>
 				<li class="mui-table-view-cell">西藏自治区</li>
 				<li class="mui-table-view-cell">广西壮族自治区</li>
-				<!-- 							<li class="mui-table-view-cell">香港特别行政区</li>
-							<li class="mui-table-view-cell">澳门特别行政区</li> -->
+				<li class="mui-table-view-cell">香港特别行政区</li>
+				<li class="mui-table-view-cell">澳门特别行政区</li>
 				<input type="hidden" name="" id="mui_shengs" value="" />
 			</ul>
 
@@ -533,7 +534,7 @@
 
 						if(zname.value != "") {
 							if(sheng.value != "") {
-								if(tes.value != "") {
+								// if(tes.value != "") {
 									if(lei.value != "") {
 										/*loading*/
 										document.getElementById("mui-scroll-wrapper").style.display = "block";
@@ -634,10 +635,10 @@
 										mui.toast('请选择分类');
 										toasts();
 									}
-								} else {
-									mui.toast('请输入作品简介');
-									toasts();
-								}
+								// } else {
+								// 	mui.toast('请输入作品简介');
+								// 	toasts();
+								// }
 							} else {
 								mui.toast('请选择省份');
 								toasts();

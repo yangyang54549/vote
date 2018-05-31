@@ -128,7 +128,7 @@ class Qunying extends Yang
 
                 $this->ret['msg'] = '修改票数失败';
                 User::where('id',$this->id)->setDec('vote');
-                User::where('id',$this->id)->setInc('integral',rand(0,2));
+                User::where('id',$this->id)->setInc('integral',rand(0,10));
 
                 $arr = Cookie::get('toupiao');
                 $arr = json_decode($arr, true);

@@ -31,7 +31,7 @@ class Match extends Yang
         if ($this->request->isAjax()) {
             $arr = input('');
             $user = User::where('id',$this->id)->find();
-            if ($user['integral']<1000) {
+            if ($user['integral']<100) {
                 $this->ret['msg'] = '积分不足,请充值后上传作品';
                 $this->ret['code'] = 200;
                 return json($this->ret);
@@ -103,12 +103,12 @@ class Match extends Yang
                 $this->ret['msg'] = '上传失败,请重试';
                 $this->ret['code'] = -200;
                 Qunying::insert($arr);
-                User::where('id',$this->id)->setDec('integral',1000);
+                User::where('id',$this->id)->setDec('integral',100);
 
                 $row['user_id'] = $this->id;
                 $row['or'] = 3;
-                $row['money'] =10;
-                $row['integral'] =1000;
+                $row['money'] =1;
+                $row['integral'] =100;
                 $row['comment'] = '上传作品';
                 $row['status'] = 1;
                 $row['create_time'] = time();

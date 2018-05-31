@@ -3,7 +3,7 @@
  * @Author: Marte
  * @Date:   2018-01-08 15:06:15
  * @Last Modified by:   Marte
- * @Last Modified time: 2018-04-02 18:47:37
+ * @Last Modified time: 2018-05-07 18:19:41
  */
 namespace app\web\controller;
 use app\web\controller\Yang;
@@ -149,7 +149,7 @@ class Wxpay extends Yang
     public function activate(){
         if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ) {
 
-            $money = 0.01*100;
+            $money = 100;
 
             $row['user_id']=Session::get('user.id');
             $row['or']=1;
